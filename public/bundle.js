@@ -95,35 +95,119 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
-/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _synth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./synth */ "./client/synth.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _synth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../synth */ "./synth.js");
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_2__);
+// import sequencer from './sequencer'
+const jamCanvas = document.createElement('jamCanvas');
+const socket = io(window.location.origin);
 
 
 
+console.log('NX:  ', nexusui__WEBPACK_IMPORTED_MODULE_1___default.a);
 
-const sequencer = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#sequencer', {
+
+const setup = () => {
+  document.body.appendChild(jamCanvas);
+};
+
+const triggerNote = note => {
+  _synth__WEBPACK_IMPORTED_MODULE_0__["default"][0].triggerAttackRelease(note, '16n');
+};
+
+const sequencer = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#synth-sequencer', {
   'size': [400, 400],
   'mode': 'toggle',
   'rows': 8,
   'columns': 8
 });
 
-sequencer.on('step', function (evt) {
-  console.log(evt);
-  if (evt[7]) _synth__WEBPACK_IMPORTED_MODULE_2__["default"][0].triggerAttackRelease('C5', '16n');
-  if (evt[6]) _synth__WEBPACK_IMPORTED_MODULE_2__["default"][0].triggerAttackRelease('B4', '16n');
-  if (evt[5]) _synth__WEBPACK_IMPORTED_MODULE_2__["default"][0].triggerAttackRelease('A4', '16n');
-  if (evt[4]) _synth__WEBPACK_IMPORTED_MODULE_2__["default"][0].triggerAttackRelease('G4', '16n');
-  if (evt[3]) _synth__WEBPACK_IMPORTED_MODULE_2__["default"][0].triggerAttackRelease('F4', '16n');
-  if (evt[2]) _synth__WEBPACK_IMPORTED_MODULE_2__["default"][0].triggerAttackRelease('E4', '16n');
-  if (evt[1]) _synth__WEBPACK_IMPORTED_MODULE_2__["default"][0].triggerAttackRelease('D4', '16n');
-  if (evt[0]) _synth__WEBPACK_IMPORTED_MODULE_2__["default"][0].triggerAttackRelease('C4', '16n');
+sequencer.on('step', note => {
+  if (note[7]) {
+    triggerNote('C5');
+    socket.emit('nx', 'C5');
+  }
+  if (note[6]) {
+    triggerNote('B4');
+    socket.emit('nx', 'B4');
+  }
+  if (note[5]) {
+    triggerNote('A4');
+    socket.emit('nx', 'A4');
+  }
+  if (note[4]) {
+    triggerNote('G4');
+    socket.emit('nx', 'G4');
+  }
+  if (note[3]) {
+    triggerNote('F4');
+    socket.emit('nx', 'F4');
+  }
+  if (note[2]) {
+    triggerNote('E4');
+    socket.emit('nx', 'E4');
+  }
+  if (note[1]) {
+    triggerNote('D4');
+    socket.emit('nx', 'D4');
+  }
+  if (note[0]) {
+    triggerNote('C4');
+    socket.emit('nx', 'C4');
+  }
 });
 
 sequencer.start(100);
+
+socket.on('connect', function () {
+  console.log('I have made a persistent two-way connection to the server!');
+});
+
+socket.on('noteState', payload => {
+  noteOn = payload;
+});
+
+nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.onload = (...payload) => {
+  console.log('TEST****');
+  nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.sendsTo("node", ...payload);
+};
+
+document.addEventListener('DOMContentLoaded', setup);
+
+/***/ }),
+
+/***/ "./client/synth.js":
+/*!*************************!*\
+  !*** ./client/synth.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
+/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_0__);
+
+const Tone = __webpack_require__(/*! Tone */ "./node_modules/Tone/build/Tone.js");
+
+const reverb = new Tone.Freeverb().toMaster();
+const vibrato = new Tone.Vibrato().toMaster();
+const chorus = new Tone.Chorus().toMaster();
+const delay = new Tone.PingPongDelay().toMaster();
+const gain = new Tone.Gain(0.3);
+// const autoFilter = new Tone.AutoFilter('8n').toMaster()
+// const lfo = new Tone.LFO('4n', 1, 1)
+// lfo.connect(delay)
+reverb.wet.value = 1.0;
+vibrato.wet.value = 1.0;
+chorus.wet.value = 1.0;
+delay.wet.value = 1.0;
+
+let synths = [new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus)];
+
+/* harmony default export */ __webpack_exports__["default"] = (synths);
 
 /***/ }),
 
@@ -58837,39 +58921,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory){
   
   return Tone;
 }));
-
-/***/ }),
-
-/***/ "./synth.js":
-/*!******************!*\
-  !*** ./synth.js ***!
-  \******************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! events */ "./node_modules/events/events.js");
-/* harmony import */ var events__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(events__WEBPACK_IMPORTED_MODULE_0__);
-
-const Tone = __webpack_require__(/*! Tone */ "./node_modules/Tone/build/Tone.js");
-
-const reverb = new Tone.Freeverb().toMaster();
-const vibrato = new Tone.Vibrato().toMaster();
-const chorus = new Tone.Chorus().toMaster();
-const delay = new Tone.PingPongDelay().toMaster();
-const gain = new Tone.Gain(0.3);
-// const autoFilter = new Tone.AutoFilter('8n').toMaster()
-// const lfo = new Tone.LFO('4n', 1, 1)
-// lfo.connect(delay)
-reverb.wet.value = 1.0;
-vibrato.wet.value = 1.0;
-chorus.wet.value = 1.0;
-delay.wet.value = 1.0;
-
-let synths = [new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus)];
-
-/* harmony default export */ __webpack_exports__["default"] = (synths);
 
 /***/ })
 

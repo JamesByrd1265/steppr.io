@@ -1,4 +1,6 @@
-# World Wide Whiteboard
+# steppr.io
+
+kick some jamz friend
 
 ## Setup
 
