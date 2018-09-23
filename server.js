@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const socketio = require('socket.io');
 let noteStates = [0, 0, 0, 0, 0, 0, 0, 0]
+let step = {}, steps = []
 
 const server = app.listen(4000, () => {
   console.log(`Listening on http://localhost:${server.address().port}`)
@@ -13,10 +14,14 @@ const io = socketio(server);
 io.on('connection', function (socket) {
   console.log('A new client has connected!');
   console.log(socket.id);
-  socket.emit('nx', noteStates)
+  socket.on('selectStep', function(...data) {
+    step = data[0]
+    steps = data[1]
+    socket.broadcast.emit('selectStep', step, steps)
+  })
   socket.on('nx', function (data) {
-    console.log('DATA:  ', data)
     noteStates = data
+    console.log('DATA:  ', noteStates)
     socket.broadcast.emit('nx', data)
   });
   socket.on('disconnect', () => {

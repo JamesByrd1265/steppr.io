@@ -100,12 +100,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_2__);
-const jamCanvas = document.createElement('jamCanvas');
 const socket = io(window.location.origin);
+const jamCanvas = document.createElement('jamCanvas');
 
 
 
-console.log('NX:  ', nexusui__WEBPACK_IMPORTED_MODULE_1___default.a);
 
 const sequencer = nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.add('sequencer');
 sequencer.size = [400, 400];
@@ -114,14 +113,24 @@ sequencer.rows = 8;
 sequencer.columns = 8;
 
 let noteStates = [0, 0, 0, 0, 0, 0, 0, 0];
+let grid = [],
+    steps = [],
+    step = {};
+
+const triggerNote = note => {
+  _synth__WEBPACK_IMPORTED_MODULE_0__["default"][0].triggerAttackRelease(note, '32n');
+};
 
 const setup = () => {
   document.body.appendChild(jamCanvas);
+  setupSequencer();
 };
 
-const triggerNote = note => {
-  _synth__WEBPACK_IMPORTED_MODULE_0__["default"][0].triggerAttackRelease(note, '16n');
-};
+sequencer.on('change', data => {
+  console.log('STEP:  ', data);
+  if (!step.state && data.state) step = data;
+  socket.emit('selectStep', step, steps);
+});
 
 sequencer.on('step', notes => {
   if (notes[7] || noteStates[7]) {
@@ -166,29 +175,42 @@ sequencer.on('step', notes => {
   }
 });
 
-sequencer.start(100);
+const setupSequencer = () => {
+  const stepsNodeList = window.document.getElementsByTagName('rect');
+  grid = Array.from(stepsNodeList);
+  console.log('GRID:  ', grid);
+  for (let i = 0; i < grid.length; i += 8) {
+    steps.push(grid.slice(i, i + 8));
+  }
+  console.log('STEPS:  ', steps);
+  sequencer.start(100);
+};
 
 socket.on('connect', function () {
   console.log('I have made a persistent two-way connection to the server!');
 });
 
-// socket.on('triggeredNotes', (data) => {
-//   steps = data
-// })
-
-socket.on('nx', data => {
-  console.log(data);
-  noteStates = data;
-  console.log('states:  ', noteStates);
+socket.on('selectStep', (...data) => {
+  //#ccc
+  console.log('DATA:  ', [...data]);
+  let currentStep = steps[data[0].row][data[0].column];
+  // currentStep.stroke = '#ccc'
+  console.log('CURRENT:  ', currentStep);
+  step = data[0], steps = data[1];
+  console.log('SELECTED STEP: ', currentStep);
 });
 
-nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.onload = () => {
+socket.on('nx', data => {
+  noteStates = data;
+});
+
+nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.onload = function () {
   // console.log('PAYLOAD:  ')
   console.log('TEST****');
   nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.sendsTo("node");
 };
 
-document.addEventListener('DOMContentLoaded', setup, nexusui__WEBPACK_IMPORTED_MODULE_1___default.a);
+document.addEventListener('DOMContentLoaded', setup);
 
 /***/ }),
 
