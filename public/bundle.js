@@ -124,42 +124,42 @@ const triggerNote = note => {
 };
 
 sequencer.on('step', notes => {
-  if (notes[7]) {
+  if (notes[7] || noteStates[7]) {
     triggerNote('C5');
     noteStates[7] = notes[7];
     socket.emit('nx', notes);
   }
-  if (notes[6]) {
+  if (notes[6] || noteStates[6]) {
     triggerNote('B4');
     noteStates[6] = notes[6];
     socket.emit('nx', notes);
   }
-  if (notes[5]) {
+  if (notes[5] || noteStates[5]) {
     triggerNote('A4');
     noteStates[5] = notes[5];
     socket.emit('nx', notes);
   }
-  if (notes[4]) {
+  if (notes[4] || noteStates[4]) {
     triggerNote('G4');
     noteStates[4] = notes[4];
     socket.emit('nx', notes);
   }
-  if (notes[3]) {
+  if (notes[3] || noteStates[3]) {
     triggerNote('F4');
     noteStates[3] = notes[3];
     socket.emit('nx', notes);
   }
-  if (notes[2]) {
+  if (notes[2] || noteStates[2]) {
     triggerNote('E4');
     noteStates[2] = notes[2];
     socket.emit('nx', notes);
   }
-  if (notes[1]) {
+  if (notes[1] || noteStates[1]) {
     triggerNote('D4');
     noteStates[1] = notes[1];
     socket.emit('nx', notes);
   }
-  if (notes[0]) {
+  if (notes[0] || noteStates[0]) {
     triggerNote('C4');
     noteStates[0] = notes[0];
     socket.emit('nx', notes);
