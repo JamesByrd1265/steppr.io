@@ -100,7 +100,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_2__);
-// import sequencer from './sequencer'
 const jamCanvas = document.createElement('jamCanvas');
 const socket = io(window.location.origin);
 
@@ -108,6 +107,11 @@ const socket = io(window.location.origin);
 
 console.log('NX:  ', nexusui__WEBPACK_IMPORTED_MODULE_1___default.a);
 
+const sequencer = nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.add('sequencer');
+sequencer.size = [400, 400];
+sequencer.mode = 'toggle';
+sequencer.rows = 8;
+sequencer.columns = 8;
 
 const setup = () => {
   document.body.appendChild(jamCanvas);
@@ -117,45 +121,38 @@ const triggerNote = note => {
   _synth__WEBPACK_IMPORTED_MODULE_0__["default"][0].triggerAttackRelease(note, '16n');
 };
 
-const sequencer = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#synth-sequencer', {
-  'size': [400, 400],
-  'mode': 'toggle',
-  'rows': 8,
-  'columns': 8
-});
-
 sequencer.on('step', note => {
   if (note[7]) {
     triggerNote('C5');
-    socket.emit('nx', 'C5');
+    socket.emit('nx', note);
   }
   if (note[6]) {
     triggerNote('B4');
-    socket.emit('nx', 'B4');
+    socket.emit('nx', note);
   }
   if (note[5]) {
     triggerNote('A4');
-    socket.emit('nx', 'A4');
+    socket.emit('nx', note);
   }
   if (note[4]) {
     triggerNote('G4');
-    socket.emit('nx', 'G4');
+    socket.emit('nx', note);
   }
   if (note[3]) {
     triggerNote('F4');
-    socket.emit('nx', 'F4');
+    socket.emit('nx', note);
   }
   if (note[2]) {
     triggerNote('E4');
-    socket.emit('nx', 'E4');
+    socket.emit('nx', note);
   }
   if (note[1]) {
     triggerNote('D4');
-    socket.emit('nx', 'D4');
+    socket.emit('nx', note);
   }
   if (note[0]) {
     triggerNote('C4');
-    socket.emit('nx', 'C4');
+    socket.emit('nx', note);
   }
 });
 
@@ -165,16 +162,16 @@ socket.on('connect', function () {
   console.log('I have made a persistent two-way connection to the server!');
 });
 
-socket.on('noteState', payload => {
-  noteOn = payload;
+socket.on('nx', (...data) => {
+  console.log(...data);
+  nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.onload = () => {
+    // console.log('PAYLOAD:  ')
+    console.log('TEST****');
+    nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.sendsTo("node");
+  };
 });
 
-nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.onload = (...payload) => {
-  console.log('TEST****');
-  nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.sendsTo("node", ...payload);
-};
-
-document.addEventListener('DOMContentLoaded', setup);
+document.addEventListener('DOMContentLoaded', setup, nexusui__WEBPACK_IMPORTED_MODULE_1___default.a);
 
 /***/ }),
 

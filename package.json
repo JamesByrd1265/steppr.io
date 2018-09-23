@@ -10,6 +10,7 @@
     "start-server": "nodemon server.js --ignore public"
   },
   "dependencies": {
+    "connect": "^3.6.6",
     "draggabilly": "^2.2.0",
     "express": "^4.12.3",
     "http": "0.0.0",
