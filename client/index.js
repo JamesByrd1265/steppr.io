@@ -11,6 +11,8 @@ sequencer.mode = 'toggle'
 sequencer.rows = 8
 sequencer.columns = 8
 
+let noteStates = [0, 0, 0, 0, 0, 0, 0, 0]
+
 const setup = () => {
   document.body.appendChild(jamCanvas)
 }
@@ -19,39 +21,47 @@ const triggerNote = note => {
   synths[0].triggerAttackRelease(note, '16n')
 }
 
-sequencer.on('step', note => {
-  if(note[7]) {
+sequencer.on('step', notes => {
+  if(notes[7]) {
     triggerNote('C5')
-    socket.emit('nx', note)
+    noteStates[7] = notes[7]
+    socket.emit('nx', notes)
   }
-  if(note[6]) {
+  if(notes[6]) {
     triggerNote('B4')
-    socket.emit('nx', note)   
+    noteStates[6] = notes[6]
+    socket.emit('nx', notes)   
   }
-  if(note[5]) {
+  if(notes[5]) {
     triggerNote('A4')
-    socket.emit('nx', note)   
+    noteStates[5] = notes[5]
+    socket.emit('nx', notes)   
   }
-  if(note[4]) {
+  if(notes[4]) {
     triggerNote('G4')
-    socket.emit('nx', note)   
+    noteStates[4] = notes[4]
+    socket.emit('nx', notes)   
   }
-  if(note[3]) {
+  if(notes[3]) {
     triggerNote('F4')
-    socket.emit('nx', note)   
+    noteStates[3] = notes[3]
+    socket.emit('nx', notes)   
   }
-  if(note[2]) {
+  if(notes[2]) {
     triggerNote('E4')
-    socket.emit('nx', note)   
+    noteStates[2] = notes[2]
+    socket.emit('nx', notes)   
   }
-  if(note[1]) {
+  if(notes[1]) {
     triggerNote('D4')
-    socket.emit('nx', note)   
+    noteStates[1] = notes[1]
+    socket.emit('nx', notes)   
   }
-  if(note[0]) {
+  if(notes[0]) {
     triggerNote('C4')
-    socket.emit('nx', note)
-  }
+    noteStates[0] = notes[0]
+    socket.emit('nx', notes)
+  } 
 })
 
 sequencer.start(100)
@@ -60,15 +70,21 @@ socket.on('connect', function() {
   console.log('I have made a persistent two-way connection to the server!')
 })
 
-socket.on('nx', (...data) => {
-  console.log(...data)
-  nx.onload = () => {
-    // console.log('PAYLOAD:  ')
-    console.log('TEST****')
-    nx.sendsTo("node")
-  }
+// socket.on('triggeredNotes', (data) => {
+//   steps = data
+// })
+
+socket.on('nx', (data) => {
+  console.log(data)
+  noteStates = data
+  console.log('states:  ', noteStates)
 })
 
+nx.onload = () => {
+  // console.log('PAYLOAD:  ')
+  console.log('TEST****')
+  nx.sendsTo("node")
+}
 
 
 document.addEventListener('DOMContentLoaded', setup, nx)

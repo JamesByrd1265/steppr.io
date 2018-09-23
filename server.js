@@ -2,8 +2,7 @@ const path = require('path')
 const express = require('express')
 const app = express()
 const socketio = require('socket.io');
-// const osc = require('node-osc')
-// let client = new osc.Client('localhost', 4000)
+let noteStates = [0, 0, 0, 0, 0, 0, 0, 0]
 
 const server = app.listen(4000, () => {
   console.log(`Listening on http://localhost:${server.address().port}`)
@@ -14,10 +13,12 @@ const io = socketio(server);
 io.on('connection', function (socket) {
   console.log('A new client has connected!');
   console.log(socket.id);
-    socket.on('nx', function (...data) {
-      console.log('DATA:  ', ...data)
-      socket.emit('nx', ...data)
-    });
+  socket.on('nx', function (data) {
+    console.log('DATA:  ', data)
+    noteStates = data
+    socket.emit('nx', data)
+    socket.broadcast.emit('nx', data)
+  });
   socket.on('disconnect', () => {
     console.log('user disconnected')
   })
