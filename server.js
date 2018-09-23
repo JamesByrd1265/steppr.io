@@ -13,10 +13,10 @@ const io = socketio(server);
 io.on('connection', function (socket) {
   console.log('A new client has connected!');
   console.log(socket.id);
+  socket.emit('nx', noteStates)
   socket.on('nx', function (data) {
     console.log('DATA:  ', data)
     noteStates = data
-    socket.emit('nx', data)
     socket.broadcast.emit('nx', data)
   });
   socket.on('disconnect', () => {
