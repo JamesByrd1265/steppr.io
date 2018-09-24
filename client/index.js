@@ -5,56 +5,20 @@ import synths from './synths'
 import Nexus from 'nexusui'
 import Tone from 'tone'
 
-const leadSeq = new Nexus.Sequencer('#lead-seq',{
- 'size': [400,200],
- 'mode': 'toggle',
- 'rows': 8,
- 'columns': 8
-})
+let sequencer = {'size': [400,200], 'mode': 'toggle', 'rows': 8, 'columns': 8}
+let slider = {'size': [180,20], 'mode': 'relative', 'min': -80, 'max': 0, 'step': 0, 'value': -80}
 
-const bassSeq = new Nexus.Sequencer('#bass-seq',{
- 'size': [400,200],
- 'mode': 'toggle',
- 'rows': 8,
- 'columns': 8
-})
-
-const drumSeq = new Nexus.Sequencer('#drum-seq',{
- 'size': [800,200],
- 'mode': 'toggle',
- 'rows': 8,
- 'columns': 16
-})
-
-const leadVol = new Nexus.Slider('#lead-vol', {
-  'size': [120,20],
-  'mode': 'relative',
-  'min': 0,
-  'max': 1,
-  'step': 0,
-  'value': 0
-})
-
-const bassVol = new Nexus.Slider('#bass-vol', {
-  'size': [120,20],
-  'mode': 'relative',
-  'min': 0,
-  'max': 1,
-  'step': 0,
-  'value': 0
-})
-
-const drumVol = new Nexus.Slider('#drum-vol', {
-  'size': [120,20],
-  'mode': 'relative',
-  'min': 0,
-  'max': 1,
-  'step': 0,
-  'value': 0
-})
+const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)
+const bassSeq = new Nexus.Sequencer('#bass-seq', sequencer)
+const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [800,200], 'mode': 'toggle', 'rows': 8, 'columns': 16})
+const leadVol = new Nexus.Slider('#lead-vol', slider)
+const bassVol = new Nexus.Slider('#bass-vol', slider)
+const drumVol = new Nexus.Slider('#drum-vol', slider)
+let synth = synths.fmSynth
+synth.volume.value = -80
 
 const triggerNote = note => {
-  synths[0].triggerAttackRelease(note, '32n')
+  synth.triggerAttackRelease(note, '32n')
 }
 
 const setup = () => {
@@ -98,7 +62,6 @@ leadSeq.on('step', notes => {
   } 
 })
 
-
 bassSeq.on('step', notes => {
   if(notes[7]) {
     triggerNote('C3')
@@ -132,6 +95,12 @@ bassSeq.on('step', notes => {
     triggerNote('C2')
     socket.emit('nx', notes)
   } 
+})
+
+leadVol.on('change', level => {
+  console.log('LEVEL:  ', level)
+  synth.volume.value = level
+  console.log(synth.volume.value)
 })
 
 const setupSequencer = () => {

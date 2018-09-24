@@ -4,7 +4,7 @@
 
 #lead-vol {
   display: inline-block;
-  padding-left: 120px;
+  padding-left: 135px;
 }
 
 #bass-seq {
@@ -13,7 +13,7 @@
 
 #bass-vol {
   display: inline-block;
-  padding-left: 120px;
+  padding-left: 140px;
 }
 
 #drum-seq {
@@ -22,7 +22,7 @@
 
 #drum-vol {
   display: inline-block;
-  padding-left: 120px;
+  padding-left: 104px;
 }
 
 #synth-title {

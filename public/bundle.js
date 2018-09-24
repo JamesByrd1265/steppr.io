@@ -108,56 +108,20 @@ const canvas = document.createElement('canvas');
 
 
 
-const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#lead-seq', {
-  'size': [400, 200],
-  'mode': 'toggle',
-  'rows': 8,
-  'columns': 8
-});
+let sequencer = { 'size': [400, 200], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
+let slider = { 'size': [180, 20], 'mode': 'relative', 'min': -80, 'max': 0, 'step': 0, 'value': -80 };
 
-const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#bass-seq', {
-  'size': [400, 200],
-  'mode': 'toggle',
-  'rows': 8,
-  'columns': 8
-});
-
-const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#drum-seq', {
-  'size': [800, 200],
-  'mode': 'toggle',
-  'rows': 8,
-  'columns': 16
-});
-
-const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#lead-vol', {
-  'size': [120, 20],
-  'mode': 'relative',
-  'min': 0,
-  'max': 1,
-  'step': 0,
-  'value': 0
-});
-
-const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#bass-vol', {
-  'size': [120, 20],
-  'mode': 'relative',
-  'min': 0,
-  'max': 1,
-  'step': 0,
-  'value': 0
-});
-
-const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#drum-vol', {
-  'size': [120, 20],
-  'mode': 'relative',
-  'min': 0,
-  'max': 1,
-  'step': 0,
-  'value': 0
-});
+const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#lead-seq', sequencer);
+const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#bass-seq', sequencer);
+const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#drum-seq', { 'size': [800, 200], 'mode': 'toggle', 'rows': 8, 'columns': 16 });
+const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#lead-vol', slider);
+const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#bass-vol', slider);
+const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#drum-vol', slider);
+let synth = _synths__WEBPACK_IMPORTED_MODULE_0__["default"].fmSynth;
+synth.volume.value = -80;
 
 const triggerNote = note => {
-  _synths__WEBPACK_IMPORTED_MODULE_0__["default"][0].triggerAttackRelease(note, '32n');
+  synth.triggerAttackRelease(note, '32n');
 };
 
 const setup = () => {
@@ -236,6 +200,12 @@ bassSeq.on('step', notes => {
   }
 });
 
+leadVol.on('change', level => {
+  console.log('LEVEL:  ', level);
+  synth.volume.value = level;
+  console.log(synth.volume.value);
+});
+
 const setupSequencer = () => {
   leadSeq.start(100);
   bassSeq.start(100);
@@ -276,16 +246,33 @@ const reverb = new Tone.Freeverb().toMaster();
 const vibrato = new Tone.Vibrato().toMaster();
 const chorus = new Tone.Chorus().toMaster();
 const delay = new Tone.PingPongDelay().toMaster();
-const gain = new Tone.Gain(0.3);
-// const autoFilter = new Tone.AutoFilter('8n').toMaster()
-// const lfo = new Tone.LFO('4n', 1, 1)
-// lfo.connect(delay)
+const gain = new Tone.Gain(0.5).toMaster();
+const vol = new Tone.Volume().toMaster();
+
 reverb.wet.value = 1.0;
 vibrato.wet.value = 1.0;
 chorus.wet.value = 1.0;
 delay.wet.value = 1.0;
 
-let synths = [new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus), new Tone.FMSynth().chain(gain, vibrato, chorus)];
+let fmSynth = new Tone.FMSynth().chain(gain, vol, vibrato, chorus);
+let membraneSynth = new Tone.MembraneSynth().chain(gain, vol);
+let amSynth = new Tone.AMSynth().chain(gain, vol);
+let metalSynth = new Tone.MetalSynth().chain(gain, vol);
+let noiseSynth = new Tone.NoiseSynth().chain(gain, vol);
+let pluckSynth = new Tone.PluckSynth().chain(gain, vol);
+let duoSynth = new Tone.DuoSynth().chain(gain, vol);
+let polySynth = new Tone.PolySynth().chain(gain, vol);
+
+const synths = {
+  fmSynth,
+  membraneSynth,
+  amSynth,
+  metalSynth,
+  noiseSynth,
+  pluckSynth,
+  duoSynth,
+  polySynth
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (synths);
 
