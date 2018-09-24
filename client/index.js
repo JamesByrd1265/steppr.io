@@ -5,12 +5,12 @@ import synths from './synths'
 import Nexus from 'nexusui'
 import Tone from 'tone'
 
-let sequencer = {'size': [400,200], 'mode': 'toggle', 'rows': 8, 'columns': 8}
+let sequencer = {'size': [600,300], 'mode': 'toggle', 'rows': 8, 'columns': 8}
 let slider = {'size': [180,20], 'mode': 'relative', 'min': -80, 'max': 0, 'step': 0, 'value': -80}
 
 const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)
 const bassSeq = new Nexus.Sequencer('#bass-seq', sequencer)
-const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [800,200], 'mode': 'toggle', 'rows': 8, 'columns': 16})
+const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [1245,300], 'mode': 'toggle', 'rows': 8, 'columns': 16})
 const leadVol = new Nexus.Slider('#lead-vol', slider)
 const bassVol = new Nexus.Slider('#bass-vol', slider)
 const drumVol = new Nexus.Slider('#drum-vol', slider)
@@ -98,6 +98,12 @@ bassSeq.on('step', notes => {
 })
 
 leadVol.on('change', level => {
+  console.log('LEVEL:  ', level)
+  synth.volume.value = level
+  console.log(synth.volume.value)
+})
+
+bassVol.on('change', level => {
   console.log('LEVEL:  ', level)
   synth.volume.value = level
   console.log(synth.volume.value)

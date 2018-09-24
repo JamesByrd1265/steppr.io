@@ -108,12 +108,12 @@ const canvas = document.createElement('canvas');
 
 
 
-let sequencer = { 'size': [400, 200], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
+let sequencer = { 'size': [600, 300], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
 let slider = { 'size': [180, 20], 'mode': 'relative', 'min': -80, 'max': 0, 'step': 0, 'value': -80 };
 
 const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#lead-seq', sequencer);
 const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#bass-seq', sequencer);
-const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#drum-seq', { 'size': [800, 200], 'mode': 'toggle', 'rows': 8, 'columns': 16 });
+const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#drum-seq', { 'size': [1245, 300], 'mode': 'toggle', 'rows': 8, 'columns': 16 });
 const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#lead-vol', slider);
 const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#bass-vol', slider);
 const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#drum-vol', slider);
@@ -201,6 +201,12 @@ bassSeq.on('step', notes => {
 });
 
 leadVol.on('change', level => {
+  console.log('LEVEL:  ', level);
+  synth.volume.value = level;
+  console.log(synth.volume.value);
+});
+
+bassVol.on('change', level => {
   console.log('LEVEL:  ', level);
   synth.volume.value = level;
   console.log(synth.volume.value);
