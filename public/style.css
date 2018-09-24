@@ -1,22 +1,43 @@
-/*interface {
-  position: absolute;
-  display: flex;
-  top: 0, left: 0;
-  width: 100%; height: 100%;
-}
 
-#sequencer-1 {
-  border: 3px solid black;
-  width: 45%; height: 90%;
-}
-
-/*.scale {
-  position: relative;
-  border: 4px solid black;
-}
-
-.note {
-  display: flex;
-  padding: 20px;
-  border: 2px solid black;
+/*di6 {
+  padding: 40px;
 }*/
+
+#lead-seq {
+  padding-left: 40px;
+}
+
+#bass-seq {
+  padding-left: 40px;
+}
+
+#drum-seq {
+  padding-left: 40px;
+}
+
+h2 {
+  padding-top: 80px;
+  padding-left: 40px;
+}
+
+
+
+
+
+
+
+
+
+/*// const leadSeq = nx.add('sequencer')
+// leadSeq.size = [400,400]
+// leadSeq.mode = 'toggle'
+// leadSeq.rows = 8
+// leadSeq.columns = 8
+
+// const bassSeq = nx.add('sequencer')
+// bassSeq.size = [400,400]
+// bassSeq.mode = 'toggle'
+// bassSeq.rows = 8
+// bassSeq.columns = 8
+// bassSeq.padding = 800
+*/

@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 const app = express()
-const socketio = require('socket.io');
+const socketio = require('socket.io')
 
 const server = app.listen(4000, () => {
   console.log(`Listening on http://localhost:${server.address().port}`)
@@ -14,6 +14,7 @@ io.on('connection', function (socket) {
   console.log(socket.id);
 
   socket.on('nx', function (data) {
+    console.log('DATA:  ', data)
     socket.broadcast.emit('nx', data)
   });
 

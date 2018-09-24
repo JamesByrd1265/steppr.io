@@ -90,37 +90,56 @@
 /*!*************************!*\
   !*** ./client/index.js ***!
   \*************************/
-/*! no exports provided */
+/*! exports provided: socket */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "socket", function() { return socket; });
 /* harmony import */ var _synth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./synth */ "./client/synth.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_2__);
 const socket = io(window.location.origin);
-const jamCanvas = document.createElement('jamCanvas');
+const canvas = document.createElement('canvas');
+
+// import nx from 'nexusui'
 
 
 
-const sequencer = nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.add('sequencer');
-sequencer.size = [400, 400];
-sequencer.mode = 'toggle';
-sequencer.rows = 8;
-sequencer.columns = 8;
+var leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#lead-seq', {
+  'size': [400, 200],
+  'mode': 'toggle',
+  'rows': 8,
+  'columns': 8
+});
+
+var bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#bass-seq', {
+  'size': [400, 200],
+  'mode': 'toggle',
+  'rows': 8,
+  'columns': 8
+});
+
+var drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#drum-seq', {
+  'size': [800, 200],
+  'mode': 'toggle',
+  'rows': 8,
+  'columns': 16
+});
 
 const triggerNote = note => {
   _synth__WEBPACK_IMPORTED_MODULE_0__["default"][0].triggerAttackRelease(note, '32n');
 };
 
 const setup = () => {
-  document.body.appendChild(jamCanvas);
+  document.body.appendChild(canvas);
   setupSequencer();
+  // nx.onload()
 };
 
-sequencer.on('step', notes => {
+leadSeq.on('step', notes => {
   if (notes[7]) {
     triggerNote('C5');
     socket.emit('nx', notes);
@@ -155,8 +174,45 @@ sequencer.on('step', notes => {
   }
 });
 
+bassSeq.on('step', notes => {
+  if (notes[7]) {
+    triggerNote('C3');
+    socket.emit('nx', notes);
+  }
+  if (notes[6]) {
+    triggerNote('B2');
+    socket.emit('nx', notes);
+  }
+  if (notes[5]) {
+    triggerNote('A2');
+    socket.emit('nx', notes);
+  }
+  if (notes[4]) {
+    triggerNote('G2');
+    socket.emit('nx', notes);
+  }
+  if (notes[3]) {
+    triggerNote('F2');
+    socket.emit('nx', notes);
+  }
+  if (notes[2]) {
+    triggerNote('E2');
+    socket.emit('nx', notes);
+  }
+  if (notes[1]) {
+    triggerNote('D2');
+    socket.emit('nx', notes);
+  }
+  if (notes[0]) {
+    triggerNote('C2');
+    socket.emit('nx', notes);
+  }
+});
+
 const setupSequencer = () => {
-  sequencer.start(100);
+  leadSeq.start(100);
+  bassSeq.start(100);
+  drumSeq.start(100);
 };
 
 socket.on('connect', function () {
@@ -167,11 +223,9 @@ socket.on('nx', data => {
   console.log('DATA:  ', data);
 });
 
-nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.onload = () => {
-  // console.log('PAYLOAD:  ')
-  console.log('TEST****');
-  nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.sendsTo("node");
-};
+// nx.onload = function() {
+//  nx.sendTo('node')
+// }
 
 document.addEventListener('DOMContentLoaded', setup);
 
