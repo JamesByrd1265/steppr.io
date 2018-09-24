@@ -1,29 +1,56 @@
 export const socket = io(window.location.origin);
 const canvas = document.createElement('canvas')
-import synths from './synth'
+import synths from './synths'
 // import nx from 'nexusui'
 import Nexus from 'nexusui'
 import Tone from 'tone'
 
-var leadSeq = new Nexus.Sequencer('#lead-seq',{
+const leadSeq = new Nexus.Sequencer('#lead-seq',{
  'size': [400,200],
  'mode': 'toggle',
  'rows': 8,
  'columns': 8
 })
 
-var bassSeq = new Nexus.Sequencer('#bass-seq',{
+const bassSeq = new Nexus.Sequencer('#bass-seq',{
  'size': [400,200],
  'mode': 'toggle',
  'rows': 8,
  'columns': 8
 })
 
-var drumSeq = new Nexus.Sequencer('#drum-seq',{
+const drumSeq = new Nexus.Sequencer('#drum-seq',{
  'size': [800,200],
  'mode': 'toggle',
  'rows': 8,
  'columns': 16
+})
+
+const leadVol = new Nexus.Slider('#lead-vol', {
+  'size': [120,20],
+  'mode': 'relative',
+  'min': 0,
+  'max': 1,
+  'step': 0,
+  'value': 0
+})
+
+const bassVol = new Nexus.Slider('#bass-vol', {
+  'size': [120,20],
+  'mode': 'relative',
+  'min': 0,
+  'max': 1,
+  'step': 0,
+  'value': 0
+})
+
+const drumVol = new Nexus.Slider('#drum-vol', {
+  'size': [120,20],
+  'mode': 'relative',
+  'min': 0,
+  'max': 1,
+  'step': 0,
+  'value': 0
 })
 
 const triggerNote = note => {

@@ -96,7 +96,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "socket", function() { return socket; });
-/* harmony import */ var _synth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./synth */ "./client/synth.js");
+/* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
@@ -108,29 +108,56 @@ const canvas = document.createElement('canvas');
 
 
 
-var leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#lead-seq', {
+const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#lead-seq', {
   'size': [400, 200],
   'mode': 'toggle',
   'rows': 8,
   'columns': 8
 });
 
-var bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#bass-seq', {
+const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#bass-seq', {
   'size': [400, 200],
   'mode': 'toggle',
   'rows': 8,
   'columns': 8
 });
 
-var drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#drum-seq', {
+const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#drum-seq', {
   'size': [800, 200],
   'mode': 'toggle',
   'rows': 8,
   'columns': 16
 });
 
+const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#lead-vol', {
+  'size': [120, 20],
+  'mode': 'relative',
+  'min': 0,
+  'max': 1,
+  'step': 0,
+  'value': 0
+});
+
+const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#bass-vol', {
+  'size': [120, 20],
+  'mode': 'relative',
+  'min': 0,
+  'max': 1,
+  'step': 0,
+  'value': 0
+});
+
+const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#drum-vol', {
+  'size': [120, 20],
+  'mode': 'relative',
+  'min': 0,
+  'max': 1,
+  'step': 0,
+  'value': 0
+});
+
 const triggerNote = note => {
-  _synth__WEBPACK_IMPORTED_MODULE_0__["default"][0].triggerAttackRelease(note, '32n');
+  _synths__WEBPACK_IMPORTED_MODULE_0__["default"][0].triggerAttackRelease(note, '32n');
 };
 
 const setup = () => {
@@ -231,10 +258,10 @@ document.addEventListener('DOMContentLoaded', setup);
 
 /***/ }),
 
-/***/ "./client/synth.js":
-/*!*************************!*\
-  !*** ./client/synth.js ***!
-  \*************************/
+/***/ "./client/synths.js":
+/*!**************************!*\
+  !*** ./client/synths.js ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

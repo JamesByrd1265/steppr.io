@@ -1,43 +1,46 @@
-
-/*di6 {
-  padding: 40px;
-}*/
-
 #lead-seq {
   padding-left: 40px;
+}
+
+#lead-vol {
+  display: inline-block;
+  padding-left: 120px;
 }
 
 #bass-seq {
   padding-left: 40px;
 }
 
+#bass-vol {
+  display: inline-block;
+  padding-left: 120px;
+}
+
 #drum-seq {
   padding-left: 40px;
 }
 
+#drum-vol {
+  display: inline-block;
+  padding-left: 120px;
+}
+
+#synth-title {
+  display: inline-block;
+}
+
+#bass-title {
+  display: inline-block;
+}
+
+#drum-title {
+  display: inline-block;
+}
+
 h2 {
+  font-family: 'Poppins', sans-serif;
   padding-top: 80px;
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 
-
-
-
-
-
-
-
-/*// const leadSeq = nx.add('sequencer')
-// leadSeq.size = [400,400]
-// leadSeq.mode = 'toggle'
-// leadSeq.rows = 8
-// leadSeq.columns = 8
-
-// const bassSeq = nx.add('sequencer')
-// bassSeq.size = [400,400]
-// bassSeq.mode = 'toggle'
-// bassSeq.rows = 8
-// bassSeq.columns = 8
-// bassSeq.padding = 800
-*/
