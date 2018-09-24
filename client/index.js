@@ -2,6 +2,7 @@ export const socket = io(window.location.origin);
 const canvas = document.createElement('canvas')
 import $ from 'jquery'
 import synths from './synths'
+// import drums from './drums'
 // import nx from 'nexusui'
 import Nexus from 'nexusui'
 import Tone from 'tone'
@@ -16,6 +17,8 @@ const leadVol = new Nexus.Slider('#lead-vol', slider)
 const bassVol = new Nexus.Slider('#bass-vol', slider)
 const drumVol = new Nexus.Slider('#drum-vol', slider)
 let lead = synths.fm, bass = synths.fmBass
+
+console.log('seq:  ', leadSeq)
 
 const selectSound = sound => {
   if(sound.target.value === 'FM') {
@@ -42,11 +45,15 @@ const selectSound = sound => {
     sound.target === '#lead-select'
     ? lead = synths.poly
     : bass = synths.polyBass
-  } return synth
+  }
 }
 
 const triggerNote = (synth, note) => {
   synth.triggerAttackRelease(note, '32n')
+}
+
+const triggerHit = drum => {
+  drums.triggerAttack(drum)
 }
 
 const setup = () => {
@@ -54,6 +61,10 @@ const setup = () => {
   setupSequencer()
   // nx.onload()
 }
+
+leadSeq.on('change', event => {
+  socket.emit('leadSeq', event)
+})
 
 leadSeq.on('step', notes => {
   if(notes[7]) {
@@ -148,8 +159,13 @@ socket.on('nx', (data) => {
   console.log('DATA:  ', data)
 })
 
-// nx.onload = function() {
-//  nx.sendTo('node')
-// }
+socket.on('leadSeq', data => {
+  console.log('lead seq data: ', data)
+  leadSeq.matrix.set.cell(data.row, data.column, data.state)
+})
+
+Nexus.onload = function() {
+ Nexus.sendsTo(receiveData)
+}
 
 document.addEventListener('DOMContentLoaded', setup)

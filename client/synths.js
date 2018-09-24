@@ -1,4 +1,3 @@
-import {EventEmitter} from 'events'
 const Tone = require('Tone')
 
 const reverb = new Tone.Freeverb().toMaster()
