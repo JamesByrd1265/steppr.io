@@ -66,6 +66,10 @@ leadSeq.on('change', event => {
   socket.emit('leadSeq', event)
 })
 
+bassSeq.on('change', event => {
+  socket.emit('bassSeq', event)
+})
+
 leadSeq.on('step', notes => {
   if(notes[7]) {
     triggerNote(lead, 'C6')
@@ -138,10 +142,12 @@ bassSeq.on('step', notes => {
 
 leadVol.on('change', level => {
   lead.volume.value = level
+  // socket.emit('leadVol', level)
 })
 
 bassVol.on('change', level => {
   bass.volume.value = level
+  // socket.emit('bassVol', level)
 })
 
 const setupSequencer = () => {
@@ -160,12 +166,19 @@ socket.on('nx', (data) => {
 })
 
 socket.on('leadSeq', data => {
-  console.log('lead seq data: ', data)
-  leadSeq.matrix.set.cell(data.row, data.column, data.state)
+  leadSeq.matrix.set.cell(data.column, data.row, data.state)
 })
 
-Nexus.onload = function() {
- Nexus.sendsTo(receiveData)
-}
+socket.on('bassSeq', data => {
+  bassSeq.matrix.set.cell(data.column, data.row, data.state)
+})
+
+// socket.on('leadVol', data => {
+//   leadVol.value = data
+// })
+
+// socket.on('bassVol', data => {
+//   bass.volume.value = data
+// })
 
 document.addEventListener('DOMContentLoaded', setup)
