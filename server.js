@@ -15,8 +15,22 @@ io.on('connection', function (socket) {
   socket.on('leadSeq', (data) => {
     socket.broadcast.emit('leadSeq', data)
   })
+  socket.on('bassSeq', (data) => {
+    socket.broadcast.emit('bassSeq', data)
+  })
+  // socket.on('leadVol', (data) => {
+  //   socket.broadcast.emit('leadVol', data)
+  // })
+  // socket.on('bassVol', (data) => {
+  //   socket.broadcast.emit('bassVol', data)
+  // })  
+  // socket.on('selectLeadSound', data => {
+  //   socket.broadcast.emit('selectLeadSound', data)
+  // })
+  // socket.on('selectBassSound', data => {
+  //   socket.broadcast.emit('selectBassSound', data)
+  // })  
   socket.on('nx', function (data) {
-    console.log('DATA:  ', data)
     socket.broadcast.emit('nx', data)
   });
 

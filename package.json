@@ -1,7 +1,7 @@
 {
-  "name": "harmonizer",
+  "name": "steppr.io",
   "version": "1.0.0",
-  "description": "real-time jamming web application",
+  "description": "real-time music step-sequencers",
   "main": "index.js",
   "author": "James Byrd",
   "scripts": {

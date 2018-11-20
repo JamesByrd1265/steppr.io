@@ -18,31 +18,30 @@ const bassVol = new Nexus.Slider('#bass-vol', slider)
 const drumVol = new Nexus.Slider('#drum-vol', slider)
 let lead = synths.fm, bass = synths.fmBass
 
-console.log('seq:  ', leadSeq)
-
 const selectSound = sound => {
-  if(sound.target.value === 'FM') {
-    sound.target === '#lead-select'
+  let {value, id} = sound.target
+  if(value === 'FM') {
+    id === 'lead-select'
     ? lead = synths.fm
     : bass = synths.fmBass
-  } else if(sound.target.value === 'MEMBRANE') {
-    sound.target === '#lead-select'
+  } else if(value === 'MEMBRANE') {
+    id === 'lead-select'
     ? lead = synths.membrane
     : bass = synths.membraneBass
-  } else if(sound.target.value === 'AM') {
-    sound.target === '#lead-select'
+  } else if(value === 'AM') {
+    id === 'lead-select'
     ? lead = synths.am
     : bass = synths.amBass
-  } else if(sound.target.value === 'PLUCK') {
-    sound.target === '#lead-select'
+  } else if(value === 'PLUCK') {
+    id === 'lead-select'
     ? lead = synths.pluck
     : bass = synths.pluckBass
-  } else if(sound.target.value === 'DUO') {
-    sound.target === '#lead-select'
+  } else if(value === 'DUO') {
+    id === 'lead-select'
     ? lead = synths.duo
     : bass = synths.duoBass
-  } else if(sound.target.value === 'POLY') {
-    sound.target === '#lead-select'
+  } else if(value === 'POLY') {
+    id === 'lead-select'
     ? lead = synths.poly
     : bass = synths.polyBass
   }
@@ -64,6 +63,10 @@ const setup = () => {
 
 leadSeq.on('change', event => {
   socket.emit('leadSeq', event)
+})
+
+bassSeq.on('change', event => {
+  socket.emit('bassSeq', event)
 })
 
 leadSeq.on('step', notes => {
@@ -138,10 +141,12 @@ bassSeq.on('step', notes => {
 
 leadVol.on('change', level => {
   lead.volume.value = level
+  // socket.emit('leadVol', level)
 })
 
 bassVol.on('change', level => {
   bass.volume.value = level
+  // socket.emit('bassVol', level)
 })
 
 const setupSequencer = () => {
@@ -160,12 +165,19 @@ socket.on('nx', (data) => {
 })
 
 socket.on('leadSeq', data => {
-  console.log('lead seq data: ', data)
-  leadSeq.matrix.set.cell(data.row, data.column, data.state)
+  leadSeq.matrix.set.cell(data.column, data.row, data.state)
 })
 
-Nexus.onload = function() {
- Nexus.sendsTo(receiveData)
-}
+socket.on('bassSeq', data => {
+  bassSeq.matrix.set.cell(data.column, data.row, data.state)
+})
+
+// socket.on('leadVol', data => {
+//   leadVol.value = data
+// })
+
+// socket.on('bassVol', data => {
+//   bass.volume.value = data
+// })
 
 document.addEventListener('DOMContentLoaded', setup)
