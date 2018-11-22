@@ -8,14 +8,16 @@ import Nexus from 'nexusui'
 import Tone from 'tone'
 
 let sequencer = {'size': [600,300], 'mode': 'toggle', 'rows': 8, 'columns': 8}
-let slider = {'size': [180,20], 'mode': 'relative', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
+let leadSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
+let bassSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
+let drumSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
 
 const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)
 const bassSeq = new Nexus.Sequencer('#bass-seq', sequencer)
 const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [1245,300], 'mode': 'toggle', 'rows': 8, 'columns': 16})
-const leadVol = new Nexus.Slider('#lead-vol', slider)
-const bassVol = new Nexus.Slider('#bass-vol', slider)
-const drumVol = new Nexus.Slider('#drum-vol', slider)
+const leadVol = new Nexus.Slider('#lead-vol', leadSlider)
+const bassVol = new Nexus.Slider('#bass-vol', bassSlider)
+const drumVol = new Nexus.Slider('#drum-vol', drumSlider)
 let lead = synths.fm, bass = synths.fmBass
 
 const selectSound = sound => {
@@ -141,12 +143,13 @@ bassSeq.on('step', notes => {
 
 leadVol.on('change', level => {
   lead.volume.value = level
-  // socket.emit('leadVol', level)
+  socket.emit('leadVol', level)
+  socket.off('leadVol')
 })
 
 bassVol.on('change', level => {
   bass.volume.value = level
-  // socket.emit('bassVol', level)
+  socket.emit('bassVol', level)
 })
 
 const setupSequencer = () => {
@@ -160,10 +163,6 @@ socket.on('connect', function() {
   console.log('I have made a persistent two-way connection to the server!')
 })
 
-socket.on('nx', (data) => {
-  console.log('DATA:  ', data)
-})
-
 socket.on('leadSeq', data => {
   leadSeq.matrix.set.cell(data.column, data.row, data.state)
 })
@@ -172,12 +171,13 @@ socket.on('bassSeq', data => {
   bassSeq.matrix.set.cell(data.column, data.row, data.state)
 })
 
-// socket.on('leadVol', data => {
-//   leadVol.value = data
-// })
+socket.on('leadVol', data => {
+  console.log('data: ', data)
+  leadVol.value = data
+})
 
-// socket.on('bassVol', data => {
-//   bass.volume.value = data
-// })
+socket.on('bassVol', data => {
+  bassVol.value = data
+})
 
 document.addEventListener('DOMContentLoaded', setup)

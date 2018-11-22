@@ -18,12 +18,12 @@ io.on('connection', function (socket) {
   socket.on('bassSeq', (data) => {
     socket.broadcast.emit('bassSeq', data)
   })
-  // socket.on('leadVol', (data) => {
-  //   socket.broadcast.emit('leadVol', data)
-  // })
-  // socket.on('bassVol', (data) => {
-  //   socket.broadcast.emit('bassVol', data)
-  // })  
+  socket.on('leadVol', (data) => {
+    socket.broadcast.emit('leadVol', data)
+  })
+  socket.on('bassVol', (data) => {
+    socket.broadcast.emit('bassVol', data)
+  })  
   // socket.on('selectLeadSound', data => {
   //   socket.broadcast.emit('selectLeadSound', data)
   // })
