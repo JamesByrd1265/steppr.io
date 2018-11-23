@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const socketio = require('socket.io')
 
+
 const server = app.listen(4000, () => {
   console.log(`Listening on http://localhost:${server.address().port}`)
 })
@@ -10,26 +11,22 @@ const server = app.listen(4000, () => {
 const io = socketio(server);
 
 io.on('connection', function (socket) {
-  console.log('A new client has connected!');
-  console.log(socket.id);
+  console.log('A new client has connected!', socket.id)
+
   socket.on('leadSeq', (data) => {
     socket.broadcast.emit('leadSeq', data)
   })
   socket.on('bassSeq', (data) => {
     socket.broadcast.emit('bassSeq', data)
   })
-  socket.on('leadVol', (data) => {
-    socket.broadcast.emit('leadVol', data)
+
+  socket.on('selectLeadSound', data => {
+    socket.broadcast.emit('selectLeadSound', data)
   })
-  socket.on('bassVol', (data) => {
-    socket.broadcast.emit('bassVol', data)
-  })  
-  // socket.on('selectLeadSound', data => {
-  //   socket.broadcast.emit('selectLeadSound', data)
-  // })
-  // socket.on('selectBassSound', data => {
-  //   socket.broadcast.emit('selectBassSound', data)
-  // })  
+  socket.on('selectBassSound', data => {
+    socket.broadcast.emit('selectBassSound', data)
+  }) 
+  
   socket.on('nx', function (data) {
     socket.broadcast.emit('nx', data)
   });

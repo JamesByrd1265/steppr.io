@@ -2,8 +2,6 @@ export const socket = io(window.location.origin);
 const canvas = document.createElement('canvas')
 import $ from 'jquery'
 import synths from './synths'
-// import drums from './drums'
-// import nx from 'nexusui'
 import Nexus from 'nexusui'
 import Tone from 'tone'
 
@@ -20,32 +18,39 @@ const bassVol = new Nexus.Slider('#bass-vol', bassSlider)
 const drumVol = new Nexus.Slider('#drum-vol', drumSlider)
 let lead = synths.fm, bass = synths.fmBass
 
-const selectSound = sound => {
+const selectLeadSound = sound => {
+  socket.emit('selectLeadSound', sound.target.value)
   let {value, id} = sound.target
   if(value === 'FM') {
-    id === 'lead-select'
-    ? lead = synths.fm
-    : bass = synths.fmBass
+    lead = synths.fm
   } else if(value === 'MEMBRANE') {
-    id === 'lead-select'
-    ? lead = synths.membrane
-    : bass = synths.membraneBass
+    lead = synths.membrane
   } else if(value === 'AM') {
-    id === 'lead-select'
-    ? lead = synths.am
-    : bass = synths.amBass
+    lead = synths.am
   } else if(value === 'PLUCK') {
-    id === 'lead-select'
-    ? lead = synths.pluck
-    : bass = synths.pluckBass
+    lead = synths.pluck
   } else if(value === 'DUO') {
-    id === 'lead-select'
-    ? lead = synths.duo
-    : bass = synths.duoBass
+    lead = synths.duo
   } else if(value === 'POLY') {
-    id === 'lead-select'
-    ? lead = synths.poly
-    : bass = synths.polyBass
+    lead = synths.poly
+  }
+}
+
+const selectBassSound = sound => {
+  socket.emit('selectBassSound', sound.target.value)
+  let {value, id} = sound.target
+  if(value === 'FM') {
+    bass = synths.fm
+  } else if(value === 'MEMBRANE') {
+    bass = synths.membrane
+  } else if(value === 'AM') {
+    bass = synths.am
+  } else if(value === 'PLUCK') {
+    bass = synths.pluck
+  } else if(value === 'DUO') {
+    bass = synths.duo
+  } else if(value === 'POLY') {
+    bass = synths.poly
   }
 }
 
@@ -60,7 +65,6 @@ const triggerHit = drum => {
 const setup = () => {
   document.body.appendChild(canvas)
   setupSequencer()
-  // nx.onload()
 }
 
 leadSeq.on('change', event => {
@@ -143,20 +147,18 @@ bassSeq.on('step', notes => {
 
 leadVol.on('change', level => {
   lead.volume.value = level
-  socket.emit('leadVol', level)
-  socket.off('leadVol')
 })
 
 bassVol.on('change', level => {
   bass.volume.value = level
-  socket.emit('bassVol', level)
 })
 
 const setupSequencer = () => {
   leadSeq.start(100)
   bassSeq.start(100)
   drumSeq.start(100)
-  $("select").on('change', selectSound)
+  $("#lead-select").on('change', selectLeadSound)
+  $("#bass-select").on('change', selectBassSound)
 }
 
 socket.on('connect', function() {
@@ -171,13 +173,14 @@ socket.on('bassSeq', data => {
   bassSeq.matrix.set.cell(data.column, data.row, data.state)
 })
 
-socket.on('leadVol', data => {
-  console.log('data: ', data)
-  leadVol.value = data
+socket.on('selectLeadSound', data => {
+  $("#lead-select").val(data)
+  lead = synths[data.toLowerCase()]
 })
 
-socket.on('bassVol', data => {
-  bassVol.value = data
+socket.on('selectBassSound', data => {
+  $("#bass-select").val(data)
+  bass = synths[data.toLowerCase()]
 })
 
 document.addEventListener('DOMContentLoaded', setup)

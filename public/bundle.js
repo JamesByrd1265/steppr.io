@@ -107,8 +107,6 @@ const socket = io(window.location.origin);
 const canvas = document.createElement('canvas');
 
 
-// import drums from './drums'
-// import nx from 'nexusui'
 
 
 
@@ -126,20 +124,39 @@ const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Slider('#drum
 let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,
     bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass;
 
-const selectSound = sound => {
+const selectLeadSound = sound => {
+  socket.emit('selectLeadSound', sound.target.value);
   let { value, id } = sound.target;
   if (value === 'FM') {
-    id === 'lead-select' ? lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm : bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm;
   } else if (value === 'MEMBRANE') {
-    id === 'lead-select' ? lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membrane : bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membraneBass;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membrane;
   } else if (value === 'AM') {
-    id === 'lead-select' ? lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].am : bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].amBass;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].am;
   } else if (value === 'PLUCK') {
-    id === 'lead-select' ? lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluck : bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluckBass;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluck;
   } else if (value === 'DUO') {
-    id === 'lead-select' ? lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duo : bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duoBass;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duo;
   } else if (value === 'POLY') {
-    id === 'lead-select' ? lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].poly : bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].polyBass;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].poly;
+  }
+};
+
+const selectBassSound = sound => {
+  socket.emit('selectBassSound', sound.target.value);
+  let { value, id } = sound.target;
+  if (value === 'FM') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm;
+  } else if (value === 'MEMBRANE') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membrane;
+  } else if (value === 'AM') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].am;
+  } else if (value === 'PLUCK') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluck;
+  } else if (value === 'DUO') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duo;
+  } else if (value === 'POLY') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].poly;
   }
 };
 
@@ -154,7 +171,6 @@ const triggerHit = drum => {
 const setup = () => {
   document.body.appendChild(canvas);
   setupSequencer();
-  // nx.onload()
 };
 
 leadSeq.on('change', event => {
@@ -237,20 +253,18 @@ bassSeq.on('step', notes => {
 
 leadVol.on('change', level => {
   lead.volume.value = level;
-  socket.emit('leadVol', level);
-  socket.off('leadVol');
 });
 
 bassVol.on('change', level => {
   bass.volume.value = level;
-  socket.emit('bassVol', level);
 });
 
 const setupSequencer = () => {
   leadSeq.start(100);
   bassSeq.start(100);
   drumSeq.start(100);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("select").on('change', selectSound);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").on('change', selectLeadSound);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").on('change', selectBassSound);
 };
 
 socket.on('connect', function () {
@@ -265,13 +279,14 @@ socket.on('bassSeq', data => {
   bassSeq.matrix.set.cell(data.column, data.row, data.state);
 });
 
-socket.on('leadVol', data => {
-  console.log('data: ', data);
-  leadVol.value = data;
+socket.on('selectLeadSound', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").val(data);
+  lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"][data.toLowerCase()];
 });
 
-socket.on('bassVol', data => {
-  bassVol.value = data;
+socket.on('selectBassSound', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").val(data);
+  bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"][data.toLowerCase()];
 });
 
 document.addEventListener('DOMContentLoaded', setup);
