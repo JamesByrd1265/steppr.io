@@ -115,6 +115,19 @@ let leadSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 
 let bassSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
 let drumSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
 
+const drumOnLoad = () => console.log('drum samples loaded');
+
+const drums = new tone__WEBPACK_IMPORTED_MODULE_3___default.a.Sampler({
+  "C1": "BD-707.wav", //707kick
+  "C2": "SD-909.wav", //sd909
+  "C3": "Bongo.wav", //bongo
+  "C4": "CH-909.wav", //ch909
+  "C5": "OH-909.wav", //oh909
+  "C6": "Maracas.wav", //maracas
+  "C7": "Clap.wav", //clap
+  "C8": "Ride.wav" //ride
+}, drumOnLoad, '/drum-samples/').toMaster();
+
 const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#lead-seq', sequencer);
 const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#bass-seq', sequencer);
 const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#drum-seq', { 'size': [1245, 300], 'mode': 'toggle', 'rows': 8, 'columns': 16 });
@@ -146,17 +159,17 @@ const selectBassSound = sound => {
   socket.emit('selectBassSound', sound.target.value);
   let { value, id } = sound.target;
   if (value === 'FM') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm;
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass;
   } else if (value === 'MEMBRANE') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membrane;
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membraneBass;
   } else if (value === 'AM') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].am;
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].amBass;
   } else if (value === 'PLUCK') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluck;
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluckBass;
   } else if (value === 'DUO') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duo;
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duoBass;
   } else if (value === 'POLY') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].poly;
+    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].polyBass;
   }
 };
 
@@ -184,70 +197,105 @@ bassSeq.on('change', event => {
 leadSeq.on('step', notes => {
   if (notes[7]) {
     triggerNote(lead, 'C6');
-    socket.emit('nx', notes);
+    socket.emit('leadSeq', notes);
   }
   if (notes[6]) {
     triggerNote(lead, 'B5');
-    socket.emit('nx', notes);
+    socket.emit('leadSeq', notes);
   }
   if (notes[5]) {
     triggerNote(lead, 'A5');
-    socket.emit('nx', notes);
+    socket.emit('leadSeq', notes);
   }
   if (notes[4]) {
     triggerNote(lead, 'G5');
-    socket.emit('nx', notes);
+    socket.emit('leadSeq', notes);
   }
   if (notes[3]) {
     triggerNote(lead, 'F5');
-    socket.emit('nx', notes);
+    socket.emit('leadSeq', notes);
   }
   if (notes[2]) {
     triggerNote(lead, 'E5');
-    socket.emit('nx', notes);
+    socket.emit('leadSeq', notes);
   }
   if (notes[1]) {
     triggerNote(lead, 'D5');
-    socket.emit('nx', notes);
+    socket.emit('leadSeq', notes);
   }
   if (notes[0]) {
     triggerNote(lead, 'C5');
-    socket.emit('nx', notes);
+    socket.emit('leadSeq', notes);
   }
 });
 
 bassSeq.on('step', notes => {
   if (notes[7]) {
     triggerNote(bass, 'C3');
-    socket.emit('nx', notes);
+    socket.emit('bassSeq', notes);
   }
   if (notes[6]) {
     triggerNote(bass, 'B2');
-    socket.emit('nx', notes);
+    socket.emit('bassSeq', notes);
   }
   if (notes[5]) {
     triggerNote(bass, 'A2');
-    socket.emit('nx', notes);
+    socket.emit('bassSeq', notes);
   }
   if (notes[4]) {
     triggerNote(bass, 'G2');
-    socket.emit('nx', notes);
+    socket.emit('bassSeq', notes);
   }
   if (notes[3]) {
     triggerNote(bass, 'F2');
-    socket.emit('nx', notes);
+    socket.emit('bassSeq', notes);
   }
   if (notes[2]) {
     triggerNote(bass, 'E2');
-    socket.emit('nx', notes);
+    socket.emit('bassSeq', notes);
   }
   if (notes[1]) {
     triggerNote(bass, 'D2');
-    socket.emit('nx', notes);
+    socket.emit('bassSeq', notes);
   }
   if (notes[0]) {
     triggerNote(bass, 'C2');
-    socket.emit('nx', notes);
+    socket.emit('bassSeq', notes);
+  }
+});
+
+drumSeq.on('step', hits => {
+  if (hits[7]) {
+    triggerHit('C8');
+    socket.emit('drumSeq', hits);
+  }
+  if (hits[6]) {
+    triggerHit('C7');
+    socket.emit('drumSeq', hits);
+  }
+  if (hits[5]) {
+    triggerHit('C6');
+    socket.emit('drumSeq', hits);
+  }
+  if (hits[4]) {
+    triggerHit('C5');
+    socket.emit('drumSeq', hits);
+  }
+  if (hits[3]) {
+    triggerHit('C4');
+    socket.emit('drumSeq', hits);
+  }
+  if (hits[2]) {
+    triggerHit('C3');
+    socket.emit('drumSeq', hits);
+  }
+  if (hits[1]) {
+    triggerHit('C2');
+    socket.emit('drumSeq', hits);
+  }
+  if (hits[0]) {
+    triggerHit('C1');
+    socket.emit('drumSeq', hits);
   }
 });
 
@@ -277,6 +325,11 @@ socket.on('leadSeq', data => {
 
 socket.on('bassSeq', data => {
   bassSeq.matrix.set.cell(data.column, data.row, data.state);
+});
+
+socket.on('drumSeq', data => {
+  console.log('data:  ', data);
+  drumSeq.matrix.set.cell(data.column, data.row, data.state);
 });
 
 socket.on('selectLeadSound', data => {
