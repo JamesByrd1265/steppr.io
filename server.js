@@ -10,16 +10,16 @@ const server = app.listen(4000, () => {
 
 const io = socketio(server);
 
-io.on('connection', function (socket) {
+io.on('connection', socket => {
   console.log('A new client has connected!', socket.id)
 
-  socket.on('leadSeq', (data) => {
+  socket.on('leadSeq', data => {
     socket.broadcast.emit('leadSeq', data)
   })
-  socket.on('bassSeq', (data) => {
+  socket.on('bassSeq', data => {
     socket.broadcast.emit('bassSeq', data)
   })
-  socket.on('drumSeq', (data) => {
+  socket.on('drumSeq', data => {
     socket.broadcast.emit('drumSeq', data)
   })
 
@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
     socket.broadcast.emit('selectBassSound', data)
   }) 
   
-  socket.on('nx', function (data) {
+  socket.on('nx', data => {
     socket.broadcast.emit('nx', data)
   });
 
@@ -41,7 +41,7 @@ io.on('connection', function (socket) {
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 

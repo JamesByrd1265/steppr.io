@@ -116,17 +116,18 @@ let bassSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 
 let drumSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
 
 const drumOnLoad = () => console.log('drum samples loaded');
+let drumSamples = {
+  "C1": "BD-707.wav",
+  "C2": "SD-909.wav",
+  "C3": "Bongo.wav",
+  "C4": "CH-909.wav",
+  "C5": "OH-909.wav",
+  "C6": "Maracas.wav",
+  "C7": "Clap.wav",
+  "C8": "Ride.wav"
+};
 
-const drums = new tone__WEBPACK_IMPORTED_MODULE_3___default.a.Sampler({
-  "C1": "BD-707.wav", //707kick
-  "C2": "SD-909.wav", //sd909
-  "C3": "Bongo.wav", //bongo
-  "C4": "CH-909.wav", //ch909
-  "C5": "OH-909.wav", //oh909
-  "C6": "Maracas.wav", //maracas
-  "C7": "Clap.wav", //clap
-  "C8": "Ride.wav" //ride
-}, drumOnLoad, '/drum-samples/').toMaster();
+const drums = new tone__WEBPACK_IMPORTED_MODULE_3___default.a.Sampler(drumSamples, drumOnLoad, '/drum-samples/').toMaster();
 
 const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#lead-seq', sequencer);
 const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#bass-seq', sequencer);
@@ -138,8 +139,8 @@ let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,
     bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass;
 
 const selectLeadSound = sound => {
-  socket.emit('selectLeadSound', sound.target.value);
   let { value, id } = sound.target;
+  socket.emit('selectLeadSound', value);
   if (value === 'FM') {
     lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm;
   } else if (value === 'MEMBRANE') {
@@ -156,8 +157,8 @@ const selectLeadSound = sound => {
 };
 
 const selectBassSound = sound => {
-  socket.emit('selectBassSound', sound.target.value);
   let { value, id } = sound.target;
+  socket.emit('selectBassSound', value);
   if (value === 'FM') {
     bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass;
   } else if (value === 'MEMBRANE') {
@@ -311,6 +312,10 @@ bassVol.on('change', level => {
   bass.volume.value = level;
 });
 
+drumVol.on('change', level => {
+  drums.volume.value = level;
+});
+
 const setupSequencer = () => {
   leadSeq.start(100);
   bassSeq.start(100);
@@ -319,12 +324,11 @@ const setupSequencer = () => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").on('change', selectBassSound);
 };
 
-socket.on('connect', function () {
+socket.on('connect', () => {
   console.log('I have made a persistent two-way connection to the server!');
 });
 
 socket.on('leadSeq', data => {
-  //console.log('lead data:  ', data)
   leadSeq.matrix.set.cell(data.column, data.row, data.state);
 });
 
@@ -333,7 +337,6 @@ socket.on('bassSeq', data => {
 });
 
 socket.on('drumSeq', data => {
-  console.log('data:  ', data);
   drumSeq.matrix.set.cell(data.column, data.row, data.state);
 });
 

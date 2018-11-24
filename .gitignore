@@ -1,7 +1,7 @@
 node_modules
 .DS_Store
-./public/bundle.js
-./public/bundle.js.map
-./client/drums.js
+public/bundle.js
+public/bundle.js.map
+client/drums.js
 socket-slider.js
-./client/bass-sequencer.js
+client/bass-sequencer.js
