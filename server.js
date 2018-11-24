@@ -19,6 +19,9 @@ io.on('connection', function (socket) {
   socket.on('bassSeq', (data) => {
     socket.broadcast.emit('bassSeq', data)
   })
+  socket.on('drumSeq', (data) => {
+    socket.broadcast.emit('drumSeq', data)
+  })
 
   socket.on('selectLeadSound', data => {
     socket.broadcast.emit('selectLeadSound', data)

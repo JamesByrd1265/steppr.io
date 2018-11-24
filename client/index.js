@@ -88,108 +88,112 @@ bassSeq.on('change', event => {
   socket.emit('bassSeq', event)
 })
 
+drumSeq.on('change', event => {
+  socket.emit('drumSeq', event)
+})
+
 leadSeq.on('step', notes => {
   if(notes[7]) {
     triggerNote(lead, 'C6')
-    socket.emit('leadSeq', notes)
+    socket.emit('nx', notes)
   }
   if(notes[6]) {
     triggerNote(lead, 'B5')
-    socket.emit('leadSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[5]) {
     triggerNote(lead, 'A5')
-    socket.emit('leadSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[4]) {
     triggerNote(lead, 'G5')
-    socket.emit('leadSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[3]) {
     triggerNote(lead, 'F5')
-    socket.emit('leadSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[2]) {
     triggerNote(lead, 'E5')
-    socket.emit('leadSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[1]) {
     triggerNote(lead, 'D5')
-    socket.emit('leadSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[0]) {
     triggerNote(lead, 'C5')
-    socket.emit('leadSeq', notes)
+    socket.emit('nx', notes)
   } 
 })
 
 bassSeq.on('step', notes => {
   if(notes[7]) {
     triggerNote(bass, 'C3')
-    socket.emit('bassSeq', notes)
+    socket.emit('nx', notes)
   }
   if(notes[6]) {
     triggerNote(bass, 'B2')
-    socket.emit('bassSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[5]) {
     triggerNote(bass, 'A2')
-    socket.emit('bassSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[4]) {
     triggerNote(bass, 'G2')
-    socket.emit('bassSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[3]) {
     triggerNote(bass, 'F2')
-    socket.emit('bassSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[2]) {
     triggerNote(bass, 'E2')
-    socket.emit('bassSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[1]) {
     triggerNote(bass, 'D2')
-    socket.emit('bassSeq', notes)   
+    socket.emit('nx', notes)   
   }
   if(notes[0]) {
     triggerNote(bass, 'C2')
-    socket.emit('bassSeq', notes)
+    socket.emit('nx', notes)
   } 
 })
 
 drumSeq.on('step', hits => {
   if(hits[7]) {
     triggerHit('C8')
-    socket.emit('drumSeq', hits)
+    socket.emit('nx', hits)
   }
   if(hits[6]) {
     triggerHit('C7')
-    socket.emit('drumSeq', hits)   
+    socket.emit('nx', hits)   
   }
   if(hits[5]) {
     triggerHit('C6')
-    socket.emit('drumSeq', hits)   
+    socket.emit('nx', hits)   
   }
   if(hits[4]) {
     triggerHit('C5')
-    socket.emit('drumSeq', hits)   
+    socket.emit('nx', hits)   
   }
   if(hits[3]) {
     triggerHit('C4')
-    socket.emit('drumSeq', hits)   
+    socket.emit('nx', hits)   
   }
   if(hits[2]) {
     triggerHit('C3')
-    socket.emit('drumSeq', hits)   
+    socket.emit('nx', hits)   
   }
   if(hits[1]) {
     triggerHit('C2')
-    socket.emit('drumSeq', hits)   
+    socket.emit('nx', hits)   
   }
   if(hits[0]) {
     triggerHit('C1')
-    socket.emit('drumSeq', hits)
+    socket.emit('nx', hits)
   } 
 })
 
@@ -214,6 +218,7 @@ socket.on('connect', function() {
 })
 
 socket.on('leadSeq', data => {
+  //console.log('lead data:  ', data)
   leadSeq.matrix.set.cell(data.column, data.row, data.state)
 })
 
