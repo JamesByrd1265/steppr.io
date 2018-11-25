@@ -6,31 +6,96 @@ import Nexus from 'nexusui'
 import Tone from 'tone'
 
 let sequencer = {'size': [600,300], 'mode': 'toggle', 'rows': 8, 'columns': 8}
-let leadSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
-let bassSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
-let drumSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
-
-const drumOnLoad = () => console.log('drum samples loaded')
-let drumSamples = {
-  "C1" : "BD-707.wav",
-  "C2" : "SD-909.wav",
-  "C3" : "Bongo.wav",
-  "C4" : "CH-909.wav",
-  "C5" : "OH-909.wav",
-  "C6" : "Maracas.wav",
-  "C7" : "Clap.wav",
-  "C8" : "Ride.wav"
-}
-
-const drums = new Tone.Sampler(drumSamples, drumOnLoad, '/drum-samples/').toMaster()
-
 const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)
 const bassSeq = new Nexus.Sequencer('#bass-seq', sequencer)
 const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [1245,300], 'mode': 'toggle', 'rows': 8, 'columns': 16})
+
+let leadSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
+let bassSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
+let drumSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
 const leadVol = new Nexus.Slider('#lead-vol', leadSlider)
 const bassVol = new Nexus.Slider('#bass-vol', bassSlider)
 const drumVol = new Nexus.Slider('#drum-vol', drumSlider)
-let lead = synths.fm, bass = synths.fmBass
+
+const drumOnLoad = () => console.log('drum samples loaded')
+const drumSamples = {
+  "C1": "RIDE-909.wav",
+  "C2": "SPLASH.wav",
+  "C3": "CRASH.wav",
+  "D1": "CLAP-909.wav",
+  "E1": "MARACAS.wav",
+  "F1": "OH-909.wav",
+  "F#1": 'CH-78.wav',
+  'F#2': 'CH-RTM.wav',
+  'F#3': 'CH-909.wav',
+  'F#4': 'CH-METAL.wav',
+  "G1": "BONGO.wav",
+  "G2": "CONGA.wav",
+  "G3": "CONGA-HI.wav",
+  "G4": "TIMBALE.wav",
+  "G5": "TIMBALE-FLAM.wav",
+  "A1": "SD-808.wav",
+  "A2": "SD-909-MPC.wav",
+  "A3": "SD-909.wav",
+  "A4": "SD-909-COLORED.wav",
+  "A5": "RIM-808.wav",
+  "B1": "BD-78.wav",
+  "B2": "BD-RTM.wav",
+  "B3": "BD-707.wav",
+  "B4": "BD-808.wav"
+}
+const drums = new Tone.Sampler(drumSamples, drumOnLoad, '/drum-samples/').toMaster()
+const kicks = {
+  BD_78: 'B1',
+  BD_RTM: 'B2',
+  BD_707: 'B3',
+  BD_808: 'B4'
+}
+const snares = {
+  SD_808: 'A1',
+  SD_909_MPC: 'A2',
+  SD_909: 'A3',
+  SD_909_COLORED: 'A4',
+  RIM_808: 'A5'
+}
+const percussion = {
+  BONGO: 'G1',
+  CONGA: 'G2',
+  CONGA_HI: 'G3',
+  TIMBALE: 'G4',
+  TIMBALE_FLAM: 'G5'
+}
+const closedHats = {
+  CH_78: 'F#1',
+  CH_RTM: 'F#2',
+  CH_909: 'F#3',
+  CH_METAL: 'F#4'
+}
+const openHats = {
+  OH_909: 'F1'
+}
+const shakers = {
+  MARACAS: 'E1'
+}
+const claps = {
+  CLAP_909: 'D1'
+}
+const cymbals = {
+  RIDE_909: 'C1',
+  SPLASH: 'C2',
+  CRASH: 'C3'
+}
+
+let lead = synths.fm,
+bass = synths.fmBass,
+cymbal = cymbals.RIDE_909,
+clap = claps.CLAP_909,
+shaker = shakers.MARACAS,
+openHat = openHats.OH_909,
+closedHat = closedHats.CH_78,
+perc = percussion.BONGO,
+snare = snares.SD_808,
+kick = kicks.BD_78
 
 const selectLeadSound = sound => {
   let {value, id} = sound.target
@@ -68,17 +133,53 @@ const selectBassSound = sound => {
   }
 }
 
+const selectCymbal = sample => {
+  let {value, id} = sample.target
+  socket.emit('selectCymbalSound', value)
+  cymbal = cymbals[value]
+}
+const selectClap = sample => {
+  let {value, id} = sample.target
+  socket.emit('selectClap', value)
+  clap = claps[value]
+}
+const selectShaker = sample => {
+  let {value, id} = sample.target
+  socket.emit('selectShaker', value)
+  shaker = shakers[value]
+}
+const selectOpenHat = sample => {
+  let {value, id} = sample.target
+  socket.emit('selectOpenHat', value)
+  openHat = openHats[value]
+}
+const selectClosedHat = sample => {
+  let {value, id} = sample.target
+  socket.emit('selectClosedHat', value)
+  closedHat = closedHats[value]
+}
+const selectPerc = sample => {
+  let {value, id} = sample.target
+  socket.emit('selectPerc', value)
+  perc = percussion[value]
+}
+const selectSnare = sample => {
+  let {value, id} = sample.target
+  socket.emit('selectSnare', value)
+  snare = snares[value]
+}
+const selectKick = sample => {
+  let {value, id} = sample.target
+  socket.emit('selectKick', value)
+  kick = kicks[value]
+}
+
 const triggerNote = (synth, note) => {
   synth.triggerAttackRelease(note, '32n')
 }
 
 const triggerHit = drum => {
   drums.triggerAttack(drum)
-}
-
-const setup = () => {
-  document.body.appendChild(canvas)
-  setupSequencer()
 }
 
 leadSeq.on('change', event => {
@@ -165,35 +266,35 @@ bassSeq.on('step', notes => {
 
 drumSeq.on('step', hits => {
   if(hits[7]) {
-    triggerHit('C8')
+    triggerHit(cymbal)
     socket.emit('nx', hits)
   }
   if(hits[6]) {
-    triggerHit('C7')
+    triggerHit(clap)
     socket.emit('nx', hits)   
   }
   if(hits[5]) {
-    triggerHit('C6')
+    triggerHit(shaker)
     socket.emit('nx', hits)   
   }
   if(hits[4]) {
-    triggerHit('C5')
+    triggerHit(openHat)
     socket.emit('nx', hits)   
   }
   if(hits[3]) {
-    triggerHit('C4')
+    triggerHit(closedHat)
     socket.emit('nx', hits)   
   }
   if(hits[2]) {
-    triggerHit('C3')
+    triggerHit(perc)
     socket.emit('nx', hits)   
   }
   if(hits[1]) {
-    triggerHit('C2')
+    triggerHit(snare)
     socket.emit('nx', hits)   
   }
   if(hits[0]) {
-    triggerHit('C1')
+    triggerHit(kick)
     socket.emit('nx', hits)
   } 
 })
@@ -210,12 +311,20 @@ drumVol.on('change', level => {
   drums.volume.value = level
 })
 
-const setupSequencer = () => {
+const setupSequencers = () => {
   leadSeq.start(100)
   bassSeq.start(100)
   drumSeq.start(100)
   $("#lead-select").on('change', selectLeadSound)
   $("#bass-select").on('change', selectBassSound)
+  $("#cymbal-select").on('change', selectCymbal)
+  $("#clap-select").on('change', selectClap)
+  $("#shaker-select").on('change', selectShaker)
+  $("#oh-select").on('change', selectOpenHat)
+  $("#ch-select").on('change', selectClosedHat)
+  $("#perc-select").on('change', selectPerc)
+  $("#snare-select").on('change', selectSnare)
+  $("#kick-select").on('change', selectKick)
 }
 
 socket.on('connect', () => {
@@ -243,5 +352,10 @@ socket.on('selectBassSound', data => {
   $("#bass-select").val(data)
   bass = synths[data.toLowerCase()]
 })
+
+const setup = () => {
+  document.body.appendChild(canvas)
+  setupSequencers()
+}
 
 document.addEventListener('DOMContentLoaded', setup)
