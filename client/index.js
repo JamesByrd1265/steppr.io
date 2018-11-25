@@ -7,8 +7,8 @@ import Tone from 'tone'
 
 let bpm = 125
 const bpmConverter = ms => (60000/ms) / 4
-const tempo = new Nexus.Number('#tempo', {
-  'size': [60,30],
+const tempo = new Nexus.Number('#tempo-select', {
+  'size': [120,60],
   'value': bpm,
   'min': 30,
   'max': 300,
@@ -191,9 +191,12 @@ const triggerHit = drum => {
   drums.triggerAttack(drum)
 }
 
-// tempo.on('change', event => {
-//   socket.emit()
-// })
+tempo.on('change', event => {
+  $('#tempo').mouseup(() => {
+    console.log('test')
+    socket.emit('changeTempo', event)
+  })
+})
 
 leadSeq.on('change', event => {
   socket.emit('leadSeq', event)
@@ -313,7 +316,6 @@ drumSeq.on('step', hits => {
 })
 
 tempo.on('change', value => {
-  console.log('tempo:  ', value)
   leadSeq.matrix.bpm = value
   bassSeq.matrix.bpm = value
   drumSeq.matrix.bpm = value
@@ -324,7 +326,6 @@ tempo.on('change', value => {
   leadSeq.start(bpm)
   bassSeq.start(bpm)
   drumSeq.start(bpm)
-  console.log('sequencer tempo:  ', leadSeq.matrix.bpm)
 })
 
 leadVol.on('change', level => {
@@ -357,6 +358,11 @@ const setupSequencers = () => {
 
 socket.on('connect', () => {
   console.log('I have made a persistent two-way connection to the server!')
+})
+
+socket.on('changeTempo', data => {
+  tempo.value = data
+  console.log('tempo data: ', data,  '   bpm:  ', bpm)
 })
 
 socket.on('leadSeq', data => {

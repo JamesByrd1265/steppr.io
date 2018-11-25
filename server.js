@@ -12,6 +12,9 @@ const io = socketio(server);
 
 io.on('connection', socket => {
   console.log('A new client has connected!', socket.id)
+  socket.on('changeTempo', data => {
+    socket.broadcast.emit('changeTempo', data)
+  })  
   socket.on('leadSeq', data => {
     socket.broadcast.emit('leadSeq', data)
   })
