@@ -202,9 +202,9 @@ let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,
     snare = snares.SD_808,
     kick = kicks.BD_78;
 
-const selectLeadSound = sound => {
+const selectLead = sound => {
   let { value, id } = sound.target;
-  socket.emit('selectLeadSound', value);
+  socket.emit('selectLead', value);
   if (value === 'FM') {
     lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm;
   } else if (value === 'MEMBRANE') {
@@ -220,9 +220,9 @@ const selectLeadSound = sound => {
   }
 };
 
-const selectBassSound = sound => {
+const selectBass = sound => {
   let { value, id } = sound.target;
-  socket.emit('selectBassSound', value);
+  socket.emit('selectBass', value);
   if (value === 'FM') {
     bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass;
   } else if (value === 'MEMBRANE') {
@@ -240,7 +240,7 @@ const selectBassSound = sound => {
 
 const selectCymbal = sample => {
   let { value, id } = sample.target;
-  socket.emit('selectCymbalSound', value);
+  socket.emit('selectCymbal', value);
   cymbal = cymbals[value];
 };
 const selectClap = sample => {
@@ -420,8 +420,8 @@ const setupSequencers = () => {
   leadSeq.start(100);
   bassSeq.start(100);
   drumSeq.start(100);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").on('change', selectLeadSound);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").on('change', selectBassSound);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").on('change', selectLead);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").on('change', selectBass);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#cymbal-select").on('change', selectCymbal);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#clap-select").on('change', selectClap);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#shaker-select").on('change', selectShaker);
@@ -448,14 +448,55 @@ socket.on('drumSeq', data => {
   drumSeq.matrix.set.cell(data.column, data.row, data.state);
 });
 
-socket.on('selectLeadSound', data => {
+socket.on('selectLead', data => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").val(data);
   lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"][data.toLowerCase()];
 });
 
-socket.on('selectBassSound', data => {
+socket.on('selectBass', data => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").val(data);
   bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"][data.toLowerCase()];
+});
+
+socket.on('selectCymbal', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#cymbal-select").val(data);
+  cymbal = cymbals[data];
+});
+
+socket.on('selectClap', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#clap-select").val(data);
+  clap = claps[data];
+});
+
+socket.on('selectShaker', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#shaker-select").val(data);
+  shaker = shakers[data];
+});
+
+socket.on('selectOpenHat', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#oh-select").val(data);
+  openHat = openHats[data];
+});
+
+socket.on('selectClosedHat', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#ch-select").val(data);
+  closedHat = closedHats[data];
+});
+
+socket.on('selectPerc', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#perc-select").val(data);
+  console.log('perc:   ', data);
+  perc = percussion[data];
+});
+
+socket.on('selectSnare', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#snare-select").val(data);
+  snare = snares[data];
+});
+
+socket.on('selectKick', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-select").val(data);
+  kick = kicks[data];
 });
 
 const setup = () => {

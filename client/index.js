@@ -97,9 +97,9 @@ perc = percussion.BONGO,
 snare = snares.SD_808,
 kick = kicks.BD_78
 
-const selectLeadSound = sound => {
+const selectLead = sound => {
   let {value, id} = sound.target
-  socket.emit('selectLeadSound', value)
+  socket.emit('selectLead', value)
   if(value === 'FM') {
     lead = synths.fm
   } else if(value === 'MEMBRANE') {
@@ -115,9 +115,9 @@ const selectLeadSound = sound => {
   }
 }
 
-const selectBassSound = sound => {
+const selectBass = sound => {
   let {value, id} = sound.target
-  socket.emit('selectBassSound', value)
+  socket.emit('selectBass', value)
   if(value === 'FM') {
     bass = synths.fmBass
   } else if(value === 'MEMBRANE') {
@@ -135,7 +135,7 @@ const selectBassSound = sound => {
 
 const selectCymbal = sample => {
   let {value, id} = sample.target
-  socket.emit('selectCymbalSound', value)
+  socket.emit('selectCymbal', value)
   cymbal = cymbals[value]
 }
 const selectClap = sample => {
@@ -315,8 +315,8 @@ const setupSequencers = () => {
   leadSeq.start(100)
   bassSeq.start(100)
   drumSeq.start(100)
-  $("#lead-select").on('change', selectLeadSound)
-  $("#bass-select").on('change', selectBassSound)
+  $("#lead-select").on('change', selectLead)
+  $("#bass-select").on('change', selectBass)
   $("#cymbal-select").on('change', selectCymbal)
   $("#clap-select").on('change', selectClap)
   $("#shaker-select").on('change', selectShaker)
@@ -343,14 +343,55 @@ socket.on('drumSeq', data => {
   drumSeq.matrix.set.cell(data.column, data.row, data.state)
 })
 
-socket.on('selectLeadSound', data => {
+socket.on('selectLead', data => {
   $("#lead-select").val(data)
   lead = synths[data.toLowerCase()]
 })
 
-socket.on('selectBassSound', data => {
+socket.on('selectBass', data => {
   $("#bass-select").val(data)
   bass = synths[data.toLowerCase()]
+})
+
+socket.on('selectCymbal', data => {
+  $("#cymbal-select").val(data)
+  cymbal = cymbals[data]
+})
+
+socket.on('selectClap', data => {
+  $("#clap-select").val(data)
+  clap = claps[data]
+})
+
+socket.on('selectShaker', data => {
+  $("#shaker-select").val(data)
+  shaker = shakers[data]
+})
+
+socket.on('selectOpenHat', data => {
+  $("#oh-select").val(data)
+  openHat = openHats[data]
+})
+
+socket.on('selectClosedHat', data => {
+  $("#ch-select").val(data)
+  closedHat = closedHats[data]
+})
+
+socket.on('selectPerc', data => {
+  $("#perc-select").val(data)
+  console.log('perc:   ', data)
+  perc = percussion[data]
+})
+
+socket.on('selectSnare', data => {
+  $("#snare-select").val(data)
+  snare = snares[data]
+})
+
+socket.on('selectKick', data => {
+  $("#kick-select").val(data)
+  kick = kicks[data]
 })
 
 const setup = () => {
