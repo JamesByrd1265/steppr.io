@@ -110,6 +110,15 @@ const canvas = document.createElement('canvas');
 
 
 
+let bpm = 125;
+const bpmConverter = ms => 60000 / ms / 4;
+const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Number('#tempo', {
+  'size': [60, 30],
+  'value': bpm,
+  'min': 30,
+  'max': 300,
+  'step': 1
+});
 let sequencer = { 'size': [600, 300], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
 const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#lead-seq', sequencer);
 const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#bass-seq', sequencer);
@@ -287,6 +296,10 @@ const triggerHit = drum => {
   drums.triggerAttack(drum);
 };
 
+// tempo.on('change', event => {
+//   socket.emit()
+// })
+
 leadSeq.on('change', event => {
   socket.emit('leadSeq', event);
 });
@@ -404,6 +417,21 @@ drumSeq.on('step', hits => {
   }
 });
 
+tempo.on('change', value => {
+  console.log('tempo:  ', value);
+  leadSeq.matrix.bpm = value;
+  bassSeq.matrix.bpm = value;
+  drumSeq.matrix.bpm = value;
+  bpm = bpmConverter(value);
+  leadSeq.stop();
+  bassSeq.stop();
+  drumSeq.stop();
+  leadSeq.start(bpm);
+  bassSeq.start(bpm);
+  drumSeq.start(bpm);
+  console.log('sequencer tempo:  ', leadSeq.matrix.bpm);
+});
+
 leadVol.on('change', level => {
   lead.volume.value = level;
 });
@@ -417,9 +445,9 @@ drumVol.on('change', level => {
 });
 
 const setupSequencers = () => {
-  leadSeq.start(100);
-  bassSeq.start(100);
-  drumSeq.start(100);
+  leadSeq.start(bpm);
+  bassSeq.start(bpm);
+  drumSeq.start(bpm);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").on('change', selectLead);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").on('change', selectBass);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#cymbal-select").on('change', selectCymbal);
@@ -485,7 +513,6 @@ socket.on('selectClosedHat', data => {
 
 socket.on('selectPerc', data => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#perc-select").val(data);
-  console.log('perc:   ', data);
   perc = percussion[data];
 });
 
