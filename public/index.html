@@ -37,51 +37,55 @@
           <option value='POLY'>POLY</option>
         </select> 
         <div id='bass-seq'></div>
-      </div> 
+      </div>
       <div id='drum-container'>
-        <select id='kick-select'>
-          <option value='BD_78'>78</option>
-          <option value='BD_RTM'>RTM</option>
-          <option value='BD_707'>707</option>
-          <option value='BD_808'>808</option>
-        </select>
-        <select id='snare-select'>
-          <option value='SD_808'>808</option>
-          <option value='SD_909_MPC'>909-MPC</option>
-          <option value='SD_909'>909</option>
-          <option value='SD_909_COLORED'>909-COLORED</option>
-          <option value='RIM_808'>RIM</option>
-        </select>
-        <select id='perc-select'>
-          <option value='BONGO'>BONGO</option>
-          <option value='CONGA'>CONGA</option>
-          <option value='CONGA_HI'>CONGA-HI</option>
-          <option value='TIMBALE'>TIMBALE</option>
-          <option value='TIMBALE_FLAM'>TIMBALE-FLAM</option>
-        </select>
-        <select id='ch-select'>
-          <option value='CH_78'>78</option>
-          <option value='CH_RTM'>RTM</option>
-          <option value='CH_909'>909</option>
-          <option value='CH_METAL'>METAL</option>
-        </select>
-        <select id='oh-select'>
-          <option value='OH_909'>909</option>
-        </select>
-        <select id='shaker-select'>
-          <option value='MARACAS'>MARACAS</option>
-        </select>
-        <select id='clap-select'>
-          <option value='CLAP_909'>CLAP</option>
-        </select>
-        <select id='cymbal-select'>
-          <option value='RIDE_909'>RIDE</option>
-          <option value='SPLASH'>SPLASH</option>
-          <option value='CRASH'>CRASH</option>
-        </select>
-        <h2 id='drum-title'>Drummr</h2>
-        <div id='drum-vol'></div>
-        <div id='drum-seq'></div>
+        <div id='drum-select-container'>
+          <select class='drum-select' id='cymbal-select'>
+            <option value='RIDE_909'>RIDE</option>
+            <option value='SPLASH'>SPLASH</option>
+            <option value='CRASH'>CRASH</option>
+          </select>
+          <select class='drum-select' id='clap-select'>
+            <option value='CLAP_909'>CLAP</option>
+          </select>
+          <select class='drum-select' id='shaker-select'>
+            <option value='MARACAS'>MARACAS</option>
+          </select>
+          <select class='drum-select' id='oh-select'>
+            <option value='OH_909'>909</option>
+          </select>
+          <select class='drum-select' id='ch-select'>
+            <option value='CH_78'>78</option>
+            <option value='CH_RTM'>RTM</option>
+            <option value='CH_909'>909</option>
+            <option value='CH_METAL'>METAL</option>
+          </select>
+          <select class='drum-select' id='perc-select'>
+            <option value='BONGO'>BONGO</option>
+            <option value='CONGA'>CONGA</option>
+            <option value='CONGA_HI'>CONGA-HI</option>
+            <option value='TIMBALE'>TIMBALE</option>
+            <option value='TIMBALE_FLAM'>TIMBALE-FLAM</option>
+          </select>
+          <select class='drum-select' id='snare-select'>
+            <option value='SD_808'>808</option>
+            <option value='SD_909_MPC'>909-MPC</option>
+            <option value='SD_909'>909</option>
+            <option value='SD_909_COLORED'>909-COLORED</option>
+            <option value='RIM_808'>RIM</option>
+          </select>
+          <select class='drum-select' id='kick-select'>
+            <option value='BD_78'>78</option>
+            <option value='BD_RTM'>RTM</option>
+            <option value='BD_707'>707</option>
+            <option value='BD_808'>808</option>
+          </select>
+        </div>
+        <div id='drum-seq-container'>
+          <h2 id='drum-title'>Drummr</h2>
+          <div id='drum-vol'></div>
+          <div id='drum-seq'></div>
+        </div>
       </div>
     </div>
   </body>

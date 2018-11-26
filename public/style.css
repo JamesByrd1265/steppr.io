@@ -48,16 +48,26 @@
   padding-left: 140px;
 }
 
-#drum-select {
-  padding-right: 60px;
+#drum-container {
+  display: inline-flex;
 }
 
-#drum-container {
+/*#drum-seq-container {
   display: inline-block;
 }
+*/
+#drum-select-container {
+  padding-top: 9.8em;
+  padding-right: 0;
+}
 
-#drum-seq {
+/*#drum-seq {
   padding-left: 188px;
+}*/
+
+.drum-select {
+  width: 8em;
+  margin: .875em;
 }
 
 #drum-vol {
