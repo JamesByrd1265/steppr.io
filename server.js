@@ -3,8 +3,7 @@ const express = require('express')
 const app = express()
 const socketio = require('socket.io')
 
-
-const server = app.listen(4000, () => {
+const server = app.listen(9000, () => {
   console.log(`Listening on http://localhost:${server.address().port}`)
 })
 
@@ -62,9 +61,9 @@ io.on('connection', socket => {
   })
 })
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '/public')))
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 

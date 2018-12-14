@@ -1,4 +1,4 @@
-export const socket = io(window.location.origin);
+const socket = io(window.location.origin);
 const canvas = document.createElement('canvas')
 import $ from 'jquery'
 import synths from './synths'
