@@ -1,5 +1,6 @@
 const socket = io(window.location.origin);
 const canvas = document.createElement('canvas')
+// var audioCtx = new AudioContext();
 import $ from 'jquery'
 import synths from './synths'
 import Nexus from 'nexusui'
@@ -340,10 +341,27 @@ drumVol.on('change', level => {
   drums.volume.value = level
 })
 
-const setupSequencers = () => {
+const start = () => {
+  // if(Tone.context.state === 'suspended') {
+  //   console.log(Tone.context.state)
+  //   Tone.context.resume().then(() => {
+  //     console.log(Tone.context.state)
+  //   })
+  // }
+  // if(Nexus.context.state === 'suspended') {
+  //   console.log(Nexus.context.state)
+  //   Nexus.context.resume().then(() => {
+  //     console.log(Nexus.context.state)
+  //   })
+  // } 
+  leadSeq.interval.clock.context.resume().then(() => console.log('audio context resumed'))
   leadSeq.start(bpm)
   bassSeq.start(bpm)
   drumSeq.start(bpm)
+}
+
+const setupSequencers = () => {
+  $("#start").on('click', start)
   $("#lead-select").on('change', selectLead)
   $("#bass-select").on('change', selectBass)
   $("#cymbal-select").on('change', selectCymbal)
@@ -433,3 +451,12 @@ const setup = () => {
 }
 
 document.addEventListener('DOMContentLoaded', setup)
+
+if(typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefined") {
+   var resumeAudio = function() {
+      if(typeof g_WebAudioContext == "undefined" || g_WebAudioContext == null) return;
+      if(g_WebAudioContext.state == "suspended") g_WebAudioContext.resume();
+      document.removeEventListener("click", resumeAudio);
+   };
+   document.addEventListener("click", resumeAudio);
+}
