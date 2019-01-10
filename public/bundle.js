@@ -446,19 +446,16 @@ drumVol.on('change', level => {
 });
 
 const start = () => {
-  // if(Tone.context.state === 'suspended') {
-  //   console.log(Tone.context.state)
-  //   Tone.context.resume().then(() => {
-  //     console.log(Tone.context.state)
-  //   })
-  // }
-  // if(Nexus.context.state === 'suspended') {
-  //   console.log(Nexus.context.state)
-  //   Nexus.context.resume().then(() => {
-  //     console.log(Nexus.context.state)
-  //   })
-  // } 
-  leadSeq.interval.clock.context.resume().then(() => console.log('audio context resumed'));
+  const { context } = leadSeq.interval.clock;
+
+  if (context.state === 'suspended') {
+    context.resume().then(() => console.log('audio context resumed'));
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('stop');
+  } else {
+    context.suspend().then(() => console.log('audio context suspended'));
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('start');
+  }
+
   leadSeq.start(bpm);
   bassSeq.start(bpm);
   drumSeq.start(bpm);
