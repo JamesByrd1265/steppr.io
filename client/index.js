@@ -343,18 +343,19 @@ drumVol.on('change', level => {
 
 const start = () => {
   const {context} = leadSeq.interval.clock
-
   if(context.state === 'suspended') {
     context.resume().then(() => console.log('audio context resumed'))
+    leadSeq.start(bpm)
+    bassSeq.start(bpm)
+    drumSeq.start(bpm)
     $("#start").html('stop')
   } else {
+    leadSeq.stop()
+    bassSeq.stop()
+    drumSeq.stop()
     context.suspend().then(() => console.log('audio context suspended'))
     $("#start").html('start')
   }
-
-  leadSeq.start(bpm)
-  bassSeq.start(bpm)
-  drumSeq.start(bpm)
 }
 
 

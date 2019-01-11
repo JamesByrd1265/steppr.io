@@ -447,18 +447,19 @@ drumVol.on('change', level => {
 
 const start = () => {
   const { context } = leadSeq.interval.clock;
-
   if (context.state === 'suspended') {
     context.resume().then(() => console.log('audio context resumed'));
+    leadSeq.start(bpm);
+    bassSeq.start(bpm);
+    drumSeq.start(bpm);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('stop');
   } else {
+    leadSeq.stop();
+    bassSeq.stop();
+    drumSeq.stop();
     context.suspend().then(() => console.log('audio context suspended'));
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('start');
   }
-
-  leadSeq.start(bpm);
-  bassSeq.start(bpm);
-  drumSeq.start(bpm);
 };
 
 const setupSequencers = () => {
