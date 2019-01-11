@@ -8,8 +8,10 @@ import Tone from 'tone'
 
 let bpm = 125
 const bpmConverter = ms => (60000/ms) / 4
-const tempo = new Nexus.Number('#tempo-select', {
-  'size': [120,60],
+const tempo = new Nexus.Dial('#tempo-select', {
+  'size': [120,120],
+  'interaction': 'radial', // "radial", "vertical", or "horizontal"
+  'mode': 'absolute', // "absolute" or "relative"
   'value': bpm,
   'min': 30,
   'max': 300,

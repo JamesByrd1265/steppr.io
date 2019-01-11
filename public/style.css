@@ -52,10 +52,10 @@
   display: inline-flex;
 }
 
-/*#drum-seq-container {
+#drum-seq-container {
   display: inline-block;
 }
-*/
+
 #drum-select-container {
   padding-top: 9.8em;
   padding-right: 0;
