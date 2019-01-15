@@ -104,7 +104,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_3__);
 const socket = io(window.location.origin);
 const canvas = document.createElement('canvas');
-// var audioCtx = new AudioContext();
 
 
 
@@ -114,13 +113,18 @@ let bpm = 125;
 const bpmConverter = ms => 60000 / ms / 4;
 const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Dial('#tempo-select', {
   'size': [120, 120],
-  'interaction': 'radial', // "radial", "vertical", or "horizontal"
-  'mode': 'absolute', // "absolute" or "relative"
+  'interaction': 'radial',
+  'mode': 'absolute',
   'value': bpm,
   'min': 30,
   'max': 300,
   'step': 1
 });
+
+tempo.colorize('fill', 'rgba(255, 255, 255, .64)');
+tempo.colorize('accent', 'rgba(67, 203, 203)');
+tempo.colorize('border', 'rgba(67, 203, 203)');
+
 let sequencer = { 'size': [600, 300], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
 const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#lead-seq', sequencer);
 const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#bass-seq', sequencer);

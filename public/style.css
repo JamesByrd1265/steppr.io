@@ -1,16 +1,58 @@
+body {
+  overflow-x:hidden;
+  font-family: 'Poppins';
+}
+
 #jam-canvas {
+  width: 100vw;
+  background-color: #3D3D3D;
   padding-left: 500px
 }
 
+#nav {
+  width: 100vw;
+  height: 189px;
+  margin: 0 auto;
+  display: inline-flex;
+  background: radial-gradient(2541.00px at 99.65% 49.73%, #B46A3F 0%, #DC7E50 13.14%, rgba(220, 131, 80, 0.86) 25.41%, #DC8350 50.74%, #CE7846 73.58%, #DC8350 87.19%, #B46A3F 100%); 
+}
+
+#header {
+  width: 100vw;
+  margin-top: .8em;
+  font-size: 8em;
+  font-family: 'Musicnet';
+  font-weight: lighter;
+  text-align: center;
+  align-self: center;
+}
+
+#start {
+  right: 2em;
+  font-size: 3em;
+  color: white;
+  padding: .1em .9em .1em .9em;
+  position: absolute;
+  align-self: center;
+  background: #3D3D3D;
+  border: 1px solid #3D3D3D;
+}
+
 #tempo {
+  position: absolute;
+  right: 6.15em; 
+/*  width: 314px;*/
+  margin: 3em 0;
+  display: inline-block; 
   align-items: center;
 }
 
 #tempo-select {
-  padding: 12em;
+  padding: 3.42em;
   margin: 0;
   border: solid black 1px;
   align-self: center;
+  background: rgba(67, 203, 203, 0.57);
 }
 
 #lead-container {
@@ -61,10 +103,6 @@
   padding-right: 0;
 }
 
-/*#drum-seq {
-  padding-left: 188px;
-}*/
-
 .drum-select {
   width: 8em;
   margin: .875em;
@@ -94,4 +132,20 @@ h2 {
   padding-left: 50px;
 }
 
+circle {
+  stroke: rgba(67, 203, 203); stroke-width: .3em;
+}
 
+path:nth-child(1) {
+  fill-opacity: 1;
+}
+
+path:nth-child(4) {
+  fill: #DC8350;
+  fill-opacity: 1;
+}
+
+path:nth-child(5) {
+  fill: #DC8350;
+  fill-opacity: 1;
+}
