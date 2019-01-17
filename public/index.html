@@ -13,13 +13,15 @@
       <button id='start'>START</button>
     </div>
     <div id='jam-canvas'>
-      <select id='lead-select'>
-        <option value='FM'>FM</option>
-        <option value='MEMBRANE'>MEMBRANE</option>
+      <select id='lead-select' size='6'>
+        <option disabled id='lead-select-header'
+          class='sub-header'>SYNTH</option>
         <option value='AM'>AM</option>
+        <option value='POLY'>POLY</option>
+        <option value='MEMBRANE'>MEMBRANE</option>
         <option value='PLUCK'>PLUCK</option>
         <option value='DUO'>DUO</option>
-        <option value='POLY'>POLY</option>
+        <option value='FM'>FM</option>
       </select>
       <div id='lead-container'>   
         <h2 id='synth-title'>Synthr</h2>
@@ -29,17 +31,21 @@
       <div id='bass-container'> 
         <h2 id='bass-title'>Bassr</h2>
         <div id='bass-vol'></div>
-        <select id='bass-select'>
-          <option value='FM'>FM</option>
-          <option value='MEMBRANE'>MEMBRANE</option>
+        <select id='bass-select' size='6'>
+          <option disabled id='bass-header'
+            class='sub-header'>BASS</option>
           <option value='AM'>AM</option>
+          <option value='POLY'>POLY</option>
+          <option value='MEMBRANE'>MEMBRANE</option>
           <option value='PLUCK'>PLUCK</option>
           <option value='DUO'>DUO</option>
-          <option value='POLY'>POLY</option>
+          <option value='FM'>FM</option>
         </select> 
         <div id='bass-seq'></div>
       </div>
       <div id='tempo'>
+        <h3 id='tempo-header'
+          class='sub-header'>TEMPO</h3>
         <div id='tempo-select'></div>
       </div>
       <div id='drum-container'>

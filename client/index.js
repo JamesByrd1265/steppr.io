@@ -8,7 +8,7 @@ import Tone from 'tone'
 let bpm = 125
 const bpmConverter = ms => (60000/ms) / 4
 const tempo = new Nexus.Dial('#tempo-select', {
-  'size': [120, 120],
+  'size': [90, 90],
   'interaction': 'radial',
   'mode': 'absolute',
   'value': bpm,
@@ -20,7 +20,6 @@ const tempo = new Nexus.Dial('#tempo-select', {
 tempo.colorize('fill', 'rgba(255, 255, 255, .64)')
 tempo.colorize('accent', 'rgba(67, 203, 203)')
 tempo.colorize('border', 'rgba(67, 203, 203)')
-
 
 let sequencer = {'size': [600,300], 'mode': 'toggle', 'rows': 8, 'columns': 8}
 const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)

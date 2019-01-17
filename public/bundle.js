@@ -112,7 +112,7 @@ const canvas = document.createElement('canvas');
 let bpm = 125;
 const bpmConverter = ms => 60000 / ms / 4;
 const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Dial('#tempo-select', {
-  'size': [120, 120],
+  'size': [90, 90],
   'interaction': 'radial',
   'mode': 'absolute',
   'value': bpm,
