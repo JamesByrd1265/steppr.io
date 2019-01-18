@@ -23,6 +23,7 @@ body {
   height: 189px;
   margin: 0 auto;
   display: inline-flex;
+  position: absolute;
   background: radial-gradient(2541.00px at 99.65% 49.73%, #B46A3F 0%, #DC7E50 13.14%, rgba(220, 131, 80, 0.86) 25.41%, #DC8350 50.74%, #CE7846 73.58%, #DC8350 87.19%, #B46A3F 100%); 
 }
 
@@ -50,7 +51,7 @@ body {
 #tempo {
   position: absolute;
   right: 3.75em; 
-  margin: 3em 0;
+  margin: 13em 0;
   display: inline-block; 
   align-items: center;
 }
@@ -66,8 +67,10 @@ body {
 }
 
 .synth-container {
-  position: absolute;
-  width: 40%;
+  position: relative;
+  width: 46%;
+  margin-top: 14.5vh;
+  display: inline-flex;
 }
 
 .sequencer {
@@ -83,6 +86,7 @@ body {
 #lead-container {
     border: 1px solid white;
   display: inline-block;
+  margin-right: 2em;
 }
 
 #lead-select-header {
@@ -127,6 +131,7 @@ option {
 
 #lead-seq {
   margin: 0;
+  margin-right: 9em;
   display: inline-block;
   padding-left: 40px;
 }
@@ -137,25 +142,32 @@ option {
 }
 
 #bass-container {
-  right: 26em;
+/*  right: 20em*/;
     border: 1px solid white;
   display: inline-block;
+  align-items: right;
 }
 
 .select-container {
   display: inline-block;
       border: 1px solid white;
   margin: 60px;
+  margin-right: 0;
   width: 200px;
 }
 
 #bass-seq {
   padding-left: 40px;
+  display: inline-block;
 }
 
 #bass-vol {
   display: inline-block;
   padding-left: 140px;
+}
+
+#bass-select-container {
+  padding-left: 16em;
 }
 
 #drum-container {
