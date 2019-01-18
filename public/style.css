@@ -38,7 +38,7 @@ body {
 }
 
 #start {
-  right: 2em;
+  right: 2.6em;
   font-size: 2em;
   color: white;
   padding: .1em .9em .1em .9em;
@@ -50,7 +50,7 @@ body {
 
 #tempo {
   position: absolute;
-  right: 3.75em; 
+  right: 5em; 
   margin: 13em 0;
   display: inline-block; 
   align-items: center;
@@ -68,8 +68,8 @@ body {
 
 .synth-container {
   position: relative;
-  width: 46%;
-  margin-top: 14.5vh;
+  width: 44%;
+  margin-top: 16.2vh;
   display: inline-flex;
 }
 
@@ -84,13 +84,19 @@ body {
 }
 
 #lead-container {
-    border: 1px solid white;
+  /*  border: 1px solid white;*/
   display: inline-block;
-  margin-right: 2em;
+  margin-left: 1.8em;
 }
 
 #lead-select-header {
 
+}
+
+.sequencer-header {
+  width: 800px;
+  margin-left: 2.5em;
+  background-color: rgba(67, 203, 203, 0.84);
 }
 
 .sub-header {
@@ -110,13 +116,25 @@ option:checked {
 
 select {
   width: 162px;
+  height: 400px;
   outline: none;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
+  padding-top: 1em;
   background-color: rgba(67, 203, 203, 0.84);
   border: 1px solid rgba(67, 203, 203, 0.84);
   border-top: 0;
+  margin-bottom: .4em;
+}
+
+.vol-slider rect {
+  fill: #DC8350;
+}
+
+.vol-slider circle {
+  fill: white;
+  stroke: none;
 }
 
 #lead-select {
@@ -142,18 +160,17 @@ option {
 }
 
 #bass-container {
-/*  right: 20em*/;
-    border: 1px solid white;
+  /*  border: 1px solid white;*/
   display: inline-block;
   align-items: right;
 }
 
 .select-container {
   display: inline-block;
-      border: 1px solid white;
+    /*  border: 1px solid white;*/
   margin: 60px;
-  margin-right: 0;
-  width: 200px;
+  margin-right: 1em;
+  width: 167px;
 }
 
 #bass-seq {
@@ -167,15 +184,15 @@ option {
 }
 
 #bass-select-container {
-  padding-left: 16em;
+  padding-left: 17.3em;
 }
 
 #drum-container {
-  position: absolute;
-  bottom: 20px;
-  border: 1px solid white;
-/*  display: inline-flex;*/
-display: none;
+/*  position: absolute;*/
+/*  bottom: 20px;*/
+/*  border: 1px solid white;*/
+  display: inline-flex;
+/*display: none;*/
 }
 
 #drum-seq-container {
@@ -197,7 +214,12 @@ display: none;
   padding-left: 104px;
 }
 
-#synth-title {
+.synth-title {
+  padding: 0;
+  padding-left: 1.4em;
+  letter-spacing: .14em;
+  margin: 0;
+  color: white;
   display: inline-block;
 }
 
