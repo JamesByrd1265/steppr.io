@@ -17,7 +17,7 @@
         <div class=select-container>
           <h3 id='lead-select-header'
               class='sub-header'>SYNTH</h3>
-          <select id='lead-select' size='6'>
+          <select id='lead-select' class='synth-select' size='6'>
             <option value='AM'>AM</option>
             <option value='POLY'>POLY</option>
             <option value='MEMBRANE'>MEMBRANE</option>
@@ -25,6 +25,15 @@
             <option value='DUO'>DUO</option>
             <option value='FM'>FM</option>
           </select>
+          <select class=
+            'synth-effect
+            sub-header'>
+            <option disabled selected value='CHOOSE-EFFECT'>EFFECT&#9660</option>
+            <option value='REVERB'>REVERB</option>
+            <option value='DELAY'>DELAY</option>
+            <option value='DISTORTION'>DISTORTION</option>
+            <option value='PING-PONG'>PING-PONG</option>
+          EFFECT</select>
         </div>
         <div class='sequencer'>
           <div class='sequencer-header'>
@@ -45,7 +54,7 @@
         <div id=bass-select-container class='select-container'>
           <h3 id='bass-select-header'
             class='sub-header'>BASS</h3>
-          <select id='bass-select' size='6'>
+          <select id='bass-select' class='synth-select' size='6'>
             <option value='AM'>AM</option>
             <option value='POLY'>POLY</option>
             <option value='MEMBRANE'>MEMBRANE</option>
@@ -53,6 +62,15 @@
             <option value='DUO'>DUO</option>
             <option value='FM'>FM</option>
           </select> 
+          <select class=
+            'synth-effect
+            sub-header'>
+            <option disabled selected value='CHOOSE-EFFECT'>EFFECT&#9660</option>
+            <option value='REVERB'>REVERB</option>
+            <option value='DELAY'>DELAY</option>
+            <option value='DISTORTION'>DISTORTION</option>
+            <option value='PING-PONG'>PING-PONG</option>
+          EFFECT</select>
         </div>
       </div>
       <div id='tempo'>
@@ -62,6 +80,7 @@
       </div>
       <div id='drum-container'>
         <div id='drum-select-container'>
+
           <select class='drum-select' id='cymbal-select'>
             <option value='RIDE_909'>RIDE</option>
             <option value='SPLASH'>SPLASH</option>
