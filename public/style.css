@@ -91,13 +91,14 @@ body {
   margin-left: 1.8em;
 }
 
-#lead-select-header {
-
-}
-
 .sequencer-header {
   width: 800px;
   margin-left: 2.5em;
+  background-color: rgba(67, 203, 203, 0.84);
+}
+
+#drum-seq-header {
+  width: 1688px;
   background-color: rgba(67, 203, 203, 0.84);
 }
 
@@ -136,10 +137,6 @@ option:checked {
 .vol-slider circle {
   fill: white;
   stroke: none;
-}
-
-#lead-select {
-/*  margin-left: 150px;*/
 }
 
 select {
@@ -196,7 +193,7 @@ option {
   padding-left: 17.3em;
 }
 
-.synth-effect {
+.effect {
   text-align: center;
   align-items: center;
   text-align-last: center;
@@ -206,14 +203,10 @@ option {
   margin: 0 0 .3em 0;
 }
 
-/*.synth-effect{
-  text-align: center;
-}*/
-
 #drum-container {
   position: relative;
   display: inline-flex;
-  bottom: 24dvh;
+  margin-left: .4em;
 }
 
 #drum-seq-container {
@@ -222,21 +215,32 @@ option {
 
 #drum-select-container {
   width: 162px;
-  height: 400px;
+  height: 434px;
   outline: none;
   color: white;
   font-size: 18px;
   text-align: center;
-  padding-top: 1em;
   background-color: rgba(67, 203, 203, 0.84);
-  border: 1px solid rgba(67, 203, 203, 0.84);
   border-top: 0;
-  margin-bottom: .4em;
+  margin: .7em 63px .4em 81px;
 }
 
 .drum-select {
   width: 8em;
-  margin: .875em;
+  margin-top: .65em;
+  margin-bottom: .65em;
+  width: 126px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  text-align-last: center;
+  padding: .1em .9em .1em .9em;
+  background-color: rgba(67, 203, 203, 0.84);
+  border: 1px solid rgba(67, 203, 203, 0);
+}
+
+#drum-select-header {
+  margin: 0;
 }
 
 #drum-vol {
@@ -244,7 +248,7 @@ option {
   padding-left: 104px;
 }
 
-.synth-title {
+.seq-title {
   padding: 0;
   padding-left: 1.4em;
   letter-spacing: .14em;

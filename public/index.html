@@ -26,18 +26,18 @@
             <option value='FM'>FM</option>
           </select>
           <select class=
-            'synth-effect
+            'effect
             sub-header'>
             <option disabled selected value='CHOOSE-EFFECT'>EFFECT&#9660</option>
             <option value='REVERB'>REVERB</option>
             <option value='DELAY'>DELAY</option>
             <option value='DISTORTION'>DISTORTION</option>
             <option value='PING-PONG'>PING-PONG</option>
-          EFFECT</select>
+          </select>
         </div>
         <div class='sequencer'>
           <div class='sequencer-header'>
-            <h2 class='synth-title'>Synthr</h2>
+            <h2 class='seq-title'>Synthr</h2>
             <div id='lead-vol' class='vol-slider'></div>
           </div>
           <div id='lead-seq'></div>
@@ -46,7 +46,7 @@
       <div id='bass-container' class='synth-container'>
         <div class='sequencer'> 
           <div class='sequencer-header'>
-            <h2 class='synth-title'>Bassr</h2>
+            <h2 class='seq-title'>Bassr</h2>
             <div id='bass-vol' class='vol-slider'></div>
           </div>
           <div id='bass-seq'></div>
@@ -63,14 +63,14 @@
             <option value='FM'>FM</option>
           </select> 
           <select class=
-            'synth-effect
+            'effect
             sub-header'>
             <option disabled selected value='CHOOSE-EFFECT'>EFFECT&#9660</option>
             <option value='REVERB'>REVERB</option>
             <option value='DELAY'>DELAY</option>
             <option value='DISTORTION'>DISTORTION</option>
             <option value='PING-PONG'>PING-PONG</option>
-          EFFECT</select>
+          </select>
         </div>
       </div>
       <div id='tempo'>
@@ -79,8 +79,9 @@
         <div id='tempo-select'></div>
       </div>
       <div id='drum-container'>
-        <div id='drum-select-container'>
-
+        <div id='drum-select-container' class='select-container'>
+          <h3 id='drum-select-header'
+            class='sub-header'>DRUMS</h3>          
           <select class='drum-select' id='cymbal-select'>
             <option value='RIDE_909'>RIDE</option>
             <option value='SPLASH'>SPLASH</option>
@@ -121,10 +122,20 @@
             <option value='BD_707'>707</option>
             <option value='BD_808'>808</option>
           </select>
+          <select class='effect sub-header'>
+            <option disabled selected value='CHOOSE-EFFECT'>
+              EFFECT&#9660</option>
+            <option value='REVERB'>REVERB</option>
+            <option value='DELAY'>DELAY</option>
+            <option value='DISTORTION'>DISTORTION</option>
+            <option value='PING-PONG'>PING-PONG</option>
+          </select>
         </div>
         <div id='drum-seq-container'>
-          <h2 id='drum-title'>Drummr</h2>
-          <div id='drum-vol' class='vol-slider'></div>
+          <div id='drum-seq-header'>
+            <h2 class='seq-title'>Drummr</h2>
+            <div id='drum-vol' class='vol-slider'></div>
+          </div>
           <div id='drum-seq'></div>
         </div>
       </div>

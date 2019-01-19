@@ -24,7 +24,7 @@ tempo.colorize('border', 'rgba(67, 203, 203)')
 let sequencer = {'size': [800, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8}
 const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)
 const bassSeq = new Nexus.Sequencer('#bass-seq', sequencer)
-const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [1245,300], 'mode': 'toggle', 'rows': 8, 'columns': 16})
+const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [1688,400], 'mode': 'toggle', 'rows': 8, 'columns': 16})
 
 let leadSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
 let bassSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
