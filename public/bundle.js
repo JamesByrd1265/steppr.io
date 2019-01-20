@@ -86,6 +86,50 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./client/effects.js":
+/*!***************************!*\
+  !*** ./client/effects.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const Tone = __webpack_require__(/*! Tone */ "./node_modules/Tone/build/Tone.js");
+
+const delay = new Tone.PingPongDelay().toMaster();
+const reverb = new Tone.Freeverb().toMaster();
+const phaser = new Tone.Phaser().toMaster();
+const chorus = new Tone.Chorus().toMaster();
+const distortion = new Tone.Distortion().toMaster();
+const bitcrusher = new Tone.BitCrusher().toMaster();
+const autofilter = new Tone.AutoFilter().toMaster();
+const pingpong = new Tone.PingPongDelay().toMaster();
+
+delay.wet.value = 1;
+reverb.wet.value = 1;
+phaser.wet.value = 1;
+chorus.wet.value = 1;
+distortion.wet.value = 1;
+bitcrusher.wet.value = 1;
+pingpong.wet.value = 1;
+autofilter.wet.value = 1;
+
+const effects = {
+  delay,
+  reverb,
+  phaser,
+  chorus,
+  distortion,
+  bitcrusher,
+  autofilter,
+  pingpong
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (effects);
+
+/***/ }),
+
 /***/ "./client/index.js":
 /*!*************************!*\
   !*** ./client/index.js ***!
@@ -98,10 +142,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
-/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
-/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
-/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./effects */ "./client/effects.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_4__);
 const socket = io(window.location.origin);
 const canvas = document.createElement('canvas');
 
@@ -109,9 +154,10 @@ const canvas = document.createElement('canvas');
 
 
 
+
 let bpm = 125;
 const bpmConverter = ms => 60000 / ms / 4;
-const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Dial('#tempo-select', {
+const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Dial('#tempo-select', {
   'size': [90, 90],
   'interaction': 'radial',
   'mode': 'absolute',
@@ -126,16 +172,16 @@ tempo.colorize('accent', 'rgba(67, 203, 203)');
 tempo.colorize('border', 'rgba(67, 203, 203)');
 
 let sequencer = { 'size': [800, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
-const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#lead-seq', sequencer);
-const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#bass-seq', sequencer);
-const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Sequencer('#drum-seq', { 'size': [1685, 400], 'mode': 'toggle', 'rows': 8, 'columns': 16 });
+const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#lead-seq', sequencer);
+const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#bass-seq', sequencer);
+const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#drum-seq', { 'size': [1685, 400], 'mode': 'toggle', 'rows': 8, 'columns': 16 });
 
 let leadSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
 let bassSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
 let drumSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
-const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Slider('#lead-vol', leadSlider);
-const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Slider('#bass-vol', bassSlider);
-const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_2___default.a.Slider('#drum-vol', drumSlider);
+const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#lead-vol', leadSlider);
+const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#bass-vol', bassSlider);
+const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#drum-vol', drumSlider);
 
 const drumOnLoad = () => console.log('drum samples loaded');
 const drumSamples = {
@@ -164,7 +210,7 @@ const drumSamples = {
   "B3": "BD-707.wav",
   "B4": "BD-808.wav"
 };
-const drums = new tone__WEBPACK_IMPORTED_MODULE_3___default.a.Sampler(drumSamples, drumOnLoad, '/drum-samples/').toMaster();
+const drums = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Sampler(drumSamples, drumOnLoad, '/drum-samples/').toMaster();
 const kicks = {
   BD_78: 'B1',
   BD_RTM: 'B2',
@@ -217,6 +263,30 @@ let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,
     snare = snares.SD_808,
     kick = kicks.BD_78;
 
+const {
+  delay,
+  reverb,
+  phaser,
+  chorus,
+  distortion,
+  bitcrusher,
+  autofilter,
+  pingpong
+} = _effects__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+let leadEffect = '',
+    bassEffect = '',
+    cymbalEffect = '',
+    clapEffect = '',
+    shakerEffect = '',
+    openHatEffect = '',
+    closedHatEffect = '',
+    percEffect = '',
+    snareEffect = '',
+    kickEffect = '';
+
+// if(leadEffect !== '') lead.fan(leadEffect)
+
 const selectLead = sound => {
   let { value, id } = sound.target;
   socket.emit('selectLead', value);
@@ -235,8 +305,30 @@ const selectLead = sound => {
   }
 };
 
-const selectBass = sound => {
-  let { value, id } = sound.target;
+const selectLeadEffect = effect => {
+  let { value, id } = effect.target;
+  socket.emit('selectLeadEffect', value);
+  if (value === 'DELAY') {
+    lead.fan(delay);
+  } else if (value === 'REVERB') {
+    lead.fan(reverb);
+  } else if (value === 'PHASER') {
+    lead.fan(phaser);
+  } else if (value === 'CHORUS') {
+    lead.fan(chorus);
+  } else if (value === 'DISTORTION') {
+    lead.fan(distortion);
+  } else if (value === 'BITCRUSHER') {
+    lead.fan(bitcrusher);
+  } else if (value === 'AUTOFILTER') {
+    lead.fan(autofilter);
+  } else if (value === 'PINGPONG') {
+    lead.fan(pingpong);
+  }
+};
+
+const selectBass = effect => {
+  let { value, id } = effect.target;
   socket.emit('selectBass', value);
   if (value === 'FM') {
     bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass;
@@ -250,6 +342,30 @@ const selectBass = sound => {
     bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duoBass;
   } else if (value === 'POLY') {
     bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].polyBass;
+  }
+};
+
+const selectBassEffect = effect => {
+  let { value, id } = effect.target;
+  socket.emit('selectBassEffect', value);
+  if (value === 'DRY') {
+    bassEffect = 'DRY';
+  } else if (value === 'DELAY') {
+    bassEffect = delay;
+  } else if (value === 'REVERB') {
+    bassEffect = reverb;
+  } else if (value === 'PHASER') {
+    bassEffect = phaser;
+  } else if (value === 'CHORUS') {
+    bassEffect = chorus;
+  } else if (value === 'DISTORTION') {
+    bassEffect = distortion;
+  } else if (value === 'BITCRUSHER') {
+    bassEffect = bitcrusher;
+  } else if (value === 'AUTOFILTER') {
+    bassEffect = autofilter;
+  } else if (value === 'PINGPONG') {
+    bassEffect = pingpong;
   }
 };
 
@@ -458,13 +574,13 @@ const start = () => {
     leadSeq.start(bpm);
     bassSeq.start(bpm);
     drumSeq.start(bpm);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('stop');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('STOP');
   } else {
     leadSeq.stop();
     bassSeq.stop();
     drumSeq.stop();
     context.suspend().then(() => console.log('audio context suspended'));
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('start');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('START');
   }
 };
 
@@ -480,6 +596,16 @@ const setupSequencers = () => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#perc-select").on('change', selectPerc);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#snare-select").on('change', selectSnare);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-select").on('change', selectKick);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-effect-select").on('change', selectLeadEffect);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-effect-select").on('change', selectBassEffect);
+  // $("#cymbal-effect-select").on('change', selectCymbalEffect)
+  // $("#clap-effect-select").on('change', selectClapEffect)
+  // $("#shaker-effect-select").on('change', selectShakerEffect)
+  // $("#oh-effect-select").on('change', selectOpenHatEffect)
+  // $("#ch-effect-select").on('change', selectClosedHatEffect)
+  // $("#perc-effect-select").on('change', selectPercEffect)
+  // $("#snare-effect-select").on('change', selectSnareEffect)
+  // $("#kick-effect-select").on('change', selectKickEffect)
 };
 
 socket.on('connect', () => {
@@ -582,19 +708,10 @@ if (typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefine
 __webpack_require__.r(__webpack_exports__);
 const Tone = __webpack_require__(/*! Tone */ "./node_modules/Tone/build/Tone.js");
 
-const reverb = new Tone.Freeverb().toMaster();
-const vibrato = new Tone.Vibrato().toMaster();
-const chorus = new Tone.Chorus().toMaster();
-const delay = new Tone.PingPongDelay().toMaster();
-const gain = new Tone.Gain(0.5).toMaster();
 const vol = new Tone.Volume().toMaster();
+const gain = new Tone.Gain(0.5).toMaster();
 
-reverb.wet.value = 1.0;
-vibrato.wet.value = 1.0;
-chorus.wet.value = 1.0;
-delay.wet.value = 1.0;
-
-let fm = new Tone.FMSynth().chain(gain, vol, vibrato, chorus);
+let fm = new Tone.FMSynth().chain(gain, vol);
 let membrane = new Tone.MembraneSynth().chain(gain, vol);
 let am = new Tone.AMSynth().chain(gain, vol);
 let metal = new Tone.MetalSynth().chain(gain, vol);
@@ -602,7 +719,7 @@ let noise = new Tone.NoiseSynth().chain(gain, vol);
 let pluck = new Tone.PluckSynth().chain(gain, vol);
 let duo = new Tone.DuoSynth().chain(gain, vol);
 let poly = new Tone.PolySynth().chain(gain, vol);
-let fmBass = new Tone.FMSynth().chain(gain, vol, vibrato, chorus);
+let fmBass = new Tone.FMSynth().chain(gain, vol);
 let membraneBass = new Tone.MembraneSynth().chain(gain, vol);
 let amBass = new Tone.AMSynth().chain(gain, vol);
 let metalBass = new Tone.MetalSynth().chain(gain, vol);

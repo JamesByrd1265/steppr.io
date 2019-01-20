@@ -2,6 +2,7 @@ const socket = io(window.location.origin);
 const canvas = document.createElement('canvas')
 import $ from 'jquery'
 import synths from './synths'
+import effects from './effects'
 import Nexus from 'nexusui'
 import Tone from 'tone'
 
@@ -113,6 +114,30 @@ perc = percussion.BONGO,
 snare = snares.SD_808,
 kick = kicks.BD_78
 
+const {
+  delay,
+  reverb,
+  phaser,
+  chorus,
+  distortion,
+  bitcrusher,
+  autofilter,
+  pingpong
+} = effects
+
+let leadEffect = '',
+bassEffect = '',
+cymbalEffect = '',
+clapEffect = '',
+shakerEffect = '',
+openHatEffect = '',
+closedHatEffect = '',
+percEffect = '',
+snareEffect = '',
+kickEffect = ''
+
+// if(leadEffect !== '') lead.fan(leadEffect)
+
 const selectLead = sound => {
   let {value, id} = sound.target
   socket.emit('selectLead', value)
@@ -131,8 +156,30 @@ const selectLead = sound => {
   }
 }
 
-const selectBass = sound => {
-  let {value, id} = sound.target
+const selectLeadEffect = effect => {
+  let {value, id} = effect.target
+  socket.emit('selectLeadEffect', value)
+  if(value === 'DELAY') {
+    lead.fan(delay)
+  } else if(value === 'REVERB') {
+    lead.fan(reverb)
+  } else if(value === 'PHASER') {
+    lead.fan(phaser)
+  } else if(value === 'CHORUS') {
+    lead.fan(chorus)
+  } else if(value === 'DISTORTION') {
+    lead.fan(distortion)
+  } else if(value === 'BITCRUSHER') {
+    lead.fan(bitcrusher)
+  } else if(value === 'AUTOFILTER') {
+    lead.fan(autofilter)
+  } else if(value === 'PINGPONG') {
+    lead.fan(pingpong)
+  }
+}
+
+const selectBass = effect => {
+  let {value, id} = effect.target
   socket.emit('selectBass', value)
   if(value === 'FM') {
     bass = synths.fmBass
@@ -146,6 +193,30 @@ const selectBass = sound => {
     bass = synths.duoBass
   } else if(value === 'POLY') {
     bass = synths.polyBass
+  }
+}
+
+const selectBassEffect = effect => {
+  let {value, id} = effect.target
+  socket.emit('selectBassEffect', value)
+  if(value === 'DRY') {
+    bassEffect = 'DRY'
+  } else if(value === 'DELAY') {
+    bassEffect = delay
+  } else if(value === 'REVERB') {
+    bassEffect = reverb
+  } else if(value === 'PHASER') {
+    bassEffect = phaser
+  } else if(value === 'CHORUS') {
+    bassEffect = chorus
+  } else if(value === 'DISTORTION') {
+    bassEffect = distortion
+  } else if(value === 'BITCRUSHER') {
+    bassEffect = bitcrusher
+  } else if(value === 'AUTOFILTER') {
+    bassEffect = autofilter
+  } else if(value === 'PINGPONG') {
+    bassEffect = pingpong
   }
 }
 
@@ -354,13 +425,13 @@ const start = () => {
     leadSeq.start(bpm)
     bassSeq.start(bpm)
     drumSeq.start(bpm)
-    $("#start").html('stop')
+    $("#start").html('STOP')
   } else {
     leadSeq.stop()
     bassSeq.stop()
     drumSeq.stop()
     context.suspend().then(() => console.log('audio context suspended'))
-    $("#start").html('start')
+    $("#start").html('START')
   }
 }
 
@@ -377,6 +448,16 @@ const setupSequencers = () => {
   $("#perc-select").on('change', selectPerc)
   $("#snare-select").on('change', selectSnare)
   $("#kick-select").on('change', selectKick)
+  $("#lead-effect-select").on('change', selectLeadEffect)
+  $("#bass-effect-select").on('change', selectBassEffect)
+  // $("#cymbal-effect-select").on('change', selectCymbalEffect)
+  // $("#clap-effect-select").on('change', selectClapEffect)
+  // $("#shaker-effect-select").on('change', selectShakerEffect)
+  // $("#oh-effect-select").on('change', selectOpenHatEffect)
+  // $("#ch-effect-select").on('change', selectClosedHatEffect)
+  // $("#perc-effect-select").on('change', selectPercEffect)
+  // $("#snare-effect-select").on('change', selectSnareEffect)
+  // $("#kick-effect-select").on('change', selectKickEffect)
 }
 
 socket.on('connect', () => {
