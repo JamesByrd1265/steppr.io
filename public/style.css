@@ -1,5 +1,5 @@
 /* 
-  blue:rgba(67, 203, 203, 0.84);
+  blue:#46ABAA;
   orange: #DC8350;
 */
 
@@ -16,12 +16,11 @@ body {
 
 #jam-canvas {
   width: 100%;
-  height: 100%;
 }
 
 #nav {
   width: 100vw;
-  height: 189px;
+  height: 180px;
   margin: 0 auto;
   display: inline-flex;
   position: absolute;
@@ -52,7 +51,7 @@ body {
 #tempo {
   position: absolute;
   right: 5em; 
-  margin: 13em 0;
+  margin: 12em 0;
   display: inline-block; 
   align-items: center;
 }
@@ -62,17 +61,18 @@ body {
   margin: 0;
   border: solid black 1px;
   align-self: center;
-  background: rgba(67, 203, 203, 0.84);
-  border: 1px solid rgba(67, 203, 203, 0.84);
+  background: #46ABAA;
+  border: 1px solid #46ABAA;
   border-top: 0;
 }
 
 .synth-container {
   position: relative;
   width: 44%;
-  margin-top: 12vh;
+  margin-top: 11vh;
   display: inline-flex;
   align-items: center;
+  height: 544px;
 }
 
 .sequencer {
@@ -86,7 +86,6 @@ body {
 }
 
 #lead-container {
-  /*  border: 1px solid white;*/
   display: inline-block;
   margin-left: 1.8em;
 }
@@ -94,18 +93,18 @@ body {
 .sequencer-header {
   width: 800px;
   margin-left: 2.5em;
-  background-color: rgba(67, 203, 203, 0.84);
+  background-color: #46ABAA;
 }
 
 #drum-seq-header {
   width: 1685px;
-  background-color: rgba(67, 203, 203, 0.84);
+  background-color: #46ABAA;
 }
 
 #drum-seq-footer {
   width: 1685px;
-  background-color: rgba(67, 203, 203, 0.84);
-  border-bottom: 1px solid rgba(67, 203, 203, 0.84);
+  background-color: #46ABAA;
+  border-bottom: 1px solid #46ABAA;
   text-align: left;
   padding: 0;
 }
@@ -132,6 +131,8 @@ body {
 
 option:checked {
   box-shadow: 0 0 10px 100px #DC8350 inset;
+  height: 1em;
+  margin-bottom: .8em;
 }
 
 .synth-select {
@@ -142,8 +143,8 @@ option:checked {
   font-size: 18px;
   text-align: center;
   padding-top: 1em;
-  background-color: rgba(67, 203, 203, 0.84);
-  border: 1px solid rgba(67, 203, 203, 0.84);
+  background-color: #46ABAA;
+  border: 1px solid #46ABAA;
   border-top: 0;
 }
 
@@ -238,7 +239,7 @@ option {
   color: white;
   font-size: 18px;
   text-align: center;
-  background-color: rgba(67, 203, 203, 0.84);
+  background-color: #46ABAA;
   border-top: 0;
   margin: .7em 64px .4em 81px;
 }
@@ -254,7 +255,7 @@ option {
   text-align: center;
   text-align-last: center;
   padding: .1em .9em .1em .9em;
-  background-color: rgba(67, 203, 203, 0.84);
+  background-color: #46ABAA;
 }
 
 #drum-select-header {
@@ -263,7 +264,7 @@ option {
 
 #drum-vol {
   display: inline-block;
-  padding-left: 123px;
+  padding-left: 116px;
 }
 
 .seq-title {
@@ -291,7 +292,7 @@ h2 {
 }
 
 circle {
-  stroke: rgba(67, 203, 203);
+  stroke: #46ABAA;
   stroke-width: .3em;
 }
 
@@ -307,4 +308,24 @@ path:nth-child(4) {
 path:nth-child(5) {
   fill: #DC8350;
   fill-opacity: 1;
+}
+
+#footer {
+  width: 100vw;
+  height: 124px;
+  margin: 0 auto;
+  bottom: -2.3em;
+  display: inline-flex;
+  position: relative;
+  background: radial-gradient(2541.00px at 99.65% 49.73%, #B46A3F 0%, #DC7E50 13.14%, rgba(220, 131, 80, 0.86) 25.41%, #DC8350 50.74%, #CE7846 73.58%, #DC8350 87.19%, #B46A3F 100%); 
+}
+
+#copyright {
+  width: 100vw;
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-family: 'Poppins';
+  font-weight: lighter;
+  text-align: center;
+  align-self: center;
 }
