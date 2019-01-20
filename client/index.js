@@ -136,8 +136,6 @@ percEffect = '',
 snareEffect = '',
 kickEffect = ''
 
-// if(leadEffect !== '') lead.fan(leadEffect)
-
 const selectLead = sound => {
   let {value, id} = sound.target
   socket.emit('selectLead', value)
@@ -160,20 +158,28 @@ const selectLeadEffect = effect => {
   let {value, id} = effect.target
   socket.emit('selectLeadEffect', value)
   if(value === 'DELAY') {
+    lead.disconnect()
     lead.fan(delay)
   } else if(value === 'REVERB') {
+    lead.disconnect()
     lead.fan(reverb)
   } else if(value === 'PHASER') {
+    lead.disconnect()
     lead.fan(phaser)
   } else if(value === 'CHORUS') {
+    lead.disconnect()
     lead.fan(chorus)
   } else if(value === 'DISTORTION') {
+    lead.disconnect()
     lead.fan(distortion)
   } else if(value === 'BITCRUSHER') {
+    lead.disconnect()
     lead.fan(bitcrusher)
   } else if(value === 'AUTOFILTER') {
+    lead.disconnect()
     lead.fan(autofilter)
   } else if(value === 'PINGPONG') {
+    lead.disconnect()
     lead.fan(pingpong)
   }
 }

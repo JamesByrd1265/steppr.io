@@ -106,13 +106,13 @@ const bitcrusher = new Tone.BitCrusher().toMaster();
 const autofilter = new Tone.AutoFilter().toMaster();
 const pingpong = new Tone.PingPongDelay().toMaster();
 
-delay.wet.value = 1;
+delay.wet.value = .5;
 reverb.wet.value = 1;
 phaser.wet.value = 1;
 chorus.wet.value = 1;
 distortion.wet.value = 1;
 bitcrusher.wet.value = 1;
-pingpong.wet.value = 1;
+pingpong.wet.value = .5;
 autofilter.wet.value = 1;
 
 const effects = {
@@ -285,8 +285,6 @@ let leadEffect = '',
     snareEffect = '',
     kickEffect = '';
 
-// if(leadEffect !== '') lead.fan(leadEffect)
-
 const selectLead = sound => {
   let { value, id } = sound.target;
   socket.emit('selectLead', value);
@@ -309,20 +307,28 @@ const selectLeadEffect = effect => {
   let { value, id } = effect.target;
   socket.emit('selectLeadEffect', value);
   if (value === 'DELAY') {
+    lead.disconnect();
     lead.fan(delay);
   } else if (value === 'REVERB') {
+    lead.disconnect();
     lead.fan(reverb);
   } else if (value === 'PHASER') {
+    lead.disconnect();
     lead.fan(phaser);
   } else if (value === 'CHORUS') {
+    lead.disconnect();
     lead.fan(chorus);
   } else if (value === 'DISTORTION') {
+    lead.disconnect();
     lead.fan(distortion);
   } else if (value === 'BITCRUSHER') {
+    lead.disconnect();
     lead.fan(bitcrusher);
   } else if (value === 'AUTOFILTER') {
+    lead.disconnect();
     lead.fan(autofilter);
   } else if (value === 'PINGPONG') {
+    lead.disconnect();
     lead.fan(pingpong);
   }
 };

@@ -9,13 +9,13 @@ const bitcrusher = new Tone.BitCrusher().toMaster()
 const autofilter = new Tone.AutoFilter().toMaster()
 const pingpong = new Tone.PingPongDelay().toMaster()
 
-delay.wet.value = 1
+delay.wet.value = .5
 reverb.wet.value = 1
 phaser.wet.value = 1
 chorus.wet.value = 1
 distortion.wet.value = 1
 bitcrusher.wet.value = 1
-pingpong.wet.value = 1
+pingpong.wet.value = .5
 autofilter.wet.value = 1
 
 const effects = {
