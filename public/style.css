@@ -51,7 +51,7 @@ body {
 #tempo {
   position: absolute;
   right: 5em; 
-  margin: 12em 0;
+  margin: 13em 0;
   display: inline-block; 
   align-items: center;
 }
@@ -69,7 +69,7 @@ body {
 .synth-container {
   position: relative;
   width: 44%;
-  margin-top: 11vh;
+  margin-top: 12vh;
   display: inline-flex;
   align-items: center;
   height: 544px;
@@ -97,12 +97,12 @@ body {
 }
 
 #drum-seq-header {
-  width: 1685px;
+  width: 1684px;
   background-color: #46ABAA;
 }
 
 #drum-seq-footer {
-  width: 1685px;
+  width: 1684px;
   background-color: #46ABAA;
   border-bottom: 1px solid #46ABAA;
   text-align: left;
@@ -208,7 +208,7 @@ option {
 }
 
 #bass-select-container {
-  padding-left: 17.3em;
+  padding-left: 17.35em;
 }
 
 .effect {
@@ -244,6 +244,18 @@ option {
   margin: .7em 64px .4em 81px;
 }
 
+#drum-effect-container {
+  width: 162px;
+  height: 434px;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  background-color: #46ABAA;
+  border-top: 0;
+  margin-left: 64px;
+}
+
 .drum-select {
   outline: none;
   width: 8em;
@@ -258,7 +270,25 @@ option {
   background-color: #46ABAA;
 }
 
+.drum-effect {
+  outline: none;
+  width: 8em;
+  margin-top: .714em;
+  margin-bottom: .714em;
+  width: 126px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  text-align-last: center;
+  padding: .1em .9em .1em .9em;
+  background-color: #46ABAA;
+}
+
 #drum-select-header {
+  margin: 0;
+}
+
+#drum-effect-header {
   margin: 0;
 }
 
