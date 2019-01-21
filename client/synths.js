@@ -1,7 +1,7 @@
 const Tone = require('Tone')
 
-const vol = new Tone.Volume().toMaster()
-const gain = new Tone.Gain(0.5).toMaster()
+export const vol = new Tone.Volume().toMaster()
+export const gain = new Tone.Gain(0.5).toMaster()
 
 let fm = new Tone.FMSynth().chain(gain, vol)
 let membrane = new Tone.MembraneSynth().chain(gain, vol)

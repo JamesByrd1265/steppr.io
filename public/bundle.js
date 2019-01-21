@@ -306,7 +306,10 @@ const selectLead = sound => {
 const selectLeadEffect = effect => {
   let { value, id } = effect.target;
   socket.emit('selectLeadEffect', value);
-  if (value === 'DELAY') {
+  if (value === 'DRY') {
+    lead.disconnect();
+    lead.fan(_synths__WEBPACK_IMPORTED_MODULE_1__["gain"], _synths__WEBPACK_IMPORTED_MODULE_1__["vol"]);
+  } else if (value === 'DELAY') {
     lead.disconnect();
     lead.fan(delay);
   } else if (value === 'REVERB') {
@@ -355,23 +358,32 @@ const selectBassEffect = effect => {
   let { value, id } = effect.target;
   socket.emit('selectBassEffect', value);
   if (value === 'DRY') {
-    bassEffect = 'DRY';
+    bass.disconnect();
+    bass.fan(_synths__WEBPACK_IMPORTED_MODULE_1__["gain"], _synths__WEBPACK_IMPORTED_MODULE_1__["vol"]);
   } else if (value === 'DELAY') {
-    bassEffect = delay;
+    bass.disconnect();
+    bass.fan(delay);
   } else if (value === 'REVERB') {
-    bassEffect = reverb;
+    bass.disconnect();
+    bass.fan(reverb);
   } else if (value === 'PHASER') {
-    bassEffect = phaser;
+    bass.disconnect();
+    bass.fan(phaser);
   } else if (value === 'CHORUS') {
-    bassEffect = chorus;
+    bass.disconnect();
+    bass.fan(chorus);
   } else if (value === 'DISTORTION') {
-    bassEffect = distortion;
+    bass.disconnect();
+    bass.fan(distortion);
   } else if (value === 'BITCRUSHER') {
-    bassEffect = bitcrusher;
+    bass.disconnect();
+    bass.fan(bitcrusher);
   } else if (value === 'AUTOFILTER') {
-    bassEffect = autofilter;
+    bass.disconnect();
+    bass.fan(autofilter);
   } else if (value === 'PINGPONG') {
-    bassEffect = pingpong;
+    bass.disconnect();
+    bass.fan(pingpong);
   }
 };
 
@@ -707,11 +719,13 @@ if (typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefine
 /*!**************************!*\
   !*** ./client/synths.js ***!
   \**************************/
-/*! exports provided: default */
+/*! exports provided: vol, gain, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vol", function() { return vol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gain", function() { return gain; });
 const Tone = __webpack_require__(/*! Tone */ "./node_modules/Tone/build/Tone.js");
 
 const vol = new Tone.Volume().toMaster();
