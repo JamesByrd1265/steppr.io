@@ -135,7 +135,7 @@ option:checked {
   margin-bottom: .8em;
 }
 
-.synth-select {
+.list-select {
   width: 162px;
   height: 365px;
   outline: none;
@@ -146,6 +146,7 @@ option:checked {
   background-color: #46ABAA;
   border: 1px solid #46ABAA;
   border-top: 0;
+  overflow: hidden;
 }
 
 .vol-slider rect {
@@ -270,18 +271,10 @@ option {
   background-color: #46ABAA;
 }
 
-.drum-effect {
-  outline: none;
-  width: 8em;
-  margin-top: .714em;
-  margin-bottom: .714em;
-  width: 126px;
-  color: white;
-  font-size: 18px;
-  text-align: center;
-  text-align-last: center;
-  padding: .1em .9em .1em .9em;
-  background-color: #46ABAA;
+#drum-effect-select option {
+  margin: 0;
+  padding: .6em;
+  height: 8px;
 }
 
 #drum-select-header {
@@ -342,7 +335,7 @@ path:nth-child(5) {
 
 #footer {
   width: 100vw;
-  height: 124px;
+  height: 140px;
   margin: 0 auto;
   bottom: -2.3em;
   display: inline-flex;
@@ -352,7 +345,7 @@ path:nth-child(5) {
 
 #copyright {
   width: 100vw;
-  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 1.5em;
   font-family: 'Poppins';
   font-weight: lighter;

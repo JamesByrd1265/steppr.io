@@ -86,50 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./client/effects.js":
-/*!***************************!*\
-  !*** ./client/effects.js ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const Tone = __webpack_require__(/*! Tone */ "./node_modules/Tone/build/Tone.js");
-
-const delay = new Tone.PingPongDelay().toMaster();
-const reverb = new Tone.Freeverb().toMaster();
-const phaser = new Tone.Phaser().toMaster();
-const chorus = new Tone.Chorus().toMaster();
-const distortion = new Tone.Distortion().toMaster();
-const bitcrusher = new Tone.BitCrusher().toMaster();
-const autofilter = new Tone.AutoFilter().toMaster();
-const pingpong = new Tone.PingPongDelay().toMaster();
-
-delay.wet.value = .5;
-reverb.wet.value = 1;
-phaser.wet.value = 1;
-chorus.wet.value = 1;
-distortion.wet.value = 1;
-bitcrusher.wet.value = 1;
-pingpong.wet.value = .5;
-autofilter.wet.value = 1;
-
-const effects = {
-  delay,
-  reverb,
-  phaser,
-  chorus,
-  distortion,
-  bitcrusher,
-  autofilter,
-  pingpong
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (effects);
-
-/***/ }),
-
 /***/ "./client/index.js":
 /*!*************************!*\
   !*** ./client/index.js ***!
@@ -142,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
-/* harmony import */ var _effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./effects */ "./client/effects.js");
+/* harmony import */ var _synth_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./synth-effects */ "./client/synth-effects.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
@@ -183,6 +139,35 @@ const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#lead
 const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#bass-vol', bassSlider);
 const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#drum-vol', drumSlider);
 
+const {
+  delay,
+  reverb,
+  phaser,
+  chorus,
+  distortion,
+  bitcrusher,
+  autofilter,
+  pingpong
+} = _synth_effects__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+const drumDelay = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.FeedbackDelay();
+const drumReverb = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Freeverb();
+const drumPhaser = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Phaser();
+const drumChorus = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Chorus();
+const drumDistortion = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Distortion();
+const drumBitcrusher = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.BitCrusher();
+const drumAutofilter = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.AutoFilter();
+const drumPingpong = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.PingPongDelay();
+
+drumDelay.wet.value = .3;
+drumReverb.wet.value = .8;
+drumPhaser.wet.value = 1;
+drumChorus.wet.value = 1;
+drumDistortion.wet.value = 1;
+drumBitcrusher.wet.value = 1;
+drumAutofilter.wet.value = 1;
+drumPingpong.wet.value = .4;
+
 const drumOnLoad = () => console.log('drum samples loaded');
 const drumSamples = {
   "C1": "RIDE-909.wav",
@@ -210,7 +195,12 @@ const drumSamples = {
   "B3": "BD-707.wav",
   "B4": "BD-808.wav"
 };
-const drums = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Sampler(drumSamples, drumOnLoad, '/drum-samples/').toMaster();
+
+const drumVerb = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Freeverb();
+const drums = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Sampler(drumSamples, drumOnLoad, '/drum-samples/').chain(drumDelay, drumReverb, drumPhaser, drumChorus, drumDistortion, drumBitcrusher, drumAutofilter, drumPingpong, tone__WEBPACK_IMPORTED_MODULE_4___default.a.Master);
+
+console.log('drums: ', drums);
+
 const kicks = {
   BD_78: 'B1',
   BD_RTM: 'B2',
@@ -262,28 +252,6 @@ let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,
     perc = percussion.BONGO,
     snare = snares.SD_808,
     kick = kicks.BD_78;
-
-const {
-  delay,
-  reverb,
-  phaser,
-  chorus,
-  distortion,
-  bitcrusher,
-  autofilter,
-  pingpong
-} = _effects__WEBPACK_IMPORTED_MODULE_2__["default"];
-
-let leadEffect = '',
-    bassEffect = '',
-    cymbalEffect = '',
-    clapEffect = '',
-    shakerEffect = '',
-    openHatEffect = '',
-    closedHatEffect = '',
-    percEffect = '',
-    snareEffect = '',
-    kickEffect = '';
 
 const selectLead = sound => {
   let { value, id } = sound.target;
@@ -426,6 +394,42 @@ const selectKick = sample => {
   let { value, id } = sample.target;
   socket.emit('selectKick', value);
   kick = kicks[value];
+};
+
+console.log('drums', drums);
+
+const selectKickEffect = effect => {
+  console.log('test');
+  let { value, id } = effect.target;
+  socket.emit('selectKickEffect', value);
+  // if(value === 'DRY') {
+
+  //   kick.fan(gain, vol)
+  // } else if(value === 'DELAY') {
+
+  //   kick.fan(delay)
+  // } else if(value === 'REVERB') {
+
+  //   kick.fan(reverb)
+  // } else if(value === 'PHASER') {
+
+  //   kick.fan(phaser)
+  // } else if(value === 'CHORUS') {
+
+  //   kick.fan(chorus)
+  // } else if(value === 'DISTORTION') {
+
+  //   kick.fan(distortion)
+  // } else if(value === 'BITCRUSHER') {
+
+  //   kick.fan(bitcrusher)
+  // } else if(value === 'AUTOFILTER') {
+
+  //   kick.fan(autofilter)
+  // } else if(value === 'PINGPONG') {
+
+  //   kick.fan(pingpong)
+  // }
 };
 
 const triggerNote = (synth, note) => {
@@ -623,7 +627,7 @@ const setupSequencers = () => {
   // $("#ch-effect-select").on('change', selectClosedHatEffect)
   // $("#perc-effect-select").on('change', selectPercEffect)
   // $("#snare-effect-select").on('change', selectSnareEffect)
-  // $("#kick-effect-select").on('change', selectKickEffect)
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-effect-select").on('change', selectKickEffect);
 };
 
 socket.on('connect', () => {
@@ -712,6 +716,50 @@ if (typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefine
   };
   document.addEventListener("click", resumeAudio);
 }
+
+/***/ }),
+
+/***/ "./client/synth-effects.js":
+/*!*********************************!*\
+  !*** ./client/synth-effects.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const Tone = __webpack_require__(/*! Tone */ "./node_modules/Tone/build/Tone.js");
+
+const delay = new Tone.FeedbackDelay().toMaster();
+const reverb = new Tone.Freeverb().toMaster();
+const phaser = new Tone.Phaser().toMaster();
+const chorus = new Tone.Chorus().toMaster();
+const distortion = new Tone.Distortion().toMaster();
+const bitcrusher = new Tone.BitCrusher().toMaster();
+const autofilter = new Tone.AutoFilter().toMaster();
+const pingpong = new Tone.PingPongDelay().toMaster();
+
+delay.wet.value = .5;
+reverb.wet.value = 1;
+phaser.wet.value = 1;
+chorus.wet.value = 1;
+distortion.wet.value = 1;
+bitcrusher.wet.value = 1;
+autofilter.wet.value = 1;
+pingpong.wet.value = .5;
+
+const effects = {
+  delay,
+  reverb,
+  phaser,
+  chorus,
+  distortion,
+  bitcrusher,
+  autofilter,
+  pingpong
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (effects);
 
 /***/ }),
 

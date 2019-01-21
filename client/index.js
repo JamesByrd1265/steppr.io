@@ -2,7 +2,7 @@ const socket = io(window.location.origin);
 const canvas = document.createElement('canvas')
 import $ from 'jquery'
 import synths, {vol, gain} from './synths'
-import effects from './effects'
+import synthEffects from './synth-effects'
 import Nexus from 'nexusui'
 import Tone from 'tone'
 
@@ -34,6 +34,36 @@ const leadVol = new Nexus.Slider('#lead-vol', leadSlider)
 const bassVol = new Nexus.Slider('#bass-vol', bassSlider)
 const drumVol = new Nexus.Slider('#drum-vol', drumSlider)
 
+const {
+  delay,
+  reverb,
+  phaser,
+  chorus,
+  distortion,
+  bitcrusher,
+  autofilter,
+  pingpong
+} = synthEffects
+
+
+const drumDelay = new Tone.FeedbackDelay()
+const drumReverb = new Tone.Freeverb()
+const drumPhaser = new Tone.Phaser()
+const drumChorus = new Tone.Chorus()
+const drumDistortion = new Tone.Distortion()
+const drumBitcrusher = new Tone.BitCrusher()
+const drumAutofilter = new Tone.AutoFilter()
+const drumPingpong = new Tone.PingPongDelay()
+
+drumDelay.wet.value = .3
+drumReverb.wet.value = .8
+drumPhaser.wet.value = 1
+drumChorus.wet.value = 1
+drumDistortion.wet.value = 1
+drumBitcrusher.wet.value = 1
+drumAutofilter.wet.value = 1
+drumPingpong.wet.value = .4
+
 const drumOnLoad = () => console.log('drum samples loaded')
 const drumSamples = {
   "C1": "RIDE-909.wav",
@@ -61,7 +91,22 @@ const drumSamples = {
   "B3": "BD-707.wav",
   "B4": "BD-808.wav"
 }
-const drums = new Tone.Sampler(drumSamples, drumOnLoad, '/drum-samples/').toMaster()
+
+const drumVerb = new Tone.Freeverb()
+const drums = new Tone.Sampler(drumSamples, drumOnLoad, '/drum-samples/').chain(
+  drumDelay,
+  drumReverb,
+  drumPhaser,
+  drumChorus,
+  drumDistortion,
+  drumBitcrusher,
+  drumAutofilter,
+  drumPingpong,
+  Tone.Master
+)
+
+console.log('drums: ', drums)
+
 const kicks = {
   BD_78: 'B1',
   BD_RTM: 'B2',
@@ -113,28 +158,6 @@ closedHat = closedHats.CH_78,
 perc = percussion.BONGO,
 snare = snares.SD_808,
 kick = kicks.BD_78
-
-const {
-  delay,
-  reverb,
-  phaser,
-  chorus,
-  distortion,
-  bitcrusher,
-  autofilter,
-  pingpong
-} = effects
-
-let leadEffect = '',
-bassEffect = '',
-cymbalEffect = '',
-clapEffect = '',
-shakerEffect = '',
-openHatEffect = '',
-closedHatEffect = '',
-percEffect = '',
-snareEffect = '',
-kickEffect = ''
 
 const selectLead = sound => {
   let {value, id} = sound.target
@@ -277,6 +300,42 @@ const selectKick = sample => {
   let {value, id} = sample.target
   socket.emit('selectKick', value)
   kick = kicks[value]
+}
+
+console.log('drums', drums)
+
+const selectKickEffect = effect => {
+  console.log('test')
+  let {value, id} = effect.target
+  socket.emit('selectKickEffect', value)
+  // if(value === 'DRY') {
+
+  //   kick.fan(gain, vol)
+  // } else if(value === 'DELAY') {
+
+  //   kick.fan(delay)
+  // } else if(value === 'REVERB') {
+
+  //   kick.fan(reverb)
+  // } else if(value === 'PHASER') {
+
+  //   kick.fan(phaser)
+  // } else if(value === 'CHORUS') {
+
+  //   kick.fan(chorus)
+  // } else if(value === 'DISTORTION') {
+
+  //   kick.fan(distortion)
+  // } else if(value === 'BITCRUSHER') {
+
+  //   kick.fan(bitcrusher)
+  // } else if(value === 'AUTOFILTER') {
+
+  //   kick.fan(autofilter)
+  // } else if(value === 'PINGPONG') {
+
+  //   kick.fan(pingpong)
+  // }
 }
 
 const triggerNote = (synth, note) => {
@@ -475,7 +534,7 @@ const setupSequencers = () => {
   // $("#ch-effect-select").on('change', selectClosedHatEffect)
   // $("#perc-effect-select").on('change', selectPercEffect)
   // $("#snare-effect-select").on('change', selectSnareEffect)
-  // $("#kick-effect-select").on('change', selectKickEffect)
+  $("#kick-effect-select").on('change', selectKickEffect)
 }
 
 socket.on('connect', () => {

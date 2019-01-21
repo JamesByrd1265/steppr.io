@@ -1,6 +1,6 @@
 const Tone = require('Tone')
 
-const delay = new Tone.PingPongDelay().toMaster()
+const delay = new Tone.FeedbackDelay().toMaster()
 const reverb = new Tone.Freeverb().toMaster()
 const phaser = new Tone.Phaser().toMaster()
 const chorus = new Tone.Chorus().toMaster()
@@ -15,8 +15,8 @@ phaser.wet.value = 1
 chorus.wet.value = 1
 distortion.wet.value = 1
 bitcrusher.wet.value = 1
-pingpong.wet.value = .5
 autofilter.wet.value = 1
+pingpong.wet.value = .5
 
 const effects = {
   delay,
