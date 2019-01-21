@@ -159,14 +159,23 @@ const drumBitcrusher = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.BitCrushe
 const drumAutofilter = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.AutoFilter();
 const drumPingpong = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.PingPongDelay();
 
-drumDelay.wet.value = .3;
-drumReverb.wet.value = .8;
-drumPhaser.wet.value = 1;
-drumChorus.wet.value = 1;
-drumDistortion.wet.value = 1;
-drumBitcrusher.wet.value = 1;
-drumAutofilter.wet.value = 1;
-drumPingpong.wet.value = .4;
+// drumDelay.wet.value = .3
+// drumReverb.wet.value = .8
+// drumPhaser.wet.value = 1
+// drumChorus.wet.value = 1
+// drumDistortion.wet.value = 1
+// drumBitcrusher.wet.value = 1
+// drumAutofilter.wet.value = 1
+// drumPingpong.wet.value = .4
+
+drumDelay.wet.value = 0;
+drumReverb.wet.value = 0;
+drumPhaser.wet.value = 0;
+drumChorus.wet.value = 0;
+drumDistortion.wet.value = 0;
+drumBitcrusher.wet.value = 0;
+drumAutofilter.wet.value = 0;
+drumPingpong.wet.value = 0;
 
 const drumOnLoad = () => console.log('drum samples loaded');
 const drumSamples = {
@@ -196,7 +205,6 @@ const drumSamples = {
   "B4": "BD-808.wav"
 };
 
-const drumVerb = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Freeverb();
 const drums = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Sampler(drumSamples, drumOnLoad, '/drum-samples/').chain(drumDelay, drumReverb, drumPhaser, drumChorus, drumDistortion, drumBitcrusher, drumAutofilter, drumPingpong, tone__WEBPACK_IMPORTED_MODULE_4___default.a.Master);
 
 console.log('drums: ', drums);
@@ -396,42 +404,6 @@ const selectKick = sample => {
   kick = kicks[value];
 };
 
-console.log('drums', drums);
-
-const selectKickEffect = effect => {
-  console.log('test');
-  let { value, id } = effect.target;
-  socket.emit('selectKickEffect', value);
-  // if(value === 'DRY') {
-
-  //   kick.fan(gain, vol)
-  // } else if(value === 'DELAY') {
-
-  //   kick.fan(delay)
-  // } else if(value === 'REVERB') {
-
-  //   kick.fan(reverb)
-  // } else if(value === 'PHASER') {
-
-  //   kick.fan(phaser)
-  // } else if(value === 'CHORUS') {
-
-  //   kick.fan(chorus)
-  // } else if(value === 'DISTORTION') {
-
-  //   kick.fan(distortion)
-  // } else if(value === 'BITCRUSHER') {
-
-  //   kick.fan(bitcrusher)
-  // } else if(value === 'AUTOFILTER') {
-
-  //   kick.fan(autofilter)
-  // } else if(value === 'PINGPONG') {
-
-  //   kick.fan(pingpong)
-  // }
-};
-
 const triggerNote = (synth, note) => {
   synth.triggerAttackRelease(note, '32n');
 };
@@ -606,6 +578,18 @@ const start = () => {
   }
 };
 
+let effectFontColor = 'white';
+const toggleEffectFontColor = function () {
+  effectFontColor = effectFontColor === 'white' ? '#DC8350' : 'white';
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).css('color', effectFontColor);
+};
+
+const selectDrumEffect = function (effect) {
+  return function () {
+    effect.wet.value = effect.wet.value === 0 ? .5 : 0;
+  };
+};
+
 const setupSequencers = () => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").on('click', start);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").on('change', selectLead);
@@ -620,14 +604,15 @@ const setupSequencers = () => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-select").on('change', selectKick);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-effect-select").on('change', selectLeadEffect);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-effect-select").on('change', selectBassEffect);
-  // $("#cymbal-effect-select").on('change', selectCymbalEffect)
-  // $("#clap-effect-select").on('change', selectClapEffect)
-  // $("#shaker-effect-select").on('change', selectShakerEffect)
-  // $("#oh-effect-select").on('change', selectOpenHatEffect)
-  // $("#ch-effect-select").on('change', selectClosedHatEffect)
-  // $("#perc-effect-select").on('change', selectPercEffect)
-  // $("#snare-effect-select").on('change', selectSnareEffect)
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-effect-select").on('change', selectKickEffect);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".drum-effect").on('click', toggleEffectFontColor);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").on('click', selectDrumEffect(drumDelay));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").on('click', selectDrumEffect(drumReverb));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").on('click', selectDrumEffect(drumPhaser));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").on('click', selectDrumEffect(drumChorus));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").on('click', selectDrumEffect(drumDistortion));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").on('click', selectDrumEffect(drumBitcrusher));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").on('click', selectDrumEffect(drumAutofilter));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").on('click', selectDrumEffect(drumPingpong));
 };
 
 socket.on('connect', () => {

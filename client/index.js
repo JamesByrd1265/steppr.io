@@ -55,14 +55,23 @@ const drumBitcrusher = new Tone.BitCrusher()
 const drumAutofilter = new Tone.AutoFilter()
 const drumPingpong = new Tone.PingPongDelay()
 
-drumDelay.wet.value = .3
-drumReverb.wet.value = .8
-drumPhaser.wet.value = 1
-drumChorus.wet.value = 1
-drumDistortion.wet.value = 1
-drumBitcrusher.wet.value = 1
-drumAutofilter.wet.value = 1
-drumPingpong.wet.value = .4
+// drumDelay.wet.value = .3
+// drumReverb.wet.value = .8
+// drumPhaser.wet.value = 1
+// drumChorus.wet.value = 1
+// drumDistortion.wet.value = 1
+// drumBitcrusher.wet.value = 1
+// drumAutofilter.wet.value = 1
+// drumPingpong.wet.value = .4
+
+drumDelay.wet.value = 0
+drumReverb.wet.value = 0
+drumPhaser.wet.value = 0
+drumChorus.wet.value = 0
+drumDistortion.wet.value = 0
+drumBitcrusher.wet.value = 0
+drumAutofilter.wet.value = 0
+drumPingpong.wet.value = 0
 
 const drumOnLoad = () => console.log('drum samples loaded')
 const drumSamples = {
@@ -92,7 +101,6 @@ const drumSamples = {
   "B4": "BD-808.wav"
 }
 
-const drumVerb = new Tone.Freeverb()
 const drums = new Tone.Sampler(drumSamples, drumOnLoad, '/drum-samples/').chain(
   drumDelay,
   drumReverb,
@@ -302,42 +310,6 @@ const selectKick = sample => {
   kick = kicks[value]
 }
 
-console.log('drums', drums)
-
-const selectKickEffect = effect => {
-  console.log('test')
-  let {value, id} = effect.target
-  socket.emit('selectKickEffect', value)
-  // if(value === 'DRY') {
-
-  //   kick.fan(gain, vol)
-  // } else if(value === 'DELAY') {
-
-  //   kick.fan(delay)
-  // } else if(value === 'REVERB') {
-
-  //   kick.fan(reverb)
-  // } else if(value === 'PHASER') {
-
-  //   kick.fan(phaser)
-  // } else if(value === 'CHORUS') {
-
-  //   kick.fan(chorus)
-  // } else if(value === 'DISTORTION') {
-
-  //   kick.fan(distortion)
-  // } else if(value === 'BITCRUSHER') {
-
-  //   kick.fan(bitcrusher)
-  // } else if(value === 'AUTOFILTER') {
-
-  //   kick.fan(autofilter)
-  // } else if(value === 'PINGPONG') {
-
-  //   kick.fan(pingpong)
-  // }
-}
-
 const triggerNote = (synth, note) => {
   synth.triggerAttackRelease(note, '32n')
 }
@@ -512,6 +484,17 @@ const start = () => {
   }
 }
 
+let effectFontColor = 'white'
+const toggleEffectFontColor = function() {
+  effectFontColor = effectFontColor === 'white' ? '#DC8350' : 'white'
+  $(this).css('color', effectFontColor)
+}
+
+const selectDrumEffect = function(effect) {
+  return function() {
+    effect.wet.value = effect.wet.value === 0 ? .5 : 0
+  }
+}
 
 const setupSequencers = () => {
   $("#start").on('click', start)
@@ -527,14 +510,15 @@ const setupSequencers = () => {
   $("#kick-select").on('change', selectKick)
   $("#lead-effect-select").on('change', selectLeadEffect)
   $("#bass-effect-select").on('change', selectBassEffect)
-  // $("#cymbal-effect-select").on('change', selectCymbalEffect)
-  // $("#clap-effect-select").on('change', selectClapEffect)
-  // $("#shaker-effect-select").on('change', selectShakerEffect)
-  // $("#oh-effect-select").on('change', selectOpenHatEffect)
-  // $("#ch-effect-select").on('change', selectClosedHatEffect)
-  // $("#perc-effect-select").on('change', selectPercEffect)
-  // $("#snare-effect-select").on('change', selectSnareEffect)
-  $("#kick-effect-select").on('change', selectKickEffect)
+  $(".drum-effect").on('click', toggleEffectFontColor)
+  $("#drum-delay").on('click', selectDrumEffect(drumDelay))
+  $("#drum-reverb").on('click', selectDrumEffect(drumReverb))
+  $("#drum-phaser").on('click', selectDrumEffect(drumPhaser))
+  $("#drum-chorus").on('click', selectDrumEffect(drumChorus))
+  $("#drum-distortion").on('click', selectDrumEffect(drumDistortion))
+  $("#drum-bitcrusher").on('click', selectDrumEffect(drumBitcrusher))
+  $("#drum-autofilter").on('click', selectDrumEffect(drumAutofilter))
+  $("#drum-pingpong").on('click', selectDrumEffect(drumPingpong))
 }
 
 socket.on('connect', () => {

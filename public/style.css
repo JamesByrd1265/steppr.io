@@ -146,7 +146,6 @@ option:checked {
   background-color: #46ABAA;
   border: 1px solid #46ABAA;
   border-top: 0;
-  overflow: hidden;
 }
 
 .vol-slider rect {
@@ -271,10 +270,18 @@ option {
   background-color: #46ABAA;
 }
 
-#drum-effect-select option {
-  margin: 0;
-  padding: .6em;
-  height: 8px;
+
+.drum-effect {
+  border: none;
+  background-color: #46ABAA;
+  color: white;
+  font-size: 18px;
+  width: 140px;
+  padding: .75em;
+}
+
+.drum-effect:focus {
+  outline: none;
 }
 
 #drum-select-header {
