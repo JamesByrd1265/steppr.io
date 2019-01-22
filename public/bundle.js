@@ -171,74 +171,159 @@ drumPingpong.wet.value = 0;
 const drumOnLoad = () => console.log('drum samples loaded');
 const drumSamples = {
   "C1": "RIDE-909.wav",
-  "C2": "SPLASH.wav",
-  "C3": "CRASH.wav",
+  "C2": "RIDE-707.wav",
+  "C3": "RIDE-METAL.wav",
+  "C4": "SPLASH.wav",
+  "C5": "CRASH.wav",
+  "C6": "CRASH-707.wav",
+  "C7": "CHIMES.wav",
+  "C8": "NOISE.wav",
   "D1": "CLAP-909.wav",
+  "D2": "CLAP-909-SHORT.wav",
+  "D3": "CLAP-NOISE.wav",
+  "D4": "CLAP-NOISE-FILT.wav",
+  "D5": "CLAP-NOISE-HI.wav",
+  "D6": "CLAP-SWEEP.wav",
+  "D7": "CLAP-HI-SWEEP.wav",
+  "D8": "CLAP-UFO.wav",
   "E1": "MARACAS.wav",
+  "E2": "MARACAS-808.wav",
+  "E3": "SHAKER.wav",
+  "E4": "SHAKER-SP1200.wav",
+  "E5": "CABASA.wav",
+  "E6": "AGOGO.wav",
+  "E7": "QUIJADA.wav",
+  "E8": "SHAKER-NOISE.wav",
   "F1": "OH-909.wav",
-  "F#1": 'CH-78.wav',
-  'F#2': 'CH-RTM.wav',
-  'F#3': 'CH-909.wav',
-  'F#4': 'CH-METAL.wav',
+  "F2": "OH-909-SHORT.wav",
+  "F3": "OH-808.wav",
+  "F4": "OH-CR78.wav",
+  "F5": "OH-SDS800.wav",
+  "F6": "OH-SP1200.wav",
+  "F7": "OH-NOISE.wav",
+  "F8": "OH-78-NOISE.wav",
+  "F#1": "CH-78.wav",
+  "F#2": "CH-RTM.wav",
+  "F#3": "CH-909.wav",
+  "F#4": "CH-909-COLOR.wav",
+  "F#5": "CH-808.wav",
+  "F#6": "CH-727.wav",
+  "F#7": "CH-METAL.wav",
+  "F#8": "CH-SDS800.wav",
   "G1": "BONGO.wav",
-  "G2": "CONGA.wav",
-  "G3": "CONGA-HI.wav",
-  "G4": "TIMBALE.wav",
-  "G5": "TIMBALE-FLAM.wav",
+  "G2": "BONGO-727.wav",
+  "G3": "CONGA.wav",
+  "G4": "CONGA-HI.wav",
+  "G5": "CONGA-LOW.wav",
+  "G6": "CONGA-CR78.wav",
+  "G7": "TIMBALE.wav",
+  "G8": "TIMBALE-FLAM.wav",
   "A1": "SD-808.wav",
-  "A2": "SD-909-MPC.wav",
-  "A3": "SD-909.wav",
-  "A4": "SD-909-COLORED.wav",
-  "A5": "RIM-808.wav",
+  "A2": "SD-909.wav",
+  "A3": "SD-909-COLORED.wav",
+  "A4": "SD-707.wav",
+  "A5": "SD-CR78.wav",
+  "A6": "SD-SP1200.wav",
+  "A7": "RIM-808.wav",
+  "A8": "RIM-CR78.wav",
   "B1": "BD-78.wav",
   "B2": "BD-RTM.wav",
   "B3": "BD-707.wav",
-  "B4": "BD-808.wav"
+  "B4": "BD-808.wav",
+  "B5": "BD-808-ACCENT.wav",
+  "B6": "BD-909.wav",
+  "B7": "BD-909-LONG.wav",
+  "B8": "BD-909-DIRTY.wav"
 };
 
 const drums = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Sampler(drumSamples, drumOnLoad, '/drum-samples/').chain(drumDelay, drumReverb, drumPhaser, drumChorus, drumDistortion, drumBitcrusher, drumAutofilter, drumPingpong, tone__WEBPACK_IMPORTED_MODULE_4___default.a.Master);
 
-console.log('drums: ', drums);
+const cymbals = {
+  RIDE_909: 'C1',
+  RIDE_707: 'C2',
+  RIDE_METAL: 'C3',
+  SPLASH: 'C4',
+  CRASH: 'C5',
+  CRASH_707: 'C6',
+  CHIMES: 'C7',
+  NOISE: 'C8'
+};
+
+const claps = {
+  CLAP_909: 'D1',
+  CLAP_909_SHORT: 'D2',
+  CLAP_NOISE: 'D3',
+  CLAP_NOISE_FILT: 'D4',
+  CLAP_NOISE_HI: 'D5',
+  CLAP_SWEEP: 'D6',
+  CLAP_HI_SWEEP: 'D7',
+  CLAP_UFO: 'D8'
+};
+
+const shakers = {
+  MARACAS: 'E1',
+  MARACAS_808: 'E2',
+  SHAKER: 'E3',
+  SHAKER_SP1200: 'E4',
+  CABASA: 'E5',
+  AGOGO: 'E6',
+  QUIJADA: 'E7',
+  SHAKER_NOISE: 'E8'
+};
+
+const openHats = {
+  OH_909: 'F1',
+  OH_909_SHORT: 'F2',
+  OH_808: 'F3',
+  OH_CR78: 'F4',
+  OH_SDS800: 'F5',
+  OH_SP1200: 'F6',
+  OH_NOISE: 'F7',
+  OH_78_NOISE: 'F8'
+};
+
+const closedHats = {
+  CH_78: 'F#1',
+  CH_RTM: 'F#2',
+  CH_909: 'F#3',
+  CH_909_COLOR: 'F#4',
+  CH_808: 'F#5',
+  CH_727: 'F#6',
+  CH_METAL: 'F#7',
+  CH_SDS800: 'F#8'
+};
+
+const percussion = {
+  BONGO: 'G1',
+  BONGO_727: 'G2',
+  CONGA: 'G3',
+  CONGA_HI: 'G4',
+  CONGA_LOW: 'G5',
+  CONGA_CR78: 'G6',
+  TIMBALE: 'G7',
+  TIMBALE_FLAM: 'G8'
+};
+
+const snares = {
+  SD_808: 'A1',
+  SD_909: 'A2',
+  SD_909_COLORED: 'A3',
+  SD_707: 'A4',
+  SD_CR78: 'A5',
+  SD_SP1200: 'A6',
+  RIM_808: 'A7',
+  RIM_CR78: 'A8'
+};
 
 const kicks = {
   BD_78: 'B1',
   BD_RTM: 'B2',
   BD_707: 'B3',
-  BD_808: 'B4'
-};
-const snares = {
-  SD_808: 'A1',
-  SD_909_MPC: 'A2',
-  SD_909: 'A3',
-  SD_909_COLORED: 'A4',
-  RIM_808: 'A5'
-};
-const percussion = {
-  BONGO: 'G1',
-  CONGA: 'G2',
-  CONGA_HI: 'G3',
-  TIMBALE: 'G4',
-  TIMBALE_FLAM: 'G5'
-};
-const closedHats = {
-  CH_78: 'F#1',
-  CH_RTM: 'F#2',
-  CH_909: 'F#3',
-  CH_METAL: 'F#4'
-};
-const openHats = {
-  OH_909: 'F1'
-};
-const shakers = {
-  MARACAS: 'E1'
-};
-const claps = {
-  CLAP_909: 'D1'
-};
-const cymbals = {
-  RIDE_909: 'C1',
-  SPLASH: 'C2',
-  CRASH: 'C3'
+  BD_808: 'B4',
+  BD_808_ACCENT: 'B5',
+  BD_909: 'B6',
+  BD_909_LONG: 'B7',
+  BD_909_DIRTY: 'B8'
 };
 
 let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,

@@ -154,6 +154,7 @@ option:checked {
 
 .vol-slider rect {
   fill: rgba(255, 255, 255, .64);
+
 }
 
 .vol-slider rect:nth-child(2) {
@@ -362,7 +363,7 @@ path:nth-child(5) {
 
 #copyright {
   width: 100vw;
-  margin-bottom: 1em;
+  margin-bottom: 2.2em;
   font-size: 1.5em;
   font-family: 'Poppins';
   font-weight: lighter;
