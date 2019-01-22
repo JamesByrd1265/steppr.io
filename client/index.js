@@ -45,7 +45,6 @@ const {
   pingpong
 } = synthEffects
 
-
 const drumDelay = new Tone.FeedbackDelay()
 const drumReverb = new Tone.Freeverb()
 const drumPhaser = new Tone.Phaser()
@@ -54,15 +53,6 @@ const drumDistortion = new Tone.Distortion()
 const drumBitcrusher = new Tone.BitCrusher()
 const drumAutofilter = new Tone.AutoFilter()
 const drumPingpong = new Tone.PingPongDelay()
-
-// drumDelay.wet.value = .3
-// drumReverb.wet.value = .8
-// drumPhaser.wet.value = 1
-// drumChorus.wet.value = 1
-// drumDistortion.wet.value = 1
-// drumBitcrusher.wet.value = 1
-// drumAutofilter.wet.value = 1
-// drumPingpong.wet.value = .4
 
 drumDelay.wet.value = 0
 drumReverb.wet.value = 0
@@ -484,15 +474,31 @@ const start = () => {
   }
 }
 
-let effectFontColor = 'white'
-const toggleEffectFontColor = function() {
-  effectFontColor = effectFontColor === 'white' ? '#DC8350' : 'white'
-  $(this).css('color', effectFontColor)
+let effectFontColors = {
+  'delay': 'white',
+  'reverb': 'white',
+  'phaser': 'white',
+  'chorus': 'white',
+  'distortion': 'white',
+  'bitcrusher': 'white',
+  'autofilter': 'white',
+  'pingpong': 'white'
 }
 
-const selectDrumEffect = function(effect) {
-  return function() {
-    effect.wet.value = effect.wet.value === 0 ? .5 : 0
+const toggleDrumEffect = function(effect, text) {
+  return () => {
+    console.log(effectFontColors[text])
+    let currentText = "#drum-" + text
+    console.log(currentText)
+    if(effect.wet.value === 0) {
+      effect.wet.value = .5
+      $(currentText).css('font-weight', 'bold')
+      $(currentText).css('color', '#F29854')
+    } else {
+      effect.wet.value = 0
+      $(currentText).css('font-weight', 'normal')
+      $(currentText).css('color', 'white')
+    }
   }
 }
 
@@ -510,15 +516,14 @@ const setupSequencers = () => {
   $("#kick-select").on('change', selectKick)
   $("#lead-effect-select").on('change', selectLeadEffect)
   $("#bass-effect-select").on('change', selectBassEffect)
-  $(".drum-effect").on('click', toggleEffectFontColor)
-  $("#drum-delay").on('click', selectDrumEffect(drumDelay))
-  $("#drum-reverb").on('click', selectDrumEffect(drumReverb))
-  $("#drum-phaser").on('click', selectDrumEffect(drumPhaser))
-  $("#drum-chorus").on('click', selectDrumEffect(drumChorus))
-  $("#drum-distortion").on('click', selectDrumEffect(drumDistortion))
-  $("#drum-bitcrusher").on('click', selectDrumEffect(drumBitcrusher))
-  $("#drum-autofilter").on('click', selectDrumEffect(drumAutofilter))
-  $("#drum-pingpong").on('click', selectDrumEffect(drumPingpong))
+  $("#drum-delay").on('click', toggleDrumEffect(drumDelay, 'delay'))
+  $("#drum-reverb").on('click', toggleDrumEffect(drumReverb, 'reverb'))
+  $("#drum-phaser").on('click', toggleDrumEffect(drumPhaser, 'phaser'))
+  $("#drum-chorus").on('click', toggleDrumEffect(drumChorus, 'chorus'))
+  $("#drum-distortion").on('click', toggleDrumEffect(drumDistortion, 'distortion'))
+  $("#drum-bitcrusher").on('click', toggleDrumEffect(drumBitcrusher, 'bitcrusher'))
+  $("#drum-autofilter").on('click', toggleDrumEffect(drumAutofilter, 'autofilter'))
+  $("#drum-pingpong").on('click', toggleDrumEffect(drumPingpong, 'pingpong'))
 }
 
 socket.on('connect', () => {

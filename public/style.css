@@ -42,6 +42,7 @@ body {
   font-size: 2em;
   color: white;
   padding: .1em .9em .1em .9em;
+  letter-spacing: 1px;
   position: absolute;
   align-self: center;
   background: #3D3D3D;
@@ -83,6 +84,7 @@ body {
 
 #tempo-header {
   margin-bottom: 0;
+  letter-spacing: 1px;
 }
 
 #lead-container {
@@ -123,6 +125,7 @@ body {
   width: 126px;
   color: white;
   font-size: 20px;
+  letter-spacing: 2px;
   text-align: center;
   padding: .1em .9em .1em .9em;
   background-color: #DC8350;
@@ -142,6 +145,7 @@ option:checked {
   color: white;
   font-size: 18px;
   text-align: center;
+  letter-spacing: 2px;
   padding-top: 1em;
   background-color: #46ABAA;
   border: 1px solid #46ABAA;
@@ -149,6 +153,10 @@ option:checked {
 }
 
 .vol-slider rect {
+  fill: rgba(255, 255, 255, .64);
+}
+
+.vol-slider rect:nth-child(2) {
   fill: #DC8350;
 }
 
@@ -259,12 +267,13 @@ option {
 .drum-select {
   outline: none;
   width: 8em;
-  margin-top: .714em;
+  margin-top: .72em;
   margin-bottom: .714em;
   width: 126px;
   color: white;
   font-size: 18px;
   text-align: center;
+  letter-spacing: 1px;
   text-align-last: center;
   padding: .1em .9em .1em .9em;
   background-color: #46ABAA;
@@ -272,12 +281,13 @@ option {
 
 
 .drum-effect {
+  letter-spacing: 1px;
   border: none;
   background-color: #46ABAA;
   color: white;
   font-size: 18px;
   width: 140px;
-  padding: .75em;
+  padding: .8em;
 }
 
 .drum-effect:focus {
