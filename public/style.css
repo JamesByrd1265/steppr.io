@@ -1,8 +1,3 @@
-/* 
-  blue:#46ABAA;
-  orange: #DC8350;
-*/
-
 body {
   position: fixed;
   width: 100%;
@@ -38,7 +33,7 @@ body {
 }
 
 #start {
-  right: 2.6em;
+  left: 2.9em;
   font-size: 2em;
   color: white;
   padding: .1em .9em .1em .9em;
@@ -50,21 +45,19 @@ body {
 }
 
 #tempo {
+  top: -.3em;
   position: absolute;
   right: 5em; 
-  margin: 13em 0;
   display: inline-block; 
   align-items: center;
 }
 
 #tempo-select {
-  padding: 2.2em;
+  position: relative;
+  left: 2.42em;
+  padding-top: .2em;
   margin: 0;
-  border: solid black 1px;
   align-self: center;
-  background: #46ABAA;
-  border: 1px solid #46ABAA;
-  border-top: 0;
 }
 
 .synth-container {
@@ -83,23 +76,27 @@ body {
 }
 
 #tempo-header {
+  background-color: rgba(255,255,255,0);
+  border-bottom: none;
   margin-bottom: 0;
   letter-spacing: 1px;
+  font-size: 1.55em;
 }
 
 #lead-container {
   display: inline-block;
   margin-left: 1.8em;
+  margin-right: 3em;
 }
 
 .sequencer-header {
-  width: 800px;
+  width: 940px;
   margin-left: 2.5em;
   background-color: #46ABAA;
 }
 
 #drum-seq-header {
-  width: 1684px;
+  width: 1934px;
   background-color: #46ABAA;
 }
 
@@ -193,6 +190,8 @@ option {
 }
 
 #bass-container {
+  padding-right: 10m;
+  margin-left: 3.8em;
   display: inline-block;
   align-items: right;
 }
@@ -217,7 +216,11 @@ option {
 }
 
 #bass-select-container {
+  position: relative;
+  right: -5.48em;
+  padding-left: 3.3em;
   margin-left: 21em;
+  margin-right: 0;
 }
 
 .effect {
@@ -333,7 +336,7 @@ h2 {
 }
 
 circle {
-  stroke: #46ABAA;
+  stroke: #3D3D3D;
   stroke-width: .3em;
 }
 
@@ -342,8 +345,8 @@ path:nth-child(1) {
 }
 
 path:nth-child(4) {
-  fill: #DC8350;
-  fill-opacity: 1;
+  fill: #46ABAA;
+  fill-opacity: 0;
 }
 
 path:nth-child(5) {
