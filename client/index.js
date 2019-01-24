@@ -25,7 +25,7 @@ tempo.colorize('border', '#3D3D3D')
 let sequencer = {'size': [940, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8}
 const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)
 const bassSeq = new Nexus.Sequencer('#bass-seq', sequencer)
-const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [1934,400], 'mode': 'toggle', 'rows': 8, 'columns': 16})
+const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [1932,400], 'mode': 'toggle', 'rows': 8, 'columns': 16})
 
 let leadSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
 let bassSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
@@ -682,9 +682,36 @@ socket.on('selectKick', data => {
   kick = kicks[data]
 })
 
+
+const resizeSequencersResponsively = () => {
+  const maxW2545 = window.matchMedia('(max-width: 2545px)')
+  const minW2546 = window.matchMedia('(min-width: 2546px)')
+  maxW2545.addListener(e => {
+    if(e.matches) {
+      let synthWidth = 900, drumWidth = 1910
+      leadSeq.resize(synthWidth, 400)
+      bassSeq.resize(synthWidth, 400)
+      $(".sequencer-header").width(synthWidth)
+      // $("#bass-seq").css('padding-left', 0)
+      drumSeq.resize(drumWidth, 400)
+      $("#drum-seq-header").width(drumWidth)
+    }
+  })
+  minW2546.addListener(e => {
+    if(e.matches) {
+      leadSeq.resize(940, 400)
+      bassSeq.resize(940, 400)
+      $(".sequencer-header").width(940)
+      drumSeq.resize(1934, 400)
+      $("#drum-seq-header").width(1934)
+    }
+  })
+}
+
 const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
+  // resizeSequencersResponsively()
 }
 
 document.addEventListener('DOMContentLoaded', setup)

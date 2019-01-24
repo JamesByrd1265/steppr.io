@@ -47,7 +47,7 @@ body {
 #tempo {
   top: -.3em;
   position: absolute;
-  right: 5em; 
+  right: 5.1em; 
   display: inline-block; 
   align-items: center;
 }
@@ -60,18 +60,17 @@ body {
   align-self: center;
 }
 
-.synth-container {
+#synth-container {
   position: relative;
-  width: 44%;
+  width: 100vw;
   margin-top: 12vh;
-  display: inline-flex;
   align-items: center;
   height: 544px;
+  display: inline-block;
+  justify-content: center;
 }
 
 .sequencer {
-  width: 50%;
-  margin: 0;
   display: inline-block;
 }
 
@@ -84,9 +83,8 @@ body {
 }
 
 #lead-container {
-  display: inline-block;
   margin-left: 1.8em;
-  margin-right: 3em;
+  display: inline-block;
 }
 
 .sequencer-header {
@@ -96,7 +94,7 @@ body {
 }
 
 #drum-seq-header {
-  width: 1934px;
+  width: 1932px;
   background-color: #46ABAA;
 }
 
@@ -179,7 +177,6 @@ option {
 
 #lead-seq {
   margin: 0;
-  margin-right: 9em;
   display: inline-block;
   padding-left: 40px;
 }
@@ -190,10 +187,8 @@ option {
 }
 
 #bass-container {
-  padding-right: 10m;
-  margin-left: 3.8em;
+  padding-left: .42em;
   display: inline-block;
-  align-items: right;
 }
 
 .select-container {
@@ -206,7 +201,7 @@ option {
 }
 
 #bass-seq {
-  padding-left: 40px;
+  padding-left: 2.5em;
   display: inline-block;
 }
 
@@ -217,10 +212,6 @@ option {
 
 #bass-select-container {
   position: relative;
-  right: -5.48em;
-  padding-left: 3.3em;
-  margin-left: 21em;
-  margin-right: 0;
 }
 
 .effect {
