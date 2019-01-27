@@ -777,27 +777,44 @@ socket.on('selectKick', data => {
   kick = kicks[data];
 });
 
+const mqws = ['', '', '', '', '', '', '', '', '', '', window.matchMedia('(max-width: 2254px'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px)'), window.matchMedia('(min-width: 2497px)')];
+
 const resizeSequencersResponsively = () => {
-  const maxW2496 = window.matchMedia('(max-width: 2496px)');
-  const minW2497 = window.matchMedia('(min-width: 2497px)');
-  maxW2496.addListener(e => {
+  mqws[11].addListener(e => {
     if (e.matches) {
-      let synthWidth = 900,
+      let synthWidth = 860,
           drumWidth = 1851;
-      leadSeq.resize(synthWidth, 400);
-      bassSeq.resize(synthWidth, 400);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".sequencer-header").width(synthWidth);
-      // $("#bass-seq").css('padding-left', 0)
-      drumSeq.resize(drumWidth, 400);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth);
+      leadSeq.resize(820, 400);
+      bassSeq.resize(820, 400);
+      drumSeq.resize(1693, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693);
     }
   });
-  minW2497.addListener(e => {
+  mqws[12].addListener(e => {
+    if (e.matches) {
+      leadSeq.resize(860, 400);
+      bassSeq.resize(860, 400);
+      drumSeq.resize(1772, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772);
+    }
+  });
+  mqws[13].addListener(e => {
+    if (e.matches) {
+      leadSeq.resize(900, 400);
+      bassSeq.resize(900, 400);
+      drumSeq.resize(1851, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851);
+    }
+  });
+  mqws[14].addListener(e => {
     if (e.matches) {
       leadSeq.resize(940, 400);
       bassSeq.resize(940, 400);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".sequencer-header").width(940);
       drumSeq.resize(1932, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932);
     }
   });
@@ -806,6 +823,37 @@ const resizeSequencersResponsively = () => {
 const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
+  const resizeSequencers = () => {
+    if (mqws[11].matches) {
+      leadSeq.resize(820, 400);
+      bassSeq.resize(820, 400);
+      drumSeq.resize(1693, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693);
+    }
+    if (mqws[12].matches) {
+      leadSeq.resize(860, 400);
+      bassSeq.resize(860, 400);
+      drumSeq.resize(1772, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772);
+    }
+    if (mqws[13].matches) {
+      leadSeq.resize(900, 400);
+      bassSeq.resize(900, 400);
+      drumSeq.resize(1851, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851);
+    }
+    if (mqws[14].matches) {
+      leadSeq.resize(940, 400);
+      bassSeq.resize(940, 400);
+      drumSeq.resize(1932, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932);
+    }
+  };
+  resizeSequencers();
   resizeSequencersResponsively();
 };
 
