@@ -777,88 +777,55 @@ socket.on('selectKick', data => {
   kick = kicks[data];
 });
 
-const mqws = ['', '', '', '', '', '', '', '', window.matchMedia('(min-width: 2015px) and (max-width: 2094px'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px)'), window.matchMedia('(min-width: 2497px)')];
+const mqws = ['', '', '', '', '', '', window.matchMedia('(min-width: 1975px) and (max-width: 2014px'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px)'), window.matchMedia('(min-width: 2497px)')];
 
 const resizeSequencersResponsively = () => {
-  // mqws[0].addListener(e => {
-  //   if(e.matches) {
-  //     leadSeq.resize(820, 400)
-  //     bassSeq.resize(820, 400)
-  //     drumSeq.resize(1693, 400)
-  //     $(".synth-seq-header").width(820)
-  //     $("#drum-seq-header").width(1693)
-  //   }
-  // })  
-  // mqws[1].addListener(e => {
-  //   if(e.matches) {
-  //     leadSeq.resize(820, 400)
-  //     bassSeq.resize(820, 400)
-  //     drumSeq.resize(1693, 400)
-  //     $(".synth-seq-header").width(820)
-  //     $("#drum-seq-header").width(1693)
-  //   }
-  // })
-  // mqws[2].addListener(e => {
-  //   if(e.matches) {
-  //     leadSeq.resize(820, 400)
-  //     bassSeq.resize(820, 400)
-  //     drumSeq.resize(1693, 400)
-  //     $(".synth-seq-header").width(820)
-  //     $("#drum-seq-header").width(1693)
-  //   }
-  // })
-  // mqws[3].addListener(e => {
-  //   if(e.matches) {
-  //     leadSeq.resize(820, 400)
-  //     bassSeq.resize(820, 400)
-  //     drumSeq.resize(1693, 400)
-  //     $(".synth-seq-header").width(820)
-  //     $("#drum-seq-header").width(1693)
-  //   }
-  // })
-  // mqws[4].addListener(e => {
-  //   if(e.matches) {
-  //     leadSeq.resize(820, 400)
-  //     bassSeq.resize(820, 400)
-  //     drumSeq.resize(1693, 400)
-  //     $(".synth-seq-header").width(820)
-  //     $("#drum-seq-header").width(1693)
-  //   }
-  // })
-  // mqws[5].addListener(e => {
-  //   if(e.matches) {
-  //     leadSeq.resize(820, 400)
-  //     bassSeq.resize(820, 400)
-  //     drumSeq.resize(1693, 400)
-  //     $(".synth-seq-header").width(820)
-  //     $("#drum-seq-header").width(1693)
-  //   }
-  // })
-  // mqws[6].addListener(e => {
-  //   if(e.matches) {
-  //     leadSeq.resize(820, 400)
-  //     bassSeq.resize(820, 400)
-  //     drumSeq.resize(1693, 400)
-  //     $(".synth-seq-header").width(820)
-  //     $("#drum-seq-header").width(1693)
-  //   }
-  // })
-  // mqws[7].addListener(e => {
-  //   if(e.matches) {
-  //     leadSeq.resize(820, 400)
-  //     bassSeq.resize(820, 400)
-  //     drumSeq.resize(1693, 400)
-  //     $(".synth-seq-header").width(820)
-  //     $("#drum-seq-header").width(1693)
-  //   }
-  // })
+  mqws[6].addListener(e => {
+    if (e.matches) {
+      leadSeq.resize(680, 400);
+      bassSeq.resize(680, 400);
+      drumSeq.resize(1412.5, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(150);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '3.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(154).css('margin-right', '4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(154).css('margin-left', '3.45em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(116);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(118);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(120);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(150);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.9em');
+    }
+  });
+  mqws[7].addListener(e => {
+    if (e.matches) {
+      leadSeq.resize(700, 400);
+      bassSeq.resize(700, 400);
+      drumSeq.resize(1454, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(154);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(158);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(158);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(120);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(122);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(122);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(154);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.95em');
+    }
+  });
   mqws[8].addListener(e => {
     if (e.matches) {
       leadSeq.resize(720, 400);
       bassSeq.resize(720, 400);
       drumSeq.resize(1493.5, 400);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5); //-39.5
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(158);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(160);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(160);
@@ -926,17 +893,49 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
+    if (mqws[6].matches) {
+      leadSeq.resize(680, 400);
+      bassSeq.resize(680, 400);
+      drumSeq.resize(1412.5, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(150);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(154).css('margin-right', '4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(154).css('margin-left', '3.45em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(116);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(118);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(118);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(150);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.9em');
+    }
+    if (mqws[7].matches) {
+      leadSeq.resize(700, 400);
+      bassSeq.resize(700, 400);
+      drumSeq.resize(1454, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(154);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(158);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(158);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(120);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(122);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(122);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(154);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.95em');
+    }
     if (mqws[8].matches) {
       leadSeq.resize(720, 400);
       bassSeq.resize(720, 400);
       drumSeq.resize(1493.5, 400);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(158);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(160);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(160);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(124);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(158);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(158); //orig 162
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(160); //
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(160); //
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(124); //126
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(158); ///162
     }
     if (mqws[9].matches) {
       leadSeq.resize(740, 400);
