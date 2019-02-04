@@ -131,6 +131,8 @@ option:checked {
   box-shadow: 0 0 10px 100px #DC8350 inset;
   height: 1em;
   margin-bottom: .8em;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .list-select {
@@ -143,7 +145,6 @@ option:checked {
   letter-spacing: 2px;
   padding-top: 1em;
   background-color: #46ABAA;
-  border: 1px solid #46ABAA;
   border-top: 0;
 }
 
