@@ -229,7 +229,7 @@ option {
 #drum-container {
   position: relative;
   display: inline-flex;
-  margin-left: .5em;
+  margin-left: .48em;
 }
 
 #drum-seq-container {
