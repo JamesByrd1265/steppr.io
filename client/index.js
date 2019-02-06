@@ -683,34 +683,34 @@ socket.on('selectKick', data => {
 })
 
 const mqws = [
-  window.matchMedia('(min-width: 595px) and (max-width: 634px'),    //0
-  window.matchMedia('(min-width: 635px) and (max-width: 674px'),    //1
-  window.matchMedia('(min-width: 675px) and (max-width: 714px'),    //2
-  window.matchMedia('(min-width: 715px) and (max-width: 754px'),    //3
-  window.matchMedia('(min-width: 755px) and (max-width: 794px'),    //4
-  window.matchMedia('(min-width: 795px) and (max-width: 834px'),    //5
-  window.matchMedia('(min-width: 835px) and (max-width: 874px'),   //6
-  window.matchMedia('(min-width: 875px) and (max-width: 914px'),  //7
-  window.matchMedia('(min-width: 915px) and (max-width: 954px'),  //8
-  window.matchMedia('(min-width: 955px) and (max-width: 1094px'),  //9
-  window.matchMedia('(min-width: 1095px) and (max-width: 1134px'),  //10
-  window.matchMedia('(min-width: 1135px) and (max-width: 1274px'),  //11
-  window.matchMedia('(min-width: 1175px) and (max-width: 1214px'),  //12
-  window.matchMedia('(min-width: 1215px) and (max-width: 1254px'),  //13
-  window.matchMedia('(min-width: 1255px) and (max-width: 1294px'),  //14
-  window.matchMedia('(min-width: 1295px) and (max-width: 1334px'),  //15
-  window.matchMedia('(min-width: 1335px) and (max-width: 1374px'),  //16
-  window.matchMedia('(min-width: 1375px) and (max-width: 1414px'),  //17
-  window.matchMedia('(min-width: 1415px) and (max-width: 1454px'),  //18
-  window.matchMedia('(min-width: 1455px) and (max-width: 1494px'),  //19
-  window.matchMedia('(min-width: 1495px) and (max-width: 1534px'),  //20
-  window.matchMedia('(min-width: 1535px) and (max-width: 1574px'),  //21
-  window.matchMedia('(min-width: 1575px) and (max-width: 1614px'),  //22
-  window.matchMedia('(min-width: 1615px) and (max-width: 1654px'),  //23
-  window.matchMedia('(min-width: 1655px) and (max-width: 1694px'),  //24
-  window.matchMedia('(min-width: 1695px) and (max-width: 1734px'),  //25
-  window.matchMedia('(min-width: 1735px) and (max-width: 1774px'),  //26
-  window.matchMedia('(min-width: 1775px) and (max-width: 1814px'),  //27
+  // window.matchMedia('(min-width: x) and (max-width: 634px'),    //0
+  // window.matchMedia('(min-width: x) and (max-width: 674px'),    //1
+  // window.matchMedia('(min-width: x) and (max-width: 714px'),    //2
+  // window.matchMedia('(min-width: x) and (max-width: 754px'),    //3
+  // window.matchMedia('(min-width: x) and (max-width: 794px'),    //4
+  // window.matchMedia('(min-width: x) and (max-width: 834px'),    //5
+  // window.matchMedia('(min-width: x) and (max-width: 874px'),   //6
+  // window.matchMedia('(min-width: x) and (max-width: 914px'),  //7
+  // window.matchMedia('(min-width: x) and (max-width: 954px'),  //8
+  // window.matchMedia('(min-width: x) and (max-width: 1094px'),  //9
+  // window.matchMedia('(min-width: px) and (max-width: 1134px'),  //10
+  // window.matchMedia('(min-width: px) and (max-width: 1274px'),  //11
+  // window.matchMedia('(min-width: px) and (max-width: 1214px'),  //12
+  // window.matchMedia('(min-width: px) and (max-width: 1254px'),  //13
+  // window.matchMedia('(min-width: px) and (max-width: 1294px'),  //14
+  // window.matchMedia('(min-width: px) and (max-width: 1334px'),  //15
+  // window.matchMedia('(min-width: px) and (max-width: 1374px'),  //16
+  // window.matchMedia('(min-width: px) and (max-width: 1414px'),  //17
+  // window.matchMedia('(min-width: px) and (max-width: 1454px'),  //18
+  // window.matchMedia('(min-width: px) and (max-width: 1494px'),  //19
+  // window.matchMedia('(min-width: px) and (max-width: 1534px'),  //20
+  // window.matchMedia('(min-width: px) and (max-width: 1574px'),  //21
+  // window.matchMedia('(min-width: px) and (max-width: 1614px'),  //22
+  // window.matchMedia('(min-width: px) and (max-width: 1654px'),  //23
+  // window.matchMedia('(min-width: px) and (max-width: 1694px'),  //24
+  // window.matchMedia('(min-width: px) and (max-width: 1734px'),  //25
+  window.matchMedia('(min-width: 1700px) and (max-width: 1764px'),  //26
+  window.matchMedia('(min-width: 1765px) and (max-width: 1814px'),  //27
   window.matchMedia('(min-width: 1815px) and (max-width: 1854px'),  //28
   window.matchMedia('(min-width: 1855px) and (max-width: 1894px'),  //29
   window.matchMedia('(min-width: 1895px) and (max-width: 1934px'),  //30
@@ -727,6 +727,31 @@ const mqws = [
 ]
 
 const resizeSequencersResponsively = () => {
+  mqws[27].addListener(e => {
+    if(e.matches) {
+      leadSeq.resize(616, 400)
+      bassSeq.resize(616, 400)
+      drumSeq.resize(1274.5, 400)
+      $(".synth-seq-header").width(616)
+      $("#drum-seq-header").width(1274.5)
+      $(".synth-seq-header").width(616)
+      $("#drum-seq-header").width(1274.5)
+      $('.list-select').width(140)
+      $('#drum-select-container').width(142).css('margin-right', '2.6em').css('margin-left', '74.5px')
+      $('#drum-effect-container').width(142).css('margin-left', '2.6em')
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '1.45em')
+      $('#bass-seq').css('padding-left', '2em')
+      $('#bass-seq-header').css('margin-left', '2em')
+      $('#bass-select-container').css('margin-left', '2.6em')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.sub-header').width(104)
+      $('#drum-effect-header').width(106)
+      $('#drum-select-header').width(106)
+      $('.effect').width(138)
+      $('#start').css('font-size', '1.6em').css('margin-left', '.3em')
+    }
+  })
   mqws[28].addListener(e => {
     if(e.matches) {
       leadSeq.resize(617.5, 400)
@@ -932,6 +957,29 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
+    if(mqws[26].matches) {
+      leadSeq.resize(614, 400)
+      bassSeq.resize(614, 400)
+      drumSeq.resize(1271, 400)
+      $(".synth-seq-header").width(614)
+      $("#drum-seq-header").width(1271)
+      $(".synth-seq-header").width(614)
+      $("#drum-seq-header").width(1271)
+      $('.list-select').width(138)
+      $('#drum-select-container').width(140).css('margin-right', '2.6em').css('margin-left', '67.5px')
+      $('#drum-effect-container').width(140).css('margin-left', '2.6em')
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '1em')
+      $('#bass-seq').css('padding-left', '2em')
+      $('#bass-seq-header').css('margin-left', '2em')
+      $('#bass-select-container').css('margin-left', '2.6em')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.sub-header').width(102)
+      $('#drum-effect-header').width(104)
+      $('#drum-select-header').width(104)
+      $('.effect').width(136)
+      $('#start').css('font-size', '1.6em').css('margin-left', '.3em')
+    }
     if(mqws[27].matches) {
       leadSeq.resize(616, 400)
       bassSeq.resize(616, 400)
