@@ -22,6 +22,10 @@ body {
   background: radial-gradient(2541.00px at 99.65% 49.73%, #B46A3F 0%, #DC7E50 13.14%, rgba(220, 131, 80, 0.86) 25.41%, #DC8350 50.74%, #CE7846 73.58%, #DC8350 87.19%, #B46A3F 100%); 
 }
 
+.select-sub-header {
+  font-size: 18px;
+}
+
 #header {
   width: 100vw;
   margin-top: .8em;
@@ -115,7 +119,7 @@ body {
   margin-right: 5em;
 }
 
-.sub-header {
+.select-header {
   margin-bottom: 0;
   width: 126px;
   color: white;
@@ -268,6 +272,7 @@ option {
   width: 126px;
   color: white;
   font-size: 18px;
+  font-weight: lighter;
   text-align: center;
   letter-spacing: 1px;
   text-align-last: center;

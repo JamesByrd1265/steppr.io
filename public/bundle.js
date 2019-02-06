@@ -777,35 +777,34 @@ socket.on('selectKick', data => {
   kick = kicks[data];
 });
 
-const mqws = [
-// window.matchMedia('(min-width: x) and (max-width: 634px'),    //0
-// window.matchMedia('(min-width: x) and (max-width: 674px'),    //1
-// window.matchMedia('(min-width: x) and (max-width: 714px'),    //2
-// window.matchMedia('(min-width: x) and (max-width: 754px'),    //3
-// window.matchMedia('(min-width: x) and (max-width: 794px'),    //4
-// window.matchMedia('(min-width: x) and (max-width: 834px'),    //5
-// window.matchMedia('(min-width: x) and (max-width: 874px'),   //6
-// window.matchMedia('(min-width: x) and (max-width: 914px'),  //7
-// window.matchMedia('(min-width: x) and (max-width: 954px'),  //8
-// window.matchMedia('(min-width: x) and (max-width: 1094px'),  //9
-// window.matchMedia('(min-width: px) and (max-width: 1134px'),  //10
-// window.matchMedia('(min-width: px) and (max-width: 1274px'),  //11
-// window.matchMedia('(min-width: px) and (max-width: 1214px'),  //12
-// window.matchMedia('(min-width: px) and (max-width: 1254px'),  //13
-// window.matchMedia('(min-width: px) and (max-width: 1294px'),  //14
-// window.matchMedia('(min-width: px) and (max-width: 1334px'),  //15
-// window.matchMedia('(min-width: px) and (max-width: 1374px'),  //16
-// window.matchMedia('(min-width: px) and (max-width: 1414px'),  //17
-// window.matchMedia('(min-width: px) and (max-width: 1454px'),  //18
-// window.matchMedia('(min-width: px) and (max-width: 1494px'),  //19
-// window.matchMedia('(min-width: px) and (max-width: 1534px'),  //20
-// window.matchMedia('(min-width: px) and (max-width: 1574px'),  //21
-// window.matchMedia('(min-width: px) and (max-width: 1614px'),  //22
-// window.matchMedia('(min-width: px) and (max-width: 1654px'),  //23
-// window.matchMedia('(min-width: px) and (max-width: 1694px'),  //24
-// window.matchMedia('(min-width: px) and (max-width: 1734px'),  //25
-window.matchMedia('(min-width: 1700px) and (max-width: 1764px'), //26
-window.matchMedia('(min-width: 1765px) and (max-width: 1814px'), //27
+const mqws = [window.matchMedia('(min-width: 595px) and (max-width: 634px'), //0
+window.matchMedia('(min-width: 635px) and (max-width: 674px'), //1
+window.matchMedia('(min-width: 675px) and (max-width: 714px'), //2
+window.matchMedia('(min-width: 715px) and (max-width: 754px'), //3
+window.matchMedia('(min-width: 755px) and (max-width: 794px'), //4
+window.matchMedia('(min-width: 795px) and (max-width: 834px'), //5
+window.matchMedia('(min-width: 835px) and (max-width: 874px'), //6
+window.matchMedia('(min-width: 875px) and (max-width: 914px'), //7
+window.matchMedia('(min-width: 915px) and (max-width: 954px'), //8
+window.matchMedia('(min-width: 955px) and (max-width: 1094px'), //9
+window.matchMedia('(min-width: 1095px) and (max-width: 1134px'), //10
+window.matchMedia('(min-width: 1135px) and (max-width: 1274px'), //11
+window.matchMedia('(min-width: 1175px) and (max-width: 1214px'), //12
+window.matchMedia('(min-width: 1215px) and (max-width: 1254px'), //13
+window.matchMedia('(min-width: 1255px) and (max-width: 1294px'), //14
+window.matchMedia('(min-width: 1295px) and (max-width: 1334px'), //15
+window.matchMedia('(min-width: 1335px) and (max-width: 1374px'), //16
+window.matchMedia('(min-width: 1375px) and (max-width: 1414px'), //17
+window.matchMedia('(min-width: 1415px) and (max-width: 1454px'), //18
+window.matchMedia('(min-width: 1455px) and (max-width: 1494px'), //19
+window.matchMedia('(min-width: 1495px) and (max-width: 1534px'), //20
+window.matchMedia('(min-width: 1535px) and (max-width: 1574px'), //21
+window.matchMedia('(min-width: 1575px) and (max-width: 1614px'), //22
+window.matchMedia('(min-width: 1615px) and (max-width: 1654px'), //23
+window.matchMedia('(min-width: 1655px) and (max-width: 1694px'), //24
+window.matchMedia('(min-width: 1695px) and (max-width: 1724px'), //25
+window.matchMedia('(min-width: 1725px) and (max-width: 1774px'), //26
+window.matchMedia('(min-width: 1775px) and (max-width: 1814px'), //27
 window.matchMedia('(min-width: 1815px) and (max-width: 1854px'), //28
 window.matchMedia('(min-width: 1855px) and (max-width: 1894px'), //29
 window.matchMedia('(min-width: 1895px) and (max-width: 1934px'), //30
@@ -822,6 +821,34 @@ window.matchMedia('(min-width: 2497px)') //40
 ];
 
 const resizeSequencersResponsively = () => {
+  mqws[26].addListener(e => {
+    if (e.matches) {
+      leadSeq.resize(614, 400);
+      bassSeq.resize(614, 400);
+      drumSeq.resize(1271, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(134);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '16px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(154);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(136).css('margin-right', '2.2em').css('margin-left', '61px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(136).css('margin-left', '2.2em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(100);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '.6em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '2em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '2em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '2.2em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(102).css('font-size', '18px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(104);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(104);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(132);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '0em');
+    }
+  });
   mqws[27].addListener(e => {
     if (e.matches) {
       leadSeq.resize(616, 400);
@@ -1060,20 +1087,24 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(138);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(140).css('margin-right', '2.6em').css('margin-left', '67.5px');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(140).css('margin-left', '2.6em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(134);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '16px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(154);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(136).css('margin-right', '2.2em').css('margin-left', '61px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(136).css('margin-left', '2.2em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(100);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '1em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '.6em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '2em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '2em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '2.6em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '2.2em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(102);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(102).css('font-size', '18px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(101);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(104);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(104);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(136);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '.3em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(132);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '0em');
     }
     if (mqws[27].matches) {
       leadSeq.resize(616, 400);
@@ -1092,7 +1123,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '2em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '2.6em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(104);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(104);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(106);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(106);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(138);
@@ -1114,7 +1145,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '2.3em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '3.4em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '.9em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(104);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(104);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(106);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(106);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(138);
@@ -1134,7 +1165,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '18px');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '2.5em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '1.1em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(104);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(104);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(106);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(106);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(138);
@@ -1153,7 +1184,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(146);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '24px');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '1.5em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(108);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(108);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(110);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(110);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(142);
@@ -1173,7 +1204,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(150);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '27px');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '1.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(112);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(112);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(114);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(114);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(146);
@@ -1191,7 +1222,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(152);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(154).css('margin-right', '4em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(154).css('margin-left', '3.45em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(116);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(116);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(118);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(118);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(150);
@@ -1209,7 +1240,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '2.25em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(158);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(158);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(120);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(120);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(122);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(122);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '60px');
@@ -1226,7 +1257,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(160); //orig 162
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(160); //
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(160); //
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sub-header').width(124); //126
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(124); //126
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(158); ///162
     }
     if (mqws[35].matches) {

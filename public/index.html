@@ -13,17 +13,17 @@
       <h1 id='header'>STEPPR  IO</h1>
       <div id='tempo'>
         <h3 id='tempo-header'
-          class='sub-header'>TEMPO</h3>
+          class='select-header'>TEMPO</h3>
         <div id='tempo-select'></div>
       </div>
     </div>
     <div id='jam-canvas'>
       <div id='synth-container'>
         <div id='lead-container' class='synth-container'>   
-          <div class=select-container>
+          <div id='lead-select-container' class=select-container>
             <h3 id='lead-select-header'
-                class='sub-header'>SYNTH</h3>
-            <select id='lead-select' class='list-select' size='6'>
+                class='select-header'>SYNTH</h3>
+            <select id='lead-select' class='list-select select-sub-header' size='6'>
               <option selected value='AM'>AM</option>
               <option value='POLY'>POLY</option>
               <option value='MEMBRANE'>MEMBRANE</option>
@@ -33,7 +33,7 @@
             </select>
             <select id='lead-effect-select' class=
               'effect
-              sub-header'>
+              select-header'>
               <option value='DRY' selected >DRY</option>
               <option value='DELAY'>DELAY</option>
               <option value='REVERB'>REVERB</option>
@@ -63,8 +63,8 @@
           </div>
           <div id=bass-select-container class='select-container'>
             <h3 id='bass-select-header'
-              class='sub-header'>BASS</h3>
-            <select id='bass-select' class='list-select' size='6'>
+              class='select-header'>BASS</h3>
+            <select id='bass-select' class='list-select select-sub-header' size='6'>
               <option selected value='AM'>AM</option>
               <option value='POLY'>POLY</option>
               <option value='MEMBRANE'>MEMBRANE</option>
@@ -74,7 +74,7 @@
             </select> 
             <select id='bass-effect-select' class=
               'effect
-              sub-header'>
+              select-header'>
               <option value='DRY' selected >DRY</option>
               <option value='DELAY'>DELAY</option>
               <option value='REVERB'>REVERB</option>
@@ -91,8 +91,8 @@
       <div id='drum-container'>
         <div id='drum-select-container' class='select-container'>
           <h3 id='drum-select-header'
-            class='sub-header'>DRUMS</h3>          
-          <select class='drum-select' id='cymbal-select'>
+            class='select-header'>DRUMS</h3>          
+          <select class='drum-select select-sub-header' id='cymbal-select'>
             <option value='RIDE_909'>RD-909</option>
             <option value='RIDE_707'>RD-707</option>
             <option value='RIDE_METAL'>RD-METAL</option>
@@ -102,7 +102,7 @@
             <option value='CHIMES'>CHIMES</option>
             <option value='NOISE'>NOISE</option>
           </select>
-          <select class='drum-select' id='clap-select'>
+          <select class='drum-select select-sub-header' id='clap-select'>
             <option value='CLAP_909'>CP-909</option>
             <option value='CLAP_909_SHORT'>CP-SHORT</option>
             <option value='CLAP_NOISE'>CP-NOISE</option>
@@ -112,7 +112,7 @@
             <option value='CLAP_HI_SWEEP'>CP-HSW</option>
             <option value='CLAP_UFO'>CP-UFO</option>
           </select>
-          <select class='drum-select' id='shaker-select'>
+          <select class='drum-select select-sub-header' id='shaker-select'>
             <option value='MARACAS'>MARACAS</option>
             <option value='MARACAS_808'>MAR-808</option>
             <option value='SHAKER'>SH-909</option>
@@ -122,7 +122,7 @@
             <option value='QUIJADA'>QUIJADA</option>
             <option value='SHAKER_NOISE'>SH-NOISE</option>
           </select>
-          <select class='drum-select' id='oh-select'>
+          <select class='drum-select select-sub-header' id='oh-select'>
             <option value='OH_909'>OH-909</option>
             <option value='OH_909_SHORT'>OH-SHORT</option>
             <option value='OH_808'>OH-808</option>
@@ -132,7 +132,7 @@
             <option value='OH_NOISE'>OH-NOISE</option>
             <option value='OH_78_NOISE'>OH-78</option>
           </select>
-          <select class='drum-select' id='ch-select'>
+          <select class='drum-select select-sub-header' id='ch-select'>
             <option value='CH_78'>CH-78</option>
             <option value='CH_RTM'>CH-RTM</option>
             <option value='CH_909'>CH-909</option>
@@ -142,7 +142,7 @@
             <option value='CH_METAL'>CH-METAL</option>
             <option value='CH_SDS800'>CH-800</option>
           </select>
-          <select class='drum-select' id='perc-select'>
+          <select class='drum-select select-sub-header' id='perc-select'>
             <option value='BONGO'>BONGO</option>
             <option value='BONGO_727'>BG-727</option>
             <option value='CONGA'>CONGA</option>
@@ -152,7 +152,7 @@
             <option value='TIMBALE'>TIMBALE</option>
             <option value='TIMBALE_FLAM'>TB-FLAM</option>
           </select>
-          <select class='drum-select' id='snare-select'>
+          <select class='drum-select select-sub-header' id='snare-select'>
             <option value='SD_808'>SD-808</option>
             <option value='SD_909'>SD-909</option>
             <option value='SD_909_COLORED'>SD-COLORED</option>
@@ -162,7 +162,7 @@
             <option value='RIM_808'>RIM-808</option>
             <option value='RIM_CR78'>RIM-CR78</option>
           </select>
-          <select class='drum-select' id='kick-select'>
+          <select class='drum-select select-sub-header' id='kick-select'>
             <option value='BD_78'>BD-78</option>
             <option value='BD_RTM'>BD-RTM</option>
             <option value='BD_707'>BD-707</option>
@@ -182,16 +182,16 @@
         </div>
         <div id='drum-effect-container' class='effect-container'>
           <h3 id='drum-effect-header'
-            class='sub-header'>DRUM-FX</h3>          
+            class='select-header'>DRUM-FX</h3>          
           <div id='drum-effects'>
-            <button id='drum-delay' class='drum-effect'>DELAY</button>
-            <button id='drum-reverb' class='drum-effect'>REVERB</button>
-            <button id='drum-phaser' class='drum-effect'>PHASER</button>
-            <button id='drum-chorus' class='drum-effect'>CHORUS</button>
-            <button id='drum-distortion' class='drum-effect'>DISTORTION</button>
-            <button id='drum-bitcrusher' class='drum-effect'>BITCRUSHER</button>
-            <button id='drum-autofilter' class='drum-effect'>AUTOFILTER</button>
-            <button id='drum-pingpong' class='drum-effect'>PINGPONG</button>
+            <button id='drum-delay' class='drum-effect select-sub-header'>DELAY</button>
+            <button id='drum-reverb' class='drum-effect select-sub-header'>REVERB</button>
+            <button id='drum-phaser' class='drum-effect select-sub-header'>PHASER</button>
+            <button id='drum-chorus' class='drum-effect select-sub-header'>CHORUS</button>
+            <button id='drum-distortion' class='drum-effect select-sub-header'>DISTORTION</button>
+            <button id='drum-bitcrusher' class='drum-effect select-sub-header'>BITCRUSHER</button>
+            <button id='drum-autofilter' class='drum-effect select-sub-header'>AUTOFILTER</button>
+            <button id='drum-pingpong' class='drum-effect select-sub-header'>PINGPONG</button>
           </div>
       </div>     
     </div>
