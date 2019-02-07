@@ -706,7 +706,7 @@ const mqws = [
   window.matchMedia('(min-width: 1495px) and (max-width: 1534px'),  //20
   window.matchMedia('(min-width: 1535px) and (max-width: 1574px'),  //21
   window.matchMedia('(min-width: 1575px) and (max-width: 1614px'),  //22
-  window.matchMedia('(min-width: 1615px) and (max-width: 1654px'),  //23
+  window.matchMedia('(min-width: 1615px) and (max-width: 1654px'),  //23--
   window.matchMedia('(min-width: 1655px) and (max-width: 1694px'),  //24
   window.matchMedia('(min-width: 1695px) and (max-width: 1724px'),  //25
   window.matchMedia('(min-width: 1725px) and (max-width: 1774px'),  //26
@@ -715,7 +715,7 @@ const mqws = [
   window.matchMedia('(min-width: 1855px) and (max-width: 1894px'),  //29
   window.matchMedia('(min-width: 1895px) and (max-width: 1934px'),  //30
   window.matchMedia('(min-width: 1935px) and (max-width: 1974px'),  //31
-  window.matchMedia('(min-width: 1975px) and (max-width: 2014px'),  //32--
+  window.matchMedia('(min-width: 1975px) and (max-width: 2014px'),  //32
   window.matchMedia('(min-width: 2015px) and (max-width: 2054px'),  //33
   window.matchMedia('(min-width: 2055px) and (max-width: 2094px'),  //34
   window.matchMedia('(min-width: 2095px) and (max-width: 2174px'),  //35
@@ -727,6 +727,37 @@ const mqws = [
 ]
 
 const resizeSequencersResponsively = () => {
+  mqws[24].addListener(e => {
+    if(e.matches) {
+      leadSeq.resize(606, 400)
+      bassSeq.resize(606, 400)
+      drumSeq.resize(1241, 400)
+      $(".synth-seq-header").width(606)
+      $("#drum-seq-header").width(1241)
+      $(".synth-seq-header").width(606)
+      $("#drum-seq-header").width(1241)
+      $('.list-select').width(130)
+      $('.select-sub-header').css('font-size', '16px')
+      $('.select-container').width(150).css('margin-right', '.75em')
+      $('#lead-select-container').css('margin-left', '2.7em')
+      $('#drum-select-container').width(132).css('margin-right', '2em').css('margin-left', '35px')
+      $('#drum-effect-container').width(132).css('margin-left', '2.2em')
+      $('.drum-effect').width(96)
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '0em')
+      $('#bass-seq').css('padding-left', '1.5em')
+      $('#bass-seq-header').css('margin-left', '1.5em')
+      $('#bass-select-container').css('margin-left', '2.2em')
+      $('#bass-container').css('padding-left', '0')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.select-header').width(98).css('font-size', '18px')
+      $('#bass-select-header').width(98)
+      $('#drum-effect-header').width(99)
+      $('#drum-select-header').width(100)
+      $('.effect').width(128)
+      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    }
+  })
   mqws[25].addListener(e => {
     if(e.matches) {
       leadSeq.resize(614, 400)
@@ -1015,6 +1046,35 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
+    if(mqws[24].matches) {
+      leadSeq.resize(606, 400)
+      bassSeq.resize(606, 400)
+      drumSeq.resize(1241, 400)
+      $(".synth-seq-header").width(606)
+      $("#drum-seq-header").width(1241)
+      $(".synth-seq-header").width(606)
+      $("#drum-seq-header").width(1241)
+      $('.list-select').width(130)
+      $('.select-sub-header').css('font-size', '16px')
+      $('.select-container').width(150).css('margin-right', '.75em')
+      $('#lead-select-container').css('margin-left', '2.7em')
+      $('#drum-select-container').width(132).css('margin-right', '2em').css('margin-left', '35px')
+      $('#drum-effect-container').width(132).css('margin-left', '2.2em')
+      $('.drum-effect').width(96)
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '0em')
+      $('#bass-seq').css('padding-left', '1.5em')
+      $('#bass-seq-header').css('margin-left', '1.5em')
+      $('#bass-select-container').css('margin-left', '2.2em')
+      $('#bass-container').css('padding-left', '0')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.select-header').width(98).css('font-size', '18px')
+      $('#bass-select-header').width(98)
+      $('#drum-effect-header').width(99)
+      $('#drum-select-header').width(100)
+      $('.effect').width(128)
+      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    }
     if(mqws[25].matches) {
       leadSeq.resize(614, 400)
       bassSeq.resize(614, 400)
