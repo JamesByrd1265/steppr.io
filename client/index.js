@@ -697,7 +697,7 @@ const mqws = [
   window.matchMedia('(min-width: 1135px) and (max-width: 1274px'),  //11
   window.matchMedia('(min-width: 1175px) and (max-width: 1214px'),  //12
   window.matchMedia('(min-width: 1215px) and (max-width: 1254px'),  //13
-  window.matchMedia('(min-width: 1225px) and (max-width: 1274px'),  //14
+  window.matchMedia('(min-width: 1175px) and (max-width: 1224px'),  //14
   window.matchMedia('(min-width: 1225px) and (max-width: 1274px'),  //15--
   window.matchMedia('(min-width: 1275px) and (max-width: 1324px'),  //16
   window.matchMedia('(min-width: 1325px) and (max-width: 1374px'),  //17
@@ -727,6 +727,38 @@ const mqws = [
 ]
 
 const resizeSequencersResponsively = () => {
+  mqws[14].addListener(e => {
+    if(e.matches) {
+      leadSeq.resize(480, 400)
+      bassSeq.resize(480, 400)
+      drumSeq.resize(968, 400)
+      $(".synth-seq-header").width(480)
+      $("#drum-seq-header").width(968)
+      $(".synth-seq-header").width(480)
+      $("#drum-seq-header").width(968)
+      $('.list-select').width(87)
+      $('.select-sub-header').css('font-size', '12px')
+      $('.select-container').width(107).css('margin-right', '0')
+      $('#lead-select-container').width(89.5).css('margin-left', '2.7em')
+      $('#drum-select-container').width(89).css('margin-right', '.4em').css('margin-left', '34px')
+      $('#drum-effect-container').width(89).css('margin-left', '.4em')
+      $('.drum-effect').width(63)
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '0em')
+      $('#bass-seq').css('padding-left', '.3em')
+      $('#bass-seq-header').css('margin-left', '.3em')
+      $('#bass-select-container').css('margin-left', '.15em')
+      $('#bass-container').css('padding-left', '0')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.select-header').width(62).css('font-size', '14px')
+      $('.drum-select').width(61)
+      $('#bass-select-header').width(62)
+      $('#drum-effect-header').width(64)
+      $('#drum-select-header').width(64)
+      $('.effect').width(85)
+      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    }
+  })
   mqws[15].addListener(e => {
     if(e.matches) {
       leadSeq.resize(480, 400)
@@ -1333,6 +1365,36 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
+    if(mqws[14].matches) { 
+      leadSeq.resize(455, 400)
+      bassSeq.resize(455, 400)
+      drumSeq.resize(917, 400)
+      $(".synth-seq-header").width(455)
+      $("#drum-seq-header").width(917)
+      $(".synth-seq-header").width(455)
+      $("#drum-seq-header").width(917)
+      $('.list-select').width(81)
+      $('.select-sub-header').css('font-size', '9px').css('padding-left', '0')
+      $('.select-container').width(101).css('margin-right', '0')
+      $('#lead-select-container').width(83.5).css('margin-left', '2.7em')
+      $('#drum-select-container').width(83).css('margin-right', '.4em').css('margin-left', '34px')
+      $('#drum-effect-container').width(83).css('margin-left', '.4em')
+      $('.drum-effect').width(57)
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '0em')
+      $('#bass-seq').css('padding-left', '.3em')
+      $('#bass-seq-header').css('margin-left', '.3em')
+      $('#bass-select-container').css('margin-left', '.15em')
+      $('#bass-container').css('padding-left', '0')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.select-header').width(61).css('font-size', '11px')
+      $('.drum-select').width(55)
+      $('#bass-select-header').width(62)
+      $('#drum-effect-header').width(63)
+      $('#drum-select-header').width(64)
+      $('.effect').width(79)
+      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    }
     if(mqws[15].matches) { 
       leadSeq.resize(480, 400)
       bassSeq.resize(480, 400)
