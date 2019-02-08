@@ -1716,13 +1716,13 @@ const setup = () => {
   setupSequencers();
   const resizeSequencers = () => {
     if (mqws[6].matches) {
-      leadSeq.resize(318, 400);
-      bassSeq.resize(318, 400);
-      drumSeq.resize(644, 400);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644);
+      leadSeq.resize(292, 400);
+      bassSeq.resize(292, 400);
+      drumSeq.resize(592, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(292);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(592);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(292);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(592);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(53);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '6px').css('padding-left', '0');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(69).css('margin-right', '0');
