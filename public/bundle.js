@@ -977,9 +977,9 @@ const resizeSequencersResponsively = () => {
     if (e.matches) {
       leadSeq.resize(388, 400);
       bassSeq.resize(388, 400);
-      drumSeq.resize(788, 400);
+      drumSeq.resize(782, 400);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(388);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(788);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(782);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(73);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '8px').css('padding-left', '0');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(93).css('margin-right', '0');
@@ -1809,15 +1809,18 @@ const setup = () => {
     if (mqws[11].matches) {
       leadSeq.resize(388, 400);
       bassSeq.resize(388, 400);
-      drumSeq.resize(788, 400);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(388);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(788);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(73);
+      drumSeq.resize(782, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.vol-slider').css('position', 'relative').css('top', '5px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.vol-slider rect').height(5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.seq-title').css('font-size', '.8em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(388).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(782);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(73).height(346);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '8px').css('padding-left', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(93).css('margin-right', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(75.5).css('margin-left', '2.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(75).css('margin-right', '.4em').css('margin-left', '34px');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(75).css('margin-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(93).height(434).css('margin-right', '0').css('top', '-.9em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(75.5).height(426.5).css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(75).height(426.5).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(75).height(426.5).css('margin-left', '.4em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(49);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '0em');
@@ -1897,7 +1900,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.vol-slider').css('position', 'relative').css('top', '5px');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.vol-slider rect').height(5);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.seq-title').css('font-size', '.9em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(21);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(81).height(346);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '9px').css('padding-left', '0');
