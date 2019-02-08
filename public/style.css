@@ -203,6 +203,7 @@ option {
   position: relative;
   margin-right: 1em;
   width: 167px;
+  align-content: center;
 }
 
 #bass-seq {
