@@ -783,7 +783,7 @@ window.matchMedia('(min-width: 675px) and (max-width: 714px'), //2
 window.matchMedia('(min-width: 715px) and (max-width: 754px'), //3
 window.matchMedia('(min-width: 755px) and (max-width: 794px'), //4
 window.matchMedia('(min-width: 795px) and (max-width: 834px'), //5
-window.matchMedia('(min-width: 835px) and (max-width: 874px'), //6
+window.matchMedia('(min-width: 775px) and (max-width: 824px'), //6
 window.matchMedia('(min-width: 825px) and (max-width: 874px'), //7
 window.matchMedia('(min-width: 875px) and (max-width: 924px'), //8--
 window.matchMedia('(min-width: 925px) and (max-width: 974px'), //9
@@ -821,6 +821,38 @@ window.matchMedia('(min-width: 2497px)') //40
 ];
 
 const resizeSequencersResponsively = () => {
+  mqws[6].addListener(e => {
+    if (e.matches) {
+      leadSeq.resize(314, 400);
+      bassSeq.resize(314, 400);
+      drumSeq.resize(640, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(314);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(640);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(314);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(640);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(61);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '6px').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(77).css('margin-right', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(63.5).css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(63).css('margin-right', '.4em').css('margin-left', '34px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(63).css('margin-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(37);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '0em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '.3em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '.3em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '.15em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-container').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(45).css('font-size', '9px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-select').width(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(45);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(47);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(47);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(59);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em');
+    }
+  });
   mqws[7].addListener(e => {
     if (e.matches) {
       leadSeq.resize(332, 400);
@@ -1683,21 +1715,21 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
-    if (mqws[7].matches) {
-      leadSeq.resize(332, 400);
-      bassSeq.resize(332, 400);
-      drumSeq.resize(670, 400);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(332);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(670);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(332);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(670);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(61);
+    if (mqws[6].matches) {
+      leadSeq.resize(318, 400);
+      bassSeq.resize(318, 400);
+      drumSeq.resize(644, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(53);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '6px').css('padding-left', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(77).css('margin-right', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(63.5).css('margin-left', '2.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(63).css('margin-right', '.4em').css('margin-left', '34px');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(63).css('margin-left', '.4em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(37);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(69).css('margin-right', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(55.5).css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(55).css('margin-right', '.4em').css('margin-left', '34px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(55).css('margin-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '0em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '.3em');
@@ -1705,12 +1737,42 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '.15em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-container').css('padding-left', '0');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(45).css('font-size', '9px');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-select').width(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(45);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(47);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(47);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(59);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(37).css('font-size', '9px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-select').width(27);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(37);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(39);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(39);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(51);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em');
+    }
+    if (mqws[7].matches) {
+      leadSeq.resize(318, 400);
+      bassSeq.resize(318, 400);
+      drumSeq.resize(644, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(53);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '6px').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(69).css('margin-right', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(55.5).css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(55).css('margin-right', '.4em').css('margin-left', '34px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(55).css('margin-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '0em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '.3em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '.3em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '.15em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-container').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(37).css('font-size', '9px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-select').width(27);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(37);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(39);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(39);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(51);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em');
     }
     if (mqws[8].matches) {

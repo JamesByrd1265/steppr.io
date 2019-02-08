@@ -689,7 +689,7 @@ const mqws = [
   window.matchMedia('(min-width: 715px) and (max-width: 754px'),    //3
   window.matchMedia('(min-width: 755px) and (max-width: 794px'),    //4
   window.matchMedia('(min-width: 795px) and (max-width: 834px'),    //5
-  window.matchMedia('(min-width: 835px) and (max-width: 874px'),   //6
+  window.matchMedia('(min-width: 775px) and (max-width: 824px'),   //6
   window.matchMedia('(min-width: 825px) and (max-width: 874px'),  //7
   window.matchMedia('(min-width: 875px) and (max-width: 924px'),  //8--
   window.matchMedia('(min-width: 925px) and (max-width: 974px'),  //9
@@ -727,6 +727,38 @@ const mqws = [
 ]
 
 const resizeSequencersResponsively = () => {
+  mqws[6].addListener(e => {
+    if(e.matches) {
+      leadSeq.resize(314, 400)
+      bassSeq.resize(314, 400)
+      drumSeq.resize(640, 400)
+      $(".synth-seq-header").width(314)
+      $("#drum-seq-header").width(640)
+      $(".synth-seq-header").width(314)
+      $("#drum-seq-header").width(640)
+      $('.list-select').width(61)
+      $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
+      $('.select-container').width(77).css('margin-right', '0')
+      $('#lead-select-container').width(63.5).css('margin-left', '2.7em')
+      $('#drum-select-container').width(63).css('margin-right', '.4em').css('margin-left', '34px')
+      $('#drum-effect-container').width(63).css('margin-left', '.4em')
+      $('.drum-effect').width(37)
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '0em')
+      $('#bass-seq').css('padding-left', '.3em')
+      $('#bass-seq-header').css('margin-left', '.3em')
+      $('#bass-select-container').css('margin-left', '.15em')
+      $('#bass-container').css('padding-left', '0')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.select-header').width(45).css('font-size', '9px')
+      $('.drum-select').width(35)
+      $('#bass-select-header').width(45)
+      $('#drum-effect-header').width(47)
+      $('#drum-select-header').width(47)
+      $('.effect').width(59)
+      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    }
+  })
   mqws[7].addListener(e => {
     if(e.matches) {
       leadSeq.resize(332, 400)
@@ -1589,21 +1621,21 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
-    if(mqws[7].matches) { 
-      leadSeq.resize(332, 400)
-      bassSeq.resize(332, 400)
-      drumSeq.resize(670, 400)
-      $(".synth-seq-header").width(332)
-      $("#drum-seq-header").width(670)
-      $(".synth-seq-header").width(332)
-      $("#drum-seq-header").width(670)
-      $('.list-select').width(61)
+    if(mqws[6].matches) { 
+      leadSeq.resize(318, 400)
+      bassSeq.resize(318, 400)
+      drumSeq.resize(644, 400)
+      $(".synth-seq-header").width(318)
+      $("#drum-seq-header").width(644)
+      $(".synth-seq-header").width(318)
+      $("#drum-seq-header").width(644)
+      $('.list-select').width(53)
       $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
-      $('.select-container').width(77).css('margin-right', '0')
-      $('#lead-select-container').width(63.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(63).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(63).css('margin-left', '.4em')
-      $('.drum-effect').width(37)
+      $('.select-container').width(69).css('margin-right', '0')
+      $('#lead-select-container').width(55.5).css('margin-left', '2.7em')
+      $('#drum-select-container').width(55).css('margin-right', '.4em').css('margin-left', '34px')
+      $('#drum-effect-container').width(55).css('margin-left', '.4em')
+      $('.drum-effect').width(29)
       $('#lead-seq').css('padding-left', '0')
       $('#lead-container').css('margin-left', '0em')
       $('#bass-seq').css('padding-left', '.3em')
@@ -1611,12 +1643,42 @@ const setup = () => {
       $('#bass-select-container').css('margin-left', '.15em')
       $('#bass-container').css('padding-left', '0')
       $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(45).css('font-size', '9px')
-      $('.drum-select').width(35)
-      $('#bass-select-header').width(45)
-      $('#drum-effect-header').width(47)
-      $('#drum-select-header').width(47)
-      $('.effect').width(59)
+      $('.select-header').width(37).css('font-size', '9px')
+      $('.drum-select').width(27)
+      $('#bass-select-header').width(37)
+      $('#drum-effect-header').width(39)
+      $('#drum-select-header').width(39)
+      $('.effect').width(51)
+      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    }
+    if(mqws[7].matches) { 
+      leadSeq.resize(318, 400)
+      bassSeq.resize(318, 400)
+      drumSeq.resize(644, 400)
+      $(".synth-seq-header").width(318)
+      $("#drum-seq-header").width(644)
+      $(".synth-seq-header").width(318)
+      $("#drum-seq-header").width(644)
+      $('.list-select').width(53)
+      $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
+      $('.select-container').width(69).css('margin-right', '0')
+      $('#lead-select-container').width(55.5).css('margin-left', '2.7em')
+      $('#drum-select-container').width(55).css('margin-right', '.4em').css('margin-left', '34px')
+      $('#drum-effect-container').width(55).css('margin-left', '.4em')
+      $('.drum-effect').width(29)
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '0em')
+      $('#bass-seq').css('padding-left', '.3em')
+      $('#bass-seq-header').css('margin-left', '.3em')
+      $('#bass-select-container').css('margin-left', '.15em')
+      $('#bass-container').css('padding-left', '0')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.select-header').width(37).css('font-size', '9px')
+      $('.drum-select').width(27)
+      $('#bass-select-header').width(37)
+      $('#drum-effect-header').width(39)
+      $('#drum-select-header').width(39)
+      $('.effect').width(51)
       $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
     }
     if(mqws[8].matches) { 
