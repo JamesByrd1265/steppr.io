@@ -796,8 +796,8 @@ window.matchMedia('(min-width: 1295px) and (max-width: 1334px'), //15
 window.matchMedia('(min-width: 1335px) and (max-width: 1374px'), //16
 window.matchMedia('(min-width: 1375px) and (max-width: 1414px'), //17
 window.matchMedia('(min-width: 1415px) and (max-width: 1454px'), //18
-window.matchMedia('(min-width: 1455px) and (max-width: 1494px'), //19
-window.matchMedia('(min-width: 1495px) and (max-width: 1534px'), //20
+window.matchMedia('(min-width: 1425px) and (max-width: 1454px'), //19
+window.matchMedia('(min-width: 1455px) and (max-width: 1534px'), //20
 window.matchMedia('(min-width: 1535px) and (max-width: 1574px'), //21--
 window.matchMedia('(min-width: 1575px) and (max-width: 1624px'), //22
 window.matchMedia('(min-width: 1625px) and (max-width: 1654px'), //23
@@ -821,35 +821,67 @@ window.matchMedia('(min-width: 2497px)') //40
 ];
 
 const resizeSequencersResponsively = () => {
-  mqws[20].addListener(e => {
+  mqws[19].addListener(e => {
     if (e.matches) {
-      leadSeq.resize(588, 400);
-      bassSeq.resize(588, 400);
-      drumSeq.resize(1186, 400);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(122);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '14px');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(142).css('margin-right', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(136).css('margin-left', '2.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(124).css('margin-right', '1.1em').css('margin-left', '34px');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(124).css('margin-left', '1.1em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(88);
+      leadSeq.resize(561.5, 400);
+      bassSeq.resize(561.5, 400);
+      drumSeq.resize(1133, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(103);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '13px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(123).css('margin-right', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(110).css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(105).css('margin-right', '.6em').css('margin-left', '34px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(105).css('margin-left', '.6em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(79);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '0em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '.4em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '.4em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '1.1em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '.4em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-container').css('padding-left', '0');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(93).css('font-size', '16px');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-select').width(100);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(93);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(96);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(96);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(120);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(76).css('font-size', '15px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-select').width(77);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(76);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(78);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(78);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(101);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em');
+    }
+  });
+  mqws[20].addListener(e => {
+    if (e.matches) {
+      leadSeq.resize(576, 400);
+      bassSeq.resize(576, 400);
+      drumSeq.resize(1162, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(110);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '13px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(130).css('margin-right', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(117).css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(112).css('margin-right', '.6em').css('margin-left', '34px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(112).css('margin-left', '.6em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(76);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '0em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-container').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(83).css('font-size', '15px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-select').width(84);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(83);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(85);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(85);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(108);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em');
     }
   });
@@ -1267,14 +1299,44 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
+    if (mqws[19].matches) {
+      leadSeq.resize(561.5, 400);
+      bassSeq.resize(561.5, 400);
+      drumSeq.resize(1133, 400);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(103);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '13px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(123).css('margin-right', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').width(110).css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').width(105).css('margin-right', '.6em').css('margin-left', '34px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').width(105).css('margin-left', '.6em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-effect').width(79);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-container').css('margin-left', '0em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq').css('padding-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-seq-header').css('margin-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-container').css('margin-left', '.4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-container').css('padding-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-seq-header').css('margin-left', '0');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-header').width(76).css('font-size', '15px');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.drum-select').width(77);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#bass-select-header').width(76);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-header').width(78);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-header').width(78);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.effect').width(101);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em');
+    }
     if (mqws[20].matches) {
       leadSeq.resize(576, 400);
       bassSeq.resize(576, 400);
-      drumSeq.resize(1160, 400);
+      drumSeq.resize(1162, 400);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1160);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1160);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').width(110);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-sub-header').css('font-size', '13px');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select-container').width(130).css('margin-right', '0');
