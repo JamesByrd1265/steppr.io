@@ -1593,6 +1593,18 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
+    if(mqhs[12].matches) {
+      height = 320
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(268)
+      $('#drum-select-container').height(354.5)
+      $('#drum-effect-container').height(354.5)
+      $('#nav').height(100)
+      $('#header').css('font-size', '4.5em')
+      $('#synth-container').height(440).css('margin-top', '4.75vh')
+    }
     if(mqhs[13].matches) {
       height = 340
       leadSeq.resize(synthWidth, height)
@@ -1602,7 +1614,7 @@ const setup = () => {
       $('#drum-select-container').height(374.5)
       $('#drum-effect-container').height(374.5)
       $('#nav').height(110)
-      $('#header').css('font-size', '4em')
+      $('#header').css('font-size', '4.5em')
       $('#synth-container').height(460).css('margin-top', '5.5vh')
     }
     if(mqhs[14].matches) {
