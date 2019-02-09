@@ -1579,9 +1579,9 @@ const mqhs = [
   window.matchMedia('(min-height: 825px) and (max-height: 874px'),  //7
   window.matchMedia('(min-height: 875px) and (max-height: 924px'),  //8
   window.matchMedia('(min-height: 925px) and (max-height: 974px'),  //9
-  window.matchMedia('(min-height: 975px) and (max-height: 1024px'),  //10
+  window.matchMedia('(min-height: 739px) and (max-height: 788px'),  //10--
   window.matchMedia('(min-height: 789px) and (max-height: 838px'),  //11
-  window.matchMedia('(min-height: 839px) and (max-height: 888px'),  //12--
+  window.matchMedia('(min-height: 839px) and (max-height: 888px'),  //12
   window.matchMedia('(min-height: 889px) and (max-height: 938px'),  //13
   window.matchMedia('(min-height: 939px) and (max-height: 999px'),  //14
   window.matchMedia('(min-height: 1000px) and (max-height: 1048px'),  //15
@@ -1593,6 +1593,18 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
+    if(mqhs[10].matches) {
+      height = 280
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(228)
+      $('#drum-select-container').height(314.5)
+      $('#drum-effect-container').height(314.5)
+      $('#nav').height(80)
+      $('#header').css('font-size', '4em')
+      $('#synth-container').height(400).css('margin-top', '3vh')
+    }
     if(mqhs[11].matches) {
       height = 300
       leadSeq.resize(synthWidth, height)
