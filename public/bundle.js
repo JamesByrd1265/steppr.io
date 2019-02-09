@@ -1677,8 +1677,8 @@ window.matchMedia('(min-height: 925px) and (max-height: 974px'), //9
 window.matchMedia('(min-height: 975px) and (max-height: 1024px'), //10
 window.matchMedia('(min-height: 1025px) and (max-height: 1074px'), //11
 window.matchMedia('(min-height: 1075px) and (max-height: 1124px'), //12
-window.matchMedia('(min-height: 875px) and (max-height: 924px'), //13
-window.matchMedia('(min-height: 920px) and (max-height: 999px'), //14--
+window.matchMedia('(min-height: 800px) and (max-height: 929px'), //13--
+window.matchMedia('(min-height: 939px) and (max-height: 999px'), //14
 window.matchMedia('(min-height: 1000px) and (max-height: 1048px'), //15
 window.matchMedia('(min-height: 1049px) and (max-height: 1084px'), //16
 window.matchMedia('(min-height: 1085px) and (max-height: 1124px')];
@@ -1687,6 +1687,18 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
+    if (mqhs[14].matches) {
+      height = 360;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(308);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(395);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(395);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(120);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4.5em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(480).css('margin-top', '6.5vh');
+    }
     if (mqhs[15].matches) {
       height = 380;
       leadSeq.resize(synthWidth, height);
