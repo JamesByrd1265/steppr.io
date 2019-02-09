@@ -1581,8 +1581,8 @@ const mqhs = [
   window.matchMedia('(min-height: 925px) and (max-height: 974px'),  //9
   window.matchMedia('(min-height: 975px) and (max-height: 1024px'),  //10
   window.matchMedia('(min-height: 1025px) and (max-height: 1074px'),  //11
-  window.matchMedia('(min-height: 1075px) and (max-height: 1124px'),  //12
-  window.matchMedia('(min-height: 800px) and (max-height: 929px'),  //13--
+  window.matchMedia('(min-height: 839px) and (max-height: 888px'),  //12--
+  window.matchMedia('(min-height: 889px) and (max-height: 938px'),  //13
   window.matchMedia('(min-height: 939px) and (max-height: 999px'),  //14
   window.matchMedia('(min-height: 1000px) and (max-height: 1048px'),  //15
   window.matchMedia('(min-height: 1049px) and (max-height: 1084px'),  //16
@@ -1593,14 +1593,26 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
+    if(mqhs[13].matches) {
+      height = 340
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(288)
+      $('#drum-select-container').height(374.5)
+      $('#drum-effect-container').height(374.5)
+      $('#nav').height(110)
+      $('#header').css('font-size', '4em')
+      $('#synth-container').height(460).css('margin-top', '5.5vh')
+    }
     if(mqhs[14].matches) {
       height = 360
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       $('.list-select').height(308)
-      $('#drum-select-container').height(395)
-      $('#drum-effect-container').height(395)
+      $('#drum-select-container').height(394.5)
+      $('#drum-effect-container').height(394.5)
       $('#nav').height(120)
       $('#header').css('font-size', '4.5em')
       $('#synth-container').height(480).css('margin-top', '6.5vh')
@@ -1611,8 +1623,8 @@ const setup = () => {
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       $('.list-select').height(328)
-      $('#drum-select-container').height(414)
-      $('#drum-effect-container').height(414)
+      $('#drum-select-container').height(414.5)
+      $('#drum-effect-container').height(414.5)
       $('#nav').height(130)
       $('#header').css('font-size', '4.5em')
       $('#synth-container').height(500).css('margin-top', '7.5vh')

@@ -1677,7 +1677,7 @@ window.matchMedia('(min-height: 925px) and (max-height: 974px'), //9
 window.matchMedia('(min-height: 975px) and (max-height: 1024px'), //10
 window.matchMedia('(min-height: 1025px) and (max-height: 1074px'), //11
 window.matchMedia('(min-height: 1075px) and (max-height: 1124px'), //12
-window.matchMedia('(min-height: 800px) and (max-height: 929px'), //13--
+window.matchMedia('(min-height: 800px) and (max-height: 938px'), //13--
 window.matchMedia('(min-height: 939px) and (max-height: 999px'), //14
 window.matchMedia('(min-height: 1000px) and (max-height: 1048px'), //15
 window.matchMedia('(min-height: 1049px) and (max-height: 1084px'), //16
@@ -1687,14 +1687,26 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
+    if (mqhs[13].matches) {
+      height = 340;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(288);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(374.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(374.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(110);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(460).css('margin-top', '5.5vh');
+    }
     if (mqhs[14].matches) {
       height = 360;
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(308);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(395);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(395);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(394.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(394.5);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(120);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4.5em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(480).css('margin-top', '6.5vh');
@@ -1705,8 +1717,8 @@ const setup = () => {
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(328);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(414);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(414);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(414.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(414.5);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(130);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4.5em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(500).css('margin-top', '7.5vh');
