@@ -1580,7 +1580,7 @@ const mqhs = [
   window.matchMedia('(min-height: 875px) and (max-height: 924px'),  //8
   window.matchMedia('(min-height: 925px) and (max-height: 974px'),  //9
   window.matchMedia('(min-height: 975px) and (max-height: 1024px'),  //10
-  window.matchMedia('(min-height: 1025px) and (max-height: 1074px'),  //11
+  window.matchMedia('(min-height: 789px) and (max-height: 838px'),  //11
   window.matchMedia('(min-height: 839px) and (max-height: 888px'),  //12--
   window.matchMedia('(min-height: 889px) and (max-height: 938px'),  //13
   window.matchMedia('(min-height: 939px) and (max-height: 999px'),  //14
@@ -1593,6 +1593,18 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
+    if(mqhs[11].matches) {
+      height = 300
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(248)
+      $('#drum-select-container').height(334.5)
+      $('#drum-effect-container').height(334.5)
+      $('#nav').height(90)
+      $('#header').css('font-size', '4.5em')
+      $('#synth-container').height(420).css('margin-top', '4vh')
+    }
     if(mqhs[12].matches) {
       height = 320
       leadSeq.resize(synthWidth, height)
