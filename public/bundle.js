@@ -1672,9 +1672,9 @@ window.matchMedia('(min-height: 755px) and (max-height: 794px'), //4
 window.matchMedia('(min-height: 795px) and (max-height: 834px'), //5
 window.matchMedia('(min-height: 775px) and (max-height: 824px'), //6
 window.matchMedia('(min-height: 825px) and (max-height: 874px'), //7
-window.matchMedia('(min-height: 875px) and (max-height: 924px'), //8
-window.matchMedia('(min-height: 925px) and (max-height: 974px'), //9
-window.matchMedia('(min-height: 739px) and (max-height: 788px'), //10--
+window.matchMedia('(min-height: 589px) and (max-height: 658px'), //8--
+window.matchMedia('(min-height: 659px) and (max-height: 738px'), //9
+window.matchMedia('(min-height: 739px) and (max-height: 788px'), //10
 window.matchMedia('(min-height: 789px) and (max-height: 838px'), //11
 window.matchMedia('(min-height: 839px) and (max-height: 888px'), //12
 window.matchMedia('(min-height: 889px) and (max-height: 938px'), //13
@@ -1687,6 +1687,19 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
+    if (mqhs[9].matches) {
+      height = 260;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.seq-title').css('font-size', '1.3em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(204);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(294.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(294.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(60);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '3.5em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(370).css('margin-top', '.25vh');
+    }
     if (mqhs[10].matches) {
       height = 280;
       leadSeq.resize(synthWidth, height);
