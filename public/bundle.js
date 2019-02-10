@@ -1687,6 +1687,19 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
+    if (mqhs[8].matches) {
+      height = 240;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.seq-title').css('font-size', '1.2em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(180);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(274.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(274.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(40);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '3em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(350).css('margin-top', '-1em');
+    }
     if (mqhs[9].matches) {
       height = 260;
       leadSeq.resize(synthWidth, height);
