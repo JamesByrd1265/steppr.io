@@ -1574,9 +1574,9 @@ const mqhs = [
   window.matchMedia('(min-height: 675px) and (max-height: 714px'),    //2
   window.matchMedia('(min-height: 715px) and (max-height: 754px'),    //3
   window.matchMedia('(min-height: 755px) and (max-height: 794px'),    //4
-  window.matchMedia('(min-height: 795px) and (max-height: 834px'),    //5
-  window.matchMedia('(min-height: 775px) and (max-height: 824px'),   //6
-  window.matchMedia('(min-height: 500px) and (max-height: 588px'),  //7--
+  window.matchMedia('(min-height: 795px) and (max-height: 834px'),    //5--
+  window.matchMedia('(min-height: 469px) and (max-height: 528px'),   //6
+  window.matchMedia('(min-height: 529px) and (max-height: 588px'),  //7
   window.matchMedia('(min-height: 589px) and (max-height: 658px'),  //8
   window.matchMedia('(min-height: 659px) and (max-height: 738px'),  //9
   window.matchMedia('(min-height: 739px) and (max-height: 788px'),  //10
@@ -1593,6 +1593,19 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
+    if(mqhs[6].matches) {
+      height = 200
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.seq-title').css('font-size', '1.2em')
+      $('.list-select').height(140)
+      $('#drum-select-container').height(234.5)
+      $('#drum-effect-container').height(234.5)
+      $('#nav').css('display', 'none')
+      $('#header').css('display', 'none')
+      $('#synth-container').height(320).css('margin-top', '-5em')
+    }
     if(mqhs[7].matches) {
       height = 230
       leadSeq.resize(synthWidth, height)
