@@ -840,10 +840,92 @@ window.matchMedia('(min-height: 1049px) and (max-height: 1084px'), //16
 window.matchMedia('(min-height: 1085px) and (max-height: 1124px')];
 
 let height = 400,
-    synthWidth = 1932,
-    drumWidth = 940;
+    synthWidth = 940,
+    drumWidth = 1932;
 
 const resizeSequencersResponsively = () => {
+  mqhs[6].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[7].addListener(e => {
+    if (e.matches) {
+      height = 230;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[8].addListener(e => {
+    if (e.matches) {
+      height = 240;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[9].addListener(e => {
+    if (e.matches) {
+      height = 260;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[10].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[11].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[12].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[13].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[14].addListener(e => {
+    if (e.matches) {
+      height = 360;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+  mqhs[15].addListener(e => {
+    if (e.matches) {
+      height = 380;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+    }
+  });
+
+  //width below vvvvv
   mqws[6].addListener(e => {
     if (e.matches) {
       synthWidth = 292;
@@ -1245,138 +1327,6 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
-    if (mqhs[6].matches) {
-      height = 200;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(140);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(234.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(234.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').css('display', 'none');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('display', 'none');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(320).css('margin-top', '-5em');
-    }
-    if (mqhs[7].matches) {
-      height = 230;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(170);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(264.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(264.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').css('display', 'none');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('display', 'none');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(350).css('margin-top', '-5em');
-    }
-    if (mqhs[8].matches) {
-      height = 240;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(180);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(274.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(274.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(40);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '3em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(350).css('margin-top', '-1em');
-    }
-    if (mqhs[9].matches) {
-      height = 260;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(204);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(294.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(294.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(60);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '3.5em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(370).css('margin-top', '.25vh');
-    }
-    if (mqhs[10].matches) {
-      height = 280;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(228);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(314.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(314.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(80);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(400).css('margin-top', '3vh');
-    }
-    if (mqhs[11].matches) {
-      height = 300;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(248);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(334.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(334.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(90);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4.5em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(420).css('margin-top', '4vh');
-    }
-    if (mqhs[12].matches) {
-      height = 320;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(268);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(354.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(354.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(100);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4.5em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(440).css('margin-top', '4.75vh');
-    }
-    if (mqhs[13].matches) {
-      height = 340;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(288);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(374.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(374.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(110);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4.5em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(460).css('margin-top', '5.5vh');
-    }
-    if (mqhs[14].matches) {
-      height = 360;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(308);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(394.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(394.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(120);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4.5em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(480).css('margin-top', '6.5vh');
-    }
-    if (mqhs[15].matches) {
-      height = 380;
-      leadSeq.resize(synthWidth, height);
-      bassSeq.resize(synthWidth, height);
-      drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.list-select').height(328);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-select-container').height(414.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#drum-effect-container').height(414.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(130);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '4.5em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(500).css('margin-top', '7.5vh');
-    }
-    if (mqhs[16].matches) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(140);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '5em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(520).css('margin-top', '8vh');
-    }
-    if (mqhs[17].matches) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#nav').height(160);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header').css('font-size', '6em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#synth-container').height(530).css('margin-top', '10vh');
-    }
-
-    //width vvvvvvv
     if (mqws[6].matches) {
       leadSeq.resize(292, height);
       bassSeq.resize(292, height);
