@@ -19,7 +19,7 @@ body {
   margin: 0 auto;
   display: inline-flex;
   position: absolute;
-  background: radial-gradient(2541.00px at 99.65% 49.73%, #B46A3F 0%, #DC7E50 13.14%, rgba(220, 131, 80, 0.86) 25.41%, #DC8350 50.74%, #CE7846 73.58%, #DC8350 87.19%, #B46A3F 100%); 
+  background: radial-gradient(2541.00px at 99.65% 49.73%, #B46A3F 0%, #DC7E50 13.14%, rgba(220, 131, 80, 0.86) 25.41%, #DC8350 50.74%, #CE7846 73.58%, #DC8350 87.19%, #B46A3F 100%);
 }
 
 .select-sub-header {
@@ -79,7 +79,7 @@ body {
 }
 
 #tempo-header {
-  background-color: rgba(255,255,255,0);
+  background-color: rgba(255, 255,255,0);
   border-bottom: none;
   margin-bottom: 0;
   letter-spacing: 1px;
@@ -374,836 +374,2162 @@ path:nth-child(5) {
 
 
 @media only screen and (min-width: 775px) and (max-width: 824px) {
-      synthWidth = 292
-      drumWidth = 592
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(292)
-      $("#drum-seq-header").width(592)
-      $('.list-select').width(53)
-      $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
-      $('.select-container').width(69).css('margin-right', '0')
-      $('#lead-select-container').width(55.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(55).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(55).css('margin-left', '.4em')
-      $('.drum-effect').width(29)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(37).css('font-size', '9px')
-      $('.drum-select').width(27)
-      $('#bass-select-header').width(37)
-      $('#drum-effect-header').width(39)
-      $('#drum-select-header').width(39)
-      $('.effect').width(51)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 292;
+  }
+  #drum-seq-header {
+    width: 592;
+  }
+  .list-select {
+    width: 53;
+  }
+  .select-sub-header {
+    font-size: 6px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 69;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 55.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 55;
+    margin-right: .4em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 55;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 29;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 37;
+    font-size: 9px;
+  }
+  .drum-select {
+    width: 27;
+  }
+  #bass-select-header {
+    width: 37;
+  }
+  #drum-effect-header {
+    width: 39;
+  }
+  #drum-select-header {
+    width: 39;
+  }
+  .effect {
+    width: 51;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 825px) and (max-width: 874px) {
-        synthWidth = 318
-      drumWidth = 644
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(318)
-      $("#drum-seq-header").width(644)
-      $(".synth-seq-header").width(318)
-      $("#drum-seq-header").width(644)
-      $('.list-select').width(53)
-      $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
-      $('.select-container').width(69).css('margin-right', '0')
-      $('#lead-select-container').width(55.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(55).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(55).css('margin-left', '.4em')
-      $('.drum-effect').width(29)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(37).css('font-size', '9px')
-      $('.drum-select').width(27)
-      $('#bass-select-header').width(37)
-      $('#drum-effect-header').width(39)
-      $('#drum-select-header').width(39)
-      $('.effect').width(51)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 318;
+  }
+  #drum-seq-header {
+    width: 644;
+  }
+  .synth-seq-header {
+    width: 318;
+  }
+  #drum-seq-header {
+    width: 644;
+  }
+  .list-select {
+    width: 53;
+  }
+  .select-sub-header {
+    font-size: 6px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 69;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 55.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 55;
+    margin-right: .4em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 55;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 29;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 37;
+    font-size: 9px;
+  }
+  .drum-select {
+    width: 27;
+  }
+  #bass-select-header {
+    width: 37;
+  }
+  #drum-effect-header {
+    width: 39;
+  }
+  #drum-select-header {
+    width: 39;
+  }
+  .effect {
+    width: 51;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 
 @media only screen and (min-width: 875px) and (max-width: 924px) {
-    synthWidth = 332
-    drumWidth = 670
-    leadSeq.resize(synthWidth, height)
-    bassSeq.resize(synthWidth, height)
-    drumSeq.resize(drumWidth, height)
-    $('.vol-slider').css('position', 'relative').css('top', '5px')
-    $('.vol-slider rect').height(5)
-    $('.seq-title').css('font-size', '.7em')
-    $(".synth-seq-header").width(332).height(15)
-    $("#drum-seq-header").width(670)
-    $('.list-select').width(61).height(345)
-    $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
-    $('.select-container').width(77).height(433).css('margin-right', '0').css('top', '-.95em')
-    $('#lead-select-container').width(63.5).height(426).css('margin-left', '2.7em')
-    $('#drum-select-container').width(63).height(426).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em')
-    $('#drum-effect-container').width(63).height(426).css('margin-left', '.4em')
-    $('.drum-effect').width(37)
-    $('#lead-seq').css('padding-left', '0')
-    $('#lead-container').css('margin-left', '0em')
-    $('#bass-seq').css('padding-left', '.3em')
-    $('#bass-seq-header').css('margin-left', '.3em')
-    $('#bass-select-container').css('margin-left', '.15em')
-    $('#bass-container').css('padding-left', '0')
-    $('#lead-seq-header').css('margin-left', '0')
-    $('.select-header').width(45).css('font-size', '9px')
-    $('.drum-select').width(35)
-    $('#bass-select-header').width(45)
-    $('#drum-effect-header').width(47)
-    $('#drum-select-header').width(47)
-    $('.effect').width(59)
-    $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .vol-slider {
+    position: relative;
+    top: 5px;
+  }
+  .vol-slider rect {
+    height: 5;
+  }
+  .seq-title {
+    font-size: .7em;
+  }
+  .synth-seq-header {
+    width: 332;
+    height: 15;
+  }
+  #drum-seq-header {
+    width: 670;
+  }
+  .list-select {
+    width: 61;
+    height: 345;
+  }
+  .select-sub-header {
+    font-size: 6px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 77 height: 433;
+    margin-right: 0;
+    top: -.95em;
+  }
+  #lead-select-container {
+    width: 63.5;
+    height: 426;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 63;
+    height: 426;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 63;
+    height: 426;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 37;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header{
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 45;
+    font-size: 9px;
+  }
+  .drum-select {
+    width: 35;
+  }
+  #bass-select-header {
+    width: 45;
+  }
+  #drum-effect-header {
+    width: 47;
+  }
+  #drum-select-header {
+    width: 47;
+  }
+  .effect {
+    width: 59;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 925px) and (max-width: 974px) {
-      synthWidth =
-    drumWidth =  
-    leadSeq.resize(synthWidth, height)
-    bassSeq.resize(synthWidth, height)
-    drumSeq.resize(drumWidth, height)
-    $(".synth-seq-header").width(356)
-    $("#drum-seq-header").width(722)
-    $('.list-select').width(67)
-    $('.select-sub-header').css('font-size', '8px').css('padding-left', '0')
-    $('.select-container').width(77).css('margin-right', '0')
-    $('#lead-select-container').width(69.5).css('margin-left', '2.7em')
-    $('#drum-select-container').width(69).css('margin-right', '.4em').css('margin-left', '34px')
-    $('#drum-effect-container').width(69).css('margin-left', '.4em')
-    $('.drum-effect').width(43)
-    $('#lead-seq').css('padding-left', '0')
-    $('#lead-container').css('margin-left', '0em')
-    $('#bass-seq').css('padding-left', '.3em')
-    $('#bass-seq-header').css('margin-left', '.3em')
-    $('#bass-select-container').css('margin-left', '.15em')
-    $('#bass-container').css('padding-left', '0')
-    $('#lead-seq-header').css('margin-left', '0')
-    $('.select-header').width(49).css('font-size', '10px')
-    $('.drum-select').width(41)
-    $('#bass-select-header').width(50)
-    $('#drum-effect-header').width(51)
-    $('#drum-select-header').width(52)
-    $('.effect').width(65)
-    $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 356;
+  }
+  #drum-seq-header {
+    width: 722;
+  }
+  .list-select {
+    width: 67;
+  }
+  .select-sub-header {
+    font-size: 8px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 77;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 69.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 69;
+    margin-right: .4em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 69;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 43;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header{
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 49;
+    font-size: 10px;
+  }
+  .drum-select {
+    width: 41;
+  }
+  #bass-select-header {
+    width: 50;
+  }
+  #drum-effect-header {
+    width: 51;
+  }
+  #drum-select-header {
+    width: 52;
+  }
+  .effect {
+    width: 65;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 975px) and (max-width: 1024px) {
-    synthWidth = 368
-    drumWidth = 742
-    leadSeq.resize(synthWidth, height)
-    bassSeq.resize(synthWidth, height)
-    drumSeq.resize(drumWidth, height)
-    $(".synth-seq-header").width(368)
-    $("#drum-seq-header").width(742)
-    $('.list-select').width(73)
-    $('.select-sub-header').css('font-size', '8px').css('padding-left', '0')
-    $('.select-container').width(93).css('margin-right', '0')
-    $('#lead-select-container').width(75.5).css('margin-left', '2.7em')
-    $('#drum-select-container').width(75).css('margin-right', '.4em').css('margin-left', '34px')
-    $('#drum-effect-container').width(75).css('margin-left', '.4em')
-    $('.drum-effect').width(49)
-    $('#lead-seq').css('padding-left', '0')
-    $('#lead-container').css('margin-left', '0em')
-    $('#bass-seq').css('padding-left', '.3em')
-    $('#bass-seq-header').css('margin-left', '.3em')
-    $('#bass-select-container').css('margin-left', '.15em')
-    $('#bass-container').css('padding-left', '0')
-    $('#lead-seq-header').css('margin-left', '0')
-    $('.select-header').width(55).css('font-size', '10px')
-    $('.drum-select').width(47)
-    $('#bass-select-header').width(56)
-    $('#drum-effect-header').width(57)
-    $('#drum-select-header').width(58)
-    $('.effect').width(71)
-    $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 368;
+  }
+  #drum-seq-header {
+    width: 742;
+  }
+  .list-select {
+    width: 73;
+  }
+  .select-sub-header {
+    font-size: 8px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 93;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 75.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 75;
+    margin-right: .4em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 75;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 49;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header{
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 55;
+    font-size: 10px;
+  }
+  .drum-select {
+    width: 47;
+  }
+  #bass-select-header {
+    width: 56;
+  }
+  #drum-effect-header {
+    width: 57;
+  }
+  #drum-select-header {
+    width: 58;
+  }
+  .effect {
+    width: 71;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1074px) {
-        synthWidth = 388
-      drumWidth = 782
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $('.vol-slider').css('position', 'relative').css('top', '5px')
-      $('.vol-slider rect').height(5)
-      $('.seq-title').css('font-size', '.8em')
-      $(".synth-seq-header").width(388).height(19)
-      $("#drum-seq-header").width(782)
-      $('.list-select').width(73).height(346)
-      $('.select-sub-header').css('font-size', '8px').css('padding-left', '0')
-      $('.select-container').width(93).height(434).css('margin-right', '0').css('top', '-.9em')
-      $('#lead-select-container').width(75.5).height(426.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(75).height(426.5).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em')
-      $('#drum-effect-container').width(75).height(426.5).css('margin-left', '.4em')
-      $('.drum-effect').width(49)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(55).css('font-size', '10px')
-      $('.drum-select').width(47)
-      $('#bass-select-header').width(56)
-      $('#drum-effect-header').width(57)
-      $('#drum-select-header').width(58)
-      $('.effect').width(71)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .vol-slider {
+    position: relative;
+    top: 5px;
+  }
+  .vol-slider rect {
+    height: 5;
+  }
+  .seq-title {
+    font-size: .8em;
+  }
+  .synth-seq-header {
+    width: 388;
+    height: 19;
+  }
+  #drum-seq-header {
+    width: 782;
+  }
+  .list-select {
+    width: 73;
+    height: 346;
+  }
+  .select-sub-header {
+    font-size: 8px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 93;
+    height: 434;
+    margin-right: 0;
+    top: -.9em;
+  }
+  #lead-select-container {
+    width: 75.5;
+    height: 426.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 75;
+    height: 426.5;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 75;
+    height: 426.5;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 49;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 55;
+    font-size: 10px;
+  }
+  .drum-select {
+    width: 47;
+  }
+  #bass-select-header {
+    width: 56;
+  }
+  #drum-effect-header {
+    width: 57;
+  }
+  #drum-select-header {
+    width: 58;
+  }
+  .effect {
+    width: 71;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1075px) and (max-width: 1124px) {
-      synthWidth = 400
-      drumWidth = 808
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(height)
-      $("#drum-seq-header").width(808)
-      $('.list-select').width(81)
-      $('.select-sub-header').css('font-size', '9px').css('padding-left', '0')
-      $('.select-container').width(101).css('margin-right', '0')
-      $('#lead-select-container').width(83.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(83).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(83).css('margin-left', '.4em')
-      $('.drum-effect').width(57)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(61).css('font-size', '11px')
-      $('.drum-select').width(55)
-      $('#bass-select-header').width(62)
-      $('#drum-effect-header').width(63)
-      $('#drum-select-header').width(64)
-      $('.effect').width(79)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: height;
+  }
+  #drum-seq-header {
+    width: 808;
+  }
+  .list-select {
+    width: 81;
+  }
+  .select-sub-header {
+    font-size: 9px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 101;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 83.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 83;
+    margin-right: .4em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 83;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 57;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 61;
+    font-size: 11px;
+  }
+  .drum-select {
+    width: 55;
+  }
+  #bass-select-header {
+    width: 62;
+  }
+  #drum-effect-header {
+    width: 63;
+  }
+  #drum-select-header {
+    width: 64;
+  }
+  .effect {
+    width: 79;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1125px) and (max-width: 1174px) {
-        synthWidth = 424
-      drumWidth = 854
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(424)
-      $("#drum-seq-header").width(854)
-      $('.list-select').width(81)
-      $('.select-sub-header').css('font-size', '9px').css('padding-left', '0')
-      $('.select-container').width(101).css('margin-right', '0')
-      $('#lead-select-container').width(83.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(83).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(83).css('margin-left', '.4em')
-      $('.drum-effect').width(57)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(61).css('font-size', '11px')
-      $('.drum-select').width(55)
-      $('#bass-select-header').width(62)
-      $('#drum-effect-header').width(63)
-      $('#drum-select-header').width(64)
-      $('.effect').width(79)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 424;
+  }
+  #drum-seq-header {
+    width: 854;
+  }
+  .list-select {
+    width: 81;
+  }
+  .select-sub-header {
+    font-size: 9px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 101;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 83.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 83;
+    margin-right: .4em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 83;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 57;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 61;
+    font-size: 11px;
+  }
+  .drum-select {
+    width: 55;
+  }
+  #bass-select-header {
+    width: 62;
+  }
+  #drum-effect-header {
+    width: 63;
+  }
+  #drum-select-header {
+    width: 64;
+  }
+  .effect {
+    width: 79;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1175px) and (max-width: 1224px) {
-      synthWidth = 455
-      drumWidth = 917
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $('.vol-slider').css('position', 'relative').css('top', '5px')
-      $('.vol-slider rect').height(5)
-      $('.seq-title').css('font-size', '.9em')
-      $(".synth-seq-header").width(455).height(20)
-      $("#drum-seq-header").width(917)
-      $('.list-select').width(81).height(346)
-      $('.select-sub-header').css('font-size', '9px').css('padding-left', '0')
-      $('.select-container').width(101).height(434).css('margin-right', '0').css('top', '-.9em')
-      $('#lead-select-container').width(83.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(83).height(426.5).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em')
-      $('#drum-effect-container').width(83).height(426.5).css('margin-left', '.4em')
-      $('.drum-effect').width(57)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(61).css('font-size', '11px')
-      $('.drum-select').width(55)
-      $('#bass-select-header').width(62)
-      $('#drum-effect-header').width(63)
-      $('#drum-select-header').width(64)
-      $('.effect').width(79)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .vol-slider {
+    position: relative;
+    top: 5px;
+  }
+  .vol-slider rect {
+    height: 5;
+  }
+  .seq-title {
+    font-size: .9em;
+  }
+  .synth-seq-header {
+    width: 455;
+    height: 20;
+  }
+  #drum-seq-header {
+    width: 917;
+  }
+  .list-select {
+    width: 81;
+    height: 346;
+  }
+  .select-sub-header {
+    font-size: 9px;
+    padding-left: 0;
+  }
+  .select-container {
+    width: 101;
+    height: 434;
+    margin-right: 0;
+    top: -.9em;
+  }
+  #lead-select-container {
+    width: 83.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 83;
+    height: 426.5;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 83;
+    height: 426.5;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 57;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 61;
+    font-size: 11px;
+  }
+  .drum-select {
+    width: 55;
+  }
+  #bass-select-header {
+    width: 62;
+  }
+  #drum-effect-header {
+    width: 63;
+  }
+  #drum-select-header {
+    width: 64;
+  }
+  .effect {
+    width: 79;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1225px) and (max-width: 1274px) {
-        synthWidth = 480
-      drumWidth = 968
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(480)
-      $("#drum-seq-header").width(968)
-      $('.list-select').width(87)
-      $('.select-sub-header').css('font-size', '12px')
-      $('.select-container').width(107).css('margin-right', '0')
-      $('#lead-select-container').width(89.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(89).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(89).css('margin-left', '.4em')
-      $('.drum-effect').width(63)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(62).css('font-size', '14px')
-      $('.drum-select').width(61)
-      $('#bass-select-header').width(62)
-      $('#drum-effect-header').width(64)
-      $('#drum-select-header').width(64)
-      $('.effect').width(85)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 480;
+  }
+  #drum-seq-header {
+    width: 968;
+  }
+  .list-select {
+    width: 87;
+  }
+  .select-sub-header {
+    font-size: 12px;
+  }
+  .select-container {
+    width: 107;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 89.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 89;
+    margin-right: .4em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 89;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 63;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 62;
+    font-size: 14px;
+  }
+  .drum-select {
+    width: 61;
+  }
+  #bass-select-header {
+    width: 62;
+  }
+  #drum-effect-header {
+    width: 64;
+  }
+  #drum-select-header {
+    width: 64;
+  }
+  .effect {
+    width: 85;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1275px) and (max-width: 1324px) {
-      synthWidth = 500
-      drumWidth = 1000
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(500)
-      $("#drum-seq-header").width(1000)
-      $('.list-select').width(93)
-      $('.select-sub-header').css('font-size', '12px')
-      $('.select-container').width(113).css('margin-right', '0')
-      $('#lead-select-container').width(95.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(95).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(95).css('margin-left', '.4em')
-      $('.drum-effect').width(69)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(68).css('font-size', '14px')
-      $('.drum-select').width(67)
-      $('#bass-select-header').width(68)
-      $('#drum-effect-header').width(70)
-      $('#drum-select-header').width(70)
-      $('.effect').width(91)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 500;
+  }
+  #drum-seq-header {
+    width: 1000;
+  }
+  .list-select {
+    width: 93;
+  }
+  .select-sub-header {
+    font-size: 12px;
+  }
+  .select-container {
+    width: 113;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 95.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 95;
+    margin-right: .4em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 95;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 69;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 68;
+    font-size: 14px;
+  }
+  .drum-select {
+    width: 67;
+  }
+  #bass-select-header {
+    width: 68;
+  }
+  #drum-effect-header {
+    width: 70;
+  }
+  #drum-select-header {
+    width: 70;
+  }
+  .effect {
+    width: 91;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1325px) and (max-width: 1374px) {
-        synthWidth = 522
-      drumWidth = 1051
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $('.vol-slider').css('position', 'relative').css('top', '5px')
-      $('.vol-slider rect').height(6)
-      $('.seq-title').css('font-size', '1em')
-      $(".synth-seq-header").width(522).height(25)
-      $("#drum-seq-header").width(1051)
-      $('.list-select').width(93).height(346)
-      $('.select-sub-header').css('font-size', '12px')
-      $('.select-container').width(113).height(434).css('margin-right', '0').css('top', '-.8em')
-      $('#lead-select-container').width(95.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(95).height(426.5).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em')
-      $('#drum-effect-container').width(95).height(426.5).css('margin-left', '.4em')
-      $('.drum-effect').width(69)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(68).css('font-size', '14px')
-      $('.drum-select').width(67)
-      $('#bass-select-header').width(68)
-      $('#drum-effect-header').width(70)
-      $('#drum-select-header').width(70)
-      $('.effect').width(91)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .vol-slider {
+    position: relative;
+    top: 5px;
+  }
+  .vol-slider rect {
+    height: 6;
+  }
+  .seq-title {
+    font-size: 1em;
+  }
+  .synth-seq-header {
+    width: 522;
+    height: 25;
+  }
+  #drum-seq-header {
+    width: 1051;
+  }
+  .list-select {
+    width: 93;
+    height: 346;
+  }
+  .select-sub-header {
+    font-size: 12px;
+  }
+  .select-container {
+    width: 113;
+    height: 434;
+    margin-right: 0;
+    top: -.8em;
+  }
+  #lead-select-container {
+    width: 95.5;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 95;
+    height: 426.5;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 95;
+    height: 426.5;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 69;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 68;
+    font-size: 14px;
+  }
+  .drum-select {
+    width: 67;
+  }
+  #bass-select-header {
+    width: 68;
+  }
+  #drum-effect-header {
+    width: 70;
+  }
+  #drum-select-header {
+    width: 70;
+  }
+  .effect {
+    width: 91;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1375px) and (max-width: 1424px) {
-      synthWidth = 540
-      drumWidth = 1090
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(540)
-      $("#drum-seq-header").width(1090)
-      $('.list-select').width(99)
-      $('.select-sub-header').css('font-size', '13px')
-      $('.select-container').width(119).css('margin-right', '0')
-      $('#lead-select-container').width(106).css('margin-left', '2.7em')
-      $('#drum-select-container').width(101).css('margin-right', '.6em').css('margin-left', '34px')
-      $('#drum-effect-container').width(101).css('margin-left', '.6em')
-      $('.drum-effect').width(75)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.4em')
-      $('#bass-seq-header').css('margin-left', '.4em')
-      $('#bass-select-container').css('margin-left', '.4em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(72).css('font-size', '15px')
-      $('.drum-select').width(73)
-      $('#bass-select-header').width(72)
-      $('#drum-effect-header').width(74)
-      $('#drum-select-header').width(74)
-      $('.effect').width(97)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 540;
+  }
+  #drum-seq-header {
+    width: 1090;
+  }
+  .list-select {
+    width: 99;
+  }
+  .select-sub-header {
+    font-size: 13px;
+  }
+  .select-container {
+    width: 119;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 106;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 101;
+    margin-right: .6em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 101;
+    margin-left: .6em;
+  }
+  .drum-effect {
+    width: 75;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: .4em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 72;
+    font-size: 15px;
+  }
+  .drum-select {
+    width: 73;
+  }
+  #bass-select-header {
+    width: 72;
+  }
+  #drum-effect-header {
+    width: 74;
+  }
+  #drum-select-header {
+    width: 74;
+  }
+  .effect {
+    width: 97;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1425px) and (max-width: 1454px) {
-        synthWidth = 561.5
-      drumWidth = 1133
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(561.5)
-      $("#drum-seq-header").width(1133)
-      $('.list-select').width(103)
-      $('.select-sub-header').css('font-size', '13px')
-      $('.select-container').width(123).css('margin-right', '0')
-      $('#lead-select-container').width(110).css('margin-left', '2.7em')
-      $('#drum-select-container').width(105).css('margin-right', '.6em').css('margin-left', '34px')
-      $('#drum-effect-container').width(105).css('margin-left', '.6em')
-      $('.drum-effect').width(79)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.4em')
-      $('#bass-seq-header').css('margin-left', '.4em')
-      $('#bass-select-container').css('margin-left', '.4em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(76).css('font-size', '15px')
-      $('.drum-select').width(77)
-      $('#bass-select-header').width(76)
-      $('#drum-effect-header').width(78)
-      $('#drum-select-header').width(78)
-      $('.effect').width(101)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 561.5;
+  }
+  #drum-seq-header {
+    width: 1133;
+  }
+  .list-select {
+    width: 103;
+  }
+  .select-sub-header {
+    font-size: 13px;
+  }
+  .select-container {
+    width: 123;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 110;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 105;
+    margin-right: .6em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 105;
+    margin-left: .6em;
+  }
+  .drum-effect {
+    width: 79;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: .4em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 76;
+    font-size: 15px;
+  }
+  .drum-select {
+    width: 77;
+  }
+  #bass-select-header {
+    width: 76;
+  }
+  #drum-effect-header {
+    width: 78;
+  }
+  #drum-select-header {
+    width: 78;
+  }
+  .effect {
+    width: 101;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1455px) and (max-width: 1534px) {
-      synthWidth = 576
-      drumWidth = 1162
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $('.seq-title').css('font-size', '1.1em')
-      $(".synth-seq-header").width(576)
-      $("#drum-seq-header").width(1162)
-      $('.list-select').width(110).height(346)
-      $('.select-sub-header').css('font-size', '13px')
-      $('.select-container').width(130).height(433).css('margin-right', '0').css('top', '-.75em')
-      $('#lead-select-container').width(117).css('margin-left', '2.7em')
-      $('#drum-select-container').width(112).height(426.5).css('margin-right', '.6em').css('margin-left', '34px').css('top', '-.7em')
-      $('#drum-effect-container').width(112).height(426.5).css('margin-left', '.6em')
-      $('.drum-effect').width(76)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.4em')
-      $('#bass-seq-header').css('margin-left', '.4em')
-      $('#bass-select-container').css('margin-left', '.4em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(83).css('font-size', '15px')
-      $('.drum-select').width(84)
-      $('#bass-select-header').width(83)
-      $('#drum-effect-header').width(85)
-      $('#drum-select-header').width(85)
-      $('.effect').width(108)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .seq-title {
+    font-size: 1.1em;
+  }
+  .synth-seq-header {
+    width: 576;
+  }
+  #drum-seq-header {
+    width: 1162;
+  }
+  .list-select {
+    width: 110;
+    height: 346;
+  }
+  .select-sub-header {
+    font-size: 13px;
+  }
+  .select-container {
+    width: 130;
+    height: 433;
+    margin-right: 0;
+    top: -.75em;
+  }
+  #lead-select-container {
+    width: 117;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 112;
+    height: 426.5;
+    margin-right: .6em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 112;
+    height: 426.5;
+    margin-left: .6em;
+  }
+  .drum-effect {
+    width: 76;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: .4em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 83;
+    font-size: 15px;
+  }
+  .drum-select {
+    width: 84;
+  }
+  #bass-select-header {
+    width: 83;
+  }
+  #drum-effect-header {
+    width: 85;
+  }
+  #drum-select-header {
+    width: 85;
+  }
+  .effect {
+    width: 108;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1535px) and (max-width: 1574px) {
-        synthWidth = 588
-      drumWidth = 1186
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(588)
-      $("#drum-seq-header").width(1186)
-      $('.list-select').width(122)
-      $('.select-sub-header').css('font-size', '14px')
-      $('.select-container').width(142).css('margin-right', '0')
-      $('#lead-select-container').width(136).css('margin-left', '2.7em')
-      $('#drum-select-container').width(124).css('margin-right', '1.1em').css('margin-left', '34px')
-      $('#drum-effect-container').width(124).css('margin-left', '1.1em')
-      $('.drum-effect').width(88)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.4em')
-      $('#bass-seq-header').css('margin-left', '.4em')
-      $('#bass-select-container').css('margin-left', '1.1em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(93).css('font-size', '16px')
-      $('.drum-select').width(100)
-      $('#bass-select-header').width(93)
-      $('#drum-effect-header').width(96)
-      $('#drum-select-header').width(96)
-      $('.effect').width(120)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 588;
+  }
+  #drum-seq-header {
+    width: 1186;
+  }
+  .list-select {
+    width: 122;
+  }
+  .select-sub-header {
+    font-size: 14px;
+  }
+  .select-container {
+    width: 142;
+    margin-right: 0;
+  }
+  #lead-select-container {
+    width: 136;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 124;
+    margin-right: 1.1em;
+    margin-left: 34px;
+  }
+  #drum-effect-container {
+    width: 124;
+    margin-left: 1.1em;
+  }
+  .drum-effect {
+    width: 88;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: 1.1em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 93;
+    font-size: 16px;
+  }
+  .drum-select {
+    width: 100;
+  }
+  #bass-select-header {
+    width: 93;
+  }
+  #drum-effect-header {
+    width: 96;
+  }
+  #drum-select-header {
+    width: 96;
+  }
+  .effect {
+    width: 120;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1575px) and (max-width: 1624px) {
-      synthWidth = 602
-      drumWidth = 1215
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $('.seq-title').css('font-size', '1.2em')
-      $(".synth-seq-header").width(602)
-      $("#drum-seq-header").width(1215)
-      $('.list-select').width(122).height(345)
-      $('.select-sub-header').css('font-size', '14px')
-      $('.select-container').width(142).height(431).css('margin-right', '0').css('top', '-.8em')
-      $('#lead-select-container').css('margin-left', '2.7em')
-      $('#drum-select-container').width(124).height(428).css('margin-right', '1.4em').css('margin-left', '34px').css('top', '-.7em')
-      $('#drum-effect-container').width(124).height(428).css('margin-left', '1.4em')
-      $('.drum-effect').width(88)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.4em')
-      $('#bass-seq-header').css('margin-left', '.4em')
-      $('#bass-select-container').css('margin-left', '1.4em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(93).css('font-size', '16px')
-      $('.drum-select').width(100)
-      $('#bass-select-header').width(93)
-      $('#drum-effect-header').width(95)//96?
-      $('#drum-select-header').width(96)
-      $('.effect').width(120)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .seq-title {
+    font-size: 1.2em;
+  }
+  .synth-seq-header {
+    width: 602;
+  }
+  #drum-seq-header {
+    width: 1215;
+  }
+  .list-select {
+    width: 122;
+    height: 345;
+  }
+  .select-sub-header {
+    font-size: 14px;
+  }
+  .select-container {
+    width: 142;
+    height: 431;
+    margin-right: 0;
+    top: -.8em;
+  }
+  #lead-select-container {
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 124;
+    height: 428;
+    margin-right: 1.4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 124;
+    height: 428;
+    margin-left: 1.4em;
+  }
+  .drum-effect {
+    width: 88;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: 1.4em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 93;
+    font-size: 16px;
+  }
+  .drum-select {
+    width: 100;
+  }
+  #bass-select-header {
+    width: 93;
+  }
+  #drum-effect-header {
+    width: 95);
+  }
+  #drum-select-header {
+    width: 96;
+  }
+  .effect {
+    width: 120;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1625px) and (max-width: 1654px) {
-        synthWidth = 606
-      drumWidth = 1240
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(606)
-      $("#drum-seq-header").width(1240)
-      $('.list-select').width(126)
-      $('.select-sub-header').css('font-size', '16px')
-      $('.select-container').width(146).css('margin-right', '.4em')
-      $('#lead-select-container').css('margin-left', '2.7em')
-      $('#drum-select-container').width(128).css('margin-right', '1.7em').css('margin-left', '35px')
-      $('#drum-effect-container').width(128).css('margin-left', '1.7em')
-      $('.drum-effect').width(92)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '1.5em')
-      $('#bass-seq-header').css('margin-left', '1.5em')
-      $('#bass-select-container').css('margin-left', '1.7em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(94).css('font-size', '18px')
-      $('#bass-select-header').width(94)
-      $('#drum-effect-header').width(95)
-      $('#drum-select-header').width(96)
-      $('.effect').width(124)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 606;
+  }
+  #drum-seq-header {
+    width: 1240;
+  }
+  .list-select {
+    width: 126;
+  }
+  .select-sub-header {
+    font-size: 16px;
+  }
+  .select-container {
+    width: 146;
+    margin-right: .4em;
+
+  }
+  #lead-select-container {
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 128;
+    margin-right: 1.7em;
+    margin-left: 35px;
+  }
+  #drum-effect-container {
+    width: 128;
+    margin-left: 1.7em;
+  }
+  .drum-effect {
+    width: 92;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: 1.5em;
+  }
+  #bass-seq-header {
+    margin-left: 1.5em;
+  }
+  #bass-select-container {
+    margin-left: 1.7em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 94;
+    font-size: 18px;
+  }
+  #bass-select-header {
+    width: 94;
+  }
+  #drum-effect-header {
+    width: 95;
+  }
+  #drum-select-header {
+    width: 96;
+  }
+  .effect {
+    width: 124;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1655px) and (max-width: 1694px) {
-      synthWidth = 606
-      drumWidth = 1240
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(606)
-      $("#drum-seq-header").width(1240)
-      $('.list-select').width(130)
-      $('.select-sub-header').css('font-size', '16px')
-      $('.select-container').width(150).css('margin-right', '.75em')
-      $('#lead-select-container').css('margin-left', '2.7em')
-      $('#drum-select-container').width(132).css('margin-right', '2em').css('margin-left', '35px')
-      $('#drum-effect-container').width(132).css('margin-left', '2.2em')
-      $('.drum-effect').width(96)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '1.5em')
-      $('#bass-seq-header').css('margin-left', '1.5em')
-      $('#bass-select-container').css('margin-left', '2.2em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(98).css('font-size', '18px')
-      $('#bass-select-header').width(98)
-      $('#drum-effect-header').width(99)
-      $('#drum-select-header').width(100)
-      $('.effect').width(128)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+  .synth-seq-header {
+    width: 606;
+  }
+  #drum-seq-header {
+    width: 1240;
+  }
+  .list-select {
+    width: 130;
+  }
+  .select-sub-header {
+    font-size: 16px;
+  }
+  .select-container {
+    width: 150;
+    margin-right: .75em;
+  }
+  #lead-select-container {
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 132;
+    margin-right: 2em;
+    margin-left: 35px;
+  }
+  #drum-effect-container {
+    width: 132;
+    margin-left: 2.2em;
+  }
+  .drum-effect {
+    width: 96;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: 1.5em;
+  }
+  #bass-seq-header {
+    margin-left: 1.5em;
+  }
+  #bass-select-container {
+    margin-left: 2.2em;
+  }
+  #bass-container {
+    padding-left: 0;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 98;
+    font-size: 18px;
+  }
+  #bass-select-header {
+    width: 98;
+  }
+  #drum-effect-header {
+    width: 99;
+  }
+  #drum-select-header {
+    width: 100;
+  }
+  .effect {
+    width: 128;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
 }
 
 @media only screen and (min-width: 1695px) and (max-width: 1724px) {
-        synthWidth = 614
-      drumWidth = 1271
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $('.seq-title').css('font-size', '1.3em')
-      $(".synth-seq-header").width(614)
-      $("#drum-seq-header").width(1271)
-      $('.list-select').width(134).height(345)
-      $('.select-sub-header').css('font-size', '16px')
-      $('.select-container').width(154).height(430).css('margin-right', '.75em').css('top', '-.75em')
-      $('#lead-select-container').css('margin-left', '3em')
-      $('#drum-select-container').width(136).css('margin-right', '2em').css('margin-left', '38px').css('top', '-.7em')
-      $('#drum-effect-container').width(136).height(430).css('margin-left', '2.2em')
-      $('.drum-effect').width(100)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '2em')
-      $('#bass-seq-header').css('margin-left', '2em')
-      $('#bass-select-container').css('margin-left', '2.2em')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(102).css('font-size', '18px')
-      $('#bass-select-header').width(102)
-      $('#drum-effect-header').width(103)
-      $('#drum-select-header').width(104)
-      $('.effect').width(132)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '2em')
+  .seq-title {
+    font-size: 1.3em;
+  }
+  .synth-seq-header {
+    width: 614;
+  }
+  #drum-seq-header {
+    width: 1271;
+  }
+  .list-select {
+    width: 134;
+    height: 345;
+  }
+  .select-sub-header {
+    font-size: 16px;
+  }
+  .select-container {
+    width: 154;
+    height: 430;
+    margin-right: .75em
+    top: -.75em;
+  }
+  #lead-select-container {
+    margin-left: 3em;
+  }
+  #drum-select-container {
+    width: 136;
+    margin-right: 2em;
+    margin-left: 38px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 136;
+    height: 430;
+    margin-left: 2.2em;
+  }
+  .drum-effect {
+    width: 100;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: 2em;
+  }
+  #bass-seq-header {
+    margin-left: 2em;
+  }
+  #bass-select-container {
+    margin-left: 2.2em;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 102;
+    font-size: 18px;
+  }
+  #bass-select-header {
+    width: 102;
+  }
+  #drum-effect-header {
+    width: 103;
+  }
+  #drum-select-header {
+    width: 104;
+  }
+  .effect {
+    width: 132;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 2em;
+  }
 }
 
-@media only screen and (min-width: 1725px) and (max-width: 1774px') {
-      synthWidth = 614
-      drumWidth = 1271
-      leadSeq.resize(synthWidth, 399)
-      bassSeq.resize(synthWidth, 399)
-      drumSeq.resize(drumWidth, 399)
-      $('.seq-title').css('font-size', '1.3em')
-      $(".synth-seq-header").width(614)
-      $("#drum-seq-header").width(1271)
-      $('.list-select').width(134).height(345)
-      $('.select-sub-header').css('font-size', '16px')
-      $('.select-container').width(154).height(430).css('top', '-.7em')
-      $('#drum-select-container').width(136).css('margin-right', '2.2em').css('margin-left', '61px')
-      $('#drum-effect-container').width(136).height(430).css('margin-left', '2.2em')
-      $('.drum-effect').width(100)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '.6em')
-      $('#bass-seq').css('padding-left', '2em')
-      $('#bass-seq-header').css('margin-left', '2em')
-      $('#bass-select-container').css('margin-left', '2.2em')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(102).css('font-size', '18px')
-      $('#bass-select-header').width(101)
-      $('#drum-effect-header').width(104)
-      $('#drum-select-header').width(104)
-      $('.effect').width(132)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em')
+@media only screen and (min-width: 1725px) and (max-width: 1774px) {
+  .seq-title {
+    font-size: 1.3em;
+  }
+  .synth-seq-header {
+    width: 614;
+  }
+  #drum-seq-header {
+    width: 1271;
+  }
+  .list-select {
+    width: 134;
+    height: 345;
+  }
+  .select-sub-header {
+    font-size: 16px;
+  }
+  .select-container {
+    width: 154;
+    height: 430;
+    top: -.7em;
+  }
+  #drum-select-container {
+    width: 136;
+    margin-right: 2.2em;
+    margin-left: 61px;
+  }
+  #drum-effect-container {
+    width: 136;
+    height: 430;
+    margin-left: 2.2em;
+  }
+  .drum-effect {
+    width: 100;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: .6em;
+  }
+  #bass-seq {
+    padding-left: 2em;
+  }
+  #bass-seq-header {
+    margin-left: 2em;
+  }
+  #bass-select-container {
+    margin-left: 2.2em;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 102;
+    font-size: 18px;
+  }
+  #bass-select-header {
+    width: 101;
+  }
+  #drum-effect-header {
+    width: 104;
+  }
+  #drum-select-header {
+    width: 104;
+  }
+  .effect {
+    width: 132;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em
+  }
 } 
-@media only screen and (min-width: 1775px) and (max-width: 1814px') {
-      synthWidth = 616
-      drumWidth = 1274.5
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(616)
-      $("#drum-seq-header").width(1274.5)
-      $('.list-select').width(140)
-      $('#drum-select-container').width(142).css('margin-right', '2.6em').css('margin-left', '74.5px')
-      $('#drum-effect-container').width(142).css('margin-left', '2.6em')
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '1.45em')
-      $('#bass-seq').css('padding-left', '2em')
-      $('#bass-seq-header').css('margin-left', '2em')
-      $('#bass-select-container').css('margin-left', '2.6em')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(104)
-      $('#drum-effect-header').width(106)
-      $('#drum-select-header').width(106)
-      $('.effect').width(138)
-      $('#start').css('font-size', '1.6em').css('margin-left', '.3em')
+@media only screen and (min-width: 1775px) and (max-width: 1814px) {
+  .synth-seq-header {
+    width: 616;
+  }
+  #drum-seq-header {
+    width: 1274.5;
+  }
+  .list-select {
+    width: 140;
+  }
+  #drum-select-container {
+    width: 142;
+    margin-right: 2.6em;
+    margin-left: 74.5px;
+  }
+  #drum-effect-container {
+    width: 142;
+    margin-left: 2.6em;
+  }
+  #lead-seq {
+    padding-left: 0;
+  }
+  #lead-container {
+    margin-left: 1.45em;
+  }
+  #bass-seq {
+    padding-left: 2em;
+  }
+  #bass-seq-header {
+    margin-left: 2em;
+  }
+  #bass-select-container {
+    margin-left: 2.6em;
+  }
+  #lead-seq-header {
+    margin-left: 0;
+  }
+  .select-header {
+    width: 104;
+  }
+  #drum-effect-header {
+    width: 106;
+  }
+  #drum-select-header {
+    width: 106;
+  }
+  .effect {
+    width: 138;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: .3em
+  }
 }
 
-@media only screen and (min-width: 1815px) and (max-width: 1854px') {
-      $(".synth-seq-header").width(617.5)
-      $("#drum-seq-header").width(1285)
-      $('.list-select').width(140)
-      $('#drum-select-container').width(142).css('margin-right', '3.3em').css('margin-left', '80px')
-      $('#drum-effect-container').width(142).css('margin-left', '3.2em')
-      $('#lead-seq').css('padding-left', '14px')
-      $('#bass-seq').css('padding-left', '2.3em')
-      $('#bass-seq-header').css('margin-left', '2.3em')
-      $('#bass-select-container').css('margin-left', '3.4em')
-      $('#lead-seq-header').css('margin-left', '.9em')
-      $('.select-header').width(104)
-      $('#drum-effect-header').width(106)
-      $('#drum-select-header').width(106)
-      $('.effect').width(138)
-      $('#start').css('font-size', '1.6em').css('margin-left', '.3em')
+@media only screen and (min-width: 1815px) and (max-width: 1854px) {
+  .synth-seq-header {
+    width: 617.5;
+  }
+  #drum-seq-header {
+    width: 1285;
+  }
+  .list-select {
+    width: 140;
+  }
+  #drum-select-container {
+    width: 142;
+    margin-right: 3.3em;
+    margin-left: 80px;
+  }
+  #drum-effect-container {
+    width: 142;
+    margin-left: 3.2em;
+  }
+  #lead-seq {
+    padding-left: 14px;
+  }
+  #bass-seq {
+    padding-left: 2.3em;
+  }
+  #bass-seq-header {
+    margin-left: 2.3em;
+  }
+  #bass-select-container {
+    margin-left: 3.4em;
+  }
+  #lead-seq-header {
+    margin-left: .9em;
+  }
+  .select-header {
+    width: 104;
+  }
+  #drum-effect-header {
+    width: 106;
+  }
+  #drum-select-header {
+    width: 106;
+  }
+  .effect {
+    width: 138;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: .3em
+  }
 }
 
-@media only screen and (min-width: 1855px) and (max-width: 1894px') {
-      $(".synth-seq-header").width(620)
-      $("#drum-seq-header").width(1288)
-      $('.list-select').width(140)
-      $('#drum-select-container').width(142)
-      $('#drum-effect-container').width(142).css('margin-left', '3.45em')
-      $('#lead-seq').css('padding-left', '18px')
-      $('#bass-seq').css('padding-left', '2.5em')
-      $('#lead-seq-header').css('margin-left', '1.1em')
-      $('.select-header').width(104)
-      $('#drum-effect-header').width(106)
-      $('#drum-select-header').width(106)
-      $('.effect').width(138)
-      $('#start').css('font-size', '1.6em').css('margin-left', '.3em')
+@media only screen and (min-width: 1855px) and (max-width: 1894px) {
+  .synth-seq-header {
+    width: 620;
+  }
+  #drum-seq-header {
+    width: 1288;
+  }
+  .list-select {
+    width: 140;
+  }
+  #drum-select-container {
+    width: 142;
+  }
+  #drum-effect-container {
+    width: 142;
+    margin-left: 3.45em;
+  }
+  #lead-seq {
+    padding-left: 18px;
+  }
+  #bass-seq {
+    padding-left: 2.5em;
+  }
+  #lead-seq-header {
+    margin-left: 1.1em;
+  }
+  .select-header {
+    width: 104;
+  }
+  #drum-effect-header {
+    width: 106;
+  }
+  #drum-select-header {
+    width: 106;
+  }
+  .effect {
+    width: 138;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: .3em
+  }
 }
 
-@media only screen and (min-width: 1895px) and (max-width: 1934px') {
-      synthWidth = 640
-      drumWidth = 1329.5
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(640)
-      $("#drum-seq-header").width(1329.5)
-      $('.list-select').width(144)
-      $('#drum-select-container').width(146)
-      $('#drum-effect-container').width(146)
-      $('#lead-seq').css('padding-left', '24px')
-      $('#lead-seq-header').css('margin-left', '1.5em')
-      $('.select-header').width(108)
-      $('#drum-effect-header').width(110)
-      $('#drum-select-header').width(110)
-      $('.effect').width(142)
-      $('#start').css('font-size', '1.7em')
+@media only screen and (min-width: 1895px) and (max-width: 1934px) {
+  .synth-seq-header {
+    width: 640;
+  }
+  #drum-seq-header {
+    width: 1329.5;
+  }
+  .list-select {
+    width: 144;
+  }
+  #drum-select-container {
+    width: 146;
+  }
+  #drum-effect-container {
+    width: 146;
+  }
+  #lead-seq {
+    padding-left: 24px;
+  }
+  #lead-seq-header {
+    margin-left: 1.5em;
+  }
+  .select-header {
+    width: 108;
+  }
+  #drum-effect-header {
+    width: 110;
+  }
+  #drum-select-header {
+    width: 110;
+  }
+  .effect {
+    width: 142;
+  }
+  #start {
+    font-size: 1.7em;
+  }
 }
 
-@media only screen and (min-width: 1935px) and (max-width: 1974px') {
-      synthWidth = 660
-      drumWidth = 1371
-      leadSeq.resize(synthWidth, height)
-      bassSeq.resize(synthWidth, height)
-      drumSeq.resize(drumWidth, height)
-      // $('#tempo').css('right', '5.4em')
-      $(".synth-seq-header").width(660)
-      $("#drum-seq-header").width(1371)
-      $('.list-select').width(148)
-      $('#drum-select-container').width(150).css('margin-right', '3.5em')
-      $('#drum-effect-container').width(150)
-      $('#lead-seq').css('padding-left', '27px')
-      $('#lead-seq-header').css('margin-left', '1.7em')
-      $('.select-header').width(112)
-      $('#drum-effect-header').width(114)
-      $('#drum-select-header').width(114)
-      $('.effect').width(146)
-      $('#start').css('font-size', '1.8em').css('margin-left', '.3em')
+@media only screen and (min-width: 1935px) and (max-width: 1974px) {
+/*      // #tempo right 5.4em  */
+  .synth-seq-header {
+    width: 660;
+  }
+  #drum-seq-header {
+    width: 1371;
+  }
+  .list-select {
+    width: 148;
+  }
+  #drum-select-container {
+    width: 150;
+    margin-right: 3.5em;
+  }
+  #drum-effect-container {
+    width: 150;
+  }
+  #lead-seq {
+    padding-left: 27px;
+  }
+  #lead-seq-header {
+    margin-left: 1.7em;
+  .select-header {
+    width: 112;
+  }
+  #drum-effect-header {
+    width: 114;
+  }
+  #drum-select-header {
+    width: 114;
+  }
+  .effect {
+    width: 146;
+  }
+  #start {
+    font-size: 1.8em;
+    margin-left: .3em;
+  }
 }
 
-@media only screen and (min-width: 1975px) and (max-width: 2014px') {
-      // $('#tempo').css('right', '5.3em')
-      $(".synth-seq-header").width(680)
-      $("#drum-seq-header").width(1412.5)
-      $('.list-select').width(152)
-      $('#drum-select-container').width(154).css('margin-right', '4em')
-      $('#drum-effect-container').width(154).css('margin-left', '3.45em')
-      $('.select-header').width(116)
-      $('#drum-effect-header').width(118)
-      $('#drum-select-header').width(118)
-      $('.effect').width(150)
-      $('#start').css('font-size', '1.9em')
+@media only screen and (min-width: 1975px) and (max-width: 2014px) {
+/*      // #tempo right 5.3em;*/
+  .synth-seq-header {
+    width: 680;
+  }
+  #drum-seq-header {
+    width: 1412.5;
+  }
+  .list-select {
+    width: 152;
+  }
+  #drum-select-container {
+    width: 154;
+    margin-right: 4em;
+  }
+  #drum-effect-container {
+    width: 154;
+    margin-left: 3.45em;
+  }
+  .select-header {
+    width: 116;
+  }
+  #drum-effect-header {
+    width: 118;
+  }
+  #drum-select-header {
+    width: 118;
+  }
+  .effect {
+    width: 150;
+  }
+  #start {
+    font-size: 1.9em;
+  }
 }
 
-@media only screen and (min-width: 2015px) and (max-width: 2054px') {
-      // $('#tempo').css('right', '5.2em')
-      $(".synth-seq-header").width(700)
-      $("#drum-seq-header").width(1454)
-      $('.list-select').width(156)
-      $('#lead-seq').css('padding-left', '36px')
-      $('#lead-seq-header').css('margin-left', '2.25em')
-      $('#drum-select-container').width(158)
-      $('#drum-effect-container').width(158)
-      $('.select-header').width(120)
-      $('#drum-effect-header').width(122)
-      $('#drum-select-header').width(122)
-      $('#bass-select-container').css('margin-left', '60px')
-      $('.effect').width(154)
-      $('#start').css('font-size', '1.95em')
+@media only screen and (min-width: 2015px) and (max-width: 2054px) {
+/*      // #tempo right 5.2em;*/
+  .synth-seq-header {
+    width: 700;
+  }
+  #drum-seq-header {
+    width: 1454;
+  }
+  .list-select {
+    width: 156;
+  }
+  #lead-seq {
+    padding-left: 36px;
+  }
+  #lead-seq-header {
+    margin-left: 2.25em;
+  }
+  #drum-select-container {
+    width: 158;
+  }
+  #drum-effect-container {
+    width: 158;
+  }
+  .select-header {
+    width: 120;
+  }
+  #drum-effect-header {
+    width: 122;
+  }
+  #drum-select-header {
+    width: 122;
+  }
+  #bass-select-container {
+    margin-left: 60px;
+  }
+  .effect {
+    width: 154;
+  }
+  #start {
+    font-size: 1.95em;
+  }
 }
 
-@media only screen and (min-width: 2055px) and (max-width: 2094px') {
-      // $('#tempo').css('right', '5.1em')
-      $(".synth-seq-header").width(720)
-      $("#drum-seq-header").width(1493.5)
-      $('.list-select').width(160) //orig 162
-      $('#drum-select-container').width(160) //
-      $('#drum-effect-container').width(160) //
-      $('.select-header').width(124) //126
-      $('.effect').width(158) ///162
+@media only screen and (min-width: 2055px) and (max-width: 2094px) {
+/*  // #tempo right 5.1em;  */
+  .synth-seq-header {
+    width: 720;
+  }
+  #drum-seq-header {
+    width: 1493.5;
+  }
+  .list-select {
+    width: 160;
+  }
+  #drum-select-container {
+    width: 160;
+  }
+  #drum-effect-container {
+    width: 160;
+  }
+  .select-header {
+    width: 124;
+  }
+  .effect {
+    width: 158;
+  }
 }
 
-@media only screen and (min-width: 2095px) and (max-width: 2174px') {
-      $(".synth-seq-header").width(740)
-      $("#drum-seq-header").width(1533)
+@media only screen and (min-width: 2095px) and (max-width: 2174px) {
+  .synth-seq-header {
+    width: 740;
+  }
+  #drum-seq-header {
+    width: 1533;
+  }
 }
 
-@media only screen and (min-width: 2175px) and (max-width: 2254px') {
-      $(".synth-seq-header").width(780)
-      $("#drum-seq-header").width(1612)
+@media only screen and (min-width: 2175px) and (max-width: 2254px) {
+  .synth-seq-header {
+    width: 780;
+  }
+  #drum-seq-header {
+    width: 1612;
+  }
 }
 
 @media only screen and (min-width: 2255px) and (max-width: 2334px) {
-      $(".synth-seq-header").width(820)
-      $("#drum-seq-header").width(1693)
+  .synth-seq-header {
+    width: 820;
+  }
+  #drum-seq-header {
+    width: 1693;
+  }
 }
 
 @media only screen and (min-width: 2335px) and (max-width: 2414px) {
-      $(".synth-seq-header").width(860)
-      $("#drum-seq-header").width(1772)
+  .synth-seq-header {
+    width: 860;
+  }
+  #drum-seq-header {
+    width: 1772;
+  }
 }
 
 @media only screen and (min-width: 2415px) and (max-width: 2496px) {
-      $(".synth-seq-header").width(900)
-      $("#drum-seq-header").width(1851)
+  .synth-seq-header {
+    width: 900;
+  }
+  #drum-seq-header {
+    width: 1851;
+  }
 }
 
 @media only screen and (min-width: 2497px) {
-      $(".synth-seq-header").width(940)
-      $("#drum-seq-header").width(1932)
+  .synth-seq-header {
+    width: 940;
+  }
+  #drum-seq-header {
+    width: 1932;
+  }
 }  
 
 
