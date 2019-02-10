@@ -726,11 +726,191 @@ const mqws = [
   window.matchMedia('(min-width: 2497px)')                          //40
 ]
 
+
+const mqhs = [
+  window.matchMedia('(min-height: 595px) and (max-height: 634px'),    //0
+  window.matchMedia('(min-height: 635px) and (max-height: 674px'),    //1
+  window.matchMedia('(min-height: 675px) and (max-height: 714px'),    //2
+  window.matchMedia('(min-height: 715px) and (max-height: 754px'),    //3
+  window.matchMedia('(min-height: 755px) and (max-height: 794px'),    //4
+  window.matchMedia('(min-height: 795px) and (max-height: 834px'),    //5--
+  window.matchMedia('(min-height: 469px) and (max-height: 528px'),   //6
+  window.matchMedia('(min-height: 529px) and (max-height: 588px'),  //7
+  window.matchMedia('(min-height: 589px) and (max-height: 658px'),  //8
+  window.matchMedia('(min-height: 659px) and (max-height: 738px'),  //9
+  window.matchMedia('(min-height: 739px) and (max-height: 788px'),  //10
+  window.matchMedia('(min-height: 789px) and (max-height: 838px'),  //11
+  window.matchMedia('(min-height: 839px) and (max-height: 888px'),  //12
+  window.matchMedia('(min-height: 889px) and (max-height: 938px'),  //13
+  window.matchMedia('(min-height: 939px) and (max-height: 999px'),  //14
+  window.matchMedia('(min-height: 1000px) and (max-height: 1048px'),  //15
+  window.matchMedia('(min-height: 1049px) and (max-height: 1084px'),  //16
+  window.matchMedia('(min-height: 1085px) and (max-height: 1124px'),  //17
+]
+
 let height = 400, synthWidth = 1932, drumWidth = 940
 
 const resizeSequencersResponsively = () => {
-  mqws[6].addListener(e => {
+  mqhs[6].addListener(e => {
     if(e.matches) {
+      height = 200
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.seq-title').css('font-size', '1.2em')
+      $('.list-select').height(140)
+      $('#drum-select-container').height(234.5)
+      $('#drum-effect-container').height(234.5)
+      $('#nav').css('display', 'none')
+      $('#header').css('display', 'none')
+      $('#synth-container').height(320).css('margin-top', '-5em')
+    }
+  })
+  mqhs[7].addListener(e => {
+    if(e.matches) {
+      height = 230
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.seq-title').css('font-size', '1.2em')
+      $('.list-select').height(170)
+      $('#drum-select-container').height(264.5)
+      $('#drum-effect-container').height(264.5)
+      $('#nav').css('display', 'none')
+      $('#header').css('display', 'none')
+      $('#synth-container').height(350).css('margin-top', '-5em')
+    }
+  })
+  mqhs[8].addListener(e => {
+    if(e.matches) {
+      height = 240
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.seq-title').css('font-size', '1.2em')
+      $('.list-select').height(180)
+      $('#drum-select-container').height(274.5)
+      $('#drum-effect-container').height(274.5)
+      $('#nav').height(40)
+      $('#header').css('font-size', '3em')
+      $('#synth-container').height(350).css('margin-top', '-1em')
+    }
+  })
+  mqhs[9].addListener(e => {
+    if(e.matches) {
+      height = 260
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.seq-title').css('font-size', '1.3em')
+      $('.list-select').height(204)
+      $('#drum-select-container').height(294.5)
+      $('#drum-effect-container').height(294.5)
+      $('#nav').height(60)
+      $('#header').css('font-size', '3.5em')
+      $('#synth-container').height(370).css('margin-top', '.25vh')
+    }
+  })
+  mqhs[10].addListener(e => {
+    if(e.matches) {
+      height = 280
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(228)
+      $('#drum-select-container').height(314.5)
+      $('#drum-effect-container').height(314.5)
+      $('#nav').height(80)
+      $('#header').css('font-size', '4em')
+      $('#synth-container').height(400).css('margin-top', '3vh')
+    }
+  })
+  mqhs[11].addListener(e => {
+    if(e.matches) {
+      height = 300
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(248)
+      $('#drum-select-container').height(334.5)
+      $('#drum-effect-container').height(334.5)
+      $('#nav').height(90)
+      $('#header').css('font-size', '4.5em')
+      $('#synth-container').height(420).css('margin-top', '4vh')
+    }
+  })
+  mqhs[12].addListener(e => {
+    if(e.matches) {
+      height = 320
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(268)
+      $('#drum-select-container').height(354.5)
+      $('#drum-effect-container').height(354.5)
+      $('#nav').height(100)
+      $('#header').css('font-size', '4.5em')
+      $('#synth-container').height(440).css('margin-top', '4.75vh')
+    }
+  })
+  mqhs[13].addListener(e => {
+    if(e.matches) {
+      height = 340
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(288)
+      $('#drum-select-container').height(374.5)
+      $('#drum-effect-container').height(374.5)
+      $('#nav').height(110)
+      $('#header').css('font-size', '4.5em')
+      $('#synth-container').height(460).css('margin-top', '5.5vh')
+    }
+  })
+  mqhs[14].addListener(e => {
+    if(e.matches) {
+      height = 360
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(308)
+      $('#drum-select-container').height(394.5)
+      $('#drum-effect-container').height(394.5)
+      $('#nav').height(120)
+      $('#header').css('font-size', '4.5em')
+      $('#synth-container').height(480).css('margin-top', '6.5vh')
+    }
+  })
+  mqhs[15].addListener(e => {
+    if(e.matches) {
+      height = 380
+      leadSeq.resize(synthWidth, height)
+      bassSeq.resize(synthWidth, height)
+      drumSeq.resize(drumWidth, height)
+      $('.list-select').height(328)
+      $('#drum-select-container').height(414.5)
+      $('#drum-effect-container').height(414.5)
+      $('#nav').height(130)
+      $('#header').css('font-size', '4.5em')
+      $('#synth-container').height(500).css('margin-top', '7.5vh')
+    }
+  })
+  mqhs[16].addListener(e => {
+    if(e.matches) {
+      $('#nav').height(140)
+      $('#header').css('font-size', '5em')
+      $('#synth-container').height(520).css('margin-top', '8vh')
+    }
+  })
+  mqhs[17].addListener(e => {
+    if(e.matches) {
+      $('#nav').height(160)
+      $('#header').css('font-size', '6em')
+      $('#synth-container').height(530).css('margin-top', '10vh')
+    }
+  })
+  mqws[6].addListener(e => {
+    if(e.matches) { 
       leadSeq.resize(292, height)
       bassSeq.resize(292, height)
       drumSeq.resize(592, height)
@@ -760,19 +940,21 @@ const resizeSequencersResponsively = () => {
     }
   })
   mqws[7].addListener(e => {
-    if(e.matches) {
-      leadSeq.resize(332, height)
-      bassSeq.resize(332, height)
-      drumSeq.resize(670, height)
-      $(".synth-seq-header").width(332)
-      $("#drum-seq-header").width(670)
-      $('.list-select').width(61)
+    if(e.matches) { 
+      leadSeq.resize(318, height)
+      bassSeq.resize(318, height)
+      drumSeq.resize(644, height)
+      $(".synth-seq-header").width(318)
+      $("#drum-seq-header").width(644)
+      $(".synth-seq-header").width(318)
+      $("#drum-seq-header").width(644)
+      $('.list-select').width(53)
       $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
-      $('.select-container').width(77).css('margin-right', '0')
-      $('#lead-select-container').width(63.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(63).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(63).css('margin-left', '.4em')
-      $('.drum-effect').width(37)
+      $('.select-container').width(69).css('margin-right', '0')
+      $('#lead-select-container').width(55.5).css('margin-left', '2.7em')
+      $('#drum-select-container').width(55).css('margin-right', '.4em').css('margin-left', '34px')
+      $('#drum-effect-container').width(55).css('margin-left', '.4em')
+      $('.drum-effect').width(29)
       $('#lead-seq').css('padding-left', '0')
       $('#lead-container').css('margin-left', '0em')
       $('#bass-seq').css('padding-left', '.3em')
@@ -780,105 +962,106 @@ const resizeSequencersResponsively = () => {
       $('#bass-select-container').css('margin-left', '.15em')
       $('#bass-container').css('padding-left', '0')
       $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(45).css('font-size', '9px')
-      $('.drum-select').width(35)
-      $('#bass-select-header').width(45)
-      $('#drum-effect-header').width(47)
-      $('#drum-select-header').width(47)
-      $('.effect').width(59)
+      $('.select-header').width(37).css('font-size', '9px')
+      $('.drum-select').width(27)
+      $('#bass-select-header').width(37)
+      $('#drum-effect-header').width(39)
+      $('#drum-select-header').width(39)
+      $('.effect').width(51)
       $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
     }
   })
   mqws[8].addListener(e => {
-    if(e.matches) {
-      leadSeq.resize(332, height)
-      bassSeq.resize(332, height)
-      drumSeq.resize(670, height)
-      $(".synth-seq-header").width(332)
-      $("#drum-seq-header").width(670)
-      $(".synth-seq-header").width(332)
-      $("#drum-seq-header").width(670)
-      $('.list-select').width(61)
-      $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
-      $('.select-container').width(77).css('margin-right', '0')
-      $('#lead-select-container').width(63.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(63).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(63).css('margin-left', '.4em')
-      $('.drum-effect').width(37)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(45).css('font-size', '9px')
-      $('.drum-select').width(35)
-      $('#bass-select-header').width(45)
-      $('#drum-effect-header').width(47)
-      $('#drum-select-header').width(47)
-      $('.effect').width(59)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    if(e.matches) { 
+    leadSeq.resize(332, height)
+    bassSeq.resize(332, height)
+    drumSeq.resize(670, height)
+    $('.vol-slider').css('position', 'relative').css('top', '5px')
+    $('.vol-slider rect').height(5)
+    $('.seq-title').css('font-size', '.7em')
+    $(".synth-seq-header").width(332).height(15)
+    $("#drum-seq-header").width(670)
+    $('.list-select').width(61).height(345)
+    $('.select-sub-header').css('font-size', '6px').css('padding-left', '0')
+    $('.select-container').width(77).height(433).css('margin-right', '0').css('top', '-.95em')
+    $('#lead-select-container').width(63.5).height(426).css('margin-left', '2.7em')
+    $('#drum-select-container').width(63).height(426).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em')
+    $('#drum-effect-container').width(63).height(426).css('margin-left', '.4em')
+    $('.drum-effect').width(37)
+    $('#lead-seq').css('padding-left', '0')
+    $('#lead-container').css('margin-left', '0em')
+    $('#bass-seq').css('padding-left', '.3em')
+    $('#bass-seq-header').css('margin-left', '.3em')
+    $('#bass-select-container').css('margin-left', '.15em')
+    $('#bass-container').css('padding-left', '0')
+    $('#lead-seq-header').css('margin-left', '0')
+    $('.select-header').width(45).css('font-size', '9px')
+    $('.drum-select').width(35)
+    $('#bass-select-header').width(45)
+    $('#drum-effect-header').width(47)
+    $('#drum-select-header').width(47)
+    $('.effect').width(59)
+    $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
     }
   })
   mqws[9].addListener(e => {
-    if(e.matches) {
-      leadSeq.resize(356, height)
-      bassSeq.resize(356, height)
-      drumSeq.resize(722, height)
-      $(".synth-seq-header").width(356)
-      $("#drum-seq-header").width(722)
-      $('.list-select').width(67)
-      $('.select-sub-header').css('font-size', '8px').css('padding-left', '0')
-      $('.select-container').width(77).css('margin-right', '0')
-      $('#lead-select-container').width(69.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(69).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(69).css('margin-left', '.4em')
-      $('.drum-effect').width(43)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(49).css('font-size', '10px')
-      $('.drum-select').width(41)
-      $('#bass-select-header').width(50)
-      $('#drum-effect-header').width(51)
-      $('#drum-select-header').width(52)
-      $('.effect').width(65)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    if(e.matches) { 
+    leadSeq.resize(356, height)
+    bassSeq.resize(356, height)
+    drumSeq.resize(722, height)
+    $(".synth-seq-header").width(356)
+    $("#drum-seq-header").width(722)
+    $('.list-select').width(67)
+    $('.select-sub-header').css('font-size', '8px').css('padding-left', '0')
+    $('.select-container').width(77).css('margin-right', '0')
+    $('#lead-select-container').width(69.5).css('margin-left', '2.7em')
+    $('#drum-select-container').width(69).css('margin-right', '.4em').css('margin-left', '34px')
+    $('#drum-effect-container').width(69).css('margin-left', '.4em')
+    $('.drum-effect').width(43)
+    $('#lead-seq').css('padding-left', '0')
+    $('#lead-container').css('margin-left', '0em')
+    $('#bass-seq').css('padding-left', '.3em')
+    $('#bass-seq-header').css('margin-left', '.3em')
+    $('#bass-select-container').css('margin-left', '.15em')
+    $('#bass-container').css('padding-left', '0')
+    $('#lead-seq-header').css('margin-left', '0')
+    $('.select-header').width(49).css('font-size', '10px')
+    $('.drum-select').width(41)
+    $('#bass-select-header').width(50)
+    $('#drum-effect-header').width(51)
+    $('#drum-select-header').width(52)
+    $('.effect').width(65)
+    $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
     }
   })
   mqws[10].addListener(e => {
-    if(e.matches) {
-      leadSeq.resize(368, height)
-      bassSeq.resize(368, height)
-      drumSeq.resize(742, height)
-      $(".synth-seq-header").width(368)
-      $("#drum-seq-header").width(742)
-      $('.list-select').width(73)
-      $('.select-sub-header').css('font-size', '8px').css('padding-left', '0')
-      $('.select-container').width(93).css('margin-right', '0')
-      $('#lead-select-container').width(75.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(75).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(75).css('margin-left', '.4em')
-      $('.drum-effect').width(49)
-      $('#lead-seq').css('padding-left', '0')
-      $('#lead-container').css('margin-left', '0em')
-      $('#bass-seq').css('padding-left', '.3em')
-      $('#bass-seq-header').css('margin-left', '.3em')
-      $('#bass-select-container').css('margin-left', '.15em')
-      $('#bass-container').css('padding-left', '0')
-      $('#lead-seq-header').css('margin-left', '0')
-      $('.select-header').width(55).css('font-size', '10px')
-      $('.drum-select').width(47)
-      $('#bass-select-header').width(56)
-      $('#drum-effect-header').width(57)
-      $('#drum-select-header').width(58)
-      $('.effect').width(71)
-      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    if(e.matches) { 
+    leadSeq.resize(368, height)
+    bassSeq.resize(368, height)
+    drumSeq.resize(742, height)
+    $(".synth-seq-header").width(368)
+    $("#drum-seq-header").width(742)
+    $('.list-select').width(73)
+    $('.select-sub-header').css('font-size', '8px').css('padding-left', '0')
+    $('.select-container').width(93).css('margin-right', '0')
+    $('#lead-select-container').width(75.5).css('margin-left', '2.7em')
+    $('#drum-select-container').width(75).css('margin-right', '.4em').css('margin-left', '34px')
+    $('#drum-effect-container').width(75).css('margin-left', '.4em')
+    $('.drum-effect').width(49)
+    $('#lead-seq').css('padding-left', '0')
+    $('#lead-container').css('margin-left', '0em')
+    $('#bass-seq').css('padding-left', '.3em')
+    $('#bass-seq-header').css('margin-left', '.3em')
+    $('#bass-select-container').css('margin-left', '.15em')
+    $('#bass-container').css('padding-left', '0')
+    $('#lead-seq-header').css('margin-left', '0')
+    $('.select-header').width(55).css('font-size', '10px')
+    $('.drum-select').width(47)
+    $('#bass-select-header').width(56)
+    $('#drum-effect-header').width(57)
+    $('#drum-select-header').width(58)
+    $('.effect').width(71)
+    $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
     }
   })
   mqws[11].addListener(e => {
@@ -886,14 +1069,17 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(388, height)
       bassSeq.resize(388, height)
       drumSeq.resize(782, height)
-      $(".synth-seq-header").width(388)
+      $('.vol-slider').css('position', 'relative').css('top', '5px')
+      $('.vol-slider rect').height(5)
+      $('.seq-title').css('font-size', '.8em')
+      $(".synth-seq-header").width(388).height(19)
       $("#drum-seq-header").width(782)
-      $('.list-select').width(73)
+      $('.list-select').width(73).height(346)
       $('.select-sub-header').css('font-size', '8px').css('padding-left', '0')
-      $('.select-container').width(93).css('margin-right', '0')
-      $('#lead-select-container').width(75.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(75).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(75).css('margin-left', '.4em')
+      $('.select-container').width(93).height(434).css('margin-right', '0').css('top', '-.9em')
+      $('#lead-select-container').width(75.5).height(426.5).css('margin-left', '2.7em')
+      $('#drum-select-container').width(75).height(426.5).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em')
+      $('#drum-effect-container').width(75).height(426.5).css('margin-left', '.4em')
       $('.drum-effect').width(49)
       $('#lead-seq').css('padding-left', '0')
       $('#lead-container').css('margin-left', '0em')
@@ -912,7 +1098,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mqws[12].addListener(e => {
-    if(e.matches) {
+    if(e.matches) { 
       leadSeq.resize(400, height)
       bassSeq.resize(400, height)
       drumSeq.resize(808, height)
@@ -942,7 +1128,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mqws[13].addListener(e => {
-    if(e.matches) {
+    if(e.matches) { 
       leadSeq.resize(424, height)
       bassSeq.resize(424, height)
       drumSeq.resize(854, height)
@@ -972,18 +1158,21 @@ const resizeSequencersResponsively = () => {
     }
   })
   mqws[14].addListener(e => {
-    if(e.matches) {
+    if(e.matches) { 
       leadSeq.resize(455, height)
       bassSeq.resize(455, height)
       drumSeq.resize(917, height)
-      $(".synth-seq-header").width(455)
+      $('.vol-slider').css('position', 'relative').css('top', '5px')
+      $('.vol-slider rect').height(5)
+      $('.seq-title').css('font-size', '.9em')
+      $(".synth-seq-header").width(455).height(20)
       $("#drum-seq-header").width(917)
-      $('.list-select').width(81)
+      $('.list-select').width(81).height(346)
       $('.select-sub-header').css('font-size', '9px').css('padding-left', '0')
-      $('.select-container').width(101).css('margin-right', '0')
+      $('.select-container').width(101).height(434).css('margin-right', '0').css('top', '-.9em')
       $('#lead-select-container').width(83.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(83).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(83).css('margin-left', '.4em')
+      $('#drum-select-container').width(83).height(426.5).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em')
+      $('#drum-effect-container').width(83).height(426.5).css('margin-left', '.4em')
       $('.drum-effect').width(57)
       $('#lead-seq').css('padding-left', '0')
       $('#lead-container').css('margin-left', '0em')
@@ -1002,7 +1191,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mqws[15].addListener(e => {
-    if(e.matches) {
+    if(e.matches) { 
       leadSeq.resize(480, height)
       bassSeq.resize(480, height)
       drumSeq.resize(968, height)
@@ -1032,7 +1221,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mqws[16].addListener(e => {
-    if(e.matches) {
+    if(e.matches) { 
       leadSeq.resize(500, height)
       bassSeq.resize(500, height)
       drumSeq.resize(1000, height)
@@ -1066,14 +1255,17 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(522, height)
       bassSeq.resize(522, height)
       drumSeq.resize(1051, height)
-      $(".synth-seq-header").width(522)
+      $('.vol-slider').css('position', 'relative').css('top', '5px')
+      $('.vol-slider rect').height(6)
+      $('.seq-title').css('font-size', '1em')
+      $(".synth-seq-header").width(522).height(25)
       $("#drum-seq-header").width(1051)
-      $('.list-select').width(93)
+      $('.list-select').width(93).height(346)
       $('.select-sub-header').css('font-size', '12px')
-      $('.select-container').width(113).css('margin-right', '0')
+      $('.select-container').width(113).height(434).css('margin-right', '0').css('top', '-.8em')
       $('#lead-select-container').width(95.5).css('margin-left', '2.7em')
-      $('#drum-select-container').width(95).css('margin-right', '.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(95).css('margin-left', '.4em')
+      $('#drum-select-container').width(95).height(426.5).css('margin-right', '.4em').css('margin-left', '34px').css('top', '-.7em')
+      $('#drum-effect-container').width(95).height(426.5).css('margin-left', '.4em')
       $('.drum-effect').width(69)
       $('#lead-seq').css('padding-left', '0')
       $('#lead-container').css('margin-left', '0em')
@@ -1217,14 +1409,15 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(602, height)
       bassSeq.resize(602, height)
       drumSeq.resize(1215, height)
+      $('.seq-title').css('font-size', '1.2em')
       $(".synth-seq-header").width(602)
       $("#drum-seq-header").width(1215)
-      $('.list-select').width(122)
+      $('.list-select').width(122).height(345)
       $('.select-sub-header').css('font-size', '14px')
-      $('.select-container').width(142).css('margin-right', '0')
+      $('.select-container').width(142).height(431).css('margin-right', '0').css('top', '-.8em')
       $('#lead-select-container').css('margin-left', '2.7em')
-      $('#drum-select-container').width(124).css('margin-right', '1.4em').css('margin-left', '34px')
-      $('#drum-effect-container').width(124).css('margin-left', '1.4em')
+      $('#drum-select-container').width(124).height(428).css('margin-right', '1.4em').css('margin-left', '34px').css('top', '-.7em')
+      $('#drum-effect-container').width(124).height(428).css('margin-left', '1.4em')
       $('.drum-effect').width(88)
       $('#lead-seq').css('padding-left', '0')
       $('#lead-container').css('margin-left', '0em')
@@ -1236,7 +1429,7 @@ const resizeSequencersResponsively = () => {
       $('.select-header').width(93).css('font-size', '16px')
       $('.drum-select').width(100)
       $('#bass-select-header').width(93)
-      $('#drum-effect-header').width(95)
+      $('#drum-effect-header').width(95)//96?
       $('#drum-select-header').width(96)
       $('.effect').width(120)
       $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
@@ -1300,19 +1493,49 @@ const resizeSequencersResponsively = () => {
       $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
     }
   })
+  mqws[24].addListener(e => {
+    if(e.matches) {
+      leadSeq.resize(606, height)
+      bassSeq.resize(606, height)
+      drumSeq.resize(1240, height)
+      $(".synth-seq-header").width(606)
+      $("#drum-seq-header").width(1240)
+      $('.list-select').width(130)
+      $('.select-sub-header').css('font-size', '16px')
+      $('.select-container').width(150).css('margin-right', '.75em')
+      $('#lead-select-container').css('margin-left', '2.7em')
+      $('#drum-select-container').width(132).css('margin-right', '2em').css('margin-left', '35px')
+      $('#drum-effect-container').width(132).css('margin-left', '2.2em')
+      $('.drum-effect').width(96)
+      $('#lead-seq').css('padding-left', '0')
+      $('#lead-container').css('margin-left', '0em')
+      $('#bass-seq').css('padding-left', '1.5em')
+      $('#bass-seq-header').css('margin-left', '1.5em')
+      $('#bass-select-container').css('margin-left', '2.2em')
+      $('#bass-container').css('padding-left', '0')
+      $('#lead-seq-header').css('margin-left', '0')
+      $('.select-header').width(98).css('font-size', '18px')
+      $('#bass-select-header').width(98)
+      $('#drum-effect-header').width(99)
+      $('#drum-select-header').width(100)
+      $('.effect').width(128)
+      $('#start').css('font-size', '1.6em').css('margin-left', '0em').css('left', '1.85em')
+    }
+  })
   mqws[25].addListener(e => {
     if(e.matches) {
       leadSeq.resize(614, height)
       bassSeq.resize(614, height)
       drumSeq.resize(1271, height)
+      $('.seq-title').css('font-size', '1.3em')
       $(".synth-seq-header").width(614)
       $("#drum-seq-header").width(1271)
-      $('.list-select').width(134)
+      $('.list-select').width(134).height(345)
       $('.select-sub-header').css('font-size', '16px')
-      $('.select-container').width(154).css('margin-right', '.75em')
+      $('.select-container').width(154).height(430).css('margin-right', '.75em').css('top', '-.75em')
       $('#lead-select-container').css('margin-left', '3em')
-      $('#drum-select-container').width(136).css('margin-right', '2em').css('margin-left', '38px')
-      $('#drum-effect-container').width(136).css('margin-left', '2.2em')
+      $('#drum-select-container').width(136).css('margin-right', '2em').css('margin-left', '38px').css('top', '-.7em')
+      $('#drum-effect-container').width(136).height(430).css('margin-left', '2.2em')
       $('.drum-effect').width(100)
       $('#lead-seq').css('padding-left', '0')
       $('#lead-container').css('margin-left', '0em')
@@ -1330,16 +1553,17 @@ const resizeSequencersResponsively = () => {
   })
   mqws[26].addListener(e => {
     if(e.matches) {
-      leadSeq.resize(614, height)
-      bassSeq.resize(614, height)
-      drumSeq.resize(1271, height)
+      leadSeq.resize(614, 399)
+      bassSeq.resize(614, 399)
+      drumSeq.resize(1271, 399)
+      $('.seq-title').css('font-size', '1.3em')
       $(".synth-seq-header").width(614)
       $("#drum-seq-header").width(1271)
-      $('.list-select').width(134)
+      $('.list-select').width(134).height(345)
       $('.select-sub-header').css('font-size', '16px')
-      $('.select-container').width(154)
+      $('.select-container').width(154).height(430).css('top', '-.7em')
       $('#drum-select-container').width(136).css('margin-right', '2.2em').css('margin-left', '61px')
-      $('#drum-effect-container').width(136).css('margin-left', '2.2em')
+      $('#drum-effect-container').width(136).height(430).css('margin-left', '2.2em')
       $('.drum-effect').width(100)
       $('#lead-seq').css('padding-left', '0')
       $('#lead-container').css('margin-left', '.6em')
@@ -1348,6 +1572,7 @@ const resizeSequencersResponsively = () => {
       $('#bass-select-container').css('margin-left', '2.2em')
       $('#lead-seq-header').css('margin-left', '0')
       $('.select-header').width(102).css('font-size', '18px')
+      $('#bass-select-header').width(101)
       $('#drum-effect-header').width(104)
       $('#drum-select-header').width(104)
       $('.effect').width(132)
@@ -1370,7 +1595,7 @@ const resizeSequencersResponsively = () => {
       $('#bass-seq-header').css('margin-left', '2em')
       $('#bass-select-container').css('margin-left', '2.6em')
       $('#lead-seq-header').css('margin-left', '0')
-      $('.sub-header').width(104)
+      $('.select-header').width(104)
       $('#drum-effect-header').width(106)
       $('#drum-select-header').width(106)
       $('.effect').width(138)
@@ -1392,7 +1617,7 @@ const resizeSequencersResponsively = () => {
       $('#bass-seq-header').css('margin-left', '2.3em')
       $('#bass-select-container').css('margin-left', '3.4em')
       $('#lead-seq-header').css('margin-left', '.9em')
-      $('.sub-header').width(104)
+      $('.select-header').width(104)
       $('#drum-effect-header').width(106)
       $('#drum-select-header').width(106)
       $('.effect').width(138)
@@ -1407,12 +1632,12 @@ const resizeSequencersResponsively = () => {
       $(".synth-seq-header").width(620)
       $("#drum-seq-header").width(1288)
       $('.list-select').width(140)
-      $('#drum-select-container').width(142).css('margin-right', '3.5em')
+      $('#drum-select-container').width(142)
       $('#drum-effect-container').width(142).css('margin-left', '3.45em')
       $('#lead-seq').css('padding-left', '18px')
       $('#bass-seq').css('padding-left', '2.5em')
       $('#lead-seq-header').css('margin-left', '1.1em')
-      $('.sub-header').width(104)
+      $('.select-header').width(104)
       $('#drum-effect-header').width(106)
       $('#drum-select-header').width(106)
       $('.effect').width(138)
@@ -1428,14 +1653,14 @@ const resizeSequencersResponsively = () => {
       $("#drum-seq-header").width(1329.5)
       $('.list-select').width(144)
       $('#drum-select-container').width(146)
-      $('#drum-effect-container').width(146).css('margin-left', '3.45em')
+      $('#drum-effect-container').width(146)
       $('#lead-seq').css('padding-left', '24px')
       $('#lead-seq-header').css('margin-left', '1.5em')
-      $('.sub-header').width(108)
+      $('.select-header').width(108)
       $('#drum-effect-header').width(110)
       $('#drum-select-header').width(110)
       $('.effect').width(142)
-      $('#start').css('font-size', '1.7em').css('margin-left', '.3em')
+      $('#start').css('font-size', '1.7em')
     }
   })
   mqws[31].addListener(e => {
@@ -1448,10 +1673,10 @@ const resizeSequencersResponsively = () => {
       $("#drum-seq-header").width(1371)
       $('.list-select').width(148)
       $('#drum-select-container').width(150).css('margin-right', '3.5em')
-      $('#drum-effect-container').width(150).css('margin-left', '3.45em')
+      $('#drum-effect-container').width(150)
       $('#lead-seq').css('padding-left', '27px')
       $('#lead-seq-header').css('margin-left', '1.7em')
-      $('.sub-header').width(112)
+      $('.select-header').width(112)
       $('#drum-effect-header').width(114)
       $('#drum-select-header').width(114)
       $('.effect').width(146)
@@ -1467,9 +1692,9 @@ const resizeSequencersResponsively = () => {
       $(".synth-seq-header").width(680)
       $("#drum-seq-header").width(1412.5)
       $('.list-select').width(152)
-      $('#drum-select-container').width(154).css('margin-right', '3.6em')
-      $('#drum-effect-container').width(154)
-      $('.sub-header').width(116)
+      $('#drum-select-container').width(154).css('margin-right', '4em')
+      $('#drum-effect-container').width(154).css('margin-left', '3.45em')
+      $('.select-header').width(116)
       $('#drum-effect-header').width(118)
       $('#drum-select-header').width(118)
       $('.effect').width(150)
@@ -1488,11 +1713,11 @@ const resizeSequencersResponsively = () => {
       $('#lead-seq').css('padding-left', '36px')
       $('#lead-seq-header').css('margin-left', '2.25em')
       $('#drum-select-container').width(158)
-      $('#drum-effect-container').width(158).css('margin-left', '3em')
-      $('#bass-select-container').css('margin-left', '60px')
-      $('.sub-header').width(120)
+      $('#drum-effect-container').width(158)
+      $('.select-header').width(120)
       $('#drum-effect-header').width(122)
       $('#drum-select-header').width(122)
+      $('#bass-select-container').css('margin-left', '60px')
       $('.effect').width(154)
       $('#start').css('font-size', '1.95em')
     }
@@ -1505,11 +1730,11 @@ const resizeSequencersResponsively = () => {
       // $('#tempo').css('right', '5.1em')
       $(".synth-seq-header").width(720)
       $("#drum-seq-header").width(1493.5)
-      $('.list-select').width(160)
-      $('#drum-select-container').width(160).css('margin-right', '3.6em')
-      $('#drum-effect-container').width(160)
-      $('.sub-header').width(124)
-      $('.effect').width(158)
+      $('.list-select').width(160) //orig 162
+      $('#drum-select-container').width(160) //
+      $('#drum-effect-container').width(160) //
+      $('.select-header').width(124) //126
+      $('.effect').width(158) ///162
     }
   })
   mqws[35].addListener(e => {
@@ -1532,7 +1757,7 @@ const resizeSequencersResponsively = () => {
   })
   mqws[37].addListener(e => {
     if(e.matches) {
-      leadSeq.resize(820, height)
+    leadSeq.resize(820, height)
       bassSeq.resize(820, height)
       drumSeq.resize(1693, height)
       $(".synth-seq-header").width(820)
@@ -1558,7 +1783,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mqws[40].addListener(e => {
-    if(e.matches) {
+    if(e.matches) { 
       leadSeq.resize(940, height)
       bassSeq.resize(940, height)
       drumSeq.resize(1932, height)
@@ -1567,27 +1792,6 @@ const resizeSequencersResponsively = () => {
     }
   })
 }
-
-const mqhs = [
-  window.matchMedia('(min-height: 595px) and (max-height: 634px'),    //0
-  window.matchMedia('(min-height: 635px) and (max-height: 674px'),    //1
-  window.matchMedia('(min-height: 675px) and (max-height: 714px'),    //2
-  window.matchMedia('(min-height: 715px) and (max-height: 754px'),    //3
-  window.matchMedia('(min-height: 755px) and (max-height: 794px'),    //4
-  window.matchMedia('(min-height: 795px) and (max-height: 834px'),    //5--
-  window.matchMedia('(min-height: 469px) and (max-height: 528px'),   //6
-  window.matchMedia('(min-height: 529px) and (max-height: 588px'),  //7
-  window.matchMedia('(min-height: 589px) and (max-height: 658px'),  //8
-  window.matchMedia('(min-height: 659px) and (max-height: 738px'),  //9
-  window.matchMedia('(min-height: 739px) and (max-height: 788px'),  //10
-  window.matchMedia('(min-height: 789px) and (max-height: 838px'),  //11
-  window.matchMedia('(min-height: 839px) and (max-height: 888px'),  //12
-  window.matchMedia('(min-height: 889px) and (max-height: 938px'),  //13
-  window.matchMedia('(min-height: 939px) and (max-height: 999px'),  //14
-  window.matchMedia('(min-height: 1000px) and (max-height: 1048px'),  //15
-  window.matchMedia('(min-height: 1049px) and (max-height: 1084px'),  //16
-  window.matchMedia('(min-height: 1085px) and (max-height: 1124px'),  //17
-]
 
 const setup = () => {
   document.body.appendChild(canvas)
