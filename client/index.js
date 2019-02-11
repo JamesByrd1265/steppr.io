@@ -1020,6 +1020,7 @@ const resizeSequencersResponsively = () => {
   })
   mqws[22].addListener(e => {
     if(e.matches) {
+      height = 380
       synthWidth = 602
       drumWidth = 1215
       leadSeq.resize(synthWidth, height)
@@ -1371,6 +1372,7 @@ const setup = () => {
       $("#drum-seq-header").width(1186)
     }
     if(mqws[22].matches) {
+      height = 380
       leadSeq.resize(602, height)
       bassSeq.resize(602, height)
       drumSeq.resize(1215, height)

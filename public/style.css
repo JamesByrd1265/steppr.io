@@ -2031,14 +2031,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 124px;
-    height: 428px;
+    height: 410px;
     margin-right: 1.4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 124px;
-    height: 428px;
+    height: 410px;
     margin-left: 1.4em;
   }
   .drum-effect {
@@ -2076,7 +2076,7 @@ path:nth-child(5) {
     width: 93px;
   }
   #drum-effect-header {
-    width: 95);
+    width: 95px;
   }
   #drum-select-header {
     width: 96px;
@@ -2271,14 +2271,15 @@ path:nth-child(5) {
     margin-left: 3em;
   }
   #drum-select-container {
+    height: 430px;
     width: 136px;
     margin-right: 2em;
     margin-left: 38px;
     top: -.7em;
   }
   #drum-effect-container {
-    width: 136px;
     height: 430px;
+    width: 136px;
     margin-left: 2.2em;
   }
   .drum-effect {
@@ -2447,7 +2448,7 @@ path:nth-child(5) {
     width: 106px;
   }
   .effect {
-    width: 138px;
+    width: 140px;
   }
   #start {
     font-size: 1.6em;
@@ -2499,7 +2500,7 @@ path:nth-child(5) {
     width: 106px;
   }
   .effect {
-    width: 138px;
+    width: 140px;
   }
   #start {
     font-size: 1.6em;
@@ -2543,7 +2544,7 @@ path:nth-child(5) {
     width: 106px;
   }
   .effect {
-    width: 138px;
+    width: 140px;
   }
   #start {
     font-size: 1.6em;
@@ -2583,7 +2584,7 @@ path:nth-child(5) {
     width: 110px;
   }
   .effect {
-    width: 142px;
+    width: 144px;
   }
   #start {
     font-size: 1.7em;
@@ -2613,6 +2614,7 @@ path:nth-child(5) {
   }
   #lead-seq-header {
     margin-left: 1.7em;
+  }
   .select-header {
     width: 112px;
   }
@@ -2623,7 +2625,7 @@ path:nth-child(5) {
     width: 114px;
   }
   .effect {
-    width: 146px;
+    width: 148px;
   }
   #start {
     font-size: 1.8em;
@@ -2666,7 +2668,7 @@ path:nth-child(5) {
     width: 118px;
   }
   .effect {
-    width: 150px;
+    width: 152px;
   }
   #start {
     font-size: 1.9em;
@@ -2709,7 +2711,7 @@ path:nth-child(5) {
     margin-left: 60px;
   }
   .effect {
-    width: 154px;
+    width: 156px;
   }
   #start {
     font-size: 1.95em;
@@ -2737,7 +2739,7 @@ path:nth-child(5) {
     width: 124px;
   }
   .effect {
-    width: 158px;
+    width: 160px;
   }
 }
 
