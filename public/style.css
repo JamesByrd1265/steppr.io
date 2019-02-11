@@ -706,7 +706,7 @@ path:nth-child(5) {
     width: 39px;
   }
   .effect {
-    width: 51px;
+    width: 53px;
   }
   #start {
     font-size: 1.6em;
@@ -787,7 +787,7 @@ path:nth-child(5) {
     width: 39px;
   }
   .effect {
-    width: 51px;
+    width: 53px;
   }
   #start {
     font-size: 1.6em;
@@ -824,7 +824,8 @@ path:nth-child(5) {
     padding-left: 0px;
   }
   .select-container {
-    width: 77 height: 433px;
+    width: 77px;
+    height: 433px;
     margin-right: 0px;
     top: -.95em;
   }
@@ -886,7 +887,7 @@ path:nth-child(5) {
     width: 47px;
   }
   .effect {
-    width: 59px;
+    width: 61px;
   }
   #start {
     font-size: 1.6em;
@@ -967,7 +968,7 @@ path:nth-child(5) {
     width: 52px;
   }
   .effect {
-    width: 65px;
+    width: 67px;
   }
   #start {
     font-size: 1.6em;
@@ -1048,7 +1049,7 @@ path:nth-child(5) {
     width: 58px;
   }
   .effect {
-    width: 71px;
+    width: 73px;
   }
   #start {
     font-size: 1.6em;
@@ -1147,7 +1148,7 @@ path:nth-child(5) {
     width: 58px;
   }
   .effect {
-    width: 71px;
+    width: 73px;
   }
   #start {
     font-size: 1.6em;
@@ -1228,7 +1229,7 @@ path:nth-child(5) {
     width: 64px;
   }
   .effect {
-    width: 79px;
+    width: 81px;
   }
   #start {
     font-size: 1.6em;
@@ -1309,7 +1310,7 @@ path:nth-child(5) {
     width: 64px;
   }
   .effect {
-    width: 79px;
+    width: 81px;
   }
   #start {
     font-size: 1.6em;
@@ -1407,7 +1408,7 @@ path:nth-child(5) {
     width: 64px;
   }
   .effect {
-    width: 79px;
+    width: 81px;
   }
   #start {
     font-size: 1.6em;
@@ -1487,7 +1488,7 @@ path:nth-child(5) {
     width: 64px;
   }
   .effect {
-    width: 85px;
+    width: 87px;
   }
   #start {
     font-size: 1.6em;
@@ -1567,7 +1568,7 @@ path:nth-child(5) {
     width: 70px;
   }
   .effect {
-    width: 91px;
+    width: 93px;
   }
   #start {
     font-size: 1.6em;
@@ -1664,7 +1665,7 @@ path:nth-child(5) {
     width: 70px;
   }
   .effect {
-    width: 91px;
+    width: 93px;
   }
   #start {
     font-size: 1.6em;
@@ -1744,7 +1745,7 @@ path:nth-child(5) {
     width: 74px;
   }
   .effect {
-    width: 97px;
+    width: 99px;
   }
   #start {
     font-size: 1.6em;
@@ -1753,7 +1754,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1425px) and (max-width: 1454px) {
+@media only screen and (min-width: 1425px) and (max-width: 1467px) {
   .synth-seq-header {
     width: 561.5px;
   }
@@ -1824,7 +1825,7 @@ path:nth-child(5) {
     width: 78px;
   }
   .effect {
-    width: 101px;
+    width: 103px;
   }
   #start {
     font-size: 1.6em;
@@ -1833,7 +1834,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1455px) and (max-width: 1534px) {
+@media only screen and (min-width: 1468px) and (max-width: 1534px) {
   .seq-title {
     font-size: 1.1em;
   }
@@ -1913,7 +1914,7 @@ path:nth-child(5) {
     width: 85px;
   }
   .effect {
-    width: 108px;
+    width: 110px;
   }
   #start {
     font-size: 1.6em;
@@ -1993,7 +1994,7 @@ path:nth-child(5) {
     width: 96px;
   }
   .effect {
-    width: 120px;
+    width: 122px;
   }
   #start {
     font-size: 1.6em;
@@ -2081,7 +2082,7 @@ path:nth-child(5) {
     width: 96px;
   }
   .effect {
-    width: 120px;
+    width: 122px;
   }
   #start {
     font-size: 1.6em;
@@ -2158,7 +2159,7 @@ path:nth-child(5) {
     width: 96px;
   }
   .effect {
-    width: 124px;
+    width: 126px;
   }
   #start {
     font-size: 1.6em;
@@ -2167,7 +2168,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1655px) and (max-width: 1694px) {
+@media only screen and (min-width: 1655px) and (max-width: 1702px) {
   .synth-seq-header {
     width: 606px;
   }
@@ -2234,7 +2235,7 @@ path:nth-child(5) {
     width: 100px;
   }
   .effect {
-    width: 128px;
+    width: 130px;
   }
   #start {
     font-size: 1.6em;
@@ -2243,7 +2244,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1695px) and (max-width: 1724px) {
+@media only screen and (min-width: 1703px) and (max-width: 1724px) {
   .seq-title {
     font-size: 1.3em;
   }
@@ -2255,7 +2256,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 134px;
-    height: 345px;
+    height: 364px;
   }
   .select-sub-header {
     font-size: 16px;
@@ -2315,7 +2316,7 @@ path:nth-child(5) {
     width: 104px;
   }
   .effect {
-    width: 132px;
+    width: 134px;
   }
   #start {
     font-size: 1.6em;
@@ -2347,13 +2348,14 @@ path:nth-child(5) {
     top: -.7em;
   }
   #drum-select-container {
+    height: 410px;
     width: 136px;
     margin-right: 2.2em;
     margin-left: 61px;
   }
   #drum-effect-container {
     width: 136px;
-    height: 430px;
+    height: 410px;
     margin-left: 2.2em;
   }
   .drum-effect {
@@ -2391,7 +2393,7 @@ path:nth-child(5) {
     width: 104px;
   }
   .effect {
-    width: 132px;
+    width: 134px;
   }
   #start {
     font-size: 1.6em;
@@ -2640,6 +2642,12 @@ path:nth-child(5) {
   .list-select {
     width: 152px;
   }
+  #lead-seq {
+    padding-left: 36px;
+  }
+  #lead-seq-header {
+    margin-left: 2.25em;
+  }
   #drum-select-container {
     width: 154px;
     margin-right: 4em;
@@ -2775,14 +2783,5 @@ path:nth-child(5) {
   }
   #drum-seq-header {
     width: 1851px;
-  }
-}
-
-@media only screen and (min-width: 2497px) {
-  .synth-seq-header {
-    width: 940px;
-  }
-  #drum-seq-header {
-    width: 1932px;
   }
 }  
