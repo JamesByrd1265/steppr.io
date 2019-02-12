@@ -1279,31 +1279,32 @@ const setup = () => {
       leadSeq.resize(332, height)
       bassSeq.resize(332, height)
       drumSeq.resize(670, height)
-      $(".synth-seq-header").width(332).height(15)
+      $(".synth-seq-header").width(332).height(20)
       $("#drum-seq-header").width(670)
     }
-    if(mqws[9].matches) { 
+    if(mqws[9].matches) {
+      height = 340 
       leadSeq.resize(356, height)
       bassSeq.resize(356, height)
       drumSeq.resize(722, height)
-      $(".synth-seq-header").width(356)
-      $("#drum-seq-header").width(722)
+      $(".synth-seq-header").width(356).height(20)
+      $("#drum-seq-header").width(722).height(20)
     }
     if(mqws[10].matches) {
       height = 360 
       leadSeq.resize(368, height)
       bassSeq.resize(368, height)
       drumSeq.resize(742, height)
-      $(".synth-seq-header").width(368).height(19)
-      $("#drum-seq-header").width(742).height(19)
+      $(".synth-seq-header").width(368).height(20)
+      $("#drum-seq-header").width(742).height(20)
     }
     if(mqws[11].matches) {
       height = 360 
       leadSeq.resize(388, height)
       bassSeq.resize(388, height)
       drumSeq.resize(782, height)
-      $(".synth-seq-header").width(388).height(19)
-      $("#drum-seq-header").width(782).height(19)
+      $(".synth-seq-header").width(388).height(20)
+      $("#drum-seq-header").width(782).height(20)
     }
     if(mqws[12].matches) {
       height = 380 

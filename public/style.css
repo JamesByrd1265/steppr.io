@@ -897,6 +897,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 925px) and (max-width: 974px) {
+  .seq-title {
+    font-size: .8em;
+  }
   .synth-seq-header {
     width: 356px;
   }
@@ -905,6 +908,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 67px;
+    height: 304px;
   }
   .select-sub-header {
     font-size: 8px;
@@ -913,6 +917,7 @@ path:nth-child(5) {
   .select-container {
     width: 77px;
     margin-right: 0px;
+    top: -.9em;
   }
   #lead-select-container {
     width: 69.5px;
@@ -920,11 +925,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 69px;
+    height: 360px;
     margin-right: .4em;
     margin-left: 34px;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 69px;
+    height: 360px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -952,6 +960,7 @@ path:nth-child(5) {
     margin-left: 0px;
   }
   .select-header {
+    padding-top: .25em;
     width: 49px;
     font-size: 10px;
   }
@@ -1041,7 +1050,7 @@ path:nth-child(5) {
     margin-left: 0px;
   }
   .select-header {
-    padding-top: .2em;
+    padding-top: .25em;
     width: 55px;
     font-size: 10px;
   }
