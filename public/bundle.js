@@ -936,6 +936,18 @@ const resizeSequencersResponsively = () => {
   });
 
   //width below vvvvv
+  mqws[5].addListener(e => {
+    if (e.matches) {
+      height = 220;
+      synthWidth = 266;
+      drumWidth = 540;
+      leadSeq.resize(synthWidth, height);
+      bassSeq.resize(synthWidth, height);
+      drumSeq.resize(drumWidth, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(16);
+    }
+  });
   mqws[6].addListener(e => {
     if (e.matches) {
       height = 260;
@@ -944,8 +956,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-synthWidth-header").width(292).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-drumWidth").width(592).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-drumWidth").width(drumWidth).height(16);
     }
   });
   mqws[7].addListener(e => {
@@ -1389,9 +1401,9 @@ const setup = () => {
       height = 220;
       leadSeq.resize(266, height);
       bassSeq.resize(266, height);
-      drumSeq.resize(536, height);
+      drumSeq.resize(540, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(266).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(536).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(540).height(16);
     }
     if (mqws[6].matches) {
       height = 260;

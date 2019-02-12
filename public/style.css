@@ -673,9 +673,15 @@ path:nth-child(5) {
   }
 }
 
+@media only screen and (max-width: 824px) {
+  #synth-container {
+    height: 300px;
+  }
+}
+
 /*width ***do min-width of '' and max height of '' for middle-height margin-reduction*****/
 
-@media only screen and (min-width: 725px) and (max-width: 774px) {
+@media only screen and (min-width: 675px) and (max-width: 724px) {
   .seq-title {
     font-size: .7em;
   }
@@ -687,7 +693,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 53px;
-    height: 223px;
+    height: 183px;
   }
   .select-sub-header {
     font-size: 6px;
@@ -704,14 +710,104 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 55px;
-    height: 276px;
+    height: 236px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 55px;
-    height: 276px;
+    height: 236px;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    width: 29px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header {
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    padding-top: .25em;
+    width: 37px;
+    font-size: 9px;
+  }
+  .drum-select {
+    width: 27px;
+  }
+  #bass-select-header {
+    width: 37px;
+  }
+  #drum-effect-header {
+    width: 39px;
+  }
+  #drum-select-header {
+    width: 39px;
+  }
+  .effect {
+    width: 53px;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
+  }
+}
+
+@media only screen and (min-width: 725px) and (max-width: 774px) {
+  .seq-title {
+    font-size: .7em;
+  }
+  .synth-seq-header {
+    width: 292px;
+  }
+  #drum-seq-header {
+    width: 592px;
+  }
+  .list-select {
+    width: 53px;
+    height: 183px;
+  }
+  .select-sub-header {
+    font-size: 6px;
+    padding-left: 0px;
+  }
+  .select-container {
+    width: 69px;
+    margin-right: 0px;
+    top: -.9em;
+  }
+  #lead-select-container {
+    width: 55.5px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 55px;
+    height: 236px;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 55px;
+    height: 236px;
     margin-left: .4em;
   }
   .drum-effect {
