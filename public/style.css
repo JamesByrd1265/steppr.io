@@ -817,7 +817,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 61px;
-    height: 345px;
+    height: 283px;
   }
   .select-sub-header {
     font-size: 6px;
@@ -827,23 +827,22 @@ path:nth-child(5) {
     width: 77px;
     height: 433px;
     margin-right: 0px;
-    top: -.95em;
+    top: -.9em;
   }
   #lead-select-container {
     width: 63.5px;
-    height: 426px;
     margin-left: 2.7em;
   }
   #drum-select-container {
     width: 63px;
-    height: 426px;
+    height: 336px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 63px;
-    height: 426px;
+    height: 336px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -871,6 +870,7 @@ path:nth-child(5) {
     margin-left: 0px;
   }
   .select-header {
+    padding-top: .25em;
     width: 45px;
     font-size: 9px;
   }
