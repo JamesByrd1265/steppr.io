@@ -632,9 +632,12 @@ path:nth-child(5) {
 }
 
 
-/*width*/
+/*width ***do min-width of '' and max height of '' for middle-height margin-reduction*****/
 
 @media only screen and (min-width: 775px) and (max-width: 824px) {
+  .seq-title {
+    font-size: .7em;
+  }
   .synth-seq-header {
     width: 292px;
   }
@@ -643,6 +646,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 53px;
+    height: 223px;
   }
   .select-sub-header {
     font-size: 6px;
@@ -651,6 +655,7 @@ path:nth-child(5) {
   .select-container {
     width: 69px;
     margin-right: 0px;
+    top: -.9em;
   }
   #lead-select-container {
     width: 55.5px;
@@ -658,11 +663,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 55px;
+    height: 276px;
     margin-right: .4em;
     margin-left: 34px;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 55px;
+    height: 276px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -690,6 +698,7 @@ path:nth-child(5) {
     margin-left: 0px;
   }
   .select-header {
+    padding-top: .25em;
     width: 37px;
     font-size: 9px;
   }

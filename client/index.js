@@ -850,8 +850,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-synthWidth-header").width(292)
-      $("#drum-seq-drumWidth").width(592)
+      $(".synth-synthWidth-header").width(292).height(16)
+      $("#drum-seq-drumWidth").width(592).height(16)
     }
   })
   mqws[7].addListener(e => {
@@ -862,8 +862,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(16)
+      $("#drum-seq-header").width(drumWidth).height(16)
     }
   })
   mqws[8].addListener(e => {
@@ -874,8 +874,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth).height(15)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(16)
+      $("#drum-seq-header").width(drumWidth).height(16)
     }
   })
   mqws[9].addListener(e => {
@@ -886,8 +886,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(20)
+      $("#drum-seq-header").width(drumWidth).height(20)
     }
   })
   mqws[10].addListener(e => {
@@ -898,8 +898,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(20)
+      $("#drum-seq-header").width(drumWidth).height(20)
     }
   })
   mqws[11].addListener(e => {
@@ -910,8 +910,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth).height(19)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(20)
+      $("#drum-seq-header").width(drumWidth).height(20)
     }
   })
   mqws[12].addListener(e => {
@@ -922,8 +922,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(20)
+      $("#drum-seq-header").width(drumWidth).height(20)
     }
   })
   mqws[13].addListener(e => {
@@ -934,8 +934,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(20)
+      $("#drum-seq-header").width(drumWidth).height(20)
     }
   })
   mqws[14].addListener(e => {
@@ -947,7 +947,7 @@ const resizeSequencersResponsively = () => {
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       $(".synth-seq-header").width(synthWidth).height(20)
-      $("#drum-seq-header").width(drumWidth)
+      $("#drum-seq-header").width(drumWidth).height(20)
     }
   })
   mqws[15].addListener(e => {
@@ -958,8 +958,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(25)
+      $("#drum-seq-header").width(drumWidth).height(25)
     }
   })
   mqws[16].addListener(e => {
@@ -970,8 +970,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(25)
+      $("#drum-seq-header").width(drumWidth).height(25)
     }
   })
   mqws[17].addListener(e => {
@@ -983,7 +983,7 @@ const resizeSequencersResponsively = () => {
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       $(".synth-seq-header").width(synthWidth).height(25)
-      $("#drum-seq-header").width(drumWidth)
+      $("#drum-seq-header").width(drumWidth).height(25)
     }
   })
   mqws[18].addListener(e => {
@@ -994,8 +994,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
     }
   })
   mqws[19].addListener(e => {
@@ -1006,8 +1006,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
     }
   })
   mqws[20].addListener(e => {
@@ -1018,8 +1018,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
     }
   })
   mqws[21].addListener(e => {
@@ -1030,8 +1030,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
     }
   })
   mqws[22].addListener(e => {
@@ -1042,21 +1042,21 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '2.7em')
     }
   })
   mqws[23].addListener(e => {
     if(e.matches) {
-      height = 400
+      height = 380
       synthWidth = 606
       drumWidth = 1240
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '2.7em')
     }
   })
@@ -1068,8 +1068,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '2.7em')
     }
   })
@@ -1081,8 +1081,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(614, height)
       bassSeq.resize(614, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '3em')
     }
   })
@@ -1094,8 +1094,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1107,8 +1107,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1120,8 +1120,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1133,8 +1133,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1146,8 +1146,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1160,8 +1160,8 @@ const resizeSequencersResponsively = () => {
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       // $('#tempo').css('right', '5.4em')
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1174,8 +1174,8 @@ const resizeSequencersResponsively = () => {
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       // $('#tempo').css('right', '5.3em')
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1188,8 +1188,8 @@ const resizeSequencersResponsively = () => {
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       // $('#tempo').css('right', '5.2em')
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1202,8 +1202,8 @@ const resizeSequencersResponsively = () => {
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       // $('#tempo').css('right', '5.1em')
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1215,8 +1215,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1228,8 +1228,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1241,8 +1241,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1254,8 +1254,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1267,8 +1267,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height)
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1280,8 +1280,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(940, height)
       bassSeq.resize(940, height)
       drumSeq.resize(1932, height)
-      $(".synth-seq-header").width(synthWidth)
-      $("#drum-seq-header").width(drumWidth)
+      $(".synth-seq-header").width(synthWidth).height(35)
+      $("#drum-seq-header").width(drumWidth).height(35)
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
@@ -1292,11 +1292,12 @@ const setup = () => {
   setupSequencers()
   const resizeSequencers = () => {
     if(mqws[6].matches) { 
+      height = 260
       leadSeq.resize(292, height)
       bassSeq.resize(292, height)
       drumSeq.resize(592, height)
-      $(".synth-seq-header").width(292)
-      $("#drum-seq-header").width(592)
+      $(".synth-seq-header").width(292).height(16)
+      $("#drum-seq-header").width(592).height(16)
     }
     if(mqws[7].matches) {
       height = 300 
@@ -1367,16 +1368,16 @@ const setup = () => {
       leadSeq.resize(480, height)
       bassSeq.resize(480, height)
       drumSeq.resize(968, height)
-      $(".synth-seq-header").width(480)
-      $("#drum-seq-header").width(968)
+      $(".synth-seq-header").width(480).height(25)
+      $("#drum-seq-header").width(968).height(25)
     }
     if(mqws[16].matches) {
       height = 380
       leadSeq.resize(500, height)
       bassSeq.resize(500, height)
       drumSeq.resize(1000, height)
-      $(".synth-seq-header").width(500)
-      $("#drum-seq-header").width(1000)
+      $(".synth-seq-header").width(500).height(25)
+      $("#drum-seq-header").width(1000).height(25)
     }
     if(mqws[17].matches) {
       height = 380
@@ -1384,47 +1385,47 @@ const setup = () => {
       bassSeq.resize(522, height)
       drumSeq.resize(1051, height)
       $(".synth-seq-header").width(522).height(25)
-      $("#drum-seq-header").width(1051)
+      $("#drum-seq-header").width(1051).height(25)
     }
     if(mqws[18].matches) {
       height = 380
       leadSeq.resize(540, height)
       bassSeq.resize(540, height)
       drumSeq.resize(1090, height)
-      $(".synth-seq-header").width(540)
-      $("#drum-seq-header").width(1090)
+      $(".synth-seq-header").width(540).height(35)
+      $("#drum-seq-header").width(1090).height(35)
     }
     if(mqws[19].matches) {
       height = 380
       leadSeq.resize(561.5, height)
       bassSeq.resize(561.5, height)
       drumSeq.resize(1133, height)
-      $(".synth-seq-header").width(561.5)
-      $("#drum-seq-header").width(1133)
+      $(".synth-seq-header").width(561.5).height(35)
+      $("#drum-seq-header").width(1133).height(35)
     }
     if(mqws[20].matches) {
       height = 380
       leadSeq.resize(576, height)
       bassSeq.resize(576, height)
       drumSeq.resize(1162, height)
-      $(".synth-seq-header").width(576)
-      $("#drum-seq-header").width(1162)
+      $(".synth-seq-header").width(576).height(35)
+      $("#drum-seq-header").width(1162).height(35)
     }
     if(mqws[21].matches) {
       height = 380
       leadSeq.resize(588, height)
       bassSeq.resize(588, height)
       drumSeq.resize(1186, height)
-      $(".synth-seq-header").width(588)
-      $("#drum-seq-header").width(1186)
+      $(".synth-seq-header").width(588).height(35)
+      $("#drum-seq-header").width(1186).height(35)
     }
     if(mqws[22].matches) {
       height = 380
       leadSeq.resize(602, height)
       bassSeq.resize(602, height)
       drumSeq.resize(1215, height)
-      $(".synth-seq-header").width(602)
-      $("#drum-seq-header").width(1215)
+      $(".synth-seq-header").width(602).height(35)
+      $("#drum-seq-header").width(1215).height(35)
       $('#lead-select-container').css('margin-left', '2.7em')
     }
     if(mqws[23].matches) {
@@ -1432,8 +1433,8 @@ const setup = () => {
       leadSeq.resize(606, height)
       bassSeq.resize(606, height)
       drumSeq.resize(1240, height)
-      $(".synth-seq-header").width(606)
-      $("#drum-seq-header").width(1240)
+      $(".synth-seq-header").width(606).height(35)
+      $("#drum-seq-header").width(1240).height(35)
       $('#lead-select-container').css('margin-left', '2.7em')
     }
     if(mqws[24].matches) {
@@ -1441,8 +1442,8 @@ const setup = () => {
       leadSeq.resize(606, height)
       bassSeq.resize(606, height)
       drumSeq.resize(1240, height)
-      $(".synth-seq-header").width(606)
-      $("#drum-seq-header").width(1240)
+      $(".synth-seq-header").width(606).height(35)
+      $("#drum-seq-header").width(1240).height(35)
       $('#lead-select-container').css('margin-left', '2.7em')
     }
     if(mqws[25].matches) {
@@ -1450,8 +1451,8 @@ const setup = () => {
       leadSeq.resize(614, height)
       bassSeq.resize(614, height)
       drumSeq.resize(1271, height)
-      $(".synth-seq-header").width(614)
-      $("#drum-seq-header").width(1271)
+      $(".synth-seq-header").width(614).height(35)
+      $("#drum-seq-header").width(1271).height(35)
       $('#lead-select-container').css('margin-left', '3em')
     }
     if(mqws[26].matches) {
@@ -1459,40 +1460,40 @@ const setup = () => {
       leadSeq.resize(614, height)
       bassSeq.resize(614, height)
       drumSeq.resize(1271, height)
-      $(".synth-seq-header").width(614)
-      $("#drum-seq-header").width(1271)
+      $(".synth-seq-header").width(614).height(35)
+      $("#drum-seq-header").width(1271).height(35)
     }
     if(mqws[27].matches) {
       height = 400
       leadSeq.resize(616, height)
       bassSeq.resize(616, height)
       drumSeq.resize(1274.5, height)
-      $(".synth-seq-header").width(616)
-      $("#drum-seq-header").width(1274.5)
+      $(".synth-seq-header").width(616).height(35)
+      $("#drum-seq-header").width(1274.5).height(35)
     }
     if(mqws[28].matches) {
       height = 400
       leadSeq.resize(617.5, height)
       bassSeq.resize(617.5, height)
       drumSeq.resize(1285, height)
-      $(".synth-seq-header").width(617.5)
-      $("#drum-seq-header").width(1285)
+      $(".synth-seq-header").width(617.5).height(35)
+      $("#drum-seq-header").width(1285).height(35)
     }
     if(mqws[29].matches) {
       height = 400
       leadSeq.resize(620, height)
       bassSeq.resize(620, height)
       drumSeq.resize(1288, height)
-      $(".synth-seq-header").width(620)
-      $("#drum-seq-header").width(1288)
+      $(".synth-seq-header").width(620).height(35)
+      $("#drum-seq-header").width(1288).height(35)
     }
     if(mqws[30].matches) {
       height = 400
       leadSeq.resize(640, height)
       bassSeq.resize(640, height)
       drumSeq.resize(1329.5, height)
-      $(".synth-seq-header").width(640)
-      $("#drum-seq-header").width(1329.5)
+      $(".synth-seq-header").width(640).height(35)
+      $("#drum-seq-header").width(1329.5).height(35)
     }
     if(mqws[31].matches) {
       height = 400
@@ -1500,8 +1501,8 @@ const setup = () => {
       bassSeq.resize(660, height)
       drumSeq.resize(1371, height)
       // $('#tempo').css('right', '5.4em')
-      $(".synth-seq-header").width(660)
-      $("#drum-seq-header").width(1371)
+      $(".synth-seq-header").width(660).height(35)
+      $("#drum-seq-header").width(1371).height(35)
     }
     if(mqws[32].matches) {
       height = 400
@@ -1509,8 +1510,8 @@ const setup = () => {
       bassSeq.resize(680, height)
       drumSeq.resize(1412.5, height)
       // $('#tempo').css('right', '5.3em')
-      $(".synth-seq-header").width(680)
-      $("#drum-seq-header").width(1412.5)
+      $(".synth-seq-header").width(680).height(35)
+      $("#drum-seq-header").width(1412.5).height(35)
     }
     if(mqws[33].matches) {
       height = 400
@@ -1518,8 +1519,8 @@ const setup = () => {
       bassSeq.resize(700, height)
       drumSeq.resize(1454, height)
       // $('#tempo').css('right', '5.2em')
-      $(".synth-seq-header").width(700)
-      $("#drum-seq-header").width(1454)
+      $(".synth-seq-header").width(700).height(35)
+      $("#drum-seq-header").width(1454).height(35)
     }
     if(mqws[34].matches) {
       height = 400
@@ -1527,56 +1528,56 @@ const setup = () => {
       bassSeq.resize(720, height)
       drumSeq.resize(1493.5, height)
       // $('#tempo').css('right', '5.1em')
-      $(".synth-seq-header").width(720)
-      $("#drum-seq-header").width(1493.5)
+      $(".synth-seq-header").width(720).height(35)
+      $("#drum-seq-header").width(1493.5).height(35)
     }
     if(mqws[35].matches) {
       height = 400
       leadSeq.resize(740, height)
       bassSeq.resize(740, height)
       drumSeq.resize(1533, height)
-      $(".synth-seq-header").width(740)
-      $("#drum-seq-header").width(1533)
+      $(".synth-seq-header").width(740).height(35)
+      $("#drum-seq-header").width(1533).height(35)
     }
     if(mqws[36].matches) {
       height = 400
       leadSeq.resize(780, height)
       bassSeq.resize(780, height)
       drumSeq.resize(1612, height)
-      $(".synth-seq-header").width(780)
-      $("#drum-seq-header").width(1612)
+      $(".synth-seq-header").width(780).height(35)
+      $("#drum-seq-header").width(1612).height(35)
     }
     if(mqws[37].matches) {
       height = 400
       leadSeq.resize(820, height)
       bassSeq.resize(820, height)
       drumSeq.resize(1693, height)
-      $(".synth-seq-header").width(820)
-      $("#drum-seq-header").width(1693)
+      $(".synth-seq-header").width(820).height(35)
+      $("#drum-seq-header").width(1693).height(35)
     }
     if(mqws[38].matches) {
       height = 400
       leadSeq.resize(860, height)
       bassSeq.resize(860, height)
       drumSeq.resize(1772, height)
-      $(".synth-seq-header").width(860)
-      $("#drum-seq-header").width(1772)
+      $(".synth-seq-header").width(860).height(35)
+      $("#drum-seq-header").width(1772).height(35)
     }
     if(mqws[39].matches) {
       height = 400
       leadSeq.resize(900, height)
       bassSeq.resize(900, height)
       drumSeq.resize(1851, height)
-      $(".synth-seq-header").width(900)
-      $("#drum-seq-header").width(1851)
+      $(".synth-seq-header").width(900).height(35)
+      $("#drum-seq-header").width(1851).height(35)
     }
     if(mqws[40].matches) { 
       height = 400
       leadSeq.resize(940, height)
       bassSeq.resize(940, height)
       drumSeq.resize(1932, height)
-      $(".synth-seq-header").width(940)
-      $("#drum-seq-header").width(1932)
+      $(".synth-seq-header").width(940).height(35)
+      $("#drum-seq-header").width(1932).height(35)
     }
   }
   resizeSequencers()
