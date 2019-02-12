@@ -1289,7 +1289,8 @@ const setup = () => {
       $(".synth-seq-header").width(356)
       $("#drum-seq-header").width(722)
     }
-    if(mqws[10].matches) { 
+    if(mqws[10].matches) {
+      height = 360 
       leadSeq.resize(368, height)
       bassSeq.resize(368, height)
       drumSeq.resize(742, height)
@@ -1297,11 +1298,12 @@ const setup = () => {
       $("#drum-seq-header").width(742)
     }
     if(mqws[11].matches) {
+      height = 360 
       leadSeq.resize(388, height)
       bassSeq.resize(388, height)
       drumSeq.resize(782, height)
       $(".synth-seq-header").width(388).height(19)
-      $("#drum-seq-header").width(782)
+      $("#drum-seq-header").width(782).height(19)
     }
     if(mqws[12].matches) {
       height = 380 

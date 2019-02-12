@@ -1384,6 +1384,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(722);
     }
     if (mqws[10].matches) {
+      height = 360;
       leadSeq.resize(368, height);
       bassSeq.resize(368, height);
       drumSeq.resize(742, height);
@@ -1391,11 +1392,12 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742);
     }
     if (mqws[11].matches) {
+      height = 360;
       leadSeq.resize(388, height);
       bassSeq.resize(388, height);
       drumSeq.resize(782, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(388).height(19);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(782);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(782).height(19);
     }
     if (mqws[12].matches) {
       height = 380;
