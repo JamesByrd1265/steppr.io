@@ -1388,8 +1388,8 @@ const setup = () => {
       leadSeq.resize(368, height);
       bassSeq.resize(368, height);
       drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(19);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(19);
     }
     if (mqws[11].matches) {
       height = 360;

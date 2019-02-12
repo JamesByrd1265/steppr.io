@@ -1294,8 +1294,8 @@ const setup = () => {
       leadSeq.resize(368, height)
       bassSeq.resize(368, height)
       drumSeq.resize(742, height)
-      $(".synth-seq-header").width(368)
-      $("#drum-seq-header").width(742)
+      $(".synth-seq-header").width(368).height(19)
+      $("#drum-seq-header").width(742).height(19)
     }
     if(mqws[11].matches) {
       height = 360 
