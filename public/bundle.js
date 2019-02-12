@@ -980,8 +980,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(19);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(19);
     }
   });
   mqws[10].addListener(e => {
@@ -1016,8 +1016,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(21);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(21);
     }
   });
   mqws[13].addListener(e => {
@@ -1052,8 +1052,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(25);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(25);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(24);
     }
   });
   mqws[16].addListener(e => {
@@ -1064,8 +1064,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(25);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(25);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(24.5);
     }
   });
   mqws[17].addListener(e => {
@@ -1076,8 +1076,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(25);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(25);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(26);
     }
   });
   mqws[18].addListener(e => {
@@ -1088,8 +1088,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(26);
     }
   });
   mqws[19].addListener(e => {
@@ -1100,8 +1100,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(26);
     }
   });
   mqws[20].addListener(e => {
@@ -1112,8 +1112,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(29);
     }
   });
   mqws[21].addListener(e => {
@@ -1124,8 +1124,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(29);
     }
   });
   mqws[22].addListener(e => {
@@ -1136,8 +1136,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
     }
   });
@@ -1149,8 +1149,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
     }
   });
@@ -1162,8 +1162,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
     }
   });
@@ -1175,8 +1175,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(614, height);
       bassSeq.resize(614, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
     }
   });
@@ -1188,8 +1188,8 @@ const resizeSequencersResponsively = () => {
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(32);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(32);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '60px');
     }
   });
@@ -1414,8 +1414,8 @@ const setup = () => {
       leadSeq.resize(356, height);
       bassSeq.resize(356, height);
       drumSeq.resize(722, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(356).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(722).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(356).height(19);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(722).height(19);
     }
     if (mqws[10].matches) {
       height = 360;
@@ -1438,8 +1438,8 @@ const setup = () => {
       leadSeq.resize(400, height);
       bassSeq.resize(400, height);
       drumSeq.resize(808, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(400).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(808).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(400).height(21);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(808).height(21);
     }
     if (mqws[13].matches) {
       height = 380;
@@ -1462,64 +1462,64 @@ const setup = () => {
       leadSeq.resize(480, height);
       bassSeq.resize(480, height);
       drumSeq.resize(968, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(25);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(25);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
     }
     if (mqws[16].matches) {
       height = 380;
       leadSeq.resize(500, height);
       bassSeq.resize(500, height);
       drumSeq.resize(1000, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(25);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1000).height(25);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1000).height(24.5);
     }
     if (mqws[17].matches) {
       height = 380;
       leadSeq.resize(522, height);
       bassSeq.resize(522, height);
       drumSeq.resize(1051, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(25);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(25);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
     }
     if (mqws[18].matches) {
       height = 380;
       leadSeq.resize(540, height);
       bassSeq.resize(540, height);
       drumSeq.resize(1090, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
     }
     if (mqws[19].matches) {
       height = 380;
       leadSeq.resize(561.5, height);
       bassSeq.resize(561.5, height);
       drumSeq.resize(1133, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
     }
     if (mqws[20].matches) {
       height = 380;
       leadSeq.resize(576, height);
       bassSeq.resize(576, height);
       drumSeq.resize(1162, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
     }
     if (mqws[21].matches) {
       height = 380;
       leadSeq.resize(588, height);
       bassSeq.resize(588, height);
       drumSeq.resize(1186, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
     }
     if (mqws[22].matches) {
       height = 380;
       leadSeq.resize(602, height);
       bassSeq.resize(602, height);
       drumSeq.resize(1215, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
     }
     if (mqws[23].matches) {
@@ -1527,8 +1527,8 @@ const setup = () => {
       leadSeq.resize(606, height);
       bassSeq.resize(606, height);
       drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
     }
     if (mqws[24].matches) {
@@ -1536,8 +1536,8 @@ const setup = () => {
       leadSeq.resize(606, height);
       bassSeq.resize(606, height);
       drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
     }
     if (mqws[25].matches) {
@@ -1545,8 +1545,8 @@ const setup = () => {
       leadSeq.resize(614, height);
       bassSeq.resize(614, height);
       drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
     }
     if (mqws[26].matches) {
@@ -1554,8 +1554,8 @@ const setup = () => {
       leadSeq.resize(614, height);
       bassSeq.resize(614, height);
       drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(32);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(32);
     }
     if (mqws[27].matches) {
       height = 400;

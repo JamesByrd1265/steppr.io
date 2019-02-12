@@ -631,7 +631,10 @@ path:nth-child(5) {
   }
 }
 
+/*@media only screen and (max-width: 1774px) {
 
+}
+*/
 /*width ***do min-width of '' and max height of '' for middle-height margin-reduction*****/
 
 @media only screen and (min-width: 775px) and (max-width: 824px) {
@@ -926,7 +929,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 67px;
-    height: 304px;
+    height: 303px;
   }
   .select-sub-header {
     font-size: 8px;
@@ -943,14 +946,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 69px;
-    height: 360px;
+    height: 359px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 69px;
-    height: 360px;
+    height: 359px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -986,13 +989,13 @@ path:nth-child(5) {
     width: 41px;
   }
   #bass-select-header {
-    width: 50px;
+    width: 49px;
   }
   #drum-effect-header {
     width: 51px;
   }
   #drum-select-header {
-    width: 52px;
+    width: 51px;
   }
   .effect {
     width: 67px;
@@ -1016,7 +1019,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 73px;
-    height: 322px;
+    height: 324px;
   }
   .select-sub-header {
     font-size: 8px;
@@ -1082,7 +1085,7 @@ path:nth-child(5) {
     width: 57px;
   }
   #drum-select-header {
-    width: 58px;
+    width: 57px;
   }
   .effect {
     width: 73px;
@@ -1117,7 +1120,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 73px;
-    height: 322px;
+    height: 324px;
   }
   .select-sub-header {
     font-size: 8px;
@@ -1209,7 +1212,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 81px;
-    height: 342px;
+    height: 343px;
   }
   .select-sub-header {
     font-size: 9px;
@@ -1226,14 +1229,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 83px;
-    height: 400px;
+    height: 400.5px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 83px;
-    height: 400px;
+    height: 400.5px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1299,7 +1302,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 81px;
-    height: 342px;
+    height: 343px;
   }
   .select-sub-header {
     font-size: 9px;
@@ -1407,7 +1410,7 @@ path:nth-child(5) {
     width: 101px;
     height: 434px;
     margin-right: 0px;
-    top: -.85em;
+    top: -.9em;
   }
   #lead-select-container {
     width: 83.5px;
@@ -1415,14 +1418,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 83px;
-    height: 400px;
+    height: 399px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 83px;
-    height: 400px;
+    height: 399px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1488,7 +1491,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 87px;
-    height: 345px;
+    height: 342px;
   }
   .select-sub-header {
     font-size: 12px;
@@ -1504,14 +1507,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 89px;
-    height: 406px;
+    height: 404px;
     margin-right: .4em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 89px;
-    height: 406px;
+    height: 404px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1577,7 +1580,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 93px;
-    height: 345px;
+    height: 343px;
   }
   .select-sub-header {
     font-size: 12px;
@@ -1593,14 +1596,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 95px;
-    height: 406px;
+    height: 405px;
     margin-right: .4em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 95px;
-    height: 406px;
+    height: 405px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1674,7 +1677,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 93px;
-    height: 345px;
+    height: 344px;
   }
   .select-sub-header {
     font-size: 12px;
@@ -1691,14 +1694,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 95px;
-    height: 406px;
+    height: 404px;
     margin-right: .4em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 95px;
-    height: 406px;
+    height: 404px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1763,7 +1766,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 99px;
-    height: 344px;
+    height: 343px;
   }
   .select-sub-header {
     font-size: 13px;
@@ -1782,7 +1785,7 @@ path:nth-child(5) {
     height: 406px;
     margin-right: .6em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 101px;
@@ -1870,7 +1873,7 @@ path:nth-child(5) {
     height: 406px;
     margin-right: .6em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 105px;
@@ -2028,7 +2031,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 122px;
-    height: 343px;
+    height: 344px;
   }
   .select-sub-header {
     font-size: 14px;
