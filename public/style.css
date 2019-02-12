@@ -726,7 +726,7 @@ path:nth-child(5) {
     width: 644px;
   }
   .list-select {
-    height: 283px;
+    height: 263px;
     width: 53px;
   }
   .select-sub-header {
@@ -744,14 +744,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 55px;
-    height: 336px;
+    height: 316px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 55px;
-    height: 336px;
+    height: 316px;
     margin-left: .4em;
   }
   .drum-effect {

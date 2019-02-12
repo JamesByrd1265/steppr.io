@@ -938,6 +938,7 @@ const resizeSequencersResponsively = () => {
   //width below vvvvv
   mqws[6].addListener(e => {
     if (e.matches) {
+      height = 260;
       synthWidth = 292;
       drumWidth = 592;
       leadSeq.resize(synthWidth, height);
@@ -949,6 +950,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[7].addListener(e => {
     if (e.matches) {
+      height = 300;
       synthWidth = 318;
       drumWidth = 644;
       leadSeq.resize(synthWidth, height);
@@ -960,6 +962,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[8].addListener(e => {
     if (e.matches) {
+      height = 320;
       synthWidth = 332;
       drumWidth = 670;
       leadSeq.resize(synthWidth, height);
@@ -971,6 +974,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[9].addListener(e => {
     if (e.matches) {
+      height = 340;
       synthWidth = 356;
       drumWidth = 722;
       leadSeq.resize(synthWidth, height);
@@ -982,6 +986,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[10].addListener(e => {
     if (e.matches) {
+      height = 360;
       synthWidth = 368;
       drumWidth = 742;
       leadSeq.resize(synthWidth, height);
@@ -993,6 +998,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[11].addListener(e => {
     if (e.matches) {
+      height = 360;
       synthWidth = 388;
       drumWidth = 782;
       leadSeq.resize(synthWidth, height);
@@ -1004,7 +1010,8 @@ const resizeSequencersResponsively = () => {
   });
   mqws[12].addListener(e => {
     if (e.matches) {
-      synthWidth = 400;
+      height = 380;
+      synthWidth = 380;
       drumWidth = 808;
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
@@ -1015,6 +1022,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[13].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 424;
       drumWidth = 854;
       leadSeq.resize(synthWidth, height);
@@ -1026,6 +1034,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[14].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 455;
       drumWidth = 917;
       leadSeq.resize(synthWidth, height);
@@ -1037,6 +1046,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[15].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 480;
       drumWidth = 968;
       leadSeq.resize(synthWidth, height);
@@ -1048,6 +1058,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[16].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 500;
       drumWidth = 1000;
       leadSeq.resize(synthWidth, height);
@@ -1059,6 +1070,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[17].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 522;
       drumWidth = 1051;
       leadSeq.resize(synthWidth, height);
@@ -1070,6 +1082,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[18].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 540;
       drumWidth = 1090;
       leadSeq.resize(synthWidth, height);
@@ -1081,6 +1094,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[19].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 561.5;
       drumWidth = 1133;
       leadSeq.resize(synthWidth, height);
@@ -1092,6 +1106,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[20].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 576;
       drumWidth = 1162;
       leadSeq.resize(synthWidth, height);
@@ -1103,6 +1118,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[21].addListener(e => {
     if (e.matches) {
+      height = 380;
       synthWidth = 588;
       drumWidth = 1186;
       leadSeq.resize(synthWidth, height);
@@ -1127,6 +1143,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[23].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 606;
       drumWidth = 1240;
       leadSeq.resize(synthWidth, height);
@@ -1191,6 +1208,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[28].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 617.5;
       drumWidth = 1285;
       leadSeq.resize(synthWidth, height);
@@ -1203,6 +1221,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[29].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 620;
       drumWidth = 1288;
       leadSeq.resize(synthWidth, height);
@@ -1215,6 +1234,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[30].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 640;
       drumWidth = 1329.5;
       leadSeq.resize(synthWidth, height);
@@ -1227,6 +1247,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[31].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 660;
       drumWidth = 1371;
       leadSeq.resize(synthWidth, height);
@@ -1240,6 +1261,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[32].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 680;
       drumWidth = 1412.5;
       leadSeq.resize(synthWidth, height);
@@ -1253,6 +1275,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[33].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 700;
       drumWidth = 1454;
       leadSeq.resize(synthWidth, height);
@@ -1266,6 +1289,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[34].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 720;
       drumWidth = 1493.5;
       leadSeq.resize(synthWidth, height);
@@ -1279,6 +1303,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[35].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 740;
       drumWidth = 1533;
       leadSeq.resize(synthWidth, height);
@@ -1291,6 +1316,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[36].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 780;
       drumWidth = 1612;
       leadSeq.resize(synthWidth, height);
@@ -1303,6 +1329,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[37].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 820;
       drumWidth = 1693;
       leadSeq.resize(synthWidth, height);
@@ -1315,6 +1342,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[38].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 860;
       drumWidth = 1772;
       leadSeq.resize(synthWidth, height);
@@ -1327,6 +1355,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[39].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 900;
       drumWidth = 1851;
       leadSeq.resize(synthWidth, height);
@@ -1339,6 +1368,7 @@ const resizeSequencersResponsively = () => {
   });
   mqws[40].addListener(e => {
     if (e.matches) {
+      height = 400;
       synthWidth = 940;
       drumWidth = 1932;
       leadSeq.resize(940, height);
