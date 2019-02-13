@@ -714,9 +714,12 @@ path:nth-child(5) {
   }
 }
 
-/*width ***do min-width of '' and max height of '' for middle-height margin-reduction*****/
+/*width*/
 
 @media only screen and (min-width: 675px) and (max-width: 724px) {
+  #header {
+    font-size: 2em;
+  }
   .seq-title {
     font-size: .7em;
   }
@@ -802,11 +805,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 725px) and (max-width: 774px) {
+  #header {
+    font-size: 2.9em;
+  }
   .seq-title {
     font-size: .7em;
   }
@@ -892,11 +898,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 775px) and (max-width: 824px) {
+  #header {
+    font-size: 3.3em;
+  }
   .seq-title {
     font-size: .7em;
   }
@@ -982,11 +991,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 825px) and (max-width: 874px) {
+  #header {
+    font-size: 3.7em;
+  }
   .seq-title {
     font-size: .7em;
   }
@@ -1072,12 +1084,15 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 
 @media only screen and (min-width: 875px) and (max-width: 924px) {
+  #header {
+    font-size: 4em;
+  }
   .vol-slider {
     position: relative;
     top: 5px;
@@ -1172,11 +1187,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 925px) and (max-width: 974px) {
+  #header {
+    font-size: 4.3em;
+  }
   .seq-title {
     font-size: .8em;
   }
@@ -1262,11 +1280,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 975px) and (max-width: 1024px) {
+  #header {
+    font-size: 4.6em;
+  }
   .seq-title {
     font-size: .8em;
   }
@@ -1352,11 +1373,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1074px) {
+  #header {
+    font-size: 5.1em;
+  }
   .seq-title {
     font-size: .8em;
   }
@@ -1455,11 +1479,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 1075px) and (max-width: 1124px) {
+  #header {
+    font-size: 5.6em;
+  }  
   .seq-title {
     font-size: .8em;
   }
@@ -1545,11 +1572,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 1125px) and (max-width: 1174px) {
+  #header {
+    font-size: 6em;
+  }  
   .seq-title {
     font-size: .8em;
   }
@@ -1635,11 +1665,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 1175px) and (max-width: 1224px) {
+  #header {
+    font-size: 6.4em;
+  }  
   .vol-slider {
     position: relative;
     top: 5px;
@@ -1734,11 +1767,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 1225px) and (max-width: 1274px) {
+  #header {
+    font-size: 6.7em;
+  }  
   .seq-title {
     font-size: .95em;
   }
@@ -1823,11 +1859,14 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
 @media only screen and (min-width: 1275px) and (max-width: 1324px) {
+  #header {
+    font-size: 7em;
+  }  
   .seq-title {
     font-size: .95em;
   }
@@ -1912,7 +1951,7 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2009,7 +2048,7 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2097,7 +2136,7 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2185,7 +2224,7 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2274,7 +2313,7 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2362,7 +2401,7 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2450,7 +2489,7 @@ path:nth-child(5) {
   #start {
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2530,9 +2569,10 @@ path:nth-child(5) {
     width: 126px;
   }
   #start {
+    left: 3em;
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2612,9 +2652,10 @@ path:nth-child(5) {
     width: 130px;
   }
   #start {
+    left: 3em;
     font-size: 1.6em;
     margin-left: 0em;
-    left: 1.85em;
+    left: 1.7em;
   }
 }
 
@@ -2694,6 +2735,7 @@ path:nth-child(5) {
     width: 134px;
   }
   #start {
+    left: 3em;
     font-size: 1.6em;
     margin-left: 0em;
     left: 2em;
@@ -2771,8 +2813,8 @@ path:nth-child(5) {
     width: 134px;
   }
   #start {
-    font-size: 1.6em;
-    margin-left: 0em
+    left: 2.5em;
+    font-size: 1.7em;
   }
 } 
 @media only screen and (min-width: 1775px) and (max-width: 1814px) {
@@ -2825,8 +2867,8 @@ path:nth-child(5) {
     width: 140px;
   }
   #start {
-    font-size: 1.6em;
-    margin-left: .3em
+    left: 3.2em;
+    font-size: 1.7em;
   }
 }
 
@@ -2877,8 +2919,8 @@ path:nth-child(5) {
     width: 140px;
   }
   #start {
-    font-size: 1.6em;
-    margin-left: .3em
+    left: 3.25em;
+    font-size: 1.73em;
   }
 }
 
@@ -2921,8 +2963,8 @@ path:nth-child(5) {
     width: 140px;
   }
   #start {
-    font-size: 1.6em;
-    margin-left: .3em
+    left: 3.25em;
+    font-size: 1.73em;
   }
 }
 
@@ -2961,7 +3003,8 @@ path:nth-child(5) {
     width: 144px;
   }
   #start {
-    font-size: 1.7em;
+    left: 3.1em;
+    font-size: 1.8em;
   }
 }
 
@@ -3002,8 +3045,8 @@ path:nth-child(5) {
     width: 148px;
   }
   #start {
+    left: 3.2em;
     font-size: 1.8em;
-    margin-left: .3em;
   }
 }
 
@@ -3045,6 +3088,7 @@ path:nth-child(5) {
     width: 152px;
   }
   #start {
+    left: 3em;
     font-size: 1.9em;
   }
 }
@@ -3089,6 +3133,7 @@ path:nth-child(5) {
   }
   #start {
     font-size: 1.95em;
+    left: 2.9em;
   }
 }
 

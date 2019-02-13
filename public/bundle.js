@@ -1072,7 +1072,7 @@ const resizeSequencersResponsively = () => {
     if (e.matches) {
       height = 380;
       synthWidth = 500;
-      drumWidth = 1000;
+      drumWidth = 1007;
       leadSeq.resize(synthWidth, height);
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
@@ -1489,9 +1489,9 @@ const setup = () => {
       height = 380;
       leadSeq.resize(500, height);
       bassSeq.resize(500, height);
-      drumSeq.resize(1000, height);
+      drumSeq.resize(1007, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1000).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
     }
     if (mqws[17].matches) {
       height = 380;
