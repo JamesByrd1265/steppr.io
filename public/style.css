@@ -54,18 +54,18 @@ canvas {
 }
 
 #tempo {
-  top: -.3em;
   position: absolute;
-  right: 5.1em; 
+  right: 6em; 
   display: inline-block; 
   align-items: center;
+  justify-content: center;
 }
 
 #tempo-select {
   position: relative;
-  left: 2.42em;
+  width: 50%;
   padding-top: .2em;
-  margin: 0;
+  margin: 0 auto;
   align-self: center;
 }
 
@@ -84,6 +84,9 @@ canvas {
 }
 
 #tempo-header {
+  position: relative;
+  width: 62%;
+  margin: .75em auto;
   background-color: rgba(255, 255,255,0);
   border-bottom: none;
   margin-bottom: 0;
@@ -3009,7 +3012,6 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1935px) and (max-width: 1974px) {
-/*      // #tempo right 5.4em  */
   .synth-seq-header {
     width: 660px;
   }
@@ -3051,7 +3053,6 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1975px) and (max-width: 2014px) {
-/*      // #tempo right 5.3em;*/
   .synth-seq-header {
     width: 680px;
   }
@@ -3094,7 +3095,6 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 2015px) and (max-width: 2054px) {
-/*      // #tempo right 5.2em;*/
   .synth-seq-header {
     width: 700px;
   }
@@ -3138,7 +3138,6 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 2055px) and (max-width: 2094px) {
-/*  // #tempo right 5.1em;  */
   .synth-seq-header {
     width: 720px;
   }

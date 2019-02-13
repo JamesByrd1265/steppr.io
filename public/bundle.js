@@ -957,7 +957,7 @@ const resizeSequencersResponsively = () => {
       bassSeq.resize(synthWidth, height);
       drumSeq.resize(drumWidth, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthWidth).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-drumWidth").width(drumWidth).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumWidth).height(16);
     }
   });
   mqws[7].addListener(e => {

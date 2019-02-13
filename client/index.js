@@ -863,7 +863,7 @@ const resizeSequencersResponsively = () => {
       bassSeq.resize(synthWidth, height)
       drumSeq.resize(drumWidth, height)
       $(".synth-seq-header").width(synthWidth).height(16)
-      $("#drum-seq-drumWidth").width(drumWidth).height(16)
+      $("#drum-seq-header").width(drumWidth).height(16)
     }
   })
   mqws[7].addListener(e => {
