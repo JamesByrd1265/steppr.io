@@ -1,4 +1,6 @@
 body {
+  display:flex;
+  flex-direction:column;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -9,6 +11,9 @@ body {
   background-color: #3D3D3D;
 }
 
+canvas {
+  height: 0;
+}
 #jam-canvas {
   width: 100%;
 }
@@ -235,6 +240,7 @@ option {
   position: relative;
   display: inline-flex;
   margin-left: .48em;
+  margin-bottom: 1.5em;
 }
 
 #drum-seq-container {
@@ -353,18 +359,23 @@ path:nth-child(5) {
 }
 
 #footer {
-  width: 100vw;
-  height: 140px;
+  left: 0;
+  height: 110px;
   margin: 0 auto;
-  bottom: -2.3em;
+  margin-top: auto;
+  bottom: -10em;
+  padding-bottom: 3em;
   display: inline-flex;
-  position: relative;
+  flex: 0 0 50px;
   background: radial-gradient(2541.00px at 99.65% 49.73%, #B46A3F 0%, #DC7E50 13.14%, rgba(220, 131, 80, 0.86) 25.41%, #DC8350 50.74%, #CE7846 73.58%, #DC8350 87.19%, #B46A3F 100%); 
 }
 
 #copyright {
   width: 100vw;
-  margin-bottom: 2.2em;
+  position: relative;
+  height: 50%;
+  margin: 0 auto;
+  padding-top: 1.5em;
   font-size: 1.5em;
   font-family: 'Poppins';
   font-weight: lighter;
@@ -635,11 +646,17 @@ path:nth-child(5) {
   #synth-container {
     height: 520px;
   }
+  #footer {
+    height: 200px;
+  }
 }
 
 @media only screen and (max-width: 1534px) {
   #synth-container {
     height: 500px;
+  }
+  #footer {
+    height: 230px;
   }
 }
 
@@ -647,11 +664,17 @@ path:nth-child(5) {
   #synth-container {
     height: 480px;
   }
+  #footer {
+    height: 260px;
+  }
 }
 
 @media only screen and (max-width: 1074px) {
   #synth-container {
     height: 450px;
+  }
+  #footer {
+    height: 290px;
   }
 }
 
@@ -659,11 +682,17 @@ path:nth-child(5) {
   #synth-container {
     height: 430px;
   }
+  #footer {
+    height: 320px;
+  }
 }
 
 @media only screen and (max-width: 924px) {
   #synth-container {
     height: 405px;
+  }
+  #footer {
+    height: 355px;
   }
 }
 
@@ -671,11 +700,17 @@ path:nth-child(5) {
   #synth-container {
     height: 380px;
   }
+  #footer {
+    height: 400px;
+  }
 }
 
 @media only screen and (max-width: 824px) {
   #synth-container {
     height: 300px;
+  }
+  #footer {
+    height: 420px;
   }
 }
 
