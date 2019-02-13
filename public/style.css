@@ -977,6 +977,8 @@ path:nth-child(5) {
     font-size: 9px;
   }
   .drum-select {
+    margin-top: 1.9em;
+    margin-bottom: .9em;
     width: 27px;
   }
   #bass-select-header {
@@ -1070,6 +1072,8 @@ path:nth-child(5) {
     font-size: 9px;
   }
   .drum-select {
+    margin-top: 2.2em;
+    margin-bottom: 1.5em;
     width: 27px;
   }
   #bass-select-header {
@@ -1173,6 +1177,8 @@ path:nth-child(5) {
     font-size: 9px;
   }
   .drum-select {
+    margin-top: 2.3em;
+    margin-bottom: 1.8em;
     width: 35px;
   }
   #bass-select-header {
@@ -1266,6 +1272,8 @@ path:nth-child(5) {
     font-size: 10px;
   }
   .drum-select {
+    margin-top: 2.1em;
+    margin-bottom: 1.2em;
     width: 41px;
   }
   #bass-select-header {
@@ -1359,6 +1367,8 @@ path:nth-child(5) {
     font-size: 10px;
   }
   .drum-select {
+    margin-top: 2.1em;
+    margin-bottom: 1.6em;
     width: 47px;
   }
   #bass-select-header {
@@ -1465,6 +1475,8 @@ path:nth-child(5) {
     font-size: 10px;
   }
   .drum-select {
+    margin-top: 2.1em;
+    margin-bottom: 1.6em;
     width: 47px;
   }
   #bass-select-header {
@@ -1558,6 +1570,8 @@ path:nth-child(5) {
     font-size: 11px;
   }
   .drum-select {
+    margin-top: 2em;
+    margin-bottom: 1.5em;
     width: 55px;
   }
   #bass-select-header {
@@ -1651,6 +1665,8 @@ path:nth-child(5) {
     font-size: 11px;
   }
   .drum-select {
+    margin-top: 2em;
+    margin-bottom: 1.55em;
     width: 55px;
   }
   #bass-select-header {
@@ -1713,14 +1729,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 83px;
-    height: 399px;
+    height: 400px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 83px;
-    height: 399px;
+    height: 400px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1753,6 +1769,8 @@ path:nth-child(5) {
     font-size: 11px;
   }
   .drum-select {
+    margin-top: 2em;
+    margin-bottom: 1.55em;
     width: 55px;
   }
   #bass-select-header {
@@ -1845,6 +1863,8 @@ path:nth-child(5) {
     font-size: 14px;
   }
   .drum-select {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
     width: 61px;
   }
   #bass-select-header {
@@ -1937,6 +1957,8 @@ path:nth-child(5) {
     font-size: 14px;
   }
   .drum-select {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
     width: 67px;
   }
   #bass-select-header {
@@ -2034,6 +2056,7 @@ path:nth-child(5) {
     font-size: 14px;
   }
   .drum-select {
+    margin-top: 1.65em;
     width: 67px;
   }
   #bass-select-header {
@@ -2122,6 +2145,7 @@ path:nth-child(5) {
     font-size: 15px;
   }
   .drum-select {
+    margin-top: 1.4em;
     width: 73px;
   }
   #bass-select-header {
@@ -2210,6 +2234,7 @@ path:nth-child(5) {
     font-size: 15px;
   }
   .drum-select {
+    margin-top: 1.4em;
     width: 77px;
   }
   #bass-select-header {
@@ -2299,6 +2324,7 @@ path:nth-child(5) {
     font-size: 15px;
   }
   .drum-select {
+    margin-top: 1.4em;
     width: 84px;
   }
   #bass-select-header {
@@ -2387,6 +2413,7 @@ path:nth-child(5) {
     font-size: 16px;
   }
   .drum-select {
+    margin-top: 1.2em;
     width: 100px;
   }
   #bass-select-header {
@@ -2475,6 +2502,7 @@ path:nth-child(5) {
     font-size: 16px;
   }
   .drum-select {
+    margin-top: 1.2em;
     width: 100px;
   }
   #bass-select-header {
@@ -2497,6 +2525,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1625px) and (max-width: 1654px) {
+  .drum-select {
+    margin-top: .899em;
+  }
   .seq-title {
     font-size: 1.3em;
   }
@@ -2580,6 +2611,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1655px) and (max-width: 1702px) {
+  .drum-select {
+    margin-top: .899em;
+  }
   .seq-title {
     font-size: 1.3em;
   }
@@ -2663,6 +2697,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1703px) and (max-width: 1724px) {
+  .drum-select {
+    margin-top: .899em;
+  }
   .seq-title {
     font-size: 1.3em;
   }
@@ -2681,7 +2718,6 @@ path:nth-child(5) {
   }
   .select-container {
     width: 154px;
-    height: 410px;
     margin-right: .75em
     top: -.75em;
   }
@@ -2746,6 +2782,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1725px) and (max-width: 1774px) {
+  .drum-select {
+    margin-top: .899em;
+  }
   .seq-title {
     font-size: 1.3em;
   }
@@ -2768,14 +2807,14 @@ path:nth-child(5) {
     top: -.7em;
   }
   #drum-select-container {
-    height: 410px;
+    height: 411px;
     width: 136px;
     margin-right: 2.2em;
     margin-left: 61px;
   }
   #drum-effect-container {
     width: 136px;
-    height: 410px;
+    height: 411px;
     margin-left: 2.2em;
   }
   .drum-effect {
