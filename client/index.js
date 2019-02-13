@@ -682,6 +682,10 @@ socket.on('selectKick', data => {
   kick = kicks[data]
 })
 
+const drumEffectHeaderSlice = () => {
+  $(".drum-effect-select").each(() => console.log('effect-header:  ', this.value))
+}
+
 const mqws = [
   window.matchMedia('(min-width: 0px) and (max-width: 524px'),    //0
   window.matchMedia('(min-width: 525px) and (max-width: 574px'),    //1
@@ -723,7 +727,8 @@ const mqws = [
   window.matchMedia('(min-width: 2255px) and (max-width: 2334px)'), //37
   window.matchMedia('(min-width: 2335px) and (max-width: 2414px)'), //38
   window.matchMedia('(min-width: 2415px) and (max-width: 2496px)'), //39
-  window.matchMedia('(min-width: 2497px)')                          //40
+  window.matchMedia('(min-width: 2497px)'),                         //40
+  window.matchMedia('(max-width: 1774px)')                            //41
 ]
 
 
@@ -1312,6 +1317,18 @@ const resizeSequencersResponsively = () => {
       $('#lead-select-container').css('margin-left', '60px')
     }
   })
+  mqws[41].addListener(e => {
+    if(e.matches) {
+      $("#drum-delay").html('DLY')
+      $("#drum-reverb").html('REV')
+      $("#drum-phaser").html('PHS')
+      $("#drum-chorus").html('CHR')
+      $("#drum-distortion").html('DST')
+      $("#drum-bitcrusher").html('BTC')
+      $("#drum-autofilter").html('FLT')
+      $("#drum-pingpong").html('PPD')
+    }
+  })
 }
 
 const setup = () => {
@@ -1628,6 +1645,16 @@ const setup = () => {
       drumSeq.resize(1932, height)
       $(".synth-seq-header").width(940).height(35)
       $("#drum-seq-header").width(1932).height(35)
+    }
+    if(mqws[41].matches) {
+      $("#drum-delay").html('DLY')
+      $("#drum-reverb").html('REV')
+      $("#drum-phaser").html('PHS')
+      $("#drum-chorus").html('CHR')
+      $("#drum-distortion").html('DST')
+      $("#drum-bitcrusher").html('BTC')
+      $("#drum-autofilter").html('FLT')
+      $("#drum-pingpong").html('PPD')
     }
   }
   resizeSequencers()

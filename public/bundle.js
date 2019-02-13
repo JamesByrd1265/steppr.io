@@ -103,6 +103,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_4__);
+var _this = undefined;
+
 const socket = io(window.location.origin);
 const canvas = document.createElement('canvas');
 
@@ -777,6 +779,10 @@ socket.on('selectKick', data => {
   kick = kicks[data];
 });
 
+const drumEffectHeaderSlice = () => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".drum-effect-select").each(() => console.log('effect-header:  ', _this.value));
+};
+
 const mqws = [window.matchMedia('(min-width: 0px) and (max-width: 524px'), //0
 window.matchMedia('(min-width: 525px) and (max-width: 574px'), //1
 window.matchMedia('(min-width: 575px) and (max-width: 64px'), //2
@@ -817,7 +823,8 @@ window.matchMedia('(min-width: 2175px) and (max-width: 2254px'), //36
 window.matchMedia('(min-width: 2255px) and (max-width: 2334px)'), //37
 window.matchMedia('(min-width: 2335px) and (max-width: 2414px)'), //38
 window.matchMedia('(min-width: 2415px) and (max-width: 2496px)'), //39
-window.matchMedia('(min-width: 2497px)') //40
+window.matchMedia('(min-width: 2497px)'), //40
+window.matchMedia('(max-width: 1774px)') //41
 ];
 
 const mqhs = [window.matchMedia('(min-height: 0px) and (max-height: 634px'), //0
@@ -1406,6 +1413,18 @@ const resizeSequencersResponsively = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '60px');
     }
   });
+  mqws[41].addListener(e => {
+    if (e.matches) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DLY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REV');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHS');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DST');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTC');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLT');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPD');
+    }
+  });
 };
 
 const setup = () => {
@@ -1722,6 +1741,16 @@ const setup = () => {
       drumSeq.resize(1932, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
+    }
+    if (mqws[41].matches) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DLY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REV');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHS');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DST');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTC');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLT');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPD');
     }
   };
   resizeSequencers();

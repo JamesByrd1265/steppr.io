@@ -857,7 +857,7 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
-    padding: 0;
+    margin: 0;
     width: 29px;
   }
   #lead-seq {
