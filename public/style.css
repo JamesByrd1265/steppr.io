@@ -791,6 +791,8 @@ path:nth-child(5) {
     font-size: 9px;
   }
   .drum-select {
+    margin-top: 0em;
+    margin-bottom: 0em;
     width: 27px;
   }
   #bass-select-header {
@@ -855,6 +857,7 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    padding: 0;
     width: 29px;
   }
   #lead-seq {
@@ -884,6 +887,8 @@ path:nth-child(5) {
     font-size: 9px;
   }
   .drum-select {
+    margin-top: 0em;
+    margin-bottom: 0em;
     width: 27px;
   }
   #bass-select-header {
