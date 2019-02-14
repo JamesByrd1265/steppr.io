@@ -720,6 +720,9 @@ path:nth-child(5) {
 /*width*/
 
 @media only screen and (min-width: 675px) and (max-width: 724px) {
+  .select-margin {
+    margin-top: 1.4em;
+  }
   #header {
     font-size: 2em;
   }
@@ -815,6 +818,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 725px) and (max-width: 774px) {
+  .select-margin {
+    margin-top: 1.4em;
+  }
   #header {
     font-size: 2.9em;
   }
@@ -911,6 +917,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 775px) and (max-width: 824px) {
+  .select-margin {
+    margin-top: 2.4em;
+  }
   #header {
     font-size: 3.3em;
   }
@@ -1008,6 +1017,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 825px) and (max-width: 874px) {
+  .select-margin {
+    margin-top: 3.3em;
+  }
   #header {
     font-size: 3.7em;
   }
@@ -1106,6 +1118,9 @@ path:nth-child(5) {
 
 
 @media only screen and (min-width: 875px) and (max-width: 924px) {
+  .select-margin {
+    margin-top: 3.8em;
+  }
   #header {
     font-size: 4em;
   }
@@ -1212,6 +1227,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 925px) and (max-width: 974px) {
+  .select-margin {
+    margin-top: 2.5em;
+  }
   #header {
     font-size: 4.3em;
   }
@@ -1309,6 +1327,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 975px) and (max-width: 1024px) {
+  .select-margin {
+    margin-top: 2.8em;
+  }
   #header {
     font-size: 4.6em;
   }
@@ -1406,6 +1427,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1074px) {
+  .select-margin {
+    margin-top: 2.8em;
+  }
   #header {
     font-size: 5.1em;
   }
@@ -1516,6 +1540,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1075px) and (max-width: 1124px) {
+  .select-margin {
+    margin-top: 2.4em;
+  }
   #header {
     font-size: 5.6em;
   }  
@@ -1613,6 +1640,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1125px) and (max-width: 1174px) {
+  .select-margin {
+    margin-top: 2.4em;
+  }
   #header {
     font-size: 6em;
   }  
@@ -1710,6 +1740,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1175px) and (max-width: 1224px) {
+  .select-margin {
+    margin-top: 2.42em;
+  }
   #header {
     font-size: 6.4em;
   }  
@@ -1816,6 +1849,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1225px) and (max-width: 1274px) {
+  .select-margin {
+    margin-top: 1.1em;
+  }
   #header {
     font-size: 6.7em;
   }  
@@ -1911,6 +1947,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1275px) and (max-width: 1324px) {
+  .select-margin {
+    margin-top: 1.1em;
+  }
   #header {
     font-size: 7em;
   }  
@@ -2006,6 +2045,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1325px) and (max-width: 1374px) {
+  .select-margin {
+    margin-top: 1.1em;
+  }
   .vol-slider {
     position: relative;
     top: 5px;
@@ -2105,6 +2147,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1375px) and (max-width: 1424px) {
+  .select-margin {
+    margin-top: .8em;
+  }
   .seq-title {
     font-size: 1.1em;
   }
@@ -2195,6 +2240,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1425px) and (max-width: 1467px) {
+  .select-margin {
+    margin-top: .8em;
+  }
   .seq-title {
     font-size: 1.1em;
   }
@@ -2285,6 +2333,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1468px) and (max-width: 1534px) {
+  .select-margin {
+    margin-top: .8em;
+  }
   .seq-title {
     font-size: 1.1em;
   }
@@ -2376,6 +2427,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1535px) and (max-width: 1574px) {
+  .select-margin {
+    margin-top: .6em;
+  }
   .seq-title {
     font-size: 1.2em;
   }
@@ -2466,6 +2520,9 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1575px) and (max-width: 1624px) {
+  .select-margin {
+    margin-top: .6em;
+  }
   .seq-title {
     font-size: 1.2em;
   }
