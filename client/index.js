@@ -1319,14 +1319,23 @@ const resizeSequencersResponsively = () => {
   })
   mqws[41].addListener(e => {
     if(e.matches) {
-      $("#drum-delay").html('DLY')
-      $("#drum-reverb").html('REV')
-      $("#drum-phaser").html('PHS')
-      $("#drum-chorus").html('CHR')
-      $("#drum-distortion").html('DST')
-      $("#drum-bitcrusher").html('BTC')
-      $("#drum-autofilter").html('FLT')
-      $("#drum-pingpong").html('PPD')
+      $("#drum-delay").html('DELY')
+      $("#drum-reverb").html('REVR')
+      $("#drum-phaser").html('PHSR')
+      $("#drum-chorus").html('CHOR')
+      $("#drum-distortion").html('DSTR')
+      $("#drum-bitcrusher").html('BTCR')
+      $("#drum-autofilter").html('FLTR')
+      $("#drum-pingpong").html('PPDL')
+    } else {
+      $("#drum-delay").html('DELAY')
+      $("#drum-reverb").html('REVERB')
+      $("#drum-phaser").html('PHASER')
+      $("#drum-chorus").html('CHORUS')
+      $("#drum-distortion").html('DISTORTION')
+      $("#drum-bitcrusher").html('BITCRUSHER')
+      $("#drum-autofilter").html('AUTOFILTER')
+      $("#drum-pingpong").html('PINGPONG')
     }
   })
 }
@@ -1647,14 +1656,14 @@ const setup = () => {
       $("#drum-seq-header").width(1932).height(35)
     }
     if(mqws[41].matches) {
-      $("#drum-delay").html('DLY')
-      $("#drum-reverb").html('REV')
-      $("#drum-phaser").html('PHS')
-      $("#drum-chorus").html('CHR')
-      $("#drum-distortion").html('DST')
-      $("#drum-bitcrusher").html('BTC')
-      $("#drum-autofilter").html('FLT')
-      $("#drum-pingpong").html('PPD')
+      $("#drum-delay").html('DELY')
+      $("#drum-reverb").html('REVR')
+      $("#drum-phaser").html('PHSR')
+      $("#drum-chorus").html('CHOR')
+      $("#drum-distortion").html('DSTR')
+      $("#drum-bitcrusher").html('BTCR')
+      $("#drum-autofilter").html('FLTR')
+      $("#drum-pingpong").html('PPDL')
     }
   }
   resizeSequencers()

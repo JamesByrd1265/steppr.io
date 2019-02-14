@@ -1415,14 +1415,23 @@ const resizeSequencersResponsively = () => {
   });
   mqws[41].addListener(e => {
     if (e.matches) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DLY');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REV');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHS');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHR');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DST');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTC');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLT');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPD');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELAY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVERB');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHASER');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHORUS');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DISTORTION');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BITCRUSHER');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('AUTOFILTER');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PINGPONG');
     }
   });
 };
@@ -1743,14 +1752,14 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
     }
     if (mqws[41].matches) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DLY');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REV');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHS');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHR');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DST');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTC');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLT');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPD');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
     }
   };
   resizeSequencers();

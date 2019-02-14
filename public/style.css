@@ -55,7 +55,7 @@ canvas {
 
 #tempo {
   position: absolute;
-  right: 6em; 
+  right: 3.2vw; 
   display: inline-block; 
   align-items: center;
   justify-content: center;
@@ -953,6 +953,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
     width: 29px;
   }
   #lead-seq {
@@ -1048,6 +1050,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.75em;
+    margin-bottom: 1.75em;
     width: 29px;
   }
   #lead-seq {
@@ -1153,6 +1157,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.7em;
+    margin-bottom: 2.2em;
     width: 37px;
   }
   #lead-seq {
@@ -1248,6 +1254,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.42em;
+    margin-bottom: .9em;
     width: 43px;
   }
   #lead-seq {
@@ -1343,6 +1351,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.41em;
+    margin-bottom: 1.39em;
     width: 49px;
   }
   #lead-seq {
@@ -1451,6 +1461,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.3em;
+    margin-bottom: 1.45em;
     width: 49px;
   }
   #lead-seq {
@@ -1546,6 +1558,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.2em;
+    margin-bottom: 1.25em;
     width: 57px;
   }
   #lead-seq {
@@ -1641,6 +1655,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.2em;
+    margin-bottom: 1.25em;
     width: 57px;
   }
   #lead-seq {
@@ -1745,6 +1761,8 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1.2em;
+    margin-bottom: 1.25em;
     width: 57px;
   }
   #lead-seq {
@@ -1839,6 +1857,7 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: .99em;
     width: 63px;
   }
   #lead-seq {
@@ -1933,6 +1952,7 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1em;
     width: 69px;
   }
   #lead-seq {
@@ -2033,6 +2053,7 @@ path:nth-child(5) {
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: 1em;
     width: 69px;
   }
   #lead-seq {
@@ -2122,6 +2143,7 @@ path:nth-child(5) {
     margin-left: .6em;
   }
   .drum-effect {
+    margin-top: .71em;
     width: 75px;
   }
   #lead-seq {
@@ -2211,6 +2233,7 @@ path:nth-child(5) {
     margin-left: .6em;
   }
   .drum-effect {
+    margin-top: .71em;
     width: 79px;
   }
   #lead-seq {
@@ -2301,6 +2324,7 @@ path:nth-child(5) {
     margin-left: .6em;
   }
   .drum-effect {
+    margin-top: .71em;
     width: 76px;
   }
   #lead-seq {
@@ -2390,6 +2414,7 @@ path:nth-child(5) {
     margin-left: 1.1em;
   }
   .drum-effect {
+    margin-top: .5em;
     width: 88px;
   }
   #lead-seq {
@@ -2479,6 +2504,7 @@ path:nth-child(5) {
     margin-left: 1.4em;
   }
   .drum-effect {
+    margin-top: .5em;
     width: 88px;
   }
   #lead-seq {
@@ -2568,6 +2594,7 @@ path:nth-child(5) {
     margin-left: 1.7em;
   }
   .drum-effect {
+    margin-top: .2em;
     width: 92px;
   }
   #lead-seq {
@@ -2654,6 +2681,7 @@ path:nth-child(5) {
     margin-left: 2.2em;
   }
   .drum-effect {
+    margin-top: .2em;
     width: 96px;
   }
   #lead-seq {
@@ -2742,6 +2770,7 @@ path:nth-child(5) {
     margin-left: 2.2em;
   }
   .drum-effect {
+    margin-top: .2em;
     width: 100px;
   }
   #lead-seq {
@@ -2823,6 +2852,7 @@ path:nth-child(5) {
     margin-left: 2.2em;
   }
   .drum-effect {
+    margin-top: .2em;
     width: 100px;
   }
   #lead-seq {
