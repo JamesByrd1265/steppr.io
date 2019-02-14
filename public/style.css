@@ -720,14 +720,38 @@ path:nth-child(5) {
 /*width*/
 
 @media only screen and (min-width: 675px) and (max-width: 724px) {
+  #lead-vol {
+    position: absolute;
+    left: 30px;
+    top: 56px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 150px;
+    top: 56px;
+  }
+  .seq-title {
+    font-size: .7em;
+    position: relative;
+    bottom: 6px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 8em;
+  }
+  .vol-slider rect {
+    height: 4px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 4px;
+  }
   .select-margin {
     margin-top: 1.4em;
   }
   #header {
     font-size: 2em;
-  }
-  .seq-title {
-    font-size: .7em;
   }
   .synth-seq-header {
     width: 292px;
@@ -818,14 +842,38 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 725px) and (max-width: 774px) {
+  #lead-vol {
+    position: absolute;
+    left: 30px;
+    top: 56px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 150px;
+    top: 56px;
+  }
+  .seq-title {
+    font-size: .7em;
+    position: relative;
+    bottom: 6px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 8em;
+  }
+  .vol-slider rect {
+    height: 4px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 4px;
+  }
   .select-margin {
     margin-top: 1.4em;
   }
   #header {
     font-size: 2.9em;
-  }
-  .seq-title {
-    font-size: .7em;
   }
   .synth-seq-header {
     width: 292px;
@@ -917,14 +965,38 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 775px) and (max-width: 824px) {
+  #lead-vol {
+    position: absolute;
+    left: 60px;
+    top: 56px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 140px;
+    top: 56px;
+  }
+  .seq-title {
+    font-size: .7em;
+    position: relative;
+    bottom: 6px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 6em;
+  }
+  .vol-slider rect {
+    height: 4px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 4px;
+  }
   .select-margin {
     margin-top: 2.4em;
   }
   #header {
     font-size: 3.3em;
-  }
-  .seq-title {
-    font-size: .7em;
   }
   .synth-seq-header {
     width: 292px;
@@ -1017,14 +1089,38 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 825px) and (max-width: 874px) {
+  #lead-vol {
+    position: absolute;
+    left: 94px;
+    top: 56px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 155px;
+    top: 56px;
+  }
+  .seq-title {
+    font-size: .7em;
+    position: relative;
+    bottom: 6px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 4em;
+  }
+  .vol-slider rect {
+    height: 4px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 4px;
+  }
   .select-margin {
     margin-top: 3.3em;
   }
   #header {
     font-size: 3.7em;
-  }
-  .seq-title {
-    font-size: .7em;
   }
   .synth-seq-header {
     width: 318px;
@@ -1118,21 +1214,38 @@ path:nth-child(5) {
 
 
 @media only screen and (min-width: 875px) and (max-width: 924px) {
+  #lead-vol {
+    position: absolute;
+    left: 100px;
+    top: 56px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 155px;
+    top: 56px;
+  }
+  .seq-title {
+    font-size: .7em;
+    position: relative;
+    bottom: 6px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 3em;
+  }
+  .vol-slider rect {
+    height: 4px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 4px;
+  }
   .select-margin {
     margin-top: 3.8em;
   }
   #header {
     font-size: 4em;
-  }
-  .vol-slider {
-    position: relative;
-    top: 5px;
-  }
-  .vol-slider rect {
-    height: 5px;
-  }
-  .seq-title {
-    font-size: .7em;
   }
   .synth-seq-header {
     width: 332px;
@@ -1227,14 +1340,38 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 925px) and (max-width: 974px) {
+  #lead-vol {
+    position: absolute;
+    left: 140px;
+    top: 58px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 155px;
+    top: 58px;
+  }
+  .seq-title {
+    font-size: .8em;
+    position: relative;
+    bottom: 4px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 3em;
+  }
+  .vol-slider rect {
+    height: 5px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 5px;
+  }
   .select-margin {
     margin-top: 2.5em;
   }
   #header {
     font-size: 4.3em;
-  }
-  .seq-title {
-    font-size: .8em;
   }
   .synth-seq-header {
     width: 356px;
@@ -1327,14 +1464,38 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 975px) and (max-width: 1024px) {
+  #lead-vol {
+    position: absolute;
+    left: 140px;
+    top: 58px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 190px;
+    top: 58px;
+  }
+  .seq-title {
+    font-size: .8em;
+    position: relative;
+    bottom: 4px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 3em;
+  }
+  .vol-slider rect {
+    height: 5px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 5px;
+  }
   .select-margin {
     margin-top: 2.8em;
   }
   #header {
     font-size: 4.6em;
-  }
-  .seq-title {
-    font-size: .8em;
   }
   .synth-seq-header {
     width: 368px;
@@ -1427,24 +1588,33 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1074px) {
+  #lead-vol {
+    position: absolute;
+    left: 140px;
+    top: 58px;
+  }
+  .seq-title {
+    font-size: .8em;
+    position: relative;
+    bottom: 4px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 3em;
+  }
+  .vol-slider rect {
+    height: 5px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 5px;
+  }
   .select-margin {
     margin-top: 2.8em;
   }
   #header {
     font-size: 5.1em;
-  }
-  .seq-title {
-    font-size: .8em;
-  }
-  .vol-slider {
-    position: relative;
-    top: 5px;
-  }
-  .vol-slider rect {
-    height: 5px;
-  }
-  .seq-title {
-    font-size: .8em;
   }
   .synth-seq-header {
     width: 388px;
@@ -1540,14 +1710,27 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1075px) and (max-width: 1124px) {
+  .seq-title {
+    font-size: .8em;
+    position: relative;
+    bottom: 6px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+  }
+  .vol-slider rect {
+    height: 5px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 5px;
+  }
   .select-margin {
     margin-top: 2.4em;
   }
   #header {
     font-size: 5.6em;
-  }  
-  .seq-title {
-    font-size: .8em;
   }
   .synth-seq-header {
     width: height;
@@ -1640,15 +1823,28 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1125px) and (max-width: 1174px) {
+  .seq-title {
+    font-size: .8em;
+    position: relative;
+    bottom: 6px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+  }
+  .vol-slider rect {
+    height: 5px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 5px;
+  }
   .select-margin {
     margin-top: 2.4em;
   }
   #header {
     font-size: 6em;
   }  
-  .seq-title {
-    font-size: .8em;
-  }
   .synth-seq-header {
     width: 424px;
   }
@@ -1740,6 +1936,11 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1175px) and (max-width: 1224px) {
+  .seq-title {
+    font-size: .9em;
+    position: relative;
+    bottom: 5px;
+  }
   .select-margin {
     margin-top: 2.42em;
   }
@@ -1748,13 +1949,14 @@ path:nth-child(5) {
   }  
   .vol-slider {
     position: relative;
-    top: 5px;
+    top: 1px;
   }
   .vol-slider rect {
-    height: 5px;
+    height: 6px;
+    width: 171px;
   }
-  .seq-title {
-    font-size: .9em;
+  .vol-slider circle {
+    r: 6px;
   }
   .synth-seq-header {
     width: 455px;
@@ -1849,15 +2051,28 @@ path:nth-child(5) {
 }
 
 @media only screen and (min-width: 1225px) and (max-width: 1274px) {
+  .vol-slider {
+    position: relative;
+    top: 3px;
+  }
+  .vol-slider rect {
+    height: 6px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 7px;
+  }
+  .seq-title {
+    font-size: .95em;
+    position: relative;
+    bottom: 3px;
+  }
   .select-margin {
     margin-top: 1.1em;
   }
   #header {
     font-size: 6.7em;
   }  
-  .seq-title {
-    font-size: .95em;
-  }
   .synth-seq-header {
     width: 480px;
   }
@@ -1950,12 +2165,25 @@ path:nth-child(5) {
   .select-margin {
     margin-top: 1.1em;
   }
+  .vol-slider {
+    position: relative;
+    top: 3px;
+  }
+  .vol-slider rect {
+    height: 6px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 7px;
+  }
+  .seq-title {
+    font-size: .95em;
+    position: relative;
+    bottom: 3px;
+  }
   #header {
     font-size: 7em;
   }  
-  .seq-title {
-    font-size: .95em;
-  }
   .synth-seq-header {
     width: 500px;
   }
@@ -2050,17 +2278,23 @@ path:nth-child(5) {
   }
   .vol-slider {
     position: relative;
-    top: 5px;
+    top: 3px;
   }
   .vol-slider rect {
     height: 6px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 7px;
   }
   .seq-title {
     font-size: 1em;
+    position: relative;
+    bottom: 3px;
   }
   .synth-seq-header {
+/*    padding-bottom: .2em;*/
     width: 522px;
-    height: 25px;
   }
   #drum-seq-header {
     width: 1051px;
