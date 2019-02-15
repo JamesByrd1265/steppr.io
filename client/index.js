@@ -684,9 +684,9 @@ socket.on('selectKick', data => {
 
 const mq = [
   window.matchMedia('(min-width: 0px) and (max-width: 524px) and (min-height: 0px)'),    //0
-  window.matchMedia('(min-width: 525px) and (max-width: 574px) and (min-height: 0px)'),    //1
-  window.matchMedia('(min-width: 575px) and (max-width: 64px) and (min-height: 0px)'),    //2
-  window.matchMedia('(min-width: 625px) and (max-width: 674px) and (min-height: 0px)'),    //3
+  window.matchMedia(''),    //1
+  window.matchMedia(''),    //2
+  window.matchMedia('(min-width: 0px) and (max-width: 674px) and (min-height: 0px)'),    //3
   window.matchMedia('(min-width: 675px) and (max-width: 724px) and (min-height: 0px)'),    //4
   window.matchMedia('(min-width: 725px) and (max-width: 774px) and (min-height: 0px)'),    //5
   window.matchMedia('(min-width: 775px) and (max-width: 824px) and (min-height: 0px)'),   //6--
@@ -725,28 +725,28 @@ const mq = [
   window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 0px)'), //39
   window.matchMedia('(min-width: 2497px) and (min-height: 0px)'),                         //40
   window.matchMedia('(min-width: 0px) and (max-width: 524px) and (max-height: 0px)'),    //41
-  window.matchMedia('(min-width: 575px) and (max-width: 64px) and (max-height: 0px)'),   //42
-  window.matchMedia('(min-width: 625px) and (max-width: 674px) and (max-height: 0px)'),    //43
-  window.matchMedia('(min-width: 675px) and (max-width: 724px)'),                         //44
-  window.matchMedia('(min-width: 725px) and (max-width: 774px) and (max-height: 0px)'),    //45
-  window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 0px)'),   //46
-  window.matchMedia('(min-width: 825px) and (max-width: 874px) and (max-height: 0px)'),  //47
-  window.matchMedia('(min-width: 875px) and (max-width: 924px) and (max-height: 0px)'),  //48
-  window.matchMedia('(min-width: 925px) and (max-width: 974px) and (max-height: 0px)'),  //49
+  window.matchMedia('(min-width: 0px) and (max-width: 64px) and (max-height: 0px)'),   //42
+  window.matchMedia('(min-width: 554px) and (max-width: 674px) and (max-height: 500px)'),    //43
+  window.matchMedia('(min-width: 675px) and (max-width: 724px) and (max-height: 500px)'),   //44
+  window.matchMedia('(min-width: 725px) and (max-width: 774px) and (max-height: 500px)'),    //45
+  window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 500px)'),   //46
+  window.matchMedia('(min-width: 825px) and (max-width: 874px) and (max-height: 500px)'),  //47
+  window.matchMedia('(min-width: 875px) and (max-width: 924px) and (max-height: 500px)'),  //48
+  window.matchMedia('(min-width: 925px) and (max-width: 974px) and (max-height: 500px)'),  //49
   window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (max-height: 500px)'),      //50
   window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 500px)'),     //51
   window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 500px)'),     //52
-  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 580px)'),     //53
-  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 580px)'),     //54
-  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 580px)'),     //55
-  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 580px)'),     //56
-  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 580px)'),     //57
-  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 580px)'),     //58
-  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 840px)'),   //59
-  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 840px)'),   //60
-  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 840px)'),   //61
-  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 840px)'),   //62
-  window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 840px)'),   //63
+  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 620px)'),     //53
+  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 620px)'),     //54
+  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 620px)'),     //55
+  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 620px)'),     //56
+  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 620px)'),     //57
+  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 620px)'),     //58
+  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 850px)'),   //59
+  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 850px)'),   //60
+  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 850px)'),   //61
+  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 850px)'),   //62
+  window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 850px)'),   //63
   window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (max-height: 1000px)'),  //64
   window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (max-height: 1000px)'),  //65
   window.matchMedia('(min-width: 1725px) and (max-width: 1774px) and (max-height: 1000px)'),  //66*
@@ -761,6 +761,97 @@ const mq = [
 let height = 400, synthWidth = 940, drumWidth = 1932
 
 const resizeSequencersResponsively = () => {
+  mq[43].addListener(e => {
+    if(e.matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    }
+  })
+  mq[44].addListener(e => {
+    if(e.matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    }
+  })
+  mq[45].addListener(e => {
+    if(e.matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    }
+  })
+  mq[46].addListener(e => {
+    if(e.matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    }
+  })
+  mq[47].addListener(e => {
+    if(e.matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    }
+  })
+  mq[48].addListener(e => {
+    if(e.matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    }
+  })
+  mq[49].addListener(e => {
+    if(e.matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    }
+  })
   mq[50].addListener(e => {
     if(e.matches) {
       height = 160
@@ -1532,7 +1623,77 @@ const setup = () => {
   document.body.appendChild(canvas)
   setupSequencers()
   const resizeSequencers = () => {
-    if(mq[50].matches) {
+    if(mq[43].matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    } else if(mq[44].matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    } else if(mq[45].matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    } else if(mq[46].matches) {
+      height = 160 
+      leadSeq.resize(318, height)
+      bassSeq.resize(318, height)
+      drumSeq.resize(644, height)
+      $(".synth-seq-header").width(318).height(16)
+      $("#drum-seq-header").width(644).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    } else if(mq[47].matches) {
+      height = 160 
+      leadSeq.resize(368, height)
+      bassSeq.resize(368, height)
+      drumSeq.resize(742, height)
+      $(".synth-seq-header").width(368).height(20)
+      $("#drum-seq-header").width(742).height(20)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    } else if(mq[48].matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    } else if(mq[49].matches) {
+      height = 160
+      leadSeq.resize(268, height)
+      bassSeq.resize(268, height)
+      drumSeq.resize(546, height)
+      $(".synth-seq-header").width(268).height(16)
+      $("#drum-seq-header").width(546).height(16)
+      $("#drum-effect-header").html('FX')
+      abbreviateEffects()
+      tempo.resize(45, 45)
+    } else if(mq[50].matches) {
       height = 160
       leadSeq.resize(268, height)
       bassSeq.resize(268, height)
