@@ -2143,6 +2143,1250 @@ path:nth-child(5) {
   }
 }
 
+@media only screen and (min-width: 1425px) and (max-width: 1467px) {
+  .select-margin {
+    margin-top: .8em;
+  }
+  .seq-title {
+    font-size: 1.1em;
+  }
+  .synth-seq-header {
+    width: 561.5px;
+  }
+  #drum-seq-header {
+    width: 1133px;
+  }
+  .list-select {
+    width: 103px;
+    height: 343px;
+  }
+  .select-sub-header {
+    font-size: 13px;
+  }
+  .select-container {
+    width: 123px;
+    margin-right: 0px;
+    top: -.8em;
+  }
+  #lead-select-container {
+    width: 110px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 105px;
+    height: 406px;
+    margin-right: .6em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 105px;
+    height: 406px;
+    margin-left: .6em;
+  }
+  .drum-effect {
+    margin-top: .71em;
+    width: 79px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: .4em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    width: 76px;
+    font-size: 15px;
+  }
+  .drum-select {
+    margin-top: 1.4em;
+    width: 77px;
+  }
+  #bass-select-header {
+    width: 76px;
+  }
+  #drum-effect-header {
+    width: 78px;
+  }
+  #drum-select-header {
+    width: 78px;
+  }
+  .effect {
+    width: 103px;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.7em;
+  }
+}
+
+@media only screen and (min-width: 1468px) and (max-width: 1534px) {
+  .select-margin {
+    margin-top: .8em;
+  }
+  .seq-title {
+    font-size: 1.1em;
+  }
+  .synth-seq-header {
+    width: 576px;
+  }
+  #drum-seq-header {
+    width: 1162px;
+  }
+  .list-select {
+    width: 110px;
+    height: 342px;
+  }
+  .select-sub-header {
+    font-size: 13px;
+  }
+  .select-container {
+    width: 130px;
+    height: 433px;
+    margin-right: 0px;
+    top: -.8em;
+  }
+  #lead-select-container {
+    width: 117px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 112px;
+    height: 406px;
+    margin-right: .6em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 112px;
+    height: 406px;
+    margin-left: .6em;
+  }
+  .drum-effect {
+    margin-top: .71em;
+    width: 76px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: .4em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    width: 83px;
+    font-size: 15px;
+  }
+  .drum-select {
+    margin-top: 1.4em;
+    width: 84px;
+  }
+  #bass-select-header {
+    width: 83px;
+  }
+  #drum-effect-header {
+    width: 85px;
+  }
+  #drum-select-header {
+    width: 85px;
+  }
+  .effect {
+    width: 110px;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.7em;
+  }
+}
+
+@media only screen and (min-width: 1535px) and (max-width: 1574px) {
+  .select-margin {
+    margin-top: .6em;
+  }
+  .seq-title {
+    font-size: 1.2em;
+  }
+  .synth-seq-header {
+    width: 588px;
+  }
+  #drum-seq-header {
+    width: 1186px;
+  }
+  .list-select {
+    width: 122px;
+    height: 344px;
+  }
+  .select-sub-header {
+    font-size: 14px;
+  }
+  .select-container {
+    width: 142px;
+    margin-right: 0px;
+    top: -.8em;
+  }
+  #lead-select-container {
+    width: 136px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 124px;
+    height: 410px;
+    margin-right: 1.1em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 124px;
+    height: 410px;
+    margin-left: 1.1em;
+  }
+  .drum-effect {
+    margin-top: .5em;
+    width: 88px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: 1.1em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    width: 93px;
+    font-size: 16px;
+  }
+  .drum-select {
+    margin-top: 1.2em;
+    width: 100px;
+  }
+  #bass-select-header {
+    width: 93px;
+  }
+  #drum-effect-header {
+    width: 95px;
+  }
+  #drum-select-header {
+    width: 96px;
+  }
+  .effect {
+    width: 122px;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.7em;
+  }
+}
+
+@media only screen and (min-width: 1575px) and (max-width: 1624px) {
+  .select-margin {
+    margin-top: .6em;
+  }
+  .seq-title {
+    font-size: 1.2em;
+  }
+  .synth-seq-header {
+    width: 602px;
+  }
+  #drum-seq-header {
+    width: 1215px;
+  }
+  .list-select {
+    width: 122px;
+    height: 345px;
+  }
+  .select-sub-header {
+    font-size: 14px;
+  }
+  .select-container {
+    width: 142px;
+    height: 431px;
+    margin-right: 0px;
+    top: -.8em;
+  }
+  #lead-select-container {
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 124px;
+    height: 410px;
+    margin-right: 1.4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 124px;
+    height: 410px;
+    margin-left: 1.4em;
+  }
+  .drum-effect {
+    margin-top: .5em;
+    width: 88px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .4em;
+  }
+  #bass-seq-header {
+    margin-left: .4em;
+  }
+  #bass-select-container {
+    margin-left: 1.4em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    width: 93px;
+    font-size: 16px;
+  }
+  .drum-select {
+    margin-top: 1.2em;
+    width: 100px;
+  }
+  #bass-select-header {
+    width: 93px;
+  }
+  #drum-effect-header {
+    width: 95px;
+  }
+  #drum-select-header {
+    width: 96px;
+  }
+  .effect {
+    width: 122px;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.7em;
+  }
+}
+
+@media only screen and (min-width: 1625px) and (max-width: 1654px) {
+  .drum-select {
+    margin-top: .899em;
+  }
+  .seq-title {
+    font-size: 1.3em;
+  }
+  .synth-seq-header {
+    width: 606px;
+  }
+  #drum-seq-header {
+    width: 1240px;
+  }
+  .list-select {
+    width: 126px;
+    height: 344px;
+  }
+  .select-sub-header {
+    font-size: 16px;
+  }
+  .select-container {
+    width: 146px;
+    margin-right: .4em;
+  }
+  #lead-select-container {
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 128px;
+    height: 410px;
+    margin-right: 1.7em;
+    margin-left: 35px;
+  }
+  #drum-effect-container {
+    width: 128px;
+    height: 410px;
+    margin-left: 1.7em;
+  }
+  .drum-effect {
+    margin-top: .2em;
+    width: 92px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: 1.5em;
+  }
+  #bass-seq-header {
+    margin-left: 1.5em;
+  }
+  #bass-select-container {
+    margin-left: 1.7em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    width: 93px;
+    font-size: 18px;
+  }
+  #bass-select-header {
+    width: 94px;
+  }
+  #drum-effect-header {
+    width: 96px;
+  }
+  #drum-select-header {
+    width: 96px;
+  }
+  .effect {
+    width: 126px;
+  }
+  #start {
+    left: 3em;
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.7em;
+  }
+}
+
+@media only screen and (min-width: 1655px) and (max-width: 1702px) {
+  .drum-select {
+    margin-top: .899em;
+  }
+  .seq-title {
+    font-size: 1.3em;
+  }
+  .synth-seq-header {
+    width: 606px;
+  }
+  #drum-seq-header {
+    width: 1240px;
+  }
+  .list-select {
+    width: 130px;
+    height: 344px;
+  }
+  .select-sub-header {
+    font-size: 16px;
+  }
+  .select-container {
+    width: 150px;
+    margin-right: .75em;
+  }
+  #lead-select-container {
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    height: 410px;
+    width: 132px;
+    margin-right: 2em;
+    margin-left: 35px;
+  }
+  #drum-effect-container {
+    height: 410px;
+    width: 132px;
+    margin-left: 2.2em;
+  }
+  .drum-effect {
+    margin-top: .2em;
+    width: 96px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: 1.5em;
+  }
+  #bass-seq-header {
+    margin-left: 1.5em;
+  }
+  #bass-select-container {
+    margin-left: 2.2em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    width: 97px;
+    font-size: 18px;
+  }
+  #bass-select-header {
+    width: 98px;
+  }
+  #drum-effect-header {
+    width: 99px;
+  }
+  #drum-select-header {
+    width: 100px;
+  }
+  .effect {
+    width: 130px;
+  }
+  #start {
+    left: 3em;
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.7em;
+  }
+}
+
+@media only screen and (min-width: 1703px) and (max-width: 1724px) {
+  .drum-select {
+    margin-top: .899em;
+  }
+  .seq-title {
+    font-size: 1.3em;
+  }
+  .synth-seq-header {
+    width: 614px;
+  }
+  #drum-seq-header {
+    width: 1271px;
+  }
+  .list-select {
+    width: 134px;
+    height: 344px;
+  }
+  .select-sub-header {
+    font-size: 16px;
+  }
+  .select-container {
+    width: 154px;
+    margin-right: .75em
+    top: -.75em;
+  }
+  #lead-select-container {
+    margin-left: 3em;
+  }
+  #drum-select-container {
+    height: 410px;
+    width: 136px;
+    margin-right: 2em;
+    margin-left: 38px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    height: 410px;
+    width: 136px;
+    margin-left: 2.2em;
+  }
+  .drum-effect {
+    margin-top: .2em;
+    width: 100px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: 2em;
+  }
+  #bass-seq-header {
+    margin-left: 2em;
+  }
+  #bass-select-container {
+    margin-left: 2.2em;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    width: 102px;
+    font-size: 18px;
+  }
+  #bass-select-header {
+    width: 102px;
+  }
+  #drum-effect-header {
+    width: 103px;
+  }
+  #drum-select-header {
+    width: 104px;
+  }
+  .effect {
+    width: 134px;
+  }
+  #start {
+    left: 3em;
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 2em;
+  }
+}
+
+@media only screen and (min-width: 1725px) and (max-width: 1774px) {
+  .drum-select {
+    margin-top: .899em;
+  }
+  .seq-title {
+    font-size: 1.3em;
+  }
+  .synth-seq-header {
+    width: 614px;
+  }
+  #drum-seq-header {
+    width: 1271px;
+  }
+  .list-select {
+    width: 134px;
+    height: 345px;
+  }
+  .select-sub-header {
+    font-size: 16px;
+  }
+  .select-container {
+    width: 154px;
+    height: 430px;
+    top: -.7em;
+  }
+  #drum-select-container {
+    height: 411px;
+    width: 136px;
+    margin-right: 2.2em;
+    margin-left: 61px;
+  }
+  #drum-effect-container {
+    width: 136px;
+    height: 411px;
+    margin-left: 2.2em;
+  }
+  .drum-effect {
+    margin-top: .2em;
+    width: 100px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: .6em;
+  }
+  #bass-seq {
+    padding-left: 2em;
+  }
+  #bass-seq-header {
+    margin-left: 2em;
+  }
+  #bass-select-container {
+    margin-left: 2.2em;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    width: 102px;
+    font-size: 18px;
+  }
+  #bass-select-header {
+    width: 101px;
+  }
+  #drum-effect-header {
+    width: 104px;
+  }
+  #drum-select-header {
+    width: 104px;
+  }
+  .effect {
+    width: 134px;
+  }
+  #start {
+    left: 2.5em;
+    font-size: 1.7em;
+  }
+}
+
+@media only screen and (min-width: 975px) and (max-width: 1024px) and (max-height: 500px) {
+  #clap-select {
+    display: none;
+  }
+  #drum-autofilter {
+    display: none;
+  }
+  #cymbal-select {
+    display: none;
+  }
+  #drum-pingpong {
+    display: none;
+  }
+  #drum-effect-select {
+    height: 200px;
+  }
+  #drum-container {
+    margin-bottom: 0;
+    height: 230px;
+  }
+  #copyright {
+    padding-top: 0em;
+    padding-bottom: .5em;
+  }
+  #footer {
+    bottom: 1em;
+  }
+  #tempo-header {
+    font-size: .8em;
+  }
+  #tempo {
+    display: none;
+    flex-direction: row-reverse;
+    right: 4vw;
+  }
+  #tempo-select {
+    margin-top: .2em;
+  }
+  path:nth-child(5) {
+    fill-opacity: 0;
+  }
+  #nav {
+    height: 22px;
+  }
+  #synth-container {
+    height: 0px;
+    margin-top: 5px;
+  }
+  #lead-vol {
+    position: absolute;
+    left: 140px;
+    top: 58px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 190px;
+    top: 58px;
+  }
+  .seq-title {
+    font-size: .8em;
+    position: relative;
+    bottom: 4px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 3em;
+  }
+  .vol-slider rect {
+    height: 5px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 5px;
+  }
+  .select-margin {
+    margin-top: 0;
+    padding: .1em;
+  }
+  #header {
+    font-size: 1em;
+  }
+  .synth-seq-header {
+    width: 368px;
+  }
+  #drum-seq-header {
+    width: 742px;
+  }
+  .list-select {
+    width: 73px;
+    height: 120px;
+  }
+  .select-sub-header {
+    font-size: 8px;
+    padding-left: 0px;
+  }
+  .select-container {
+    width: 93px;
+    margin-right: 0px;
+    top: -.9em;
+    margin-top: 30px;
+  }
+  #lead-select-container {
+    width: 75.5px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 75px;
+    height: 176px;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 75px;
+    height: 176px;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    position: relative;
+    top: -.7em;
+    margin: 0;
+    padding: 0;
+    width: 49px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header{
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    padding-top: .25em;
+    width: 55px;
+    font-size: 10px;
+  }
+  .drum-select {
+    position: relative;
+    top: -.7em;
+    margin: 0;
+    padding: 0;
+    width: 47px;
+  }
+  #bass-select-header {
+    width: 55px;
+  }
+  #drum-effect-header {
+    width: 57px;
+  }
+  #drum-select-header {
+    width: 57px;
+  }
+  .effect {
+    width: 73px;
+  }
+  #start {
+    font-size: .6em;
+    margin-left: 0em;
+    left: 4.4em;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1074px) and (max-height: 500px) {
+  #clap-select {
+    display: none;
+  }
+  #drum-autofilter {
+    display: none;
+  }
+  #cymbal-select {
+    display: none;
+  }
+  #drum-pingpong {
+    display: none;
+  }
+  #drum-effect-select {
+    height: 200px;
+  }
+  #drum-container {
+    margin-bottom: 0;
+    height: 230px;
+  }
+  #copyright {
+    padding-top: 0em;
+    padding-bottom: .5em;
+  }
+  #footer {
+    bottom: 1em;
+  }
+  #tempo-header {
+    font-size: .8em;
+  }
+  #tempo {
+    display: none;
+    flex-direction: row-reverse;
+    right: 4vw;
+  }
+  #tempo-select {
+    margin-top: .2em;
+  }
+  path:nth-child(5) {
+    fill-opacity: 0;
+  }
+  #nav {
+    height: 22px;
+  }
+  #synth-container {
+    height: 0px;
+    margin-top: 5px;
+  }
+  #lead-vol {
+    position: absolute;
+    left: 140px;
+    top: 58px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 190px;
+    top: 58px;
+  }
+  .seq-title {
+    font-size: .8em;
+    position: relative;
+    bottom: 4px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 3em;
+  }
+  .vol-slider rect {
+    height: 5px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 5px;
+  }
+  .select-margin {
+    margin-top: 0;
+    padding: .1em;
+  }
+  #header {
+    font-size: 1em;
+  }
+  .synth-seq-header {
+    width: 368px;
+  }
+  #drum-seq-header {
+    width: 742px;
+  }
+  .list-select {
+    width: 73px;
+    height: 120px;
+  }
+  .select-sub-header {
+    font-size: 8px;
+    padding-left: 0px;
+  }
+  .select-container {
+    width: 93px;
+    margin-right: 0px;
+    top: -.9em;
+    margin-top: 30px;
+  }
+  #lead-select-container {
+    width: 75.5px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 75px;
+    height: 176px;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 75px;
+    height: 176px;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    position: relative;
+    top: -.7em;
+    margin: 0;
+    padding: 0;
+    width: 49px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header{
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    padding-top: .25em;
+    width: 55px;
+    font-size: 10px;
+  }
+  .drum-select {
+    position: relative;
+    top: -.7em;
+    margin: 0;
+    padding: 0;
+    width: 47px;
+  }
+  #bass-select-header {
+    width: 55px;
+  }
+  #drum-effect-header {
+    width: 57px;
+  }
+  #drum-select-header {
+    width: 57px;
+  }
+  .effect {
+    width: 73px;
+  }
+  #start {
+    font-size: .6em;
+    margin-left: 0em;
+    left: 4.4em;
+  }
+}
+
+@media only screen and (min-width: 1075px) and (max-width: 1124px) and (max-height: 500px) {
+  #clap-select {
+    display: none;
+  }
+  #drum-autofilter {
+    display: none;
+  }
+  #cymbal-select {
+    display: none;
+  }
+  #drum-pingpong {
+    display: none;
+  }
+  #drum-effect-select {
+    height: 200px;
+  }
+  #drum-container {
+    margin-bottom: 0;
+    height: 230px;
+  }
+  #copyright {
+    padding-top: 0em;
+    padding-bottom: .5em;
+  }
+  #footer {
+    bottom: 1em;
+  }
+  #tempo-header {
+    font-size: .8em;
+  }
+  #tempo {
+    display: none;
+    flex-direction: row-reverse;
+    right: 4vw;
+  }
+  #tempo-select {
+    margin-top: .2em;
+  }
+  path:nth-child(5) {
+    fill-opacity: 0;
+  }
+  #nav {
+    height: 22px;
+  }
+  #synth-container {
+    height: 0px;
+    margin-top: 5px;
+  }
+  #lead-vol {
+    position: absolute;
+    left: 140px;
+    top: 58px;
+  }
+  #bass-vol {
+    position: absolute;
+    right: 190px;
+    top: 58px;
+  }
+  .seq-title {
+    font-size: .8em;
+    position: relative;
+    bottom: 4px;
+  }
+  .vol-slider {
+    position: relative;
+    top: 1px;
+    right: 3em;
+  }
+  .vol-slider rect {
+    height: 5px;
+    width: 171px;
+  }
+  .vol-slider circle {
+    r: 5px;
+  }
+  .select-margin {
+    margin-top: 0;
+    padding: .2em;
+  }
+  #header {
+    font-size: 1em;
+  }
+  .synth-seq-header {
+    width: 368px;
+  }
+  #drum-seq-header {
+    width: 742px;
+  }
+  .list-select {
+    width: 73px;
+    height: 124px;
+  }
+  .select-sub-header {
+    font-size: 8px;
+    padding-left: 0px;
+  }
+  .select-container {
+    width: 93px;
+    margin-right: 0px;
+    top: -.9em;
+    margin-top: 30px;
+  }
+  #lead-select-container {
+    width: 75.5px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 75px;
+    height: 180px;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 75px;
+    height: 180px;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    position: relative;
+    top: -.6em;
+    margin: 0;
+    padding: 0;
+    width: 49px;
+  }
+  #lead-seq {
+    padding-left: 0px;
+  }
+  #lead-container {
+    margin-left: 0em;
+  }
+  #bass-seq {
+    padding-left: .3em;
+  }
+  #bass-seq-header{
+    margin-left: .3em;
+  }
+  #bass-select-container {
+    margin-left: .15em;
+  }
+  #bass-container {
+    padding-left: 0px;
+  }
+  #lead-seq-header {
+    margin-left: 0px;
+  }
+  .select-header {
+    padding-top: .25em;
+    width: 55px;
+    font-size: 10px;
+  }
+  .drum-select {
+    position: relative;
+    top: -.6em;
+    margin: 0;
+    padding: 0;
+    width: 47px;
+  }
+  #bass-select-header {
+    width: 55px;
+  }
+  #drum-effect-header {
+    width: 57px;
+  }
+  #drum-select-header {
+    width: 57px;
+  }
+  .effect {
+    width: 73px;
+  }
+  #start {
+    font-size: .6em;
+    margin-left: 0em;
+    left: 4.4em;
+  }
+}
+
 @media only screen and (min-width: 1125px) and (max-width: 1174px) and (max-height: 580px) {
   #cymbal-select {
     display: none;
@@ -3058,466 +4302,6 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1425px) and (max-width: 1467px) {
-  .select-margin {
-    margin-top: .8em;
-  }
-  .seq-title {
-    font-size: 1.1em;
-  }
-  .synth-seq-header {
-    width: 561.5px;
-  }
-  #drum-seq-header {
-    width: 1133px;
-  }
-  .list-select {
-    width: 103px;
-    height: 343px;
-  }
-  .select-sub-header {
-    font-size: 13px;
-  }
-  .select-container {
-    width: 123px;
-    margin-right: 0px;
-    top: -.8em;
-  }
-  #lead-select-container {
-    width: 110px;
-    margin-left: 2.7em;
-  }
-  #drum-select-container {
-    width: 105px;
-    height: 406px;
-    margin-right: .6em;
-    margin-left: 34px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    width: 105px;
-    height: 406px;
-    margin-left: .6em;
-  }
-  .drum-effect {
-    margin-top: .71em;
-    width: 79px;
-  }
-  #lead-seq {
-    padding-left: 0px;
-  }
-  #lead-container {
-    margin-left: 0em;
-  }
-  #bass-seq {
-    padding-left: .4em;
-  }
-  #bass-seq-header {
-    margin-left: .4em;
-  }
-  #bass-select-container {
-    margin-left: .4em;
-  }
-  #bass-container {
-    padding-left: 0px;
-  }
-  #lead-seq-header {
-    margin-left: 0px;
-  }
-  .select-header {
-    width: 76px;
-    font-size: 15px;
-  }
-  .drum-select {
-    margin-top: 1.4em;
-    width: 77px;
-  }
-  #bass-select-header {
-    width: 76px;
-  }
-  #drum-effect-header {
-    width: 78px;
-  }
-  #drum-select-header {
-    width: 78px;
-  }
-  .effect {
-    width: 103px;
-  }
-  #start {
-    font-size: 1.6em;
-    margin-left: 0em;
-    left: 1.7em;
-  }
-}
-
-@media only screen and (min-width: 1468px) and (max-width: 1534px) {
-  .select-margin {
-    margin-top: .8em;
-  }
-  .seq-title {
-    font-size: 1.1em;
-  }
-  .synth-seq-header {
-    width: 576px;
-  }
-  #drum-seq-header {
-    width: 1162px;
-  }
-  .list-select {
-    width: 110px;
-    height: 342px;
-  }
-  .select-sub-header {
-    font-size: 13px;
-  }
-  .select-container {
-    width: 130px;
-    height: 433px;
-    margin-right: 0px;
-    top: -.8em;
-  }
-  #lead-select-container {
-    width: 117px;
-    margin-left: 2.7em;
-  }
-  #drum-select-container {
-    width: 112px;
-    height: 406px;
-    margin-right: .6em;
-    margin-left: 34px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    width: 112px;
-    height: 406px;
-    margin-left: .6em;
-  }
-  .drum-effect {
-    margin-top: .71em;
-    width: 76px;
-  }
-  #lead-seq {
-    padding-left: 0px;
-  }
-  #lead-container {
-    margin-left: 0em;
-  }
-  #bass-seq {
-    padding-left: .4em;
-  }
-  #bass-seq-header {
-    margin-left: .4em;
-  }
-  #bass-select-container {
-    margin-left: .4em;
-  }
-  #bass-container {
-    padding-left: 0px;
-  }
-  #lead-seq-header {
-    margin-left: 0px;
-  }
-  .select-header {
-    width: 83px;
-    font-size: 15px;
-  }
-  .drum-select {
-    margin-top: 1.4em;
-    width: 84px;
-  }
-  #bass-select-header {
-    width: 83px;
-  }
-  #drum-effect-header {
-    width: 85px;
-  }
-  #drum-select-header {
-    width: 85px;
-  }
-  .effect {
-    width: 110px;
-  }
-  #start {
-    font-size: 1.6em;
-    margin-left: 0em;
-    left: 1.7em;
-  }
-}
-
-@media only screen and (min-width: 1535px) and (max-width: 1574px) {
-  .select-margin {
-    margin-top: .6em;
-  }
-  .seq-title {
-    font-size: 1.2em;
-  }
-  .synth-seq-header {
-    width: 588px;
-  }
-  #drum-seq-header {
-    width: 1186px;
-  }
-  .list-select {
-    width: 122px;
-    height: 344px;
-  }
-  .select-sub-header {
-    font-size: 14px;
-  }
-  .select-container {
-    width: 142px;
-    margin-right: 0px;
-    top: -.8em;
-  }
-  #lead-select-container {
-    width: 136px;
-    margin-left: 2.7em;
-  }
-  #drum-select-container {
-    width: 124px;
-    height: 410px;
-    margin-right: 1.1em;
-    margin-left: 34px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    width: 124px;
-    height: 410px;
-    margin-left: 1.1em;
-  }
-  .drum-effect {
-    margin-top: .5em;
-    width: 88px;
-  }
-  #lead-seq {
-    padding-left: 0px;
-  }
-  #lead-container {
-    margin-left: 0em;
-  }
-  #bass-seq {
-    padding-left: .4em;
-  }
-  #bass-seq-header {
-    margin-left: .4em;
-  }
-  #bass-select-container {
-    margin-left: 1.1em;
-  }
-  #bass-container {
-    padding-left: 0px;
-  }
-  #lead-seq-header {
-    margin-left: 0px;
-  }
-  .select-header {
-    width: 93px;
-    font-size: 16px;
-  }
-  .drum-select {
-    margin-top: 1.2em;
-    width: 100px;
-  }
-  #bass-select-header {
-    width: 93px;
-  }
-  #drum-effect-header {
-    width: 95px;
-  }
-  #drum-select-header {
-    width: 96px;
-  }
-  .effect {
-    width: 122px;
-  }
-  #start {
-    font-size: 1.6em;
-    margin-left: 0em;
-    left: 1.7em;
-  }
-}
-
-@media only screen and (min-width: 1575px) and (max-width: 1624px) {
-  .select-margin {
-    margin-top: .6em;
-  }
-  .seq-title {
-    font-size: 1.2em;
-  }
-  .synth-seq-header {
-    width: 602px;
-  }
-  #drum-seq-header {
-    width: 1215px;
-  }
-  .list-select {
-    width: 122px;
-    height: 345px;
-  }
-  .select-sub-header {
-    font-size: 14px;
-  }
-  .select-container {
-    width: 142px;
-    height: 431px;
-    margin-right: 0px;
-    top: -.8em;
-  }
-  #lead-select-container {
-    margin-left: 2.7em;
-  }
-  #drum-select-container {
-    width: 124px;
-    height: 410px;
-    margin-right: 1.4em;
-    margin-left: 34px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    width: 124px;
-    height: 410px;
-    margin-left: 1.4em;
-  }
-  .drum-effect {
-    margin-top: .5em;
-    width: 88px;
-  }
-  #lead-seq {
-    padding-left: 0px;
-  }
-  #lead-container {
-    margin-left: 0em;
-  }
-  #bass-seq {
-    padding-left: .4em;
-  }
-  #bass-seq-header {
-    margin-left: .4em;
-  }
-  #bass-select-container {
-    margin-left: 1.4em;
-  }
-  #bass-container {
-    padding-left: 0px;
-  }
-  #lead-seq-header {
-    margin-left: 0px;
-  }
-  .select-header {
-    width: 93px;
-    font-size: 16px;
-  }
-  .drum-select {
-    margin-top: 1.2em;
-    width: 100px;
-  }
-  #bass-select-header {
-    width: 93px;
-  }
-  #drum-effect-header {
-    width: 95px;
-  }
-  #drum-select-header {
-    width: 96px;
-  }
-  .effect {
-    width: 122px;
-  }
-  #start {
-    font-size: 1.6em;
-    margin-left: 0em;
-    left: 1.7em;
-  }
-}
-
-@media only screen and (min-width: 1625px) and (max-width: 1654px) {
-  .drum-select {
-    margin-top: .899em;
-  }
-  .seq-title {
-    font-size: 1.3em;
-  }
-  .synth-seq-header {
-    width: 606px;
-  }
-  #drum-seq-header {
-    width: 1240px;
-  }
-  .list-select {
-    width: 126px;
-    height: 344px;
-  }
-  .select-sub-header {
-    font-size: 16px;
-  }
-  .select-container {
-    width: 146px;
-    margin-right: .4em;
-  }
-  #lead-select-container {
-    margin-left: 2.7em;
-  }
-  #drum-select-container {
-    width: 128px;
-    height: 410px;
-    margin-right: 1.7em;
-    margin-left: 35px;
-  }
-  #drum-effect-container {
-    width: 128px;
-    height: 410px;
-    margin-left: 1.7em;
-  }
-  .drum-effect {
-    margin-top: .2em;
-    width: 92px;
-  }
-  #lead-seq {
-    padding-left: 0px;
-  }
-  #lead-container {
-    margin-left: 0em;
-  }
-  #bass-seq {
-    padding-left: 1.5em;
-  }
-  #bass-seq-header {
-    margin-left: 1.5em;
-  }
-  #bass-select-container {
-    margin-left: 1.7em;
-  }
-  #bass-container {
-    padding-left: 0px;
-  }
-  #lead-seq-header {
-    margin-left: 0px;
-  }
-  .select-header {
-    width: 93px;
-    font-size: 18px;
-  }
-  #bass-select-header {
-    width: 94px;
-  }
-  #drum-effect-header {
-    width: 96px;
-  }
-  #drum-select-header {
-    width: 96px;
-  }
-  .effect {
-    width: 126px;
-  }
-  #start {
-    left: 3em;
-    font-size: 1.6em;
-    margin-left: 0em;
-    left: 1.7em;
-  }
-}
-
 @media only screen and (min-width: 1425px) and (max-width: 1467px) and (max-height: 840px) {
   #drum-container {
     margin-bottom: 0;
@@ -4157,260 +4941,6 @@ path:nth-child(5) {
     left: 1.7em;
   }
 }
-
-@media only screen and (min-width: 1655px) and (max-width: 1702px) {
-  .drum-select {
-    margin-top: .899em;
-  }
-  .seq-title {
-    font-size: 1.3em;
-  }
-  .synth-seq-header {
-    width: 606px;
-  }
-  #drum-seq-header {
-    width: 1240px;
-  }
-  .list-select {
-    width: 130px;
-    height: 344px;
-  }
-  .select-sub-header {
-    font-size: 16px;
-  }
-  .select-container {
-    width: 150px;
-    margin-right: .75em;
-  }
-  #lead-select-container {
-    margin-left: 2.7em;
-  }
-  #drum-select-container {
-    height: 410px;
-    width: 132px;
-    margin-right: 2em;
-    margin-left: 35px;
-  }
-  #drum-effect-container {
-    height: 410px;
-    width: 132px;
-    margin-left: 2.2em;
-  }
-  .drum-effect {
-    margin-top: .2em;
-    width: 96px;
-  }
-  #lead-seq {
-    padding-left: 0px;
-  }
-  #lead-container {
-    margin-left: 0em;
-  }
-  #bass-seq {
-    padding-left: 1.5em;
-  }
-  #bass-seq-header {
-    margin-left: 1.5em;
-  }
-  #bass-select-container {
-    margin-left: 2.2em;
-  }
-  #bass-container {
-    padding-left: 0px;
-  }
-  #lead-seq-header {
-    margin-left: 0px;
-  }
-  .select-header {
-    width: 97px;
-    font-size: 18px;
-  }
-  #bass-select-header {
-    width: 98px;
-  }
-  #drum-effect-header {
-    width: 99px;
-  }
-  #drum-select-header {
-    width: 100px;
-  }
-  .effect {
-    width: 130px;
-  }
-  #start {
-    left: 3em;
-    font-size: 1.6em;
-    margin-left: 0em;
-    left: 1.7em;
-  }
-}
-
-@media only screen and (min-width: 1703px) and (max-width: 1724px) {
-  .drum-select {
-    margin-top: .899em;
-  }
-  .seq-title {
-    font-size: 1.3em;
-  }
-  .synth-seq-header {
-    width: 614px;
-  }
-  #drum-seq-header {
-    width: 1271px;
-  }
-  .list-select {
-    width: 134px;
-    height: 344px;
-  }
-  .select-sub-header {
-    font-size: 16px;
-  }
-  .select-container {
-    width: 154px;
-    margin-right: .75em
-    top: -.75em;
-  }
-  #lead-select-container {
-    margin-left: 3em;
-  }
-  #drum-select-container {
-    height: 410px;
-    width: 136px;
-    margin-right: 2em;
-    margin-left: 38px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    height: 410px;
-    width: 136px;
-    margin-left: 2.2em;
-  }
-  .drum-effect {
-    margin-top: .2em;
-    width: 100px;
-  }
-  #lead-seq {
-    padding-left: 0px;
-  }
-  #lead-container {
-    margin-left: 0em;
-  }
-  #bass-seq {
-    padding-left: 2em;
-  }
-  #bass-seq-header {
-    margin-left: 2em;
-  }
-  #bass-select-container {
-    margin-left: 2.2em;
-  }
-  #lead-seq-header {
-    margin-left: 0px;
-  }
-  .select-header {
-    width: 102px;
-    font-size: 18px;
-  }
-  #bass-select-header {
-    width: 102px;
-  }
-  #drum-effect-header {
-    width: 103px;
-  }
-  #drum-select-header {
-    width: 104px;
-  }
-  .effect {
-    width: 134px;
-  }
-  #start {
-    left: 3em;
-    font-size: 1.6em;
-    margin-left: 0em;
-    left: 2em;
-  }
-}
-
-@media only screen and (min-width: 1725px) and (max-width: 1774px) {
-  .drum-select {
-    margin-top: .899em;
-  }
-  .seq-title {
-    font-size: 1.3em;
-  }
-  .synth-seq-header {
-    width: 614px;
-  }
-  #drum-seq-header {
-    width: 1271px;
-  }
-  .list-select {
-    width: 134px;
-    height: 345px;
-  }
-  .select-sub-header {
-    font-size: 16px;
-  }
-  .select-container {
-    width: 154px;
-    height: 430px;
-    top: -.7em;
-  }
-  #drum-select-container {
-    height: 411px;
-    width: 136px;
-    margin-right: 2.2em;
-    margin-left: 61px;
-  }
-  #drum-effect-container {
-    width: 136px;
-    height: 411px;
-    margin-left: 2.2em;
-  }
-  .drum-effect {
-    margin-top: .2em;
-    width: 100px;
-  }
-  #lead-seq {
-    padding-left: 0px;
-  }
-  #lead-container {
-    margin-left: .6em;
-  }
-  #bass-seq {
-    padding-left: 2em;
-  }
-  #bass-seq-header {
-    margin-left: 2em;
-  }
-  #bass-select-container {
-    margin-left: 2.2em;
-  }
-  #lead-seq-header {
-    margin-left: 0px;
-  }
-  .select-header {
-    width: 102px;
-    font-size: 18px;
-  }
-  #bass-select-header {
-    width: 101px;
-  }
-  #drum-effect-header {
-    width: 104px;
-  }
-  #drum-select-header {
-    width: 104px;
-  }
-  .effect {
-    width: 134px;
-  }
-  #start {
-    left: 2.5em;
-    font-size: 1.7em;
-  }
-}
-
 
 @media only screen and (min-width: 1655px) and (max-width: 1702px) and (max-height: 1000px) {
   #footer {

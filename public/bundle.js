@@ -823,13 +823,13 @@ window.matchMedia('(min-width: 575px) and (max-width: 64px) and (max-height: 0px
 window.matchMedia('(min-width: 625px) and (max-width: 674px) and (max-height: 0px)'), //43
 window.matchMedia('(min-width: 675px) and (max-width: 724px)'), //44
 window.matchMedia('(min-width: 725px) and (max-width: 774px) and (max-height: 0px)'), //45
-window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 0px)'), //46--
+window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 0px)'), //46
 window.matchMedia('(min-width: 825px) and (max-width: 874px) and (max-height: 0px)'), //47
 window.matchMedia('(min-width: 875px) and (max-width: 924px) and (max-height: 0px)'), //48
 window.matchMedia('(min-width: 925px) and (max-width: 974px) and (max-height: 0px)'), //49
-window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (max-height: 0px)'), //50
-window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 0px)'), //51
-window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 0px)'), //52
+window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (max-height: 500px)'), //50
+window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 500px)'), //51
+window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 500px)'), //52
 window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 580px)'), //53
 window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 580px)'), //54
 window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 580px)'), //55
@@ -857,9 +857,47 @@ let height = 400,
     drumWidth = 1932;
 
 const resizeSequencersResponsively = () => {
+  mq[50].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[51].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[52].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
   mq[53].addListener(e => {
     if (e.matches) {
-      console.log('mq', mq[53]);
       height = 200;
       leadSeq.resize(424, height);
       bassSeq.resize(424, height);
@@ -1590,7 +1628,37 @@ const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
-    if (mq[53].matches) {
+    if (mq[50].matches) {
+      height = 160;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    } else if (mq[51].matches) {
+      height = 160;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    } else if (mq[52].matches) {
+      height = 160;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    } else if (mq[53].matches) {
       height = 200;
       leadSeq.resize(424, height);
       bassSeq.resize(424, height);
