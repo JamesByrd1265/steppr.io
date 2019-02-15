@@ -777,47 +777,47 @@ socket.on('selectKick', data => {
   kick = kicks[data];
 });
 
-const mq = [window.matchMedia('(min-width: 0px) and (max-width: 524px)'), //0
-window.matchMedia('(min-width: 525px) and (max-width: 574px)'), //1
-window.matchMedia('(min-width: 575px) and (max-width: 64px)'), //2
-window.matchMedia('(min-width: 625px) and (max-width: 674px)'), //3
-window.matchMedia('(min-width: 675px) and (max-width: 724px)'), //4
-window.matchMedia('(min-width: 725px) and (max-width: 774px)'), //5
-window.matchMedia('(min-width: 775px) and (max-width: 824px)'), //6--
-window.matchMedia('(min-width: 825px) and (max-width: 874px)'), //7
-window.matchMedia('(min-width: 875px) and (max-width: 924px)'), //8
-window.matchMedia('(min-width: 925px) and (max-width: 974px)'), //9
-window.matchMedia('(min-width: 975px) and (max-width: 1024px)'), //10
-window.matchMedia('(min-width: 1025px) and (max-width: 1074px)'), //11
-window.matchMedia('(min-width: 1075px) and (max-width: 1124px)'), //12
-window.matchMedia('(min-width: 1125px) and (max-width: 1174px)'), //13
-window.matchMedia('(min-width: 1175px) and (max-width: 1224px)'), //14
-window.matchMedia('(min-width: 1225px) and (max-width: 1274px)'), //15
-window.matchMedia('(min-width: 1275px) and (max-width: 1324px)'), //16
-window.matchMedia('(min-width: 1325px) and (max-width: 1374px)'), //17
-window.matchMedia('(min-width: 1375px) and (max-width: 1424px)'), //18
-window.matchMedia('(min-width: 1425px) and (max-width: 1467px)'), //19
-window.matchMedia('(min-width: 1468px) and (max-width: 1534px)'), //20
-window.matchMedia('(min-width: 1535px) and (max-width: 1574px)'), //21
-window.matchMedia('(min-width: 1575px) and (max-width: 1624px)'), //22
-window.matchMedia('(min-width: 1625px) and (max-width: 1654px)'), //23
-window.matchMedia('(min-width: 1655px) and (max-width: 1702px)'), //24
-window.matchMedia('(min-width: 1703px) and (max-width: 1724px)'), //25
-window.matchMedia('(min-width: 1725px) and (max-width: 1774px)'), //26*
-window.matchMedia('(min-width: 1775px) and (max-width: 1814px)'), //27
-window.matchMedia('(min-width: 1815px) and (max-width: 1854px)'), //28
-window.matchMedia('(min-width: 1855px) and (max-width: 1894px)'), //29
-window.matchMedia('(min-width: 1895px) and (max-width: 1934px)'), //30
-window.matchMedia('(min-width: 1935px) and (max-width: 1974px)'), //31
-window.matchMedia('(min-width: 1975px) and (max-width: 2014px)'), //32
-window.matchMedia('(min-width: 2015px) and (max-width: 2054px)'), //33
-window.matchMedia('(min-width: 2055px) and (max-width: 2094px)'), //34
-window.matchMedia('(min-width: 2095px) and (max-width: 2174px)'), //35
-window.matchMedia('(min-width: 2175px) and (max-width: 2254px)'), //36
-window.matchMedia('(min-width: 2255px) and (max-width: 2334px)'), //37
-window.matchMedia('(min-width: 2335px) and (max-width: 2414px)'), //38
-window.matchMedia('(min-width: 2415px) and (max-width: 2496px)'), //39
-window.matchMedia('(min-width: 2497px)'), //40
+const mq = [window.matchMedia('(min-width: 0px) and (max-width: 524px) and (min-height: 1001px)'), //0
+window.matchMedia('(min-width: 525px) and (max-width: 574px) and (min-height: 1001px)'), //1
+window.matchMedia('(min-width: 575px) and (max-width: 64px) and (min-height: 1001px)'), //2
+window.matchMedia('(min-width: 625px) and (max-width: 674px) and (min-height: 1001px)'), //3
+window.matchMedia('(min-width: 675px) and (max-width: 724px) and (min-height: 1001px)'), //4
+window.matchMedia('(min-width: 725px) and (max-width: 774px) and (min-height: 1001px)'), //5
+window.matchMedia('(min-width: 775px) and (max-width: 824px) and (min-height: 1001px)'), //6--
+window.matchMedia('(min-width: 825px) and (max-width: 874px) and (min-height: 1001px)'), //7
+window.matchMedia('(min-width: 875px) and (max-width: 924px) and (min-height: 1001px)'), //8
+window.matchMedia('(min-width: 925px) and (max-width: 974px) and (min-height: 1001px)'), //9
+window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (min-height: 1001px)'), //10
+window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (min-height: 1001px)'), //11
+window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (min-height: 1001px)'), //12
+window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 1001px)'), //13
+window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 1001px)'), //14
+window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 1001px)'), //15
+window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 1001px)'), //16
+window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 1001px)'), //17
+window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 1001px)'), //18
+window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 1001px)'), //19
+window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 1001px)'), //20
+window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 1001px)'), //21
+window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 1001px)'), //22
+window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (min-height: 1001px)'), //23
+window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (min-height: 1001px)'), //24
+window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (min-height: 1001px)'), //25
+window.matchMedia('(min-width: 1725px) and (max-width: 1774px) and (min-height: 1001px)'), //26*
+window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 1001px)'), //27
+window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 1001px)'), //28
+window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 1001px)'), //29
+window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 1001px)'), //30
+window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 1001px)'), //31
+window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 1001px)'), //32
+window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 1001px)'), //33
+window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 1001px)'), //34
+window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 1001px)'), //35
+window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 1001px)'), //36
+window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 1001px)'), //37
+window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 1001px)'), //38
+window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 1001px)'), //39
+window.matchMedia('(min-width: 2497px) and (min-height: 1001px)'), //40
 window.matchMedia('(min-width: 0px) and (max-width: 524px) and (max-height: 0px)'), //41
 window.matchMedia('(min-width: 575px) and (max-width: 64px) and (max-height: 0px)'), //42
 window.matchMedia('(min-width: 625px) and (max-width: 674px) and (max-height: 0px)'), //43
@@ -836,11 +836,11 @@ window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 
 window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 0px)'), //56
 window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 0px)'), //57
 window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 0px)'), //58
-window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 0px)'), //59
-window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 0px)'), //60
-window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 0px)'), //61
-window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 0px)'), //62
-window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 0px)'), //63
+window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 840px)'), //59
+window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 840px)'), //60
+window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 840px)'), //61
+window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 840px)'), //62
+window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 840px)'), //63
 window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (max-height: 1000px)'), //64
 window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (max-height: 1000px)'), //65
 window.matchMedia('(min-width: 1725px) and (max-width: 1774px) and (max-height: 1000px)'), //66*
@@ -856,6 +856,44 @@ let height = 400,
     drumWidth = 1932;
 
 const resizeSequencersResponsively = () => {
+  mq[64].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      tempo.resize(70, 70);
+    }
+  });
+  mq[65].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      tempo.resize(70, 70);
+    }
+  });
+  mq[66].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(32);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(32);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      tempo.resize(70, 70);
+    }
+  });
   mq[67].addListener(e => {
     if (e.matches) {
       height = 320;
@@ -875,6 +913,7 @@ const resizeSequencersResponsively = () => {
       drumSeq.resize(1285, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       tempo.resize(80, 80);
     }
   });
@@ -886,6 +925,7 @@ const resizeSequencersResponsively = () => {
       drumSeq.resize(1288, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       tempo.resize(80, 80);
     }
   });
@@ -897,6 +937,7 @@ const resizeSequencersResponsively = () => {
       drumSeq.resize(1329.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       tempo.resize(80, 80);
     }
   });
@@ -908,6 +949,7 @@ const resizeSequencersResponsively = () => {
       drumSeq.resize(1360, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       tempo.resize(80, 80);
     }
   });
@@ -1400,83 +1442,22 @@ const resizeSequencersResponsively = () => {
   });
 };
 
+const abbreviateEffects = () => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
+};
+
 const setup = () => {
   document.body.appendChild(canvas);
   setupSequencers();
   const resizeSequencers = () => {
-    if (mq[45].matches) {
-      height = 220;
-      leadSeq.resize(266, height);
-      bassSeq.resize(266, height);
-      drumSeq.resize(540, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(266).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(540).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[46].matches) {
-      height = 260;
-      leadSeq.resize(292, height);
-      bassSeq.resize(292, height);
-      drumSeq.resize(592, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(292).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(592).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[47].matches) {
-      height = 300;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[48].matches) {
-      height = 320;
-      leadSeq.resize(332, height);
-      bassSeq.resize(332, height);
-      drumSeq.resize(670, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(332).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(670).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[49].matches) {
-      height = 3400;
-      leadSeq.resize(356, height);
-      bassSeq.resize(356, height);
-      drumSeq.resize(722, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(356).height(19);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(722).height(19);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[50].matches) {
-      height = 3600;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[51].matches) {
-      height = 3600;
-      leadSeq.resize(388, height);
-      bassSeq.resize(388, height);
-      drumSeq.resize(782, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(388).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(782).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[52].matches) {
-      height = 3800;
-      leadSeq.resize(400, height);
-      bassSeq.resize(400, height);
-      drumSeq.resize(808, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(400).height(21);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(808).height(21);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[53].matches) {
-      height = 3800;
-      leadSeq.resize(424, height);
-      bassSeq.resize(424, height);
-      drumSeq.resize(854, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(854).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-    } else if (mq[54].matches) {
+    if (mq[54].matches) {
       height = 300;
       leadSeq.resize(455, height);
       bassSeq.resize(455, height);
@@ -1517,43 +1498,92 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
     } else if (mq[59].matches) {
-      height = 300;
+      height = 280;
       leadSeq.resize(561.5, height);
       bassSeq.resize(561.5, height);
       drumSeq.resize(1133, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
+      tempo.resize(65, 65);
     } else if (mq[60].matches) {
-      height = 300;
+      height = 280;
       leadSeq.resize(576, height);
       bassSeq.resize(576, height);
       drumSeq.resize(1162, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
+      tempo.resize(65, 65);
     } else if (mq[61].matches) {
-      height = 300;
+      height = 280;
       leadSeq.resize(588, height);
       bassSeq.resize(588, height);
       drumSeq.resize(1186, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
+      tempo.resize(65, 65);
     } else if (mq[62].matches) {
-      height = 300;
+      height = 280;
       leadSeq.resize(602, height);
       bassSeq.resize(602, height);
       drumSeq.resize(1215, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
+      tempo.resize(65, 65);
     } else if (mq[63].matches) {
-      height = 300;
+      height = 280;
       leadSeq.resize(606, height);
       bassSeq.resize(606, height);
       drumSeq.resize(1240, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
+      tempo.resize(65, 65);
     } else if (mq[64].matches) {
       height = 300;
       leadSeq.resize(606, height);
