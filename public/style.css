@@ -7155,6 +7155,7 @@ path:nth-child(5) {
     padding-bottom: .5em;
   }
   #footer {
+    height: 300px;
     bottom: 1em;
   }
   #tempo-header {
@@ -7249,10 +7250,10 @@ path:nth-child(5) {
     margin-left: 0em;
   }
   #bass-seq {
-    padding-left: .3em;
+    padding-left: 0;
   }
   #bass-seq-header{
-    margin-left: .3em;
+    margin-left: 0;
   }
   #bass-select-container {
     margin-left: .15em;
