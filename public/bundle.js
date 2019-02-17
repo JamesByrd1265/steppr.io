@@ -777,204 +777,1723 @@ socket.on('selectKick', data => {
   kick = kicks[data];
 });
 
-const mq = [window.matchMedia('(min-width: 0px) and (max-width: 674px) and (max-height: 500px)'), //43 => 0  
-window.matchMedia('(min-width: 675px) and (max-width: 724px) and (max-height: 500px)'), //44 => 1 
-window.matchMedia('(min-width: 725px) and (max-width: 774px) and (max-height: 500px)'), //45 => 2 
-window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 500px)'), //46 => 3
-window.matchMedia('(min-width: 825px) and (max-width: 874px) and (max-height: 500px)'), //47 => 4
-window.matchMedia('(min-width: 875px) and (max-width: 924px) and (max-height: 500px)'), //48-- => 5 
-window.matchMedia('(min-width: 925px) and (max-width: 974px) and (max-height: 500px)'), //49 => 6
-window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (max-height: 500px)'), //50 => 7
-window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 500px)'), //51 => 8
-window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 500px)'), //52 => 9
-window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 500px)'), // 620 53-- => 10
-window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 500px)'), // 620 54 => 11
-window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 500px)'), // 620 55 => 12
-window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 500px)'), // 620 56 => 13
-window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 500px)'), // 620 57 => 14
-window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 500px)'), // 620 58 => 15
-window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 500px)'), //850 59 => 16
-window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 500px)'), // 850 60 => 17
-window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 500px)'), // 850 61 => 18
-window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 500px)'), // 850 62 => 19
-window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 500px)'), // 850 63 => 20
-window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (max-height: 500px)'), // 1000 64 => 21
-window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (max-height: 500px)'), // 1000 65 => 22
-window.matchMedia('(min-width: 1725px) and (max-width: 1774px) and (max-height: 500px)'), // 1000 66* => 23
-window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 500px)'), // 1000 67 => 24
-window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 500px)'), // 1000 68 => 25
-window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 500px)'), // 1000 69 => 26
-window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 500px)'), // 1000 70 => 27
-window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 500px)'), // 1000 71 => 28
-window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 500px)'), // 0 32  => 29
-window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 500px)'), // 0 33 => 30
-window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 500px)'), // 0 34 => 31
-window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 500px)'), // 0 35 => 32
-window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 500px)'), // 0 36 => 33
-window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 500px)'), // 0 37 => 34
-window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 500px)'), // 0 38 => 35
-window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 500px)'), // 0 39 => 36
-window.matchMedia('(min-width: 2497px) and (max-height: 500px)'), //40 => 37
-window.matchMedia('(min-width: 0px) and (max-width: 674px) and (max-height: 620px)'), // 500 73 => 38
-window.matchMedia('(min-width: 675px) and (max-width: 724px) and (max-height: 620px)'), // 500 74 => 39
-window.matchMedia('(min-width: 725px) and (max-width: 774px) and (max-height: 620px)'), // 500 75 => 40
-window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 620px)'), // 500 76 => 41
-window.matchMedia('(min-width: 825px) and (max-width: 874px) and (max-height: 620px)'), // 500 77   => 42
-window.matchMedia('(min-width: 875px) and (max-width: 924px) and (max-height: 620px)'), // 500 78 => 43
-window.matchMedia('(min-width: 925px) and (max-width: 974px) and (max-height: 620px)'), // 500 79 => 44
-window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (max-height: 620px)'), // 500 80 => 45
-window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 620px)'), // 500 81 => 46
-window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 620px)'), // 500 82- => 47
-window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 620px)'), //53-- => 48
-window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 620px)'), //54 => 49
-window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 620px)'), //55 => 50
-window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 620px)'), //56 => 51
-window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 620px)'), //57 => 52
-window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 620px)'), //58 => 53
-window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 620px)'), // 850 59 => 54 
-window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 620px)'), // 850 60 => 55
-window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 620px)'), // 850 61 => 56
-window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 620px)'), // 850 62 => 57
-window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 620px)'), // 850 63 => 58
-window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (max-height: 620px)'), // 1000 64 => 59
-window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (max-height: 620px)'), // 1000 65 => 60
-window.matchMedia('(min-width: 1725px) and (max-width: 1774px) and (max-height: 620px)'), // 1000 66* => 61
-window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 620px)'), // 1000 67 => 62
-window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 620px)'), // 1000 68 => 63
-window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 620px)'), // 1000 69 => 64
-window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 620px)'), // 1000 70 => 65
-window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 620px)'), // 1000 71 => 66
-window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 620px)'), // 0 32 => 67
-window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 620px)'), // 0 33 => 68
-window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 620px)'), // 0 34 => 69
-window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 620px)'), // 0 35 => 70
-window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 620px)'), // 0 36 => 71
-window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 620px)'), // 0 37 => 72
-window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 620px)'), // 0 38 => 73
-window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 620px)'), // 0 39 => 74
-window.matchMedia('(min-width: 2497px) and (max-height: 620px)'), //40 => 75
-window.matchMedia('(min-width: 0px) and (max-width: 674px) and (max-height: 850px)'), // 500 73 (5)-- => 76
-window.matchMedia('(min-width: 675px) and (max-width: 724px) and (max-height: 850px)'), // 500 74 => 77
-window.matchMedia('(min-width: 725px) and (max-width: 774px) and (max-height: 850px)'), // 500 75 => 78
-window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 850px)'), // 500 76 => 79
-window.matchMedia('(min-width: 825px) and (max-width: 874px) and (max-height: 850px)'), // 500 77   => 80
-window.matchMedia('(min-width: 875px) and (max-width: 924px) and (max-height: 850px)'), // 500 78 => 81
-window.matchMedia('(min-width: 925px) and (max-width: 974px) and (max-height: 850px)'), // 500 79 => 82
-window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (max-height: 850px)'), // 500 80 => 83
-window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 850px)'), // 500 81 => 84
-window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 850px)'), // 500 82- => 85
-window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 850px)'), // 620 53-- => 86
-window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 850px)'), // 620 54 => 87
-window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 850px)'), // 620 55 => 88
-window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 850px)'), // 620 56 => 89
-window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 850px)'), // 620 57 => 90
-window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 850px)'), // 620 58 => 91
-window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 850px)'), //59 => 92
-window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 850px)'), //60 => 93
-window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 850px)'), //61 => 94
-window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 850px)'), //62 => 95
-window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 850px)'), //63 => 96
-window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (max-height: 850px)'), // 1000 64 => 97
-window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (max-height: 850px)'), // 1000 65 => 98
-window.matchMedia('(min-width: 1725px) and (max-width: 1774px) and (max-height: 850px)'), // 1000 66* => 99
-window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 850px)'), // 1000 67 => 100
-window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 850px)'), // 1000 68 => 101
-window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 850px)'), // 1000 69 => 102
-window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 850px)'), // 1000 70 => 103
-window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 850px)'), // 1000 71 => 104
-window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 850px)'), // 0 32 => 105
-window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 850px)'), // 0 33 => 106
-window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 850px)'), // 0 34 => 107
-window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 850px)'), // 0 35 => 108
-window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 850px)'), // 0 36 => 109
-window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 850px)'), // 0 37 => 110
-window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 850px)'), // 0 38 => 111
-window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 850px)'), // 0 39 => 112
-window.matchMedia('(min-width: 2497px) and (max-height: 850px)'), // 0 40 => 113
-window.matchMedia('(min-width: 0px) and (max-width: 674px) and (max-height: 1000px)'), // 500 73 => 114
-window.matchMedia('(min-width: 675px) and (max-width: 724px) and (max-height: 1000px)'), // 500 74 => 115
-window.matchMedia('(min-width: 725px) and (max-width: 774px) and (max-height: 1000px)'), // 500 75 => 116
-window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 1000px)'), // 500 76 => 117
-window.matchMedia('(min-width: 825px) and (max-width: 874px) and (max-height: 1000px)'), // 500 77   => 118
-window.matchMedia('(min-width: 875px) and (max-width: 924px) and (max-height: 1000px)'), // 500 78 => 119
-window.matchMedia('(min-width: 925px) and (max-width: 974px) and (max-height: 1000px)'), // 500 79 => 120
-window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (max-height: 1000px)'), // 500 80 => 121
-window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 1000px)'), // 500 81 => 122
-window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 1000px)'), // 500 82- => 123
-window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 1000px)'), // 620 53-- => 124
-window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 1000px)'), // 620 54 => 125
-window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 1000px)'), // 620 55 => 126
-window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 1000px)'), // 620 56 => 127
-window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 1000px)'), // 620 57 => 128
-window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 1000px)'), // 620 58 => 129
-window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 1000px)'), // 850 59 => 130
-window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 1000px)'), // 850 60 => 131
-window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 1000px)'), // 850 61 => 132
-window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 1000px)'), // 850 62 => 133
-window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 1000px)'), // 850 63 => 134
-window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (max-height: 1000px)'), //64 => 135
-window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (max-height: 1000px)'), //65 => 136
-window.matchMedia('(min-width: 1725px) and (max-width: 1774px) and (max-height: 1000px)'), //66* => 137
-window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 1000px)'), //67 => 138
-window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 1000px)'), //68 => 139
-window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 1000px)'), //69 => 140
-window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 1000px)'), //70 => 141
-window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 1000px)'), //71 => 142
-window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 1000px)'), // 0 32 => 143 
-window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 1000px)'), // 0 33 => 144
-window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 1000px)'), // 0 34 => 145
-window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 1000px)'), // 0 35 => 146
-window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 1000px)'), // 0 36 => 147
-window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 1000px)'), // 0 37 => 148
-window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 1000px)'), // 0 38 => 149
-window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 1000px)'), // 0 39 => 150
-window.matchMedia('(min-width: 2497px) and (max-height: 1000px)'), // 0 40 => 151
-window.matchMedia('(min-width: 0px) and (max-width: 674px) and (min-height: 0px)'), //3=>  152
-window.matchMedia('(min-width: 675px) and (max-width: 724px) and (min-height: 0px)'), //4=>  153
-window.matchMedia('(min-width: 725px) and (max-width: 774px) and (min-height: 0px)'), //5=>  154
-window.matchMedia('(min-width: 775px) and (max-width: 824px) and (min-height: 0px)'), //6-- => 155
-window.matchMedia('(min-width: 825px) and (max-width: 874px) and (min-height: 0px)'), //7 => 156
-window.matchMedia('(min-width: 875px) and (max-width: 924px) and (min-height: 0px)'), //8 => 157
-window.matchMedia('(min-width: 925px) and (max-width: 974px) and (min-height: 0px)'), //9 => 158
-window.matchMedia('(min-width: 975px) and (max-width: 1024px) and (min-height: 0px)'), //10 => 159
-window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (min-height: 0px)'), //11 => 160
-window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (min-height: 0px)'), //12 => 161
-window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 0px)'), //13 => 162
-window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 0px)'), //14 => 163
-window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 0px)'), //15 => 164
-window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 0px)'), //16 => 165
-window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 0px)'), //17 => 166
-window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 0px)'), //18 => 167
-window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 0px)'), //19 => 168
-window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 0px)'), //20 => 169
-window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 0px)'), //21 => 170
-window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 0px)'), //22 => 171
-window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (min-height: 0px)'), //23 => 172
-window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (min-height: 0px)'), //24 => 173
-window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (min-height: 0px)'), //25 => 174
-window.matchMedia('(min-width: 1725px) and (max-width: 1774px) and (min-height: 0px)'), //26* => 175
-window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 0px)'), //27 => 176
-window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 0px)'), //28 => 177
-window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 0px)'), //29 => 178
-window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 0px)'), //30 => 179
-window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 0px)'), //31 => 180
-window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 0px)'), //32 => 181
-window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 0px)'), //33 => 182
-window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 0px)'), //34 => 183
-window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 0px)'), //35 => 184
-window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 0px)'), //36 => 185
-window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 0px)'), //37 => 186
-window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 0px)'), //38 => 187
-window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 0px)'), //39 => 188
-window.matchMedia('(min-width: 2497px) and (min-height: 0px)')];
+const mq = [window.matchMedia('(min-width: 0px) and (max-width: 1024px) and (max-height: 500px)'), window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 500px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 500px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 500px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 500px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 500px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 500px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 500px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 500px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 500px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 500px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 500px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (max-height: 500px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (max-height: 500px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1894px) and (max-height: 500px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 500px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 500px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 500px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 500px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 500px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 500px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 500px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 500px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 500px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 500px)'), window.matchMedia('(min-width: 2497px) and (max-height: 500px)'), window.matchMedia('(min-width: 0px) and (max-width: 874px) and (max-height: 620px)'), window.matchMedia('(min-width: 875px) and (max-width: 1074px) and (max-height: 620px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 620px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 620px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 620px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 620px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 620px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 620px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 620px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 620px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 620px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 620px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 620px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (max-height: 620px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (max-height: 620px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 620px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 620px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 620px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 620px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 620px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 620px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 620px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 620px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 620px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 620px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 620px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 620px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 620px)'), window.matchMedia('(min-width: 2497px) and (max-height: 620px)'), window.matchMedia('(min-width: 0px) and (max-width: 924px) and (max-height: 850px)'), window.matchMedia('(min-width: 925px) and (max-width: 1074px) and (max-height: 850px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 850px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 850px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 850px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 850px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 850px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 850px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 850px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 850px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 850px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 850px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 850px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 850px)'), window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (max-height: 850px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (max-height: 850px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 850px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 850px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 850px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 850px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 850px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 850px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 850px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 850px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 850px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 850px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 850px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 850px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 850px)'), window.matchMedia('(min-width: 2497px) and (max-height: 850px)'), window.matchMedia('(min-width: 0px) and (max-width: 774px) and (max-height: 1000px)'), window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 1000px)'), window.matchMedia('(min-width: 825px) and (max-width: 974px) and (max-height: 1000px)'), window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2497px) and (max-height: 1000px)'), window.matchMedia('(min-width: 0px) and (max-width: 824px) and (min-height: 0px)'), window.matchMedia('(min-width: 825px) and (max-width: 974px) and (min-height: 0px)'), window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (min-height: 0px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 0px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 0px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 0px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 0px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 0px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 0px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 0px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 0px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 0px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 0px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 0px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 0px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 0px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 0px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 0px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 0px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 0px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 0px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 0px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 0px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 0px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 0px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 0px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 0px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 0px)'), window.matchMedia('(min-width: 2497px) and (min-height: 0px)')];
 
 let height = 400,
     synthWidth = 940,
     drumWidth = 1932;
 
-// const resizeSequencersResponsively = () => {
-
-// }
+const resizeSequencersResponsively = () => {
+  mq[0].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[1].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[2].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[3].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(424, height);
+      bassSeq.resize(424, height);
+      drumSeq.resize(856, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[4].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(455, height);
+      bassSeq.resize(455, height);
+      drumSeq.resize(917, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[12].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(480, height);
+      bassSeq.resize(480, height);
+      drumSeq.resize(968, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[5].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(500, height);
+      bassSeq.resize(500, height);
+      drumSeq.resize(1007, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[6].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(522, height);
+      bassSeq.resize(522, height);
+      drumSeq.resize(1051, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[7].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(540, height);
+      bassSeq.resize(540, height);
+      drumSeq.resize(1090, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[8].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(561.5, height);
+      bassSeq.resize(561.5, height);
+      drumSeq.resize(1133, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[9].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(576, height);
+      bassSeq.resize(576, height);
+      drumSeq.resize(1162, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[10].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(588, height);
+      bassSeq.resize(588, height);
+      drumSeq.resize(1186, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[11].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(602, height);
+      bassSeq.resize(602, height);
+      drumSeq.resize(1215, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[12].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[13].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
+      tempo.resize(70, 70);
+    }
+  });
+  mq[14].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(616, height);
+      bassSeq.resize(616, height);
+      drumSeq.resize(1274.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[15].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(640, height);
+      bassSeq.resize(640, height);
+      drumSeq.resize(1329.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[16].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(660, height);
+      bassSeq.resize(660, height);
+      drumSeq.resize(1360, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[17].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(680, height);
+      bassSeq.resize(680, height);
+      drumSeq.resize(1412.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
+    }
+  });
+  mq[18].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(700, height);
+      bassSeq.resize(700, height);
+      drumSeq.resize(1454, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
+    }
+  });
+  mq[19].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(720, height);
+      bassSeq.resize(720, height);
+      drumSeq.resize(1493.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
+    }
+  });
+  mq[20].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(740, height);
+      bassSeq.resize(740, height);
+      drumSeq.resize(1533, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
+    }
+  });
+  mq[21].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(780, height);
+      bassSeq.resize(780, height);
+      drumSeq.resize(1612, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
+    }
+  });
+  mq[22].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(820, height);
+      bassSeq.resize(820, height);
+      drumSeq.resize(1693, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
+    }
+  });
+  mq[23].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(860, height);
+      bassSeq.resize(860, height);
+      drumSeq.resize(1772, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
+    }
+  });
+  mq[24].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(900, height);
+      bassSeq.resize(900, height);
+      drumSeq.resize(1851, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
+    }
+  });
+  mq[25].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(940, height);
+      bassSeq.resize(940, height);
+      drumSeq.resize(1932, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
+    }
+  });
+  mq[26].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[27].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[28].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[29].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(424, height);
+      bassSeq.resize(424, height);
+      drumSeq.resize(856, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[30].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(455, height);
+      bassSeq.resize(455, height);
+      drumSeq.resize(917, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[31].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(480, height);
+      bassSeq.resize(480, height);
+      drumSeq.resize(968, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[32].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(500, height);
+      bassSeq.resize(500, height);
+      drumSeq.resize(1007, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[33].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(522, height);
+      bassSeq.resize(522, height);
+      drumSeq.resize(1051, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[34].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(540, height);
+      bassSeq.resize(540, height);
+      drumSeq.resize(1090, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[35].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(561.5, height);
+      bassSeq.resize(561.5, height);
+      drumSeq.resize(1133, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[36].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(576, height);
+      bassSeq.resize(576, height);
+      drumSeq.resize(1162, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[37].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(588, height);
+      bassSeq.resize(588, height);
+      drumSeq.resize(1186, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[38].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(602, height);
+      bassSeq.resize(602, height);
+      drumSeq.resize(1215, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[39].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[40].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
+      tempo.resize(70, 70);
+    }
+  });
+  mq[41].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(616, height);
+      bassSeq.resize(616, height);
+      drumSeq.resize(1274.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[42].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(617.5, height);
+      bassSeq.resize(617.5, height);
+      drumSeq.resize(1285, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[43].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(620, height);
+      bassSeq.resize(620, height);
+      drumSeq.resize(1288, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[44].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(640, height);
+      bassSeq.resize(640, height);
+      drumSeq.resize(1329.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[45].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(660, height);
+      bassSeq.resize(660, height);
+      drumSeq.resize(1360, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[46].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(680, height);
+      bassSeq.resize(680, height);
+      drumSeq.resize(1412.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
+    }
+  });
+  mq[47].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(700, height);
+      bassSeq.resize(700, height);
+      drumSeq.resize(1454, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
+    }
+  });
+  mq[48].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(720, height);
+      bassSeq.resize(720, height);
+      drumSeq.resize(1493.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
+    }
+  });
+  mq[49].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(740, height);
+      bassSeq.resize(740, height);
+      drumSeq.resize(1533, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
+    }
+  });
+  mq[50].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(780, height);
+      bassSeq.resize(780, height);
+      drumSeq.resize(1612, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
+    }
+  });
+  mq[51].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(820, height);
+      bassSeq.resize(820, height);
+      drumSeq.resize(1693, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
+    }
+  });
+  mq[52].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(860, height);
+      bassSeq.resize(860, height);
+      drumSeq.resize(1772, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
+    }
+  });
+  mq[53].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(900, height);
+      bassSeq.resize(900, height);
+      drumSeq.resize(1851, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
+    }
+  });
+  mq[54].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(940, height);
+      bassSeq.resize(940, height);
+      drumSeq.resize(1932, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
+    }
+  });
+  mq[55].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[56].addListener(e => {
+    if (e.matches) {
+      console.log('tetst');
+      height = 160;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[57].addListener(e => {
+    if (e.matches) {
+      height = 160;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[58].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(424, height);
+      bassSeq.resize(424, height);
+      drumSeq.resize(856, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[59].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(455, height);
+      bassSeq.resize(455, height);
+      drumSeq.resize(917, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[60].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(480, height);
+      bassSeq.resize(480, height);
+      drumSeq.resize(968, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[61].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(500, height);
+      bassSeq.resize(500, height);
+      drumSeq.resize(1007, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[62].addListener(e => {
+    if (e.matches) {
+      height = 200;
+      leadSeq.resize(522, height);
+      bassSeq.resize(522, height);
+      drumSeq.resize(1051, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[63].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(540, height);
+      bassSeq.resize(540, height);
+      drumSeq.resize(1090, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[64].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(561.5, height);
+      bassSeq.resize(561.5, height);
+      drumSeq.resize(1133, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[65].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(576, height);
+      bassSeq.resize(576, height);
+      drumSeq.resize(1162, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[66].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(588, height);
+      bassSeq.resize(588, height);
+      drumSeq.resize(1186, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[67].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(602, height);
+      bassSeq.resize(602, height);
+      drumSeq.resize(1215, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[68].addListener(e => {
+    if (e.matches) {
+      height = 280;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[69].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      tempo.resize(70, 70);
+    }
+  });
+  mq[70].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
+      tempo.resize(70, 70);
+    }
+  });
+  mq[71].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(616, height);
+      bassSeq.resize(616, height);
+      drumSeq.resize(1274.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[72].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(617.5, height);
+      bassSeq.resize(617.5, height);
+      drumSeq.resize(1285, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[73].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(620, height);
+      bassSeq.resize(620, height);
+      drumSeq.resize(1288, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[74].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(640, height);
+      bassSeq.resize(640, height);
+      drumSeq.resize(1329.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[75].addListener(e => {
+    if (e.matches) {
+      height = 320;
+      leadSeq.resize(660, height);
+      bassSeq.resize(660, height);
+      drumSeq.resize(1360, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[76].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(680, height);
+      bassSeq.resize(680, height);
+      drumSeq.resize(1412.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
+    }
+  });
+  mq[77].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(700, height);
+      bassSeq.resize(700, height);
+      drumSeq.resize(1454, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
+    }
+  });
+  mq[78].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(720, height);
+      bassSeq.resize(720, height);
+      drumSeq.resize(1493.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
+    }
+  });
+  mq[79].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(740, height);
+      bassSeq.resize(740, height);
+      drumSeq.resize(1533, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
+    }
+  });
+  mq[80].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(780, height);
+      bassSeq.resize(780, height);
+      drumSeq.resize(1612, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
+    }
+  });
+  mq[81].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(820, height);
+      bassSeq.resize(820, height);
+      drumSeq.resize(1693, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
+    }
+  });
+  mq[82].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(860, height);
+      bassSeq.resize(860, height);
+      drumSeq.resize(1772, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
+    }
+  });
+  mq[83].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(900, height);
+      bassSeq.resize(900, height);
+      drumSeq.resize(1851, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
+    }
+  });
+  mq[84].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(940, height);
+      bassSeq.resize(940, height);
+      drumSeq.resize(1932, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
+    }
+  });
+  mq[85].addListener(e => {
+    if (e.matches) {
+      height = 220;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[86].addListener(e => {
+    if (e.matches) {
+      height = 260;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[87].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[88].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[89].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(424, height);
+      bassSeq.resize(424, height);
+      drumSeq.resize(856, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[90].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(455, height);
+      bassSeq.resize(455, height);
+      drumSeq.resize(917, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[91].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(480, height);
+      bassSeq.resize(480, height);
+      drumSeq.resize(968, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[92].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(500, height);
+      bassSeq.resize(500, height);
+      drumSeq.resize(1007, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[93].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(522, height);
+      bassSeq.resize(522, height);
+      drumSeq.resize(1051, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[94].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(540, height);
+      bassSeq.resize(540, height);
+      drumSeq.resize(1090, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[95].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(561.5, height);
+      bassSeq.resize(561.5, height);
+      drumSeq.resize(1133, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[96].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(576, height);
+      bassSeq.resize(576, height);
+      drumSeq.resize(1162, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[97].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(588, height);
+      bassSeq.resize(588, height);
+      drumSeq.resize(1186, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[98].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(602, height);
+      bassSeq.resize(602, height);
+      drumSeq.resize(1215, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[99].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[100].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
+      tempo.resize(70, 70);
+    }
+  });
+  mq[101].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(616, height);
+      bassSeq.resize(616, height);
+      drumSeq.resize(1274.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[102].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(617.5, height);
+      bassSeq.resize(617.5, height);
+      drumSeq.resize(1285, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[103].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(620, height);
+      bassSeq.resize(620, height);
+      drumSeq.resize(1288, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[104].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(640, height);
+      bassSeq.resize(640, height);
+      drumSeq.resize(1329.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[105].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(660, height);
+      bassSeq.resize(660, height);
+      drumSeq.resize(1360, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[106].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(680, height);
+      bassSeq.resize(680, height);
+      drumSeq.resize(1412.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
+    }
+  });
+  mq[107].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(700, height);
+      bassSeq.resize(700, height);
+      drumSeq.resize(1454, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
+    }
+  });
+  mq[108].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(720, height);
+      bassSeq.resize(720, height);
+      drumSeq.resize(1493.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
+    }
+  });
+  mq[109].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(740, height);
+      bassSeq.resize(740, height);
+      drumSeq.resize(1533, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
+    }
+  });
+  mq[110].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(780, height);
+      bassSeq.resize(780, height);
+      drumSeq.resize(1612, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
+    }
+  });
+  mq[111].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(820, height);
+      bassSeq.resize(820, height);
+      drumSeq.resize(1693, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
+    }
+  });
+  mq[112].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(860, height);
+      bassSeq.resize(860, height);
+      drumSeq.resize(1772, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
+    }
+  });
+  mq[113].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(900, height);
+      bassSeq.resize(900, height);
+      drumSeq.resize(1851, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
+    }
+  });
+  mq[114].addListener(e => {
+    if (e.matches) {
+      height = 340;
+      leadSeq.resize(940, height);
+      bassSeq.resize(940, height);
+      drumSeq.resize(1932, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
+    }
+  });
+  mq[115].addListener(e => {
+    if (e.matches) {
+      height = 260;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[116].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[117].addListener(e => {
+    if (e.matches) {
+      height = 300;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    }
+  });
+  mq[118].addListener(e => {
+    if (e.matches) {
+      height = 360;
+      leadSeq.resize(424, height);
+      bassSeq.resize(424, height);
+      drumSeq.resize(856, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[119].addListener(e => {
+    if (e.matches) {
+      height = 360;
+      leadSeq.resize(455, height);
+      bassSeq.resize(455, height);
+      drumSeq.resize(917, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[120].addListener(e => {
+    if (e.matches) {
+      height = 360;
+      leadSeq.resize(480, height);
+      bassSeq.resize(480, height);
+      drumSeq.resize(968, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[121].addListener(e => {
+    if (e.matches) {
+      height = 360;
+      leadSeq.resize(500, height);
+      bassSeq.resize(500, height);
+      drumSeq.resize(1007, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[122].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(522, height);
+      bassSeq.resize(522, height);
+      drumSeq.resize(1051, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[123].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(540, height);
+      bassSeq.resize(540, height);
+      drumSeq.resize(1090, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    }
+  });
+  mq[124].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(561.5, height);
+      bassSeq.resize(561.5, height);
+      drumSeq.resize(1133, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[125].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(576, height);
+      bassSeq.resize(576, height);
+      drumSeq.resize(1162, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[126].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(588, height);
+      bassSeq.resize(588, height);
+      drumSeq.resize(1186, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[127].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(602, height);
+      bassSeq.resize(602, height);
+      drumSeq.resize(1215, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[128].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    }
+  });
+  mq[129].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
+      tempo.resize(70, 70);
+    }
+  });
+  mq[130].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(616, height);
+      bassSeq.resize(616, height);
+      drumSeq.resize(1274.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[131].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(617.5, height);
+      bassSeq.resize(617.5, height);
+      drumSeq.resize(1285, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[132].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(620, height);
+      bassSeq.resize(620, height);
+      drumSeq.resize(1288, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[133].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(640, height);
+      bassSeq.resize(640, height);
+      drumSeq.resize(1329.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[134].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(660, height);
+      bassSeq.resize(660, height);
+      drumSeq.resize(1360, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
+      tempo.resize(80, 80);
+    }
+  });
+  mq[135].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(680, height);
+      bassSeq.resize(680, height);
+      drumSeq.resize(1412.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
+    }
+  });
+  mq[136].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(700, height);
+      bassSeq.resize(700, height);
+      drumSeq.resize(1454, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
+    }
+  });
+  mq[137].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(720, height);
+      bassSeq.resize(720, height);
+      drumSeq.resize(1493.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
+    }
+  });
+  mq[138].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(740, height);
+      bassSeq.resize(740, height);
+      drumSeq.resize(1533, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
+    }
+  });
+  mq[139].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(780, height);
+      bassSeq.resize(780, height);
+      drumSeq.resize(1612, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
+    }
+  });
+  mq[140].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(820, height);
+      bassSeq.resize(820, height);
+      drumSeq.resize(1693, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
+    }
+  });
+  mq[141].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(860, height);
+      bassSeq.resize(860, height);
+      drumSeq.resize(1772, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
+    }
+  });
+  mq[142].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(900, height);
+      bassSeq.resize(900, height);
+      drumSeq.resize(1851, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
+    }
+  });
+  mq[143].addListener(e => {
+    if (e.matches) {
+      height = 400;
+      leadSeq.resize(940, height);
+      bassSeq.resize(940, height);
+      drumSeq.resize(1932, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
+    }
+  });
+};
 
 const abbreviateEffects = () => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
@@ -1003,95 +2522,25 @@ const setup = () => {
       tempo.resize(45, 45);
     } else if (mq[1].matches) {
       height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
     } else if (mq[2].matches) {
       height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
     } else if (mq[3].matches) {
-      height = 160;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[4].matches) {
-      height = 160;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[5].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[6].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[7].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[8].matches) {
-      height = 160;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[9].matches) {
-      height = 160;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[10].matches) {
       height = 200;
       leadSeq.resize(424, height);
       bassSeq.resize(424, height);
@@ -1101,7 +2550,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[11].matches) {
+    } else if (mq[4].matches) {
       height = 200;
       leadSeq.resize(455, height);
       bassSeq.resize(455, height);
@@ -1121,7 +2570,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[13].matches) {
+    } else if (mq[5].matches) {
       height = 200;
       leadSeq.resize(500, height);
       bassSeq.resize(500, height);
@@ -1131,7 +2580,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[14].matches) {
+    } else if (mq[6].matches) {
       height = 200;
       leadSeq.resize(522, height);
       bassSeq.resize(522, height);
@@ -1141,7 +2590,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[15].matches) {
+    } else if (mq[7].matches) {
       height = 200;
       leadSeq.resize(540, height);
       bassSeq.resize(540, height);
@@ -1151,7 +2600,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[16].matches) {
+    } else if (mq[8].matches) {
       height = 280;
       leadSeq.resize(561.5, height);
       bassSeq.resize(561.5, height);
@@ -1161,7 +2610,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[17].matches) {
+    } else if (mq[9].matches) {
       height = 280;
       leadSeq.resize(576, height);
       bassSeq.resize(576, height);
@@ -1171,7 +2620,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[18].matches) {
+    } else if (mq[10].matches) {
       height = 280;
       leadSeq.resize(588, height);
       bassSeq.resize(588, height);
@@ -1181,7 +2630,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[19].matches) {
+    } else if (mq[11].matches) {
       height = 280;
       leadSeq.resize(602, height);
       bassSeq.resize(602, height);
@@ -1192,7 +2641,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[20].matches) {
+    } else if (mq[12].matches) {
       height = 280;
       leadSeq.resize(606, height);
       bassSeq.resize(606, height);
@@ -1203,17 +2652,8 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[21].matches) {
-      height = 400;
-      leadSeq.resize(606, height);
-      bassSeq.resize(606, height);
-      drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      tempo.resize(70, 70);
-    } else if (mq[22].matches) {
-      height = 400;
+    } else if (mq[13].matches) {
+      height = 300;
       leadSeq.resize(614, height);
       bassSeq.resize(614, height);
       drumSeq.resize(1271, height);
@@ -1221,15 +2661,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
       tempo.resize(70, 70);
-    } else if (mq[23].matches) {
-      height = 300;
-      leadSeq.resize(614, height);
-      bassSeq.resize(614, height);
-      drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(32);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(32);
-      tempo.resize(70, 70);
-    } else if (mq[24].matches) {
+    } else if (mq[14].matches) {
       height = 320;
       leadSeq.resize(616, height);
       bassSeq.resize(616, height);
@@ -1237,23 +2669,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
       tempo.resize(80, 80);
-    } else if (mq[25].matches) {
-      height = 320;
-      leadSeq.resize(617.5, height);
-      bassSeq.resize(617.5, height);
-      drumSeq.resize(1285, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
-      tempo.resize(80, 80);
-    } else if (mq[26].matches) {
-      height = 320;
-      leadSeq.resize(620, height);
-      bassSeq.resize(620, height);
-      drumSeq.resize(1288, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
-      tempo.resize(80, 80);
-    } else if (mq[27].matches) {
+    } else if (mq[15].matches) {
       height = 320;
       leadSeq.resize(640, height);
       bassSeq.resize(640, height);
@@ -1261,7 +2677,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
       tempo.resize(80, 80);
-    } else if (mq[28].matches) {
+    } else if (mq[16].matches) {
       height = 320;
       leadSeq.resize(660, height);
       bassSeq.resize(660, height);
@@ -1269,70 +2685,70 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
       tempo.resize(80, 80);
-    } else if (mq[29].matches) {
+    } else if (mq[17].matches) {
       height = 400;
       leadSeq.resize(680, height);
       bassSeq.resize(680, height);
       drumSeq.resize(1412.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
-    } else if (mq[30].matches) {
+    } else if (mq[18].matches) {
       height = 400;
       leadSeq.resize(700, height);
       bassSeq.resize(700, height);
       drumSeq.resize(1454, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
-    } else if (mq[31].matches) {
+    } else if (mq[19].matches) {
       height = 400;
       leadSeq.resize(720, height);
       bassSeq.resize(720, height);
       drumSeq.resize(1493.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
-    } else if (mq[32].matches) {
+    } else if (mq[20].matches) {
       height = 400;
       leadSeq.resize(740, height);
       bassSeq.resize(740, height);
       drumSeq.resize(1533, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
-    } else if (mq[33].matches) {
+    } else if (mq[21].matches) {
       height = 400;
       leadSeq.resize(780, height);
       bassSeq.resize(780, height);
       drumSeq.resize(1612, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
-    } else if (mq[34].matches) {
+    } else if (mq[22].matches) {
       height = 400;
       leadSeq.resize(820, height);
       bassSeq.resize(820, height);
       drumSeq.resize(1693, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
-    } else if (mq[35].matches) {
+    } else if (mq[23].matches) {
       height = 400;
       leadSeq.resize(860, height);
       bassSeq.resize(860, height);
       drumSeq.resize(1772, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
-    } else if (mq[36].matches) {
+    } else if (mq[24].matches) {
       height = 400;
       leadSeq.resize(900, height);
       bassSeq.resize(900, height);
       drumSeq.resize(1851, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
-    } else if (mq[37].matches) {
+    } else if (mq[25].matches) {
       height = 400;
       leadSeq.resize(940, height);
       bassSeq.resize(940, height);
       drumSeq.resize(1932, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
-    } else if (mq[38].matches) {
+    } else if (mq[26].matches) {
       height = 160;
       leadSeq.resize(268, height);
       bassSeq.resize(268, height);
@@ -1342,47 +2758,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
-    } else if (mq[39].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[40].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[41].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[42].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[43].matches) {
+    } else if (mq[27].matches) {
       height = 160;
       leadSeq.resize(318, height);
       bassSeq.resize(318, height);
@@ -1392,37 +2768,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
-    } else if (mq[44].matches) {
-      height = 160;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[45].matches) {
-      height = 160;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[46].matches) {
-      height = 160;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[47].matches) {
+    } else if (mq[28].matches) {
       height = 160;
       leadSeq.resize(368, height);
       bassSeq.resize(368, height);
@@ -1432,7 +2778,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
-    } else if (mq[48].matches) {
+    } else if (mq[29].matches) {
       height = 200;
       leadSeq.resize(424, height);
       bassSeq.resize(424, height);
@@ -1442,7 +2788,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[49].matches) {
+    } else if (mq[30].matches) {
       height = 200;
       leadSeq.resize(455, height);
       bassSeq.resize(455, height);
@@ -1452,7 +2798,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[50].matches) {
+    } else if (mq[31].matches) {
       height = 200;
       leadSeq.resize(480, height);
       bassSeq.resize(480, height);
@@ -1462,7 +2808,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[51].matches) {
+    } else if (mq[32].matches) {
       height = 200;
       leadSeq.resize(500, height);
       bassSeq.resize(500, height);
@@ -1472,7 +2818,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[52].matches) {
+    } else if (mq[33].matches) {
       height = 200;
       leadSeq.resize(522, height);
       bassSeq.resize(522, height);
@@ -1482,7 +2828,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[53].matches) {
+    } else if (mq[34].matches) {
       height = 200;
       leadSeq.resize(540, height);
       bassSeq.resize(540, height);
@@ -1492,7 +2838,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[54].matches) {
+    } else if (mq[35].matches) {
       height = 280;
       leadSeq.resize(561.5, height);
       bassSeq.resize(561.5, height);
@@ -1502,7 +2848,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[55].matches) {
+    } else if (mq[36].matches) {
       height = 280;
       leadSeq.resize(576, height);
       bassSeq.resize(576, height);
@@ -1512,7 +2858,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[56].matches) {
+    } else if (mq[37].matches) {
       height = 280;
       leadSeq.resize(588, height);
       bassSeq.resize(588, height);
@@ -1522,7 +2868,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[57].matches) {
+    } else if (mq[38].matches) {
       height = 280;
       leadSeq.resize(602, height);
       bassSeq.resize(602, height);
@@ -1533,7 +2879,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[58].matches) {
+    } else if (mq[39].matches) {
       height = 280;
       leadSeq.resize(606, height);
       bassSeq.resize(606, height);
@@ -1544,16 +2890,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[59].matches) {
-      height = 300;
-      leadSeq.resize(606, height);
-      bassSeq.resize(606, height);
-      drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      tempo.resize(70, 70);
-    } else if (mq[60].matches) {
+    } else if (mq[40].matches) {
       height = 300;
       leadSeq.resize(614, height);
       bassSeq.resize(614, height);
@@ -1562,15 +2899,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
       tempo.resize(70, 70);
-    } else if (mq[61].matches) {
-      height = 300;
-      leadSeq.resize(614, height);
-      bassSeq.resize(614, height);
-      drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(32);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(32);
-      tempo.resize(70, 70);
-    } else if (mq[62].matches) {
+    } else if (mq[41].matches) {
       height = 320;
       leadSeq.resize(616, height);
       bassSeq.resize(616, height);
@@ -1578,7 +2907,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
       tempo.resize(80, 80);
-    } else if (mq[63].matches) {
+    } else if (mq[42].matches) {
       height = 320;
       leadSeq.resize(617.5, height);
       bassSeq.resize(617.5, height);
@@ -1586,7 +2915,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
       tempo.resize(80, 80);
-    } else if (mq[64].matches) {
+    } else if (mq[43].matches) {
       height = 320;
       leadSeq.resize(620, height);
       bassSeq.resize(620, height);
@@ -1594,7 +2923,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
       tempo.resize(80, 80);
-    } else if (mq[65].matches) {
+    } else if (mq[44].matches) {
       height = 320;
       leadSeq.resize(640, height);
       bassSeq.resize(640, height);
@@ -1602,7 +2931,7 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
       tempo.resize(80, 80);
-    } else if (mq[66].matches) {
+    } else if (mq[45].matches) {
       height = 320;
       leadSeq.resize(660, height);
       bassSeq.resize(660, height);
@@ -1610,70 +2939,70 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
       tempo.resize(80, 80);
-    } else if (mq[67].matches) {
+    } else if (mq[46].matches) {
       height = 400;
       leadSeq.resize(680, height);
       bassSeq.resize(680, height);
       drumSeq.resize(1412.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
-    } else if (mq[68].matches) {
+    } else if (mq[47].matches) {
       height = 400;
       leadSeq.resize(700, height);
       bassSeq.resize(700, height);
       drumSeq.resize(1454, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
-    } else if (mq[69].matches) {
+    } else if (mq[48].matches) {
       height = 400;
       leadSeq.resize(720, height);
       bassSeq.resize(720, height);
       drumSeq.resize(1493.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
-    } else if (mq[70].matches) {
+    } else if (mq[49].matches) {
       height = 400;
       leadSeq.resize(740, height);
       bassSeq.resize(740, height);
       drumSeq.resize(1533, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
-    } else if (mq[71].matches) {
+    } else if (mq[50].matches) {
       height = 400;
       leadSeq.resize(780, height);
       bassSeq.resize(780, height);
       drumSeq.resize(1612, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
-    } else if (mq[72].matches) {
+    } else if (mq[51].matches) {
       height = 400;
       leadSeq.resize(820, height);
       bassSeq.resize(820, height);
       drumSeq.resize(1693, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
-    } else if (mq[73].matches) {
+    } else if (mq[52].matches) {
       height = 400;
       leadSeq.resize(860, height);
       bassSeq.resize(860, height);
       drumSeq.resize(1772, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
-    } else if (mq[74].matches) {
+    } else if (mq[53].matches) {
       height = 400;
       leadSeq.resize(900, height);
       bassSeq.resize(900, height);
       drumSeq.resize(1851, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
-    } else if (mq[75].matches) {
+    } else if (mq[54].matches) {
       height = 400;
       leadSeq.resize(940, height);
       bassSeq.resize(940, height);
       drumSeq.resize(1932, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
-    } else if (mq[76].matches) {
+    } else if (mq[55].matches) {
       height = 160;
       leadSeq.resize(268, height);
       bassSeq.resize(268, height);
@@ -1683,57 +3012,8 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
-    } else if (mq[77].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[78].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[79].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[80].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[81].matches) {
-      height = 160;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[82].matches) {
+    } else if (mq[56].matches) {
+      console.log('tetst');
       height = 160;
       leadSeq.resize(318, height);
       bassSeq.resize(318, height);
@@ -1743,38 +3023,291 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
-    } else if (mq[83].matches) {
-      height = 160;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[84].matches) {
-      height = 160;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[85].matches) {
+    } else if (mq[57].matches) {
       height = 160;
       leadSeq.resize(368, height);
       bassSeq.resize(368, height);
       drumSeq.resize(742, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    } else if (mq[58].matches) {
+      height = 200;
+      leadSeq.resize(424, height);
+      bassSeq.resize(424, height);
+      drumSeq.resize(856, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    } else if (mq[59].matches) {
+      height = 200;
+      leadSeq.resize(455, height);
+      bassSeq.resize(455, height);
+      drumSeq.resize(917, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    } else if (mq[60].matches) {
+      height = 200;
+      leadSeq.resize(480, height);
+      bassSeq.resize(480, height);
+      drumSeq.resize(968, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    } else if (mq[61].matches) {
+      height = 200;
+      leadSeq.resize(500, height);
+      bassSeq.resize(500, height);
+      drumSeq.resize(1007, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    } else if (mq[62].matches) {
+      height = 200;
+      leadSeq.resize(522, height);
+      bassSeq.resize(522, height);
+      drumSeq.resize(1051, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    } else if (mq[63].matches) {
+      height = 280;
+      leadSeq.resize(540, height);
+      bassSeq.resize(540, height);
+      drumSeq.resize(1090, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(55, 55);
+    } else if (mq[64].matches) {
+      height = 280;
+      leadSeq.resize(561.5, height);
+      bassSeq.resize(561.5, height);
+      drumSeq.resize(1133, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    } else if (mq[65].matches) {
+      height = 280;
+      leadSeq.resize(576, height);
+      bassSeq.resize(576, height);
+      drumSeq.resize(1162, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    } else if (mq[66].matches) {
+      height = 280;
+      leadSeq.resize(588, height);
+      bassSeq.resize(588, height);
+      drumSeq.resize(1186, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    } else if (mq[67].matches) {
+      height = 280;
+      leadSeq.resize(602, height);
+      bassSeq.resize(602, height);
+      drumSeq.resize(1215, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    } else if (mq[68].matches) {
+      height = 280;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    } else if (mq[69].matches) {
+      height = 300;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      tempo.resize(70, 70);
+    } else if (mq[70].matches) {
+      height = 300;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
+      tempo.resize(70, 70);
+    } else if (mq[71].matches) {
+      height = 320;
+      leadSeq.resize(616, height);
+      bassSeq.resize(616, height);
+      drumSeq.resize(1274.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
+      tempo.resize(80, 80);
+    } else if (mq[72].matches) {
+      height = 320;
+      leadSeq.resize(617.5, height);
+      bassSeq.resize(617.5, height);
+      drumSeq.resize(1285, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
+      tempo.resize(80, 80);
+    } else if (mq[73].matches) {
+      height = 320;
+      leadSeq.resize(620, height);
+      bassSeq.resize(620, height);
+      drumSeq.resize(1288, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
+      tempo.resize(80, 80);
+    } else if (mq[74].matches) {
+      height = 320;
+      leadSeq.resize(640, height);
+      bassSeq.resize(640, height);
+      drumSeq.resize(1329.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
+      tempo.resize(80, 80);
+    } else if (mq[75].matches) {
+      height = 320;
+      leadSeq.resize(660, height);
+      bassSeq.resize(660, height);
+      drumSeq.resize(1360, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
+      tempo.resize(80, 80);
+    } else if (mq[76].matches) {
+      height = 400;
+      leadSeq.resize(680, height);
+      bassSeq.resize(680, height);
+      drumSeq.resize(1412.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
+    } else if (mq[77].matches) {
+      height = 400;
+      leadSeq.resize(700, height);
+      bassSeq.resize(700, height);
+      drumSeq.resize(1454, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
+    } else if (mq[78].matches) {
+      height = 400;
+      leadSeq.resize(720, height);
+      bassSeq.resize(720, height);
+      drumSeq.resize(1493.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
+    } else if (mq[79].matches) {
+      height = 400;
+      leadSeq.resize(740, height);
+      bassSeq.resize(740, height);
+      drumSeq.resize(1533, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
+    } else if (mq[80].matches) {
+      height = 400;
+      leadSeq.resize(780, height);
+      bassSeq.resize(780, height);
+      drumSeq.resize(1612, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
+    } else if (mq[81].matches) {
+      height = 400;
+      leadSeq.resize(820, height);
+      bassSeq.resize(820, height);
+      drumSeq.resize(1693, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
+    } else if (mq[82].matches) {
+      height = 400;
+      leadSeq.resize(860, height);
+      bassSeq.resize(860, height);
+      drumSeq.resize(1772, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
+    } else if (mq[83].matches) {
+      height = 400;
+      leadSeq.resize(900, height);
+      bassSeq.resize(900, height);
+      drumSeq.resize(1851, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
+    } else if (mq[84].matches) {
+      height = 400;
+      leadSeq.resize(940, height);
+      bassSeq.resize(940, height);
+      drumSeq.resize(1932, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
+    } else if (mq[85].matches) {
+      height = 220;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
     } else if (mq[86].matches) {
-      height = 200;
+      height = 260;
+      leadSeq.resize(268, height);
+      bassSeq.resize(268, height);
+      drumSeq.resize(546, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    } else if (mq[87].matches) {
+      height = 300;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    } else if (mq[88].matches) {
+      height = 300;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(45, 45);
+    } else if (mq[89].matches) {
+      height = 300;
       leadSeq.resize(424, height);
       bassSeq.resize(424, height);
       drumSeq.resize(856, height);
@@ -1783,8 +3316,8 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[87].matches) {
-      height = 200;
+    } else if (mq[90].matches) {
+      height = 300;
       leadSeq.resize(455, height);
       bassSeq.resize(455, height);
       drumSeq.resize(917, height);
@@ -1793,8 +3326,8 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[88].matches) {
-      height = 200;
+    } else if (mq[91].matches) {
+      height = 300;
       leadSeq.resize(480, height);
       bassSeq.resize(480, height);
       drumSeq.resize(968, height);
@@ -1803,8 +3336,8 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[89].matches) {
-      height = 200;
+    } else if (mq[92].matches) {
+      height = 300;
       leadSeq.resize(500, height);
       bassSeq.resize(500, height);
       drumSeq.resize(1007, height);
@@ -1813,8 +3346,8 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[90].matches) {
-      height = 200;
+    } else if (mq[93].matches) {
+      height = 300;
       leadSeq.resize(522, height);
       bassSeq.resize(522, height);
       drumSeq.resize(1051, height);
@@ -1823,8 +3356,8 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[91].matches) {
-      height = 280;
+    } else if (mq[94].matches) {
+      height = 300;
       leadSeq.resize(540, height);
       bassSeq.resize(540, height);
       drumSeq.resize(1090, height);
@@ -1833,8 +3366,8 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(55, 55);
-    } else if (mq[92].matches) {
-      height = 280;
+    } else if (mq[95].matches) {
+      height = 300;
       leadSeq.resize(561.5, height);
       bassSeq.resize(561.5, height);
       drumSeq.resize(1133, height);
@@ -1843,58 +3376,49 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
-    } else if (mq[93].matches) {
-      height = 280;
+    } else if (mq[96].matches) {
+      height = 300;
       leadSeq.resize(576, height);
       bassSeq.resize(576, height);
       drumSeq.resize(1162, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[94].matches) {
-      height = 280;
-      leadSeq.resize(588, height);
-      bassSeq.resize(588, height);
-      drumSeq.resize(1186, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[95].matches) {
-      height = 280;
-      leadSeq.resize(602, height);
-      bassSeq.resize(602, height);
-      drumSeq.resize(1215, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[96].matches) {
-      height = 280;
-      leadSeq.resize(606, height);
-      bassSeq.resize(606, height);
-      drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(65, 65);
     } else if (mq[97].matches) {
       height = 300;
+      leadSeq.resize(588, height);
+      bassSeq.resize(588, height);
+      drumSeq.resize(1186, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    } else if (mq[98].matches) {
+      height = 300;
+      leadSeq.resize(602, height);
+      bassSeq.resize(602, height);
+      drumSeq.resize(1215, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    } else if (mq[99].matches) {
+      height = 300;
       leadSeq.resize(606, height);
       bassSeq.resize(606, height);
       drumSeq.resize(1240, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      tempo.resize(70, 70);
-    } else if (mq[98].matches) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+      abbreviateEffects();
+      tempo.resize(65, 65);
+    } else if (mq[100].matches) {
       height = 300;
       leadSeq.resize(614, height);
       bassSeq.resize(614, height);
@@ -1903,129 +3427,111 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
       tempo.resize(70, 70);
-    } else if (mq[99].matches) {
+    } else if (mq[101].matches) {
       height = 300;
-      leadSeq.resize(614, height);
-      bassSeq.resize(614, height);
-      drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(32);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(32);
-      tempo.resize(70, 70);
-    } else if (mq[100].matches) {
-      height = 320;
       leadSeq.resize(616, height);
       bassSeq.resize(616, height);
       drumSeq.resize(1274.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
       tempo.resize(80, 80);
-    } else if (mq[101].matches) {
-      height = 320;
+    } else if (mq[102].matches) {
+      height = 300;
       leadSeq.resize(617.5, height);
       bassSeq.resize(617.5, height);
       drumSeq.resize(1285, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
       tempo.resize(80, 80);
-    } else if (mq[102].matches) {
-      height = 320;
+    } else if (mq[103].matches) {
+      height = 300;
       leadSeq.resize(620, height);
       bassSeq.resize(620, height);
       drumSeq.resize(1288, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
       tempo.resize(80, 80);
-    } else if (mq[103].matches) {
-      height = 320;
+    } else if (mq[104].matches) {
+      height = 300;
       leadSeq.resize(640, height);
       bassSeq.resize(640, height);
       drumSeq.resize(1329.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
       tempo.resize(80, 80);
-    } else if (mq[104].matches) {
-      height = 320;
+    } else if (mq[105].matches) {
+      height = 300;
       leadSeq.resize(660, height);
       bassSeq.resize(660, height);
       drumSeq.resize(1360, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
       tempo.resize(80, 80);
-    } else if (mq[105].matches) {
-      height = 400;
+    } else if (mq[106].matches) {
+      height = 340;
       leadSeq.resize(680, height);
       bassSeq.resize(680, height);
       drumSeq.resize(1412.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
-    } else if (mq[106].matches) {
-      height = 400;
+    } else if (mq[107].matches) {
+      height = 340;
       leadSeq.resize(700, height);
       bassSeq.resize(700, height);
       drumSeq.resize(1454, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
-    } else if (mq[107].matches) {
-      height = 400;
+    } else if (mq[108].matches) {
+      height = 340;
       leadSeq.resize(720, height);
       bassSeq.resize(720, height);
       drumSeq.resize(1493.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
-    } else if (mq[108].matches) {
-      height = 400;
+    } else if (mq[109].matches) {
+      height = 340;
       leadSeq.resize(740, height);
       bassSeq.resize(740, height);
       drumSeq.resize(1533, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
-    } else if (mq[109].matches) {
-      height = 400;
+    } else if (mq[110].matches) {
+      height = 340;
       leadSeq.resize(780, height);
       bassSeq.resize(780, height);
       drumSeq.resize(1612, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
-    } else if (mq[110].matches) {
-      height = 400;
+    } else if (mq[111].matches) {
+      height = 340;
       leadSeq.resize(820, height);
       bassSeq.resize(820, height);
       drumSeq.resize(1693, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
-    } else if (mq[111].matches) {
-      height = 400;
+    } else if (mq[112].matches) {
+      height = 340;
       leadSeq.resize(860, height);
       bassSeq.resize(860, height);
       drumSeq.resize(1772, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
-    } else if (mq[112].matches) {
-      height = 400;
+    } else if (mq[113].matches) {
+      height = 340;
       leadSeq.resize(900, height);
       bassSeq.resize(900, height);
       drumSeq.resize(1851, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
-    } else if (mq[113].matches) {
-      height = 400;
+    } else if (mq[114].matches) {
+      height = 340;
       leadSeq.resize(940, height);
       bassSeq.resize(940, height);
       drumSeq.resize(1932, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
-    } else if (mq[114].matches) {
-      height = 220;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
     } else if (mq[115].matches) {
-      height = 220;
+      height = 260;
       leadSeq.resize(268, height);
       bassSeq.resize(268, height);
       drumSeq.resize(546, height);
@@ -2035,661 +3541,243 @@ const setup = () => {
       abbreviateEffects();
       tempo.resize(45, 45);
     } else if (mq[116].matches) {
-      height = 220;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      height = 300;
+      leadSeq.resize(318, height);
+      bassSeq.resize(318, height);
+      drumSeq.resize(644, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
     } else if (mq[117].matches) {
-      height = 260;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
+      height = 300;
+      leadSeq.resize(368, height);
+      bassSeq.resize(368, height);
+      drumSeq.resize(742, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
       tempo.resize(45, 45);
     } else if (mq[118].matches) {
-      height = 300;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      height = 360;
+      leadSeq.resize(424, height);
+      bassSeq.resize(424, height);
+      drumSeq.resize(856, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(45, 45);
+      tempo.resize(55, 55);
     } else if (mq[119].matches) {
-      height = 300;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      height = 360;
+      leadSeq.resize(455, height);
+      bassSeq.resize(455, height);
+      drumSeq.resize(917, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(45, 45);
+      tempo.resize(55, 55);
     } else if (mq[120].matches) {
-      height = 300;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
+      height = 360;
+      leadSeq.resize(480, height);
+      bassSeq.resize(480, height);
+      drumSeq.resize(968, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(45, 45);
+      tempo.resize(55, 55);
     } else if (mq[121].matches) {
-      height = 300;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      height = 360;
+      leadSeq.resize(500, height);
+      bassSeq.resize(500, height);
+      drumSeq.resize(1007, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(45, 45);
+      tempo.resize(55, 55);
     } else if (mq[122].matches) {
-      height = 300;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      height = 400;
+      leadSeq.resize(522, height);
+      bassSeq.resize(522, height);
+      drumSeq.resize(1051, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(45, 45);
+      tempo.resize(55, 55);
     } else if (mq[123].matches) {
-      height = 300;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
+      height = 400;
+      leadSeq.resize(540, height);
+      bassSeq.resize(540, height);
+      drumSeq.resize(1090, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(45, 45);
+      tempo.resize(55, 55);
     } else if (mq[124].matches) {
-      height = 300;
-      leadSeq.resize(424, height);
-      bassSeq.resize(424, height);
-      drumSeq.resize(856, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
+      height = 400;
+      leadSeq.resize(561.5, height);
+      bassSeq.resize(561.5, height);
+      drumSeq.resize(1133, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(55, 55);
+      tempo.resize(65, 65);
     } else if (mq[125].matches) {
-      height = 300;
-      leadSeq.resize(455, height);
-      bassSeq.resize(455, height);
-      drumSeq.resize(917, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
+      height = 400;
+      leadSeq.resize(576, height);
+      bassSeq.resize(576, height);
+      drumSeq.resize(1162, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(55, 55);
+      tempo.resize(65, 65);
     } else if (mq[126].matches) {
-      height = 300;
-      leadSeq.resize(480, height);
-      bassSeq.resize(480, height);
-      drumSeq.resize(968, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
+      height = 400;
+      leadSeq.resize(588, height);
+      bassSeq.resize(588, height);
+      drumSeq.resize(1186, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(55, 55);
+      tempo.resize(65, 65);
     } else if (mq[127].matches) {
-      height = 300;
-      leadSeq.resize(500, height);
-      bassSeq.resize(500, height);
-      drumSeq.resize(1007, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
+      height = 400;
+      leadSeq.resize(602, height);
+      bassSeq.resize(602, height);
+      drumSeq.resize(1215, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(55, 55);
+      tempo.resize(65, 65);
     } else if (mq[128].matches) {
-      height = 300;
-      leadSeq.resize(522, height);
-      bassSeq.resize(522, height);
-      drumSeq.resize(1051, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
+      height = 400;
+      leadSeq.resize(606, height);
+      bassSeq.resize(606, height);
+      drumSeq.resize(1240, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
       abbreviateEffects();
-      tempo.resize(55, 55);
+      tempo.resize(65, 65);
     } else if (mq[129].matches) {
-      height = 300;
-      leadSeq.resize(540, height);
-      bassSeq.resize(540, height);
-      drumSeq.resize(1090, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(55, 55);
+      height = 400;
+      leadSeq.resize(614, height);
+      bassSeq.resize(614, height);
+      drumSeq.resize(1271, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
+      tempo.resize(70, 70);
     } else if (mq[130].matches) {
-      height = 300;
-      leadSeq.resize(561.5, height);
-      bassSeq.resize(561.5, height);
-      drumSeq.resize(1133, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
+      height = 400;
+      leadSeq.resize(616, height);
+      bassSeq.resize(616, height);
+      drumSeq.resize(1274.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
+      tempo.resize(80, 80);
     } else if (mq[131].matches) {
-      height = 300;
-      leadSeq.resize(576, height);
-      bassSeq.resize(576, height);
-      drumSeq.resize(1162, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
+      height = 400;
+      leadSeq.resize(617.5, height);
+      bassSeq.resize(617.5, height);
+      drumSeq.resize(1285, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
+      tempo.resize(80, 80);
     } else if (mq[132].matches) {
-      height = 300;
-      leadSeq.resize(588, height);
-      bassSeq.resize(588, height);
-      drumSeq.resize(1186, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
+      height = 400;
+      leadSeq.resize(620, height);
+      bassSeq.resize(620, height);
+      drumSeq.resize(1288, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
+      tempo.resize(80, 80);
     } else if (mq[133].matches) {
-      height = 300;
-      leadSeq.resize(602, height);
-      bassSeq.resize(602, height);
-      drumSeq.resize(1215, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
+      height = 400;
+      leadSeq.resize(640, height);
+      bassSeq.resize(640, height);
+      drumSeq.resize(1329.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
+      tempo.resize(80, 80);
     } else if (mq[134].matches) {
-      height = 300;
-      leadSeq.resize(606, height);
-      bassSeq.resize(606, height);
-      drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
+      height = 400;
+      leadSeq.resize(660, height);
+      bassSeq.resize(660, height);
+      drumSeq.resize(1360, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
+      tempo.resize(80, 80);
     } else if (mq[135].matches) {
-      height = 300;
-      leadSeq.resize(606, height);
-      bassSeq.resize(606, height);
-      drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      tempo.resize(70, 70);
+      height = 400;
+      leadSeq.resize(680, height);
+      bassSeq.resize(680, height);
+      drumSeq.resize(1412.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
     } else if (mq[136].matches) {
-      height = 300;
-      leadSeq.resize(614, height);
-      bassSeq.resize(614, height);
-      drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
-      tempo.resize(70, 70);
+      height = 400;
+      leadSeq.resize(700, height);
+      bassSeq.resize(700, height);
+      drumSeq.resize(1454, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
     } else if (mq[137].matches) {
-      height = 300;
-      leadSeq.resize(614, height);
-      bassSeq.resize(614, height);
-      drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(32);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(32);
-      tempo.resize(70, 70);
+      height = 400;
+      leadSeq.resize(720, height);
+      bassSeq.resize(720, height);
+      drumSeq.resize(1493.5, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
     } else if (mq[138].matches) {
-      height = 300;
-      leadSeq.resize(616, height);
-      bassSeq.resize(616, height);
-      drumSeq.resize(1274.5, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
-      tempo.resize(80, 80);
+      height = 400;
+      leadSeq.resize(740, height);
+      bassSeq.resize(740, height);
+      drumSeq.resize(1533, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
     } else if (mq[139].matches) {
-      height = 300;
-      leadSeq.resize(617.5, height);
-      bassSeq.resize(617.5, height);
-      drumSeq.resize(1285, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
-      tempo.resize(80, 80);
+      height = 400;
+      leadSeq.resize(780, height);
+      bassSeq.resize(780, height);
+      drumSeq.resize(1612, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
     } else if (mq[140].matches) {
-      height = 300;
-      leadSeq.resize(620, height);
-      bassSeq.resize(620, height);
-      drumSeq.resize(1288, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
-      tempo.resize(80, 80);
+      height = 400;
+      leadSeq.resize(820, height);
+      bassSeq.resize(820, height);
+      drumSeq.resize(1693, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
     } else if (mq[141].matches) {
-      height = 300;
-      leadSeq.resize(640, height);
-      bassSeq.resize(640, height);
-      drumSeq.resize(1329.5, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
-      tempo.resize(80, 80);
+      height = 400;
+      leadSeq.resize(860, height);
+      bassSeq.resize(860, height);
+      drumSeq.resize(1772, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
     } else if (mq[142].matches) {
-      height = 300;
-      leadSeq.resize(660, height);
-      bassSeq.resize(660, height);
-      drumSeq.resize(1360, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
-      tempo.resize(80, 80);
+      height = 400;
+      leadSeq.resize(900, height);
+      bassSeq.resize(900, height);
+      drumSeq.resize(1851, height);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
     } else if (mq[143].matches) {
-      height = 340;
-      leadSeq.resize(680, height);
-      bassSeq.resize(680, height);
-      drumSeq.resize(1412.5, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
-    } else if (mq[144].matches) {
-      height = 340;
-      leadSeq.resize(700, height);
-      bassSeq.resize(700, height);
-      drumSeq.resize(1454, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
-    } else if (mq[145].matches) {
-      height = 340;
-      leadSeq.resize(720, height);
-      bassSeq.resize(720, height);
-      drumSeq.resize(1493.5, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
-    } else if (mq[146].matches) {
-      height = 340;
-      leadSeq.resize(740, height);
-      bassSeq.resize(740, height);
-      drumSeq.resize(1533, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
-    } else if (mq[147].matches) {
-      height = 340;
-      leadSeq.resize(780, height);
-      bassSeq.resize(780, height);
-      drumSeq.resize(1612, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
-    } else if (mq[148].matches) {
-      height = 340;
-      leadSeq.resize(820, height);
-      bassSeq.resize(820, height);
-      drumSeq.resize(1693, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
-    } else if (mq[149].matches) {
-      height = 340;
-      leadSeq.resize(860, height);
-      bassSeq.resize(860, height);
-      drumSeq.resize(1772, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
-    } else if (mq[150].matches) {
-      height = 340;
-      leadSeq.resize(900, height);
-      bassSeq.resize(900, height);
-      drumSeq.resize(1851, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
-    } else if (mq[151].matches) {
-      height = 340;
-      leadSeq.resize(940, height);
-      bassSeq.resize(940, height);
-      drumSeq.resize(1932, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(940).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1932).height(35);
-    } else if (mq[152].matches) {
-      height = 260;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[153].matches) {
-      height = 260;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[154].matches) {
-      height = 260;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[155].matches) {
-      height = 260;
-      leadSeq.resize(268, height);
-      bassSeq.resize(268, height);
-      drumSeq.resize(546, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(268).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(546).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[156].matches) {
-      height = 300;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[157].matches) {
-      height = 300;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[158].matches) {
-      height = 300;
-      leadSeq.resize(318, height);
-      bassSeq.resize(318, height);
-      drumSeq.resize(644, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(318).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(644).height(16);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[159].matches) {
-      height = 300;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[160].matches) {
-      height = 300;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[161].matches) {
-      height = 300;
-      leadSeq.resize(368, height);
-      bassSeq.resize(368, height);
-      drumSeq.resize(742, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(368).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(742).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[162].matches) {
-      height = 360;
-      leadSeq.resize(424, height);
-      bassSeq.resize(424, height);
-      drumSeq.resize(856, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(424).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(856).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[163].matches) {
-      height = 360;
-      leadSeq.resize(455, height);
-      bassSeq.resize(455, height);
-      drumSeq.resize(917, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(455).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(917).height(20);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[164].matches) {
-      height = 360;
-      leadSeq.resize(480, height);
-      bassSeq.resize(480, height);
-      drumSeq.resize(968, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(480).height(24);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(968).height(24);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[165].matches) {
-      height = 360;
-      leadSeq.resize(500, height);
-      bassSeq.resize(500, height);
-      drumSeq.resize(1007, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(500).height(24.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1007).height(24.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[166].matches) {
-      height = 400;
-      leadSeq.resize(522, height);
-      bassSeq.resize(522, height);
-      drumSeq.resize(1051, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(522).height(24.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1051).height(24.5);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[167].matches) {
-      height = 400;
-      leadSeq.resize(540, height);
-      bassSeq.resize(540, height);
-      drumSeq.resize(1090, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(540).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1090).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[168].matches) {
-      height = 400;
-      leadSeq.resize(561.5, height);
-      bassSeq.resize(561.5, height);
-      drumSeq.resize(1133, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(561.5).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1133).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[169].matches) {
-      height = 400;
-      leadSeq.resize(576, height);
-      bassSeq.resize(576, height);
-      drumSeq.resize(1162, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(576).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1162).height(26);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[170].matches) {
-      height = 400;
-      leadSeq.resize(588, height);
-      bassSeq.resize(588, height);
-      drumSeq.resize(1186, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(588).height(29);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1186).height(29);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[171].matches) {
-      height = 400;
-      leadSeq.resize(602, height);
-      bassSeq.resize(602, height);
-      drumSeq.resize(1215, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(602).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1215).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[172].matches) {
-      height = 400;
-      leadSeq.resize(606, height);
-      bassSeq.resize(606, height);
-      drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[173].matches) {
-      height = 400;
-      leadSeq.resize(606, height);
-      bassSeq.resize(606, height);
-      drumSeq.resize(1240, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(606).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1240).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '2.7em');
-      tempo.resize(70, 70);
-    } else if (mq[174].matches) {
-      height = 400;
-      leadSeq.resize(614, height);
-      bassSeq.resize(614, height);
-      drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(30);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#lead-select-container').css('margin-left', '3em');
-      tempo.resize(70, 70);
-    } else if (mq[175].matches) {
-      height = 400;
-      leadSeq.resize(614, height);
-      bassSeq.resize(614, height);
-      drumSeq.resize(1271, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(614).height(32);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1271).height(32);
-      tempo.resize(70, 70);
-    } else if (mq[176].matches) {
-      height = 400;
-      leadSeq.resize(616, height);
-      bassSeq.resize(616, height);
-      drumSeq.resize(1274.5, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(616).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1274.5).height(35);
-      tempo.resize(80, 80);
-    } else if (mq[177].matches) {
-      height = 400;
-      leadSeq.resize(617.5, height);
-      bassSeq.resize(617.5, height);
-      drumSeq.resize(1285, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(617.5).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1285).height(35);
-      tempo.resize(80, 80);
-    } else if (mq[178].matches) {
-      height = 400;
-      leadSeq.resize(620, height);
-      bassSeq.resize(620, height);
-      drumSeq.resize(1288, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(620).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1288).height(35);
-      tempo.resize(80, 80);
-    } else if (mq[179].matches) {
-      height = 400;
-      leadSeq.resize(640, height);
-      bassSeq.resize(640, height);
-      drumSeq.resize(1329.5, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(640).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1329.5).height(35);
-      tempo.resize(80, 80);
-    } else if (mq[180].matches) {
-      height = 400;
-      leadSeq.resize(660, height);
-      bassSeq.resize(660, height);
-      drumSeq.resize(1360, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(660).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
-      tempo.resize(80, 80);
-    } else if (mq[181].matches) {
-      height = 400;
-      leadSeq.resize(680, height);
-      bassSeq.resize(680, height);
-      drumSeq.resize(1412.5, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
-    } else if (mq[182].matches) {
-      height = 400;
-      leadSeq.resize(700, height);
-      bassSeq.resize(700, height);
-      drumSeq.resize(1454, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
-    } else if (mq[183].matches) {
-      height = 400;
-      leadSeq.resize(720, height);
-      bassSeq.resize(720, height);
-      drumSeq.resize(1493.5, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
-    } else if (mq[184].matches) {
-      height = 400;
-      leadSeq.resize(740, height);
-      bassSeq.resize(740, height);
-      drumSeq.resize(1533, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
-    } else if (mq[185].matches) {
-      height = 400;
-      leadSeq.resize(780, height);
-      bassSeq.resize(780, height);
-      drumSeq.resize(1612, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
-    } else if (mq[186].matches) {
-      height = 400;
-      leadSeq.resize(820, height);
-      bassSeq.resize(820, height);
-      drumSeq.resize(1693, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
-    } else if (mq[187].matches) {
-      height = 400;
-      leadSeq.resize(860, height);
-      bassSeq.resize(860, height);
-      drumSeq.resize(1772, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
-    } else if (mq[188].matches) {
-      height = 400;
-      leadSeq.resize(900, height);
-      bassSeq.resize(900, height);
-      drumSeq.resize(1851, height);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
-    } else if (mq[189].matches) {
       height = 400;
       leadSeq.resize(940, height);
       bassSeq.resize(940, height);
@@ -2699,7 +3787,7 @@ const setup = () => {
     }
   };
   resizeSequencers();
-  // resizeSequencersResponsively()
+  resizeSequencersResponsively();
 };
 
 document.addEventListener('DOMContentLoaded', setup);
