@@ -395,7 +395,6 @@ const triggerHit = drum => {
 
 tempo.on('change', event => {
   $('#tempo').mouseup(() => {
-    console.log('test')
     socket.emit('changeTempo', event)
   })
 })
@@ -683,7 +682,7 @@ socket.on('selectKick', data => {
 })
 
 const mq = [
-  window.matchMedia('(min-width: 0px) and (max-width: 1024px) and (max-height: 500px)'),    
+  window.matchMedia('(min-width: 0px) and (max-width: 1024px) and (max-height: 500px)'),
   window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 500px)'),     
   window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 500px)'),     
   window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 500px)'),     
@@ -708,125 +707,125 @@ const mq = [
   window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 500px)'), 
   window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 500px)'), 
   window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 500px)'), 
-  window.matchMedia('(min-width: 2497px) and (max-height: 500px)'),                         
-  window.matchMedia('(min-width: 0px) and (max-width: 874px) and (max-height: 620px)'),    
-  window.matchMedia('(min-width: 875px) and (max-width: 1074px) and (max-height: 620px)'),     
-  window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 620px)'),     
-  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 620px)'),     
-  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 620px)'),     
-  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 620px)'),     
-  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 620px)'),     
-  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 620px)'),     
-  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 620px)'),     
-  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 620px)'),   
-  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 620px)'),   
-  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 620px)'),   
-  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 620px)'),   
-  window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (max-height: 620px)'),   
-  window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 620px)'),  
-  window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 620px)'), 
-  window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 620px)'), 
-  window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 620px)'), 
-  window.matchMedia('(min-width: 2497px) and (max-height: 620px)'),                         
-  window.matchMedia('(min-width: 0px) and (max-width: 924px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 925px) and (max-width: 1074px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 850px)'),     
-  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 850px)'),   
-  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 850px)'),   
-  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 850px)'),   
-  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 850px)'),   
-  window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (max-height: 850px)'),   
-  window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 850px)'),  
-  window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 850px)'), 
-  window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 850px)'), 
-  window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 850px)'), 
-  window.matchMedia('(min-width: 2497px) and (max-height: 850px)'),                         
-  window.matchMedia('(min-width: 0px) and (max-width: 774px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 775px) and (max-width: 824px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 825px) and (max-width: 974px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 1000px)'),     
-  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 1000px)'),   
-  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 1000px)'),   
-  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 1000px)'),   
-  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 1000px)'),   
-  window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (max-height: 1000px)'),   
-  window.matchMedia('(min-width: 1703px) and (max-width: 1724px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 1000px)'),  
-  window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 1000px)'), 
-  window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 1000px)'), 
-  window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 1000px)'), 
-  window.matchMedia('(min-width: 2497px) and (max-height: 1000px)'),                         
-  window.matchMedia('(min-width: 0px) and (max-width: 824px) and (min-height: 0px)'),    
-  window.matchMedia('(min-width: 825px) and (max-width: 974px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (min-height: 0px)'), 
-  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 0px)'),  
-  window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 0px)'), 
-  window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 0px)'), 
-  window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 0px)'), 
-  window.matchMedia('(min-width: 2497px) and (min-height: 0px)')
+  window.matchMedia('(min-width: 2497px) and (max-height: 500px)'),                       
+  window.matchMedia('(min-width: 0px) and (max-width: 874px) and (min-height: 501px) and (max-height: 620px)'),    
+  window.matchMedia('(min-width: 875px) and (max-width: 1074px) and (min-height: 501px) and (max-height: 620px)'),     
+  window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (min-height: 501px) and (max-height: 620px)'),     
+  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 501px) and (max-height: 620px)'),     
+  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 501px) and (max-height: 620px)'),     
+  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 501px) and (max-height: 620px)'),     
+  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 501px) and (max-height: 620px)'),     
+  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 501px) and (max-height: 620px)'),     
+  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 501px) and (max-height: 620px)'),     
+  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 501px) and (max-height: 620px)'),   
+  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 501px) and (max-height: 620px)'),   
+  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 501px) and (max-height: 620px)'),   
+  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 501px) and (max-height: 620px)'),   
+  window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 501px) and (max-height: 620px)'),   
+  window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 501px) and (max-height: 620px)'),  
+  window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 501px) and (max-height: 620px)'), 
+  window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 501px) and (max-height: 620px)'), 
+  window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 501px) and (max-height: 620px)'), 
+  window.matchMedia('(min-width: 2497px) and (min-height: 501px) and (max-height: 620px)'),                         
+  window.matchMedia('(min-width: 0px) and (max-width: 924px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 925px) and (max-width: 1074px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 621px) and (max-height: 850px)'),     
+  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 621px) and (max-height: 850px)'),   
+  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 621px) and (max-height: 850px)'),   
+  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 621px) and (max-height: 850px)'),   
+  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 621px) and (max-height: 850px)'),   
+  window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (min-height: 621px) and (max-height: 850px)'),   
+  window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 621px) and (max-height: 850px)'),  
+  window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 621px) and (max-height: 850px)'), 
+  window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 621px) and (max-height: 850px)'), 
+  window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 621px) and (max-height: 850px)'), 
+  window.matchMedia('(min-width: 2497px) and (min-height: 621px) and (max-height: 850px)'),                         
+  window.matchMedia('(min-width: 0px) and (max-width: 774px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 775px) and (max-width: 824px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 825px) and (max-width: 974px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 851px) and (max-height: 1000px)'),     
+  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 851px) and (max-height: 1000px)'),   
+  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 851px) and (max-height: 1000px)'),   
+  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 851px) and (max-height: 1000px)'),   
+  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 851px) and (max-height: 1000px)'),   
+  window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 851px) and (max-height: 1000px)'),   
+  window.matchMedia('(min-width: 1703px) and (max-width: 174px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 851px) and (max-height: 1000px)'), 
+  window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 851px) and (max-height: 1000px)'), 
+  window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 851px) and (max-height: 1000px)'), 
+  window.matchMedia('(min-width: 2497px) and (min-height: 851px) and (max-height: 1000px)'),                         
+  window.matchMedia('(min-width: 0px) and (max-width: 824px) and (min-height: 1001px)'),    
+  window.matchMedia('(min-width: 825px) and (max-width: 974px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (min-height: 1001px)'), 
+  window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 1001px)'),  
+  window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 1001px)'), 
+  window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 1001px)'), 
+  window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 1001px)'), 
+  window.matchMedia('(min-width: 2497px) and (min-height: 1001px)')
 ]                         
 
 let height = 400, synthWidth = 940, drumWidth = 1932
@@ -846,7 +845,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[1].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 160 
       leadSeq.resize(318, height)
       bassSeq.resize(318, height)
@@ -859,7 +858,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[2].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 160 
       leadSeq.resize(368, height)
       bassSeq.resize(368, height)
@@ -872,8 +871,8 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[3].addListener(e => {
-      if(e.matches) {
-      height = 160 
+    if(e.matches) {
+      height = 200 
       leadSeq.resize(424, height)
       bassSeq.resize(424, height)
       drumSeq.resize(856, height)
@@ -885,7 +884,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[4].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 160
       leadSeq.resize(455, height)
       bassSeq.resize(455, height)
@@ -897,21 +896,8 @@ const resizeSequencersResponsively = () => {
       tempo.resize(55, 55)
     }
   })
-  mq[12].addListener(e => {
-      if(e.matches) {
-      height = 160
-      leadSeq.resize(480, height)
-      bassSeq.resize(480, height)
-      drumSeq.resize(968, height)
-      $(".synth-seq-header").width(480).height(24)
-      $("#drum-seq-header").width(968).height(24)
-      $("#drum-effect-header").html('FX')
-      abbreviateEffects()
-      tempo.resize(55, 55)
-    }
-  })
   mq[5].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 160
       leadSeq.resize(500, height)
       bassSeq.resize(500, height)
@@ -924,7 +910,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[6].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 160
       leadSeq.resize(522, height)
       bassSeq.resize(522, height)
@@ -937,7 +923,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[7].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 160
       leadSeq.resize(540, height)
       bassSeq.resize(540, height)
@@ -950,7 +936,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[8].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 280
       leadSeq.resize(561.5, height)
       bassSeq.resize(561.5, height)
@@ -963,7 +949,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[9].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 280
       leadSeq.resize(576, height)
       bassSeq.resize(576, height)
@@ -976,7 +962,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[10].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 280
       leadSeq.resize(588, height)
       bassSeq.resize(588, height)
@@ -989,7 +975,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[11].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 280
       leadSeq.resize(602, height)
       bassSeq.resize(602, height)
@@ -1003,7 +989,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[12].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 280
       leadSeq.resize(606, height)
       bassSeq.resize(606, height)
@@ -1017,7 +1003,7 @@ const resizeSequencersResponsively = () => {
     }
   })
   mq[13].addListener(e => {
-      if(e.matches) {
+    if(e.matches) {
       height = 300
       leadSeq.resize(614, height)
       bassSeq.resize(614, height)
@@ -1193,9 +1179,9 @@ const resizeSequencersResponsively = () => {
   mq[29].addListener(e => {
     if(e.matches) {
       height = 200 
-      leadSeq.resize(424, height)
-      bassSeq.resize(424, height)
-      drumSeq.resize(856, height)
+      leadSeq.resize(424, 200)
+      bassSeq.resize(424, 200)
+      drumSeq.resize(856, 200)
       $(".synth-seq-header").width(424).height(20)
       $("#drum-seq-header").width(856).height(20)
       $("#drum-effect-header").html('FX')
@@ -1507,7 +1493,6 @@ const resizeSequencersResponsively = () => {
   })
   mq[56].addListener(e => {
     if(e.matches) {
-      console.log('tetst')
       height = 160 
       leadSeq.resize(318, height)
       bassSeq.resize(318, height)
@@ -2599,7 +2584,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[4].matches) {
-      height = 200
+      height = 160
       leadSeq.resize(455, height)
       bassSeq.resize(455, height)
       drumSeq.resize(917, height)
@@ -2608,18 +2593,8 @@ const setup = () => {
       $("#drum-effect-header").html('FX')
       abbreviateEffects()
       tempo.resize(55, 55)
-    } else if(mq[12].matches) {
-      height = 200
-      leadSeq.resize(480, height)
-      bassSeq.resize(480, height)
-      drumSeq.resize(968, height)
-      $(".synth-seq-header").width(480).height(24)
-      $("#drum-seq-header").width(968).height(24)
-      $("#drum-effect-header").html('FX')
-      abbreviateEffects()
-      tempo.resize(55, 55)
     } else if(mq[5].matches) {
-      height = 200
+      height = 160
       leadSeq.resize(500, height)
       bassSeq.resize(500, height)
       drumSeq.resize(1007, height)
@@ -2629,7 +2604,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[6].matches) {
-      height = 200
+      height = 160
       leadSeq.resize(522, height)
       bassSeq.resize(522, height)
       drumSeq.resize(1051, height)
@@ -2639,7 +2614,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[7].matches) {
-      height = 200
+      height = 160
       leadSeq.resize(540, height)
       bassSeq.resize(540, height)
       drumSeq.resize(1090, height)
@@ -2836,6 +2811,7 @@ const setup = () => {
       $("#drum-effect-header").html('FX')
       abbreviateEffects()
       tempo.resize(55, 55)
+      console.log('refresh lead-seq height', leadSeq.height)
     } else if(mq[30].matches) {
       height = 200
       leadSeq.resize(455, height)
@@ -3061,7 +3037,6 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(45, 45)
     } else if(mq[56].matches) {
-      console.log('tetst')
       height = 160 
       leadSeq.resize(318, height)
       bassSeq.resize(318, height)
