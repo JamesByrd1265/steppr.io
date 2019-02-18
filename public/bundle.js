@@ -3445,63 +3445,63 @@ const setup = () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1360).height(35);
       tempo.resize(80, 80);
     } else if (mq[106].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(680, height);
       bassSeq.resize(680, height);
       drumSeq.resize(1412.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
     } else if (mq[107].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(700, height);
       bassSeq.resize(700, height);
       drumSeq.resize(1454, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(700).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1454).height(35);
     } else if (mq[108].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(720, height);
       bassSeq.resize(720, height);
       drumSeq.resize(1493.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(720).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1493.5).height(35);
     } else if (mq[109].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(740, height);
       bassSeq.resize(740, height);
       drumSeq.resize(1533, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(740).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1533).height(35);
     } else if (mq[110].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(780, height);
       bassSeq.resize(780, height);
       drumSeq.resize(1612, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(780).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1612).height(35);
     } else if (mq[111].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(820, height);
       bassSeq.resize(820, height);
       drumSeq.resize(1693, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(820).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1693).height(35);
     } else if (mq[112].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(860, height);
       bassSeq.resize(860, height);
       drumSeq.resize(1772, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(860).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1772).height(35);
     } else if (mq[113].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(900, height);
       bassSeq.resize(900, height);
       drumSeq.resize(1851, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(900).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1851).height(35);
     } else if (mq[114].matches) {
-      height = 340;
+      height = 300;
       leadSeq.resize(940, height);
       bassSeq.resize(940, height);
       drumSeq.resize(1932, height);
