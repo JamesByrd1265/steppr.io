@@ -671,15 +671,33 @@ path:nth-child(5) {
   }
 }
 
+@media only screen and (min-width: 1815px) {
+  .list-select {
+    width: 140px;
+    height: 168px;
+  }
+  #nav {
+    height: 100px;
+  }
+  #header {
+    font-size: 4em;
+  }
+  #tempo {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    right: 3.6vw;
+  }
+  path:nth-child(5) {
+    fill-opacity: 0;
+  }
+}
+
 @media only screen and (min-width: 1815px) and (max-width: 1854px) {
   .synth-seq-header {
     width: 617.5px;
   }
   #drum-seq-header {
     width: 1285px;
-  }
-  .list-select {
-    width: 140px;
   }
   #drum-select-container {
     width: 142px;
@@ -999,7 +1017,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 130px;
-    height: 268px;
+    height: 168px;
   }
   .select-sub-header {
     font-size: 16px;
@@ -1080,7 +1098,6 @@ path:nth-child(5) {
   }
   .list-select {
     width: 134px;
-    height: 268px;
   }
   .select-container {
     width: 154px;
@@ -1189,7 +1206,6 @@ path:nth-child(5) {
   }
   .list-select {
     width: 134px;
-    height: 288px;
   }
   .select-container {
     width: 154px;
@@ -1628,7 +1644,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 103px;
-    height: 242px;
+    height: 162px;
   }
   .select-sub-header {
     font-size: 13px;
@@ -1721,7 +1737,6 @@ path:nth-child(5) {
   }
   .list-select {
     width: 110px;
-    height: 242px;
   }
   .select-container {
     width: 130px;
@@ -1784,7 +1799,6 @@ path:nth-child(5) {
   }
   .list-select {
     width: 122px;
-    height: 242px;
   }
   .select-sub-header {
     font-size: 14px;
@@ -1906,7 +1920,6 @@ path:nth-child(5) {
   }
   .list-select {
     width: 126px;
-    height: 242px;
   }
   .select-sub-header {
     font-size: 16px;
@@ -1968,7 +1981,7 @@ path:nth-child(5) {
 
 /*. ************ above => max h 1654*/
 
-@media only screen and (min-width: 775px) and (max-width: 824px) and (max-height: 850px) {
+@media only screen and (min-width: 0px) and (max-width: 824px) and (max-height: 850px) {
   #synth-container {
     height: 0px;
     margin-top: 5px;
@@ -2138,22 +2151,30 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 0) and (max-width: 774px) and (max-height: 850px) {
+@media only screen and (min-width: 0px) and (max-width: 774px) and (max-height: 850px) {
+  #drum-container {
+    margin-left: 0;
+  }
+  .select-container {
+    display: none;
+  }
   #footer {
     bottom: 1em;
+  }
+  #tempo {
+    display: none;
+  }
+  #lead-vol {
+    display:  none;
+  } 
+  #bass-vol {
+    display: none;
   }
   #drum-select-container {
     display: none;
   }
   #drum-effect-container {
     display: none;
-  }
-  .drum-effect {
-    position: relative;
-    top: -.7em;
-    margin: 0;
-    padding: 0;
-    width: 49px;
   }
   #lead-seq {
     padding-left: 0px;
@@ -2175,30 +2196,6 @@ path:nth-child(5) {
   }
   #lead-seq-header {
     margin-left: 0px;
-  }
-  .select-header {
-    padding-top: .25em;
-    width: 55px;
-    font-size: 10px;
-  }
-  .drum-select {
-    position: relative;
-    top: -.7em;
-    margin: 0;
-    padding: 0;
-    width: 47px;
-  }
-  #bass-select-header {
-    width: 55px;
-  }
-  #drum-effect-header {
-    width: 57px;
-  }
-  #drum-select-header {
-    width: 57px;
-  }
-  .effect {
-    width: 73px;
   }
   #start {
     font-size: .6em;
@@ -2518,12 +2515,12 @@ path:nth-child(5) {
   }
   .list-select {
     width: 93px;
-    height: 162px;
+    height: 163px;
   }
   .select-container {
     width: 113px;
     margin-right: 0px;
-    top: -.8em;
+    top: -.85em;
   }
   #lead-select-container {
     width: 95.5px;
@@ -2579,12 +2576,6 @@ path:nth-child(5) {
   }
   .select-sub-header {
     font-size: 12px;
-  }
-  .select-container {
-    width: 113px;
-    height: 434px;
-    margin-right: 0px;
-    top: -.8em;
   }
 }
 
@@ -2739,3 +2730,15 @@ path:nth-child(5) {
 
 
 
+@media only screen and (max-width: 1124px) and (max-height: 500px) {
+  .list-select {
+    width: 73px;
+    height: 120px;
+  }
+  #nav {
+    height: 20px;
+  }
+  #header {
+    display: none;
+  }
+}
