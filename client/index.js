@@ -1493,7 +1493,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[56].addListener(e => {
     if(e.matches) {
-      height = 280 
+      height = 260 
       leadSeq.resize(318, height)
       bassSeq.resize(318, height)
       drumSeq.resize(644, height)
@@ -1506,7 +1506,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[57].addListener(e => {
     if(e.matches) {
-      height = 280 
+      height = 260 
       leadSeq.resize(368, height)
       bassSeq.resize(368, height)
       drumSeq.resize(742, height)
@@ -1519,7 +1519,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[58].addListener(e => {
     if(e.matches) {
-      height = 280 
+      height = 260 
       leadSeq.resize(424, height)
       bassSeq.resize(424, height)
       drumSeq.resize(856, height)
@@ -1532,7 +1532,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[59].addListener(e => {
     if(e.matches) { 
-      height = 280
+      height = 260
       leadSeq.resize(455, height)
       bassSeq.resize(455, height)
       drumSeq.resize(917, height)
@@ -1545,7 +1545,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[60].addListener(e => {
     if(e.matches) { 
-      height = 280
+      height = 260
       leadSeq.resize(480, height)
       bassSeq.resize(480, height)
       drumSeq.resize(968, height)
@@ -1558,7 +1558,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[61].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(500, height)
       bassSeq.resize(500, height)
       drumSeq.resize(1007, height)
@@ -1571,7 +1571,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[62].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(522, height)
       bassSeq.resize(522, height)
       drumSeq.resize(1051, height)
@@ -1584,7 +1584,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[63].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(540, height)
       bassSeq.resize(540, height)
       drumSeq.resize(1090, height)
@@ -1597,7 +1597,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[64].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(561.5, height)
       bassSeq.resize(561.5, height)
       drumSeq.resize(1133, height)
@@ -1610,7 +1610,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[65].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(576, height)
       bassSeq.resize(576, height)
       drumSeq.resize(1162, height)
@@ -1623,7 +1623,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[66].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(588, height)
       bassSeq.resize(588, height)
       drumSeq.resize(1186, height)
@@ -1636,7 +1636,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[67].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(602, height)
       bassSeq.resize(602, height)
       drumSeq.resize(1215, height)
@@ -1650,7 +1650,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[68].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(606, height)
       bassSeq.resize(606, height)
       drumSeq.resize(1240, height)
@@ -1664,7 +1664,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[69].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(606, height)
       bassSeq.resize(606, height)
       drumSeq.resize(1240, height)
@@ -1676,7 +1676,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[70].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(614, height)
       bassSeq.resize(614, height)
       drumSeq.resize(1271, height)
@@ -1688,7 +1688,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[71].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(616, height)
       bassSeq.resize(616, height)
       drumSeq.resize(1274.5, height)
@@ -1699,7 +1699,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[72].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(617.5, height)
       bassSeq.resize(617.5, height)
       drumSeq.resize(1285, height)
@@ -1710,7 +1710,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[73].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(620, height)
       bassSeq.resize(620, height)
       drumSeq.resize(1288, height)
@@ -1721,7 +1721,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[74].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(640, height)
       bassSeq.resize(640, height)
       drumSeq.resize(1329.5, height)
@@ -1732,7 +1732,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[75].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(660, height)
       bassSeq.resize(660, height)
       drumSeq.resize(1360, height)
@@ -1743,7 +1743,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[76].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(680, height)
       bassSeq.resize(680, height)
       drumSeq.resize(1412.5, height)
@@ -1753,7 +1753,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[77].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(700, height)
       bassSeq.resize(700, height)
       drumSeq.resize(1454, height)
@@ -1763,7 +1763,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[78].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(720, height)
       bassSeq.resize(720, height)
       drumSeq.resize(1493.5, height)
@@ -1773,7 +1773,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[79].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(740, height)
       bassSeq.resize(740, height)
       drumSeq.resize(1533, height)
@@ -1783,7 +1783,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[80].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(780, height)
       bassSeq.resize(780, height)
       drumSeq.resize(1612, height)
@@ -1793,7 +1793,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[81].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(820, height)
       bassSeq.resize(820, height)
       drumSeq.resize(1693, height)
@@ -1803,7 +1803,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[82].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(860, height)
       bassSeq.resize(860, height)
       drumSeq.resize(1772, height)
@@ -1813,7 +1813,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[83].addListener(e => {
     if(e.matches) {
-      height = 280
+      height = 260
       leadSeq.resize(900, height)
       bassSeq.resize(900, height)
       drumSeq.resize(1851, height)
@@ -1823,7 +1823,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[84].addListener(e => {
     if(e.matches) { 
-      height = 280
+      height = 260
       leadSeq.resize(940, height)
       bassSeq.resize(940, height)
       drumSeq.resize(1932, height)
@@ -3039,7 +3039,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(45, 45)
     } else if(mq[56].matches) {
-      height = 280 
+      height = 260 
       leadSeq.resize(318, height)
       bassSeq.resize(318, height)
       drumSeq.resize(644, height)
@@ -3049,7 +3049,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(45, 45)
     } else if(mq[57].matches) {
-      height = 280 
+      height = 260 
       leadSeq.resize(368, height)
       bassSeq.resize(368, height)
       drumSeq.resize(742, height)
@@ -3059,7 +3059,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(45, 45)
     } else if(mq[58].matches) {
-      height = 280 
+      height = 260 
       leadSeq.resize(424, height)
       bassSeq.resize(424, height)
       drumSeq.resize(856, height)
@@ -3069,7 +3069,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[59].matches) { 
-      height = 280
+      height = 260
       leadSeq.resize(455, height)
       bassSeq.resize(455, height)
       drumSeq.resize(917, height)
@@ -3079,7 +3079,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[60].matches) { 
-      height = 280
+      height = 260
       leadSeq.resize(480, height)
       bassSeq.resize(480, height)
       drumSeq.resize(968, height)
@@ -3089,7 +3089,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[61].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(500, height)
       bassSeq.resize(500, height)
       drumSeq.resize(1007, height)
@@ -3099,7 +3099,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[62].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(522, height)
       bassSeq.resize(522, height)
       drumSeq.resize(1051, height)
@@ -3109,7 +3109,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[63].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(540, height)
       bassSeq.resize(540, height)
       drumSeq.resize(1090, height)
@@ -3119,7 +3119,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(55, 55)
     } else if(mq[64].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(561.5, height)
       bassSeq.resize(561.5, height)
       drumSeq.resize(1133, height)
@@ -3129,7 +3129,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(65, 65)
     } else if(mq[65].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(576, height)
       bassSeq.resize(576, height)
       drumSeq.resize(1162, height)
@@ -3139,7 +3139,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(65, 65)
     } else if(mq[66].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(588, height)
       bassSeq.resize(588, height)
       drumSeq.resize(1186, height)
@@ -3149,7 +3149,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(65, 65)
     } else if(mq[67].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(602, height)
       bassSeq.resize(602, height)
       drumSeq.resize(1215, height)
@@ -3160,7 +3160,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(65, 65)
     } else if(mq[68].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(606, height)
       bassSeq.resize(606, height)
       drumSeq.resize(1240, height)
@@ -3171,7 +3171,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(65, 65)
     } else if(mq[69].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(606, height)
       bassSeq.resize(606, height)
       drumSeq.resize(1240, height)
@@ -3180,7 +3180,7 @@ const setup = () => {
       $('#lead-select-container').css('margin-left', '2.7em')
       tempo.resize(70, 70)
     } else if(mq[70].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(614, height)
       bassSeq.resize(614, height)
       drumSeq.resize(1271, height)
@@ -3189,7 +3189,7 @@ const setup = () => {
       $('#lead-select-container').css('margin-left', '3em')
       tempo.resize(70, 70)
     } else if(mq[71].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(616, height)
       bassSeq.resize(616, height)
       drumSeq.resize(1274.5, height)
@@ -3197,7 +3197,7 @@ const setup = () => {
       $("#drum-seq-header").width(1274.5).height(35)
       tempo.resize(80, 80)
     } else if(mq[72].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(617.5, height)
       bassSeq.resize(617.5, height)
       drumSeq.resize(1285, height)
@@ -3205,7 +3205,7 @@ const setup = () => {
       $("#drum-seq-header").width(1285).height(35)
       tempo.resize(80, 80)
     } else if(mq[73].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(620, height)
       bassSeq.resize(620, height)
       drumSeq.resize(1288, height)
@@ -3213,7 +3213,7 @@ const setup = () => {
       $("#drum-seq-header").width(1288).height(35)
       tempo.resize(80, 80)
     } else if(mq[74].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(640, height)
       bassSeq.resize(640, height)
       drumSeq.resize(1329.5, height)
@@ -3221,7 +3221,7 @@ const setup = () => {
       $("#drum-seq-header").width(1329.5).height(35)
       tempo.resize(80, 80)
     } else if(mq[75].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(660, height)
       bassSeq.resize(660, height)
       drumSeq.resize(1360, height)
@@ -3229,63 +3229,63 @@ const setup = () => {
       $("#drum-seq-header").width(1360).height(35)
       tempo.resize(80, 80)
     } else if(mq[76].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(680, height)
       bassSeq.resize(680, height)
       drumSeq.resize(1412.5, height)
       $(".synth-seq-header").width(680).height(35)
       $("#drum-seq-header").width(1412.5).height(35)
     } else if(mq[77].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(700, height)
       bassSeq.resize(700, height)
       drumSeq.resize(1454, height)
       $(".synth-seq-header").width(700).height(35)
       $("#drum-seq-header").width(1454).height(35)
     } else if(mq[78].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(720, height)
       bassSeq.resize(720, height)
       drumSeq.resize(1493.5, height)
       $(".synth-seq-header").width(720).height(35)
       $("#drum-seq-header").width(1493.5).height(35)
     } else if(mq[79].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(740, height)
       bassSeq.resize(740, height)
       drumSeq.resize(1533, height)
       $(".synth-seq-header").width(740).height(35)
       $("#drum-seq-header").width(1533).height(35)
     } else if(mq[80].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(780, height)
       bassSeq.resize(780, height)
       drumSeq.resize(1612, height)
       $(".synth-seq-header").width(780).height(35)
       $("#drum-seq-header").width(1612).height(35)
     } else if(mq[81].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(820, height)
       bassSeq.resize(820, height)
       drumSeq.resize(1693, height)
       $(".synth-seq-header").width(820).height(35)
       $("#drum-seq-header").width(1693).height(35)
     } else if(mq[82].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(860, height)
       bassSeq.resize(860, height)
       drumSeq.resize(1772, height)
       $(".synth-seq-header").width(860).height(35)
       $("#drum-seq-header").width(1772).height(35)
     } else if(mq[83].matches) {
-      height = 280
+      height = 260
       leadSeq.resize(900, height)
       bassSeq.resize(900, height)
       drumSeq.resize(1851, height)
       $(".synth-seq-header").width(900).height(35)
       $("#drum-seq-header").width(1851).height(35)
     } else if(mq[84].matches) { 
-      height = 280
+      height = 260
       leadSeq.resize(940, height)
       bassSeq.resize(940, height)
       drumSeq.resize(1932, height)

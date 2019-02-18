@@ -2310,7 +2310,7 @@ path:nth-child(5) {
 
 
 
-@media only screen and (min-width: 1125px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1125px) and (max-height: 1000px) {
   .list-select {
     height: 260px;
   }
@@ -2335,7 +2335,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1175px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1175px) and (max-height: 1000px) {
   .drum-effect {
     margin-top: .26em;
     padding: .3em;
@@ -2347,7 +2347,7 @@ path:nth-child(5) {
 }
 
 
-@media only screen and (min-width: 1225px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1225px) and (max-height: 1000px) {
   .list-select {
     height: 266px;
   }
@@ -2363,7 +2363,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1535px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1535px) and (max-height: 1000px) {
   #drum-select-container {
     height: 330px;
   }
@@ -2372,14 +2372,14 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1655px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1655px) and (max-height: 1000px) {
   #synth-container {
     height: 420px;
     margin-top: 13vh;
   }
 }
 
-@media only screen and (min-width: 1703px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1703px) and (max-height: 1000px) {
   .select-container {
     top: -.75em;
   }
@@ -2404,7 +2404,7 @@ path:nth-child(5) {
 }
 
 
-@media only screen and (min-width: 1725px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1725px) and (max-height: 1000px) {
   .select-container {
     height: 430px;
     top: -.7em;
@@ -2425,7 +2425,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1775px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1775px) and (max-height: 1000px) {
   .list-select {
     height: 268px;
   }
@@ -2459,7 +2459,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1795px) and (max-width: 1814px) and (max-height: 1000px) {
+@media only screen and (min-width: 1795px) and (max-height: 1000px) {
   #drum-container {
     margin-left: .5vw;
   }
@@ -2534,27 +2534,38 @@ path:nth-child(5) {
 
 /*850*/
 
-@media only screen and (min-width: 1125px) and (max-width: 1654px) and (max-height: 850px) {
-  #cymbal-select {
+@media only screen and (min-width: 0px) and (max-width: 1124px) and (max-height: 850px) {
+  .select-container {
     display: none;
-  }
-  #drum-pingpong {
-    display: none;
-  }
-  #drum-effect-select {
-    height: 200px;
-  }
-  #drum-container {
-    margin-bottom: 0;
-    height: 230px;
-  }
-  #copyright {
-    padding-top: 0em;
-    padding-bottom: .5em;
   }
   #footer {
     bottom: 1em;
   }
+  #tempo {
+    display: none;
+  }
+  #lead-vol {
+    display:  none;
+  } 
+  #bass-vol {
+    display: none;
+  }
+  #drum-select-container {
+    display: none;
+  }
+  #drum-effect-container {
+    display: none;
+  }
+  #start {
+    font-size: .6em;
+    left: 4.4em;
+  }
+  #drum-container {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1125px) and (max-height: 850px) {
   #tempo-header {
     font-size: .9em;
   }
@@ -2599,7 +2610,7 @@ path:nth-child(5) {
     padding: .4em;
   } 
   .list-select {
-    height: 162px;
+    height: 222px;
   }
   .select-sub-header {
     font-size: 8.7px;
@@ -2608,11 +2619,11 @@ path:nth-child(5) {
     top: -.9em;
   }
   #drum-select-container {
-    height: 220px;
+    height: 282px;
     top: -.7em;
   }
   #drum-effect-container {
-    height: 220px;
+    height: 282px;
   }
   .select-header {
     padding-top: .25em;
@@ -2622,13 +2633,17 @@ path:nth-child(5) {
     margin: 0;
     padding: 0;
   }
+  .drum-effect {
+    margin: 0;
+    padding: 0;
+  }
   #start {
     font-size: .9em;
     left: 3.2em;
   }
 }
 
-@media only screen and (min-width: 1175px) and (max-width: 1654px) and (max-height: 850px) {
+@media only screen and (min-width: 1175px) and (max-height: 850px) {
   .seq-title {
     font-size: .9em;
     position: relative;
@@ -2647,16 +2662,9 @@ path:nth-child(5) {
     height: 434px;
     top: -.9em;
   }
-  #drum-select-container {
-    height: 200px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    height: 200px;
-  }
 }
 
-@media only screen and (min-width: 1225px) and (max-width: 1654px) and (max-height: 850px) {
+@media only screen and (min-width: 1225px) and (max-height: 850px) {
   .vol-slider {
     position: relative;
     top: 3px;
@@ -2670,17 +2678,17 @@ path:nth-child(5) {
     bottom: 3px;
   }
   .list-select {
-    height: 162px;
+    height: 224px;
   }
   .select-container {
     top: -.8em;
   }
   #drum-select-container {
-    height: 220px;
+    height: 284px;
     top: -.7em;
   }
   #drum-effect-container {
-    height: 220px;
+    height: 284px;
   }
   .select-header {
     padding-top: .2em;
@@ -2692,22 +2700,12 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1275px) and (max-width: 1654px) and (max-height: 850px) {
+@media only screen and (min-width: 1275px) and (max-height: 850px) {
   .vol-slider rect {
     height: 6px;
   }
-  .list-select {
-    height: 162px;
-  }
   .select-container {
     top: -.8em;
-  }
-  #drum-select-container {
-    height: 220px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    height: 220px;
   }
   .select-header {
     padding-top: .2em;
@@ -2719,7 +2717,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1325px) and (max-width: 1654px) and (max-height: 850px) {
+@media only screen and (min-width: 1325px) and (max-height: 850px) {
   .seq-title {
     font-size: 1em;
     position: relative;
@@ -2738,7 +2736,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1425px) and (max-width: 1654px) and (max-height: 850px) {
+@media only screen and (min-width: 1425px) and (max-height: 850px) {
   #drum-container {
     margin-bottom: 0;
   }
@@ -2757,17 +2755,17 @@ path:nth-child(5) {
     font-size: 1.1em;
   }
   .list-select {
-    height: 162px;
+    height: 222px;
   }
   .select-container {
     top: -.8em;
   }
   #drum-select-container {
-    height: 228px;
+    height: 286px;
     top: -.7em;
   }
   #drum-effect-container {
-    height: 228px;
+    height: 286px;
   }
   .select-header {
     font-size: 15px;
@@ -2781,7 +2779,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1468px) and (max-width: 1654px) and (max-height: 850px) {
+@media only screen and (min-width: 1468px) and (max-height: 850px) {
   #copyright {
     padding-top: 0em;
     padding-bottom: .5em;
@@ -2795,7 +2793,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1535px) and (max-width: 1654px) and (max-height: 850px) {
+@media only screen and (min-width: 1535px) and (max-height: 850px) {
   .seq-title {
     font-size: 1.2em;
   }
@@ -2812,19 +2810,19 @@ path:nth-child(5) {
     margin-top: 0;
     margin-bottom: .4em;
   }
-}
-
-@media only screen and (min-width: 1575px) and (max-width: 1654px) and (max-height: 850px) {
-  .select-container {
-    height: 431px;
-    top: -.8em;
-  }
   #drum-select-container {
-    height: 230px;
+    height: 288px;
     top: -.7em;
   }
   #drum-effect-container {
-    height: 230px;
+    height: 288px;
+  }
+}
+
+@media only screen and (min-width: 1575px) and (max-height: 850px) {
+  .select-container {
+    height: 431px;
+    top: -.8em;
   }
   .drum-effect {
     padding: .55em;
@@ -2832,7 +2830,7 @@ path:nth-child(5) {
   }
 }
 
-@media only screen and (min-width: 1625px) and (max-width: 1654px) and (max-height: 850px) {
+@media only screen and (min-width: 1625px) and (max-height: 850px) {
   .drum-select {
     margin-top: .8em;
     margin-bottom: .4em;
@@ -2843,12 +2841,6 @@ path:nth-child(5) {
   .select-sub-header {
     font-size: 16px;
   }
-  #drum-select-container {
-    height: 410px;
-  }
-  #drum-effect-container {
-    height: 410px;
-  }
   .drum-effect {
     padding: .55em;
     margin-top: .3em;
@@ -2860,135 +2852,14 @@ path:nth-child(5) {
     font-size: 1.6em;
     left: 1.7em;
   }
-}
-
-@media only screen and (min-width: 1655px) and (max-width: 1814px) and (max-height: 850px) {
-  #footer {
-    bottom: 1em;
-  }
-  .select-margin {
-    padding: .28em;
-  }
-  #tempo {
-    display: inline-flex;
-    flex-direction: row-reverse;
-    right: 3.6vw;
-  }
-  #tempo-select {
-    margin-top: .5em;
-  }
-  path:nth-child(5) {
-    fill-opacity: 0;
-  }
-  #nav {
-    height: 100px;
-  }
-  #header {
-    font-size: 4em;
-  }
-  #synth-container {
-    height: 420px;
-    margin-top: 5.5vh;
-  }
   .drum-select {
-    margin-top: .7em;
-    margin-bottom: .3em;
-  }
-  .seq-title {
-    font-size: 1.3em;
-  }
-  .list-select {
-    height: 168px;
-  }
-  .select-sub-header {
-    font-size: 16px;
-  }
-  #drum-select-container {
-    height: 332px;
-  }
-  #drum-effect-container {
-    height: 332px;
+    margin-top: .2em;
   }
   .drum-effect {
-    padding: .5em;
-  }
-  .select-header {
-    font-size: 18px;
-  }
-  #start {
-    left: 3em;
-    font-size: 1.6em;
-    left: 1.7em;
+    padding: .2em;
   }
 }
 
-@media only screen and (min-width: 1703px) and (max-width: 1814px) and (max-height: 850px) {
-  .select-container {
-    top: -.75em;
-  }
-  #drum-select-container {
-    height: 332px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    height: 332px;
-  }
-  .drum-effect {
-    padding: .5em;
-  }
-  .select-header {
-    font-size: 18px;
-  }
-  #start {
-    left: 3em;
-    font-size: 1.6em;
-    left: 2em;
-  }
-}
-
-
-@media only screen and (min-width: 1725px) and (max-width: 1814px) and (max-height: 850px) {
-  .select-container {
-    height: 430px;
-    top: -.7em;
-  }
-  #drum-select-container {
-    height: 331px;
-  }
-  #drum-effect-container {
-    height: 331px;
-  }
-  .select-header {
-    font-size: 18px;
-  }
-  #start {
-    left: 2.5em;
-    font-size: 1.7em;
-  }
-}
-
-/*Sushdfosidhfas;dofihsadsadfasdfsadfd*/
-@media only screen and (min-width: 1775px) and (max-width: 1814px) and (max-height: 850px) {
-  .drum-select {
-    margin-top: .825em;
-    margin-bottom: .35em;
-  }
-  .select-container {
-    height: 430px;
-    top: -.7em;
-  }
-  #drum-select-container {
-    height: 356px;
-  }
-  #drum-effect-container {
-    height: 356px;
-  }
-  .drum-effect {
-    margin-top: .23em;
-    margin-bottom: 0;
-    padding: .57em;
-  }
-}
 
 /*. ************ above => max h 1654*/
 
@@ -3101,34 +2972,6 @@ path:nth-child(5) {
   #footer {
     height: 300px;
     bottom: 1em;
-  }
-}
-
-@media only screen and (min-width: 0px) and (max-width: 774px) and (max-height: 850px) {
-  .select-container {
-    display: none;
-  }
-  #footer {
-    bottom: 1em;
-  }
-  #tempo {
-    display: none;
-  }
-  #lead-vol {
-    display:  none;
-  } 
-  #bass-vol {
-    display: none;
-  }
-  #drum-select-container {
-    display: none;
-  }
-  #drum-effect-container {
-    display: none;
-  }
-  #start {
-    font-size: .6em;
-    left: 4.4em;
   }
 }
 
