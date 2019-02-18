@@ -686,7 +686,7 @@ const mq = [
   window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 500px)'),     
   window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 500px)'),     
   window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 500px)'),     
-  window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (max-height: 500px)'),     
+  window.matchMedia('(min-width: 1175px) and (max-width: 1274px) and (max-height: 500px)'),     
   window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 500px)'),     
   window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 500px)'),     
   window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 500px)'),     
