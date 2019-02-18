@@ -2444,6 +2444,8 @@ const resizeSequencersResponsively = () => {
       drumSeq.resize(1412.5, height)
       $(".synth-seq-header").width(680).height(35)
       $("#drum-seq-header").width(1412.5).height(35)
+    } else {
+      tempo.resize(90, 90)
     }
   })
   mq[136].addListener(e => {

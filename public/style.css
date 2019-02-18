@@ -363,7 +363,7 @@ path:nth-child(4) {
 
 path:nth-child(5) {
   fill: #DC8350;
-  fill-opacity: 1;
+  fill-opacity: 0;
 }
 
 #footer {
@@ -804,10 +804,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 134px;
-    height: 345px;
-  }
-  .select-sub-header {
-    font-size: 16px;
+    height: 364px;
   }
   .select-container {
     width: 154px;
@@ -815,14 +812,14 @@ path:nth-child(5) {
     top: -.7em;
   }
   #drum-select-container {
-    height: 410px;
+    height: 430px;
     width: 136px;
     margin-right: 2.2em;
     margin-left: 61px;
   }
   #drum-effect-container {
+    height: 430px;
     width: 136px;
-    height: 410px;
     margin-left: 2.2em;
   }
   .drum-effect {
@@ -880,10 +877,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 134px;
-    height: 344px;
-  }
-  .select-sub-header {
-    font-size: 16px;
+    height: 364px;
   }
   .select-container {
     width: 154px;
@@ -895,14 +889,14 @@ path:nth-child(5) {
     margin-left: 3em;
   }
   #drum-select-container {
-    height: 410px;
+    height: 430px;
     width: 136px;
     margin-right: 2em;
     margin-left: 38px;
     top: -.7em;
   }
   #drum-effect-container {
-    height: 410px;
+    height: 430px;
     width: 136px;
     margin-left: 2.2em;
   }
@@ -962,10 +956,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 130px;
-    height: 344px;
-  }
-  .select-sub-header {
-    font-size: 16px;
+    height: 364px;
   }
   .select-container {
     width: 150px;
@@ -975,13 +966,13 @@ path:nth-child(5) {
     margin-left: 2.7em;
   }
   #drum-select-container {
-    height: 410px;
+    height: 430px;
     width: 132px;
     margin-right: 2em;
     margin-left: 35px;
   }
   #drum-effect-container {
-    height: 410px;
+    height: 430px;
     width: 132px;
     margin-left: 2.2em;
   }
@@ -1044,10 +1035,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 126px;
-    height: 344px;
-  }
-  .select-sub-header {
-    font-size: 16px;
+    height: 364px;
   }
   .select-container {
     width: 146px;
@@ -1058,13 +1046,13 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 128px;
-    height: 410px;
+    height: 430px;
     margin-right: 1.7em;
     margin-left: 35px;
   }
   #drum-effect-container {
     width: 128px;
-    height: 410px;
+    height: 430px;
     margin-left: 1.7em;
   }
   .drum-effect {
@@ -1126,10 +1114,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 122px;
-    height: 345px;
-  }
-  .select-sub-header {
-    font-size: 14px;
+    height: 365px;
   }
   .select-container {
     width: 142px;
@@ -1142,14 +1127,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 124px;
-    height: 410px;
+    height: 431px;
     margin-right: 1.4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 124px;
-    height: 410px;
+    height: 431px;
     margin-left: 1.4em;
   }
   .drum-effect {
@@ -1214,10 +1199,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 122px;
-    height: 343px;
-  }
-  .select-sub-header {
-    font-size: 14px;
+    height: 363px;
   }
   .select-container {
     width: 142px;
@@ -1230,14 +1212,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 124px;
-    height: 410px;
+    height: 430px;
     margin-right: 1.1em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 124px;
-    height: 410px;
+    height: 430px;
     margin-left: 1.1em;
   }
   .drum-effect {
@@ -1302,10 +1284,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 110px;
-    height: 346px;
-  }
-  .select-sub-header {
-    font-size: 13px;
+    height: 364px;
   }
   .select-container {
     width: 130px;
@@ -1319,14 +1298,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 112px;
-    height: 406px;
+    height: 426px;
     margin-right: .6em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 112px;
-    height: 406px;
+    height: 426px;
     margin-left: .6em;
   }
   .drum-effect {
@@ -1391,15 +1370,12 @@ path:nth-child(5) {
   }
   .list-select {
     width: 103px;
-    height: 343px;
-  }
-  .select-sub-header {
-    font-size: 13px;
+    height: 363px;
   }
   .select-container {
     width: 123px;
     margin-right: 0px;
-    top: -.8em;
+    top: -.75em;
   }
   #lead-select-container {
     width: 110px;
@@ -1407,14 +1383,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 105px;
-    height: 406px;
+    height: 426px;
     margin-right: .6em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 105px;
-    height: 406px;
+    height: 426px;
     margin-left: .6em;
   }
   .drum-effect {
@@ -1479,10 +1455,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 99px;
-    height: 344px;
-  }
-  .select-sub-header {
-    font-size: 13px;
+    height: 362px;
   }
   .select-container {
     width: 119px;
@@ -1495,14 +1468,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 101px;
-    height: 406px;
+    height: 426px;
     margin-right: .6em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 101px;
-    height: 406px;
+    height: 426px;
     margin-left: .6em;
   }
   .drum-effect {
@@ -1575,10 +1548,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 93px;
-    height: 345px;
-  }
-  .select-sub-header {
-    font-size: 12px;
+    height: 362px;
   }
   .select-container {
     width: 113px;
@@ -1592,14 +1562,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 95px;
-    height: 406px;
+    height: 426px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.6em;
   }
   #drum-effect-container {
     width: 95px;
-    height: 406px;
+    height: 426px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1664,10 +1634,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 93px;
-    height: 345px;
-  }
-  .select-sub-header {
-    font-size: 12px;
+    height: 362px;
   }
   .select-container {
     width: 113px;
@@ -1680,14 +1647,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 95px;
-    height: 406px;
+    height: 426px;
     margin-right: .4em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.7em;
   }
   #drum-effect-container {
     width: 95px;
-    height: 406px;
+    height: 426px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1753,10 +1720,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 87px;
-    height: 345px;
-  }
-  .select-sub-header {
-    font-size: 12px;
+    height: 362px;
   }
   .select-container {
     width: 107px;
@@ -1769,14 +1733,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 89px;
-    height: 406px;
+    height: 426px;
     margin-right: .4em;
     margin-left: 34px;
-    top: -.6em;
+    top: -.75em;
   }
   #drum-effect-container {
     width: 89px;
-    height: 406px;
+    height: 426px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1850,11 +1814,7 @@ path:nth-child(5) {
   }
   .list-select {
     width: 81px;
-    height: 342px;
-  }
-  .select-sub-header {
-    font-size: 9px;
-    padding-left: 0px;
+    height: 362px;
   }
   .select-container {
     width: 101px;
@@ -1868,14 +1828,14 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 83px;
-    height: 400px;
+    height: 422px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 83px;
-    height: 400px;
+    height: 422px;
     margin-left: .4em;
   }
   .drum-effect {
@@ -1939,13 +1899,12 @@ path:nth-child(5) {
   #drum-seq-header {
     width: 854px;
   }
+  .select-sub-header {
+    font-size: 14px;
+  }
   .list-select {
     width: 81px;
-    height: 342px;
-  }
-  .select-sub-header {
-    font-size: 9px;
-    padding-left: 0px;
+    height: 362px;
   }
   .select-container {
     width: 101px;
@@ -1958,17 +1917,18 @@ path:nth-child(5) {
   }
   #drum-select-container {
     width: 83px;
-    height: 400px;
+    height: 422px;
     margin-right: .4em;
     margin-left: 34px;
     top: -.7em;
   }
   #drum-effect-container {
     width: 83px;
-    height: 400px;
+    height: 422px;
     margin-left: .4em;
   }
   .drum-effect {
+    margin-top: .6em;
     width: 57px;
   }
   #lead-seq {
@@ -1998,6 +1958,7 @@ path:nth-child(5) {
     font-size: 11px;
   }
   .drum-select {
+    margin-top: 1.3em;
     width: 55px;
   }
   #bass-select-header {
@@ -2103,14 +2064,6 @@ path:nth-child(5) {
   #drum-seq-header {
     width: 742px;
   }
-  .list-select {
-    width: 73px;
-    height: 120px;
-  }
-  .select-sub-header {
-    font-size: 8px;
-    padding-left: 0px;
-  }
   .select-container {
     width: 93px;
     margin-right: 0px;
@@ -2120,25 +2073,6 @@ path:nth-child(5) {
   #lead-select-container {
     width: 75.5px;
     margin-left: 2.7em;
-  }
-  #drum-select-container {
-    width: 75px;
-    height: 176px;
-    margin-right: .4em;
-    margin-left: 34px;
-    top: -.7em;
-  }
-  #drum-effect-container {
-    width: 75px;
-    height: 176px;
-    margin-left: .4em;
-  }
-  .drum-effect {
-    position: relative;
-    top: -.7em;
-    margin: 0;
-    padding: 0;
-    width: 49px;
   }
   #lead-seq {
     padding-left: 0px;
@@ -2166,13 +2100,6 @@ path:nth-child(5) {
     width: 55px;
     font-size: 10px;
   }
-  .drum-select {
-    position: relative;
-    top: -.7em;
-    margin: 0;
-    padding: 0;
-    width: 47px;
-  }
   #bass-select-header {
     width: 55px;
   }
@@ -2191,15 +2118,159 @@ path:nth-child(5) {
     left: 4.4em;
   }
 }
+/*2*/
 
-
-@media only screen and (min-width: 1725px) {
-  #drum-container {
-    margin-left: -.3em;
+@media only screen and (min-width: 775px) and (max-width: 1124px) and (min-height: 850px) {
+  .list-select {
+    width: 81px;
+    height: 362px;
+  }
+  .select-container {
+    width: 101px;
+    margin-right: 0px;
+    top: -.9em;
+  }
+  #lead-select-container {
+    width: 83.5px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 83px;
+    height: 422px;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 83px;
+    height: 422px;
+    margin-left: .4em;
+  }
+  #synth-container {
+    height: 380px;
+    margin-top: 200px;
+  }
+  #header {
+    font-size: 4em;
+  }
+   #drum-container {
+    margin-bottom: 0;
+    height: 230px;
+  }
+  #copyright {
+    padding-top: 0em;
+    padding-bottom: .5em;
+  }
+  #footer {
+    margin-top: 10em;
+    height: 300px;
+    bottom: 1em;
+  }
+  #tempo-header {
+    font-size: 1.5em;
+  }
+  #tempo {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    right: 4vw;
+  }
+  #tempo-select {
+    margin-top: .2em;
+  }
+  path:nth-child(5) {
+    fill-opacity: 0;
+  }
+  #nav {
+    height: 122px;
+  }
+  #clap-select {
+    display: inline;
+  }
+  #drum-autofilter {
+    display: inline; 
+  }
+  .seq-title {
+    font-size: .8em;
+  }
+  .synth-seq-header {
+    width: 424px;
+  }
+  #drum-seq-header {
+    width: 854px;
+  }
+  .select-sub-header {
+    font-size: 13px;
+  }
+  .list-select {
+    width: 81px;
+    height: 222px;
+  }
+  .select-container {
+    width: 101px;
+    margin-right: 0px;
+    top: -.9em;
+  }
+  #lead-select-container {
+    width: 83.5px;
+    margin-left: 2.7em;
+  }
+  #drum-select-container {
+    width: 83px;
+    height: 282px;
+    margin-right: .4em;
+    margin-left: 34px;
+    top: -.7em;
+  }
+  #drum-effect-container {
+    width: 83px;
+    height: 282px;
+    margin-left: .4em;
+  }
+  .drum-effect {
+    margin-top: 0;
+    width: 57px;
+  }
+  .select-header {
+    padding-top: .25em;
+    width: 61px;
+    font-size: 11px;
+  }
+  .drum-select {
+    margin-top: 0;
+    width: 55px;
+  }
+  #bass-select-header {
+    width: 62px;
+  }
+  #drum-effect-header {
+    width: 63px;
+  }
+  #drum-select-header {
+    width: 64px;
+  }
+  .effect {
+    width: 81px;
+  }
+  #start {
+    font-size: 1.6em;
+    margin-left: 0em;
+    left: 1.85em;
   }
 }
 
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 900px) {
+  #tempo {
+    display: none;
+  }
+  #lead-select-container {
+    display: none;
+  }
+  #bass-select-container {
+    display: none;
+  }
+  #drum-select-container {
+    display: none;
+  }
   #lead-container {
     margin-left: 0;
   }
@@ -2217,6 +2288,21 @@ path:nth-child(5) {
   }
   #bass-seq-header {
     margin-left: 0;
+  }
+  #lead-vol {
+    display: none;
+  }
+  #bass-vol {
+    display: none;
+  }
+  #drum-effect-container {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 545px) {
+  #bass-container {
+    padding-left: 0;
   }
 }
 
@@ -3435,13 +3521,21 @@ path:nth-child(5) {
     flex-direction: row-reverse;
     right: 3.6vw;
   }
-  path:nth-child(5) {
-    fill-opacity: 0;
-  }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 545px) {
-  #bass-container {
-    padding-left: 0;
+@media only screen and (max-width: 900px) and (min-height: 850px) {
+  #synth-container {
+    height: 420px;
+    margin-top: 20.5vh;
+  }
+  #start {
+    top: 2em;
+  }
+  #header {
+    font-size: 3em;
+    padding-left: 3em;
+  }
+  #footer {
+    height: 500px;
   }
 }

@@ -2396,6 +2396,8 @@ const resizeSequencersResponsively = () => {
       drumSeq.resize(1412.5, height);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(680).height(35);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(1412.5).height(35);
+    } else {
+      tempo.resize(90, 90);
     }
   });
   mq[136].addListener(e => {
