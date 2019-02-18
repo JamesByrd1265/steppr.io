@@ -1607,6 +1607,12 @@ path:nth-child(5) {
   }
 }
 
+@media only screen and (min-width: 1425px) {
+  #synth-container {
+    height: 200px;
+    margin-top: 6.5vh;
+  }
+}
 
 @media only screen and (min-width: 1425px) and (max-width: 1654px) and (max-height: 850px) {
   #drum-container {
@@ -1629,10 +1635,7 @@ path:nth-child(5) {
   #header {
     font-size: 4em;
   }
-  #synth-container {
-    height: 380px;
-    margin-top: 6.5vh;
-  }
+
   .seq-title {
     font-size: 1.1em;
   }
