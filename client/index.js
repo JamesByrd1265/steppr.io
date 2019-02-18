@@ -782,7 +782,7 @@ const mq = [
   window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 851px) and (max-height: 1000px)'),   
   window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 851px) and (max-height: 1000px)'),   
   window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 851px) and (max-height: 1000px)'),   
-  window.matchMedia('(min-width: 1703px) and (max-width: 174px) and (min-height: 851px) and (max-height: 1000px)'),  
+  window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 851px) and (max-height: 1000px)'),  
   window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 851px) and (max-height: 1000px)'),  
   window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 851px) and (max-height: 1000px)'),  
   window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 851px) and (max-height: 1000px)'),  
@@ -1859,7 +1859,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[87].addListener(e => {
     if(e.matches) {
-      height = 300 
+      height = 260 
       leadSeq.resize(318, height)
       bassSeq.resize(318, height)
       drumSeq.resize(644, height)
@@ -1872,7 +1872,7 @@ const resizeSequencersResponsively = () => {
   })
   mq[88].addListener(e => {
     if(e.matches) {
-      height = 300 
+      height = 260 
       leadSeq.resize(368, height)
       bassSeq.resize(368, height)
       drumSeq.resize(742, height)
@@ -3312,7 +3312,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(45, 45)
     } else if(mq[87].matches) {
-      height = 300 
+      height = 260 
       leadSeq.resize(318, height)
       bassSeq.resize(318, height)
       drumSeq.resize(644, height)
@@ -3322,7 +3322,7 @@ const setup = () => {
       abbreviateEffects()
       tempo.resize(45, 45)
     } else if(mq[88].matches) {
-      height = 300 
+      height = 260 
       leadSeq.resize(368, height)
       bassSeq.resize(368, height)
       drumSeq.resize(742, height)
