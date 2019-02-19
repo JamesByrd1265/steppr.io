@@ -788,7 +788,7 @@ const resizeSequencers = (seqH, synthW, drumW, headerH, tempoR) => {
   drumSeq.resize(drumW, seqH);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthW).height(headerH);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumW).height(headerH);
-  // if(tempoR !== NaN) tempo.resize(tempoR)
+  if (tempoR) tempo.resize(tempoR, tempoR);
 };
 
 const abbreviateEffects = () => {

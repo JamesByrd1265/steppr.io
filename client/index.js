@@ -836,7 +836,7 @@ const resizeSequencers = (seqH, synthW, drumW, headerH, tempoR) => {
   drumSeq.resize(drumW, seqH)
   $(".synth-seq-header").width(synthW).height(headerH)
   $("#drum-seq-header").width(drumW).height(headerH)
-  // if(tempoR !== NaN) tempo.resize(tempoR)
+  if(tempoR) tempo.resize(tempoR, tempoR)
 }
 
 const abbreviateEffects = () => {
