@@ -90,11 +90,12 @@
 /*!*************************!*\
   !*** ./client/index.js ***!
   \*************************/
-/*! no exports provided */
+/*! exports provided: bpm */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bpm", function() { return bpm; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
@@ -103,6 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _tempo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tempo */ "./client/tempo.js");
 const socket = io(window.location.origin);
 const canvas = document.createElement('canvas');
 
@@ -110,22 +112,8 @@ const canvas = document.createElement('canvas');
 
 
 
+var bpm = 125;
 
-let bpm = 125;
-const bpmConverter = ms => 60000 / ms / 4;
-const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Dial('#tempo-select', {
-  'size': [90, 90],
-  'interaction': 'radial',
-  'mode': 'absolute',
-  'value': bpm,
-  'min': 30,
-  'max': 300,
-  'step': 1
-});
-
-tempo.colorize('fill', 'rgba(67, 203, 203, 0.84)');
-tempo.colorize('accent', '#3D3D3D');
-tempo.colorize('border', '#3D3D3D');
 
 let sequencer = { 'size': [940, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
 const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#lead-seq', sequencer);
@@ -488,12 +476,6 @@ const triggerHit = drum => {
   drums.triggerAttack(drum);
 };
 
-tempo.on('change', event => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#tempo').mouseup(() => {
-    socket.emit('changeTempo', event);
-  });
-});
-
 leadSeq.on('change', event => {
   socket.emit('leadSeq', event);
 });
@@ -611,11 +593,11 @@ drumSeq.on('step', hits => {
   }
 });
 
-tempo.on('change', value => {
+_tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].on('change', value => {
   leadSeq.matrix.bpm = value;
   bassSeq.matrix.bpm = value;
   drumSeq.matrix.bpm = value;
-  bpm = bpmConverter(value);
+  bpm = Object(_tempo__WEBPACK_IMPORTED_MODULE_5__["bpmConverter"])(value);
   leadSeq.stop();
   bassSeq.stop();
   drumSeq.stop();
@@ -709,11 +691,6 @@ socket.on('connect', () => {
   console.log('I have made a persistent two-way connection to the server!');
 });
 
-socket.on('changeTempo', data => {
-  tempo.value = data;
-  console.log('tempo data: ', data, '   bpm:  ', bpm);
-});
-
 socket.on('leadSeq', data => {
   leadSeq.matrix.set.cell(data.column, data.row, data.state);
 });
@@ -788,7 +765,7 @@ const resizeSequencers = (seqH, synthW, drumW, headerH, tempoR) => {
   drumSeq.resize(drumW, seqH);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthW).height(headerH);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumW).height(headerH);
-  if (tempoR) tempo.resize(tempoR, tempoR);
+  if (tempoR) _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(tempoR, tempoR);
 };
 
 const abbreviateEffects = () => {
@@ -814,76 +791,76 @@ const resizeSequencersResponsively = () => {
     if (e.matches) {
       resizeSequencers(160, 318, 644, 16, 45);
       abbreviateEffects();
-      tempo.resize(45, 45);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(45, 45);
     }
   });
   mq[2].addListener(e => {
     if (e.matches) {
       resizeSequencers(160, 368, 742, 20, 45);
       abbreviateEffects();
-      tempo.resize(45, 45);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(45, 45);
     }
   });
   mq[3].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 424, 856, 20, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     }
   });
   mq[4].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 455, 917, 20, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     }
   });
   mq[5].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 500, 1007, 5, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     }
   });
   mq[6].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 522, 1051, 5, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     }
   });
   mq[7].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 540, 1090, 26, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     }
   });
   mq[8].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 1133, 26, 65);
-      tempo.resize(65, 65);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(65, 65);
     }
   });
   mq[9].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 576, 1162, 26, 65);
       abbreviateEffects();
-      tempo.resize(65, 65);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(65, 65);
     }
   });
   mq[10].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 588, 1186, 29, 65);
       abbreviateEffects();
-      tempo.resize(65, 65);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(65, 65);
     }
   });
   mq[11].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 602, 1215, 30, 65);
       abbreviateEffects();
-      tempo.resize(65, 65);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(65, 65);
     }
   });
   mq[12].addListener(e => {
@@ -910,7 +887,7 @@ const resizeSequencersResponsively = () => {
   mq[16].addListener(e => {
     if (e.matches) {
       resizeSequencers(200, 660, 1360, 35, 80);
-      tempo.resize(80, 80);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(80, 80);
     }
   });
   mq[17].addListener(e => {
@@ -1560,7 +1537,7 @@ const resizeSequencersResponsively = () => {
     if (e.matches) {
       resizeSequencers(400, 680, 1412, 35);
     } else {
-      tempo.resize(90, 90);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(90, 90);
     }
   });
   mq[136].addListener(e => {
@@ -1615,46 +1592,46 @@ const setup = () => {
     } else if (mq[1].matches) {
       resizeSequencers(160, 318, 644, 16, 45);
       abbreviateEffects();
-      tempo.resize(45, 45);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(45, 45);
     } else if (mq[2].matches) {
       resizeSequencers(160, 368, 742, 20, 45);
       abbreviateEffects();
-      tempo.resize(45, 45);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(45, 45);
     } else if (mq[3].matches) {
       resizeSequencers(200, 424, 856, 20, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     } else if (mq[4].matches) {
       resizeSequencers(200, 455, 917, 20, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     } else if (mq[5].matches) {
       resizeSequencers(200, 500, 1007, 24, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     } else if (mq[6].matches) {
       resizeSequencers(200, 522, 1051, 24, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     } else if (mq[7].matches) {
       resizeSequencers(200, 540, 1090, 26, 55);
       abbreviateEffects();
-      tempo.resize(55, 55);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(55, 55);
     } else if (mq[8].matches) {
       resizeSequencers(200, 1133, 26, 65);
-      tempo.resize(65, 65);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(65, 65);
     } else if (mq[9].matches) {
       resizeSequencers(200, 576, 1162, 26, 65);
       abbreviateEffects();
-      tempo.resize(65, 65);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(65, 65);
     } else if (mq[10].matches) {
       resizeSequencers(200, 588, 1186, 29, 65);
       abbreviateEffects();
-      tempo.resize(65, 65);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(65, 65);
     } else if (mq[11].matches) {
       resizeSequencers(200, 602, 1215, 30, 65);
       abbreviateEffects();
-      tempo.resize(65, 65);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(65, 65);
     } else if (mq[12].matches) {
       resizeSequencers(200, 606, 1240, 30, 65);
       abbreviateEffects();
@@ -1666,7 +1643,7 @@ const setup = () => {
       resizeSequencers(200, 640, 1329, 35, 80);
     } else if (mq[16].matches) {
       resizeSequencers(200, 660, 1360, 35, 80);
-      tempo.resize(80, 80);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(80, 80);
     } else if (mq[17].matches) {
       resizeSequencers(200, 680, 1412, 35);
     } else if (mq[18].matches) {
@@ -1877,13 +1854,13 @@ const setup = () => {
       resizeSequencers(300, 614, 1271, 30, 70);
     } else if (mq[101].matches) {
       resizeSequencers(300, 616, 1274, 35, 80);
-      tempo.resize(80, 80);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(80, 80);
     } else if (mq[102].matches) {
       resizeSequencers(300, 617, 1285, 35, 80);
-      tempo.resize(80, 80);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(80, 80);
     } else if (mq[103].matches) {
       resizeSequencers(300, 620, 1288, 35, 80);
-      tempo.resize(80, 80);
+      _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].resize(80, 80);
     } else if (mq[104].matches) {
       resizeSequencers(300, 640, 1329, 35, 80);
     } else if (mq[105].matches) {
@@ -2089,6 +2066,54 @@ const synths = {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (synths);
+
+/***/ }),
+
+/***/ "./client/tempo.js":
+/*!*************************!*\
+  !*** ./client/tempo.js ***!
+  \*************************/
+/*! exports provided: bpmConverter, tempo */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bpmConverter", function() { return bpmConverter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tempo", function() { return tempo; });
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index */ "./client/index.js");
+const socket = io(window.location.origin);
+
+
+
+
+const bpmConverter = ms => 60000 / ms / 4;
+const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Dial('#tempo-select', {
+  'size': [90, 90],
+  'interaction': 'radial',
+  'mode': 'absolute',
+  'value': _index__WEBPACK_IMPORTED_MODULE_2__["bpm"],
+  'min': 30,
+  'max': 300,
+  'step': 1
+});
+
+tempo.colorize('fill', 'rgba(67, 203, 203, 0.84)');
+tempo.colorize('accent', '#3D3D3D');
+tempo.colorize('border', '#3D3D3D');
+
+tempo.on('change', event => {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('#tempo').mouseup(() => {
+    socket.emit('changeTempo', event);
+  });
+});
+
+socket.on('changeTempo', data => {
+  tempo.value = data;
+});
 
 /***/ }),
 

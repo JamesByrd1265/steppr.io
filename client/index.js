@@ -5,22 +5,8 @@ import synths, {vol, gain} from './synths'
 import synthEffects from './synth-effects'
 import Nexus from 'nexusui'
 import Tone from 'tone'
-
-let bpm = 125
-const bpmConverter = ms => (60000/ms) / 4
-const tempo = new Nexus.Dial('#tempo-select', {
-  'size': [90, 90],
-  'interaction': 'radial',
-  'mode': 'absolute',
-  'value': bpm,
-  'min': 30,
-  'max': 300,
-  'step': 1
-})
-
-tempo.colorize('fill', 'rgba(67, 203, 203, 0.84)')
-tempo.colorize('accent', '#3D3D3D')
-tempo.colorize('border', '#3D3D3D')
+export var bpm = 125
+import {bpmConverter, tempo} from './tempo'
 
 let sequencer = {'size': [940, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8}
 const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)
@@ -393,12 +379,6 @@ const triggerHit = drum => {
   drums.triggerAttack(drum)
 }
 
-tempo.on('change', event => {
-  $('#tempo').mouseup(() => {
-    socket.emit('changeTempo', event)
-  })
-})
-
 leadSeq.on('change', event => {
   socket.emit('leadSeq', event)
 })
@@ -612,11 +592,6 @@ const setupSequencers = () => {
 
 socket.on('connect', () => {
   console.log('I have made a persistent two-way connection to the server!')
-})
-
-socket.on('changeTempo', data => {
-  tempo.value = data
-  console.log('tempo data: ', data,  '   bpm:  ', bpm)
 })
 
 socket.on('leadSeq', data => {
