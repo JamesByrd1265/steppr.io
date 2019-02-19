@@ -5,18 +5,19 @@ import synths, {vol, gain} from './synths'
 import synthEffects from './synth-effects'
 import Nexus from 'nexusui'
 import Tone from 'tone'
-export var bpm = 125
-import {bpmConverter, tempo} from './tempo'
 
-let sequencer = {'size': [940, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8}
-const leadSeq = new Nexus.Sequencer('#lead-seq', sequencer)
-const bassSeq = new Nexus.Sequencer('#bass-seq', sequencer)
+import {bpmConverter, tempo} from './tempo'
+export var bpm = 125
+
+import {leadSeq, leadVol, selectLead, selectLeadEffect} from './lead-sequencer'
+
+const bassSeq = new Nexus.Sequencer('#bass-seq', {'size': [940, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8})
 const drumSeq = new Nexus.Sequencer('#drum-seq', {'size': [1932,400], 'mode': 'toggle', 'rows': 8, 'columns': 16})
 
-let leadSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
+
 let bassSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
 let drumSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
-const leadVol = new Nexus.Slider('#lead-vol', leadSlider)
+
 const bassVol = new Nexus.Slider('#bass-vol', bassSlider)
 const drumVol = new Nexus.Slider('#drum-vol', drumSlider)
 
@@ -217,8 +218,8 @@ const kicks = {
   BD_909_DIRTY: 'B8'
 }
 
-let lead = synths.fm,
-bass = synths.fmBass,
+
+let bass = synths.fmBass,
 cymbal = cymbals.RIDE_909,
 clap = claps.CLAP_909,
 shaker = shakers.MARACAS,
@@ -228,56 +229,6 @@ perc = percussion.BONGO,
 snare = snares.SD_808,
 kick = kicks.BD_78
 
-const selectLead = sound => {
-  let {value, id} = sound.target
-  socket.emit('selectLead', value)
-  if(value === 'FM') {
-    lead = synths.fm
-  } else if(value === 'MEMBRANE') {
-    lead = synths.membrane
-  } else if(value === 'AM') {
-    lead = synths.am
-  } else if(value === 'PLUCK') {
-    lead = synths.pluck
-  } else if(value === 'DUO') {
-    lead = synths.duo
-  } else if(value === 'POLY') {
-    lead = synths.poly
-  }
-}
-
-const selectLeadEffect = effect => {
-  let {value, id} = effect.target
-  socket.emit('selectLeadEffect', value)
-  if(value === 'DRY') {
-    lead.disconnect()
-    lead.fan(gain, vol)
-  } else if(value === 'DELAY') {
-    lead.disconnect()
-    lead.fan(delay)
-  } else if(value === 'REVERB') {
-    lead.disconnect()
-    lead.fan(reverb)
-  } else if(value === 'PHASER') {
-    lead.disconnect()
-    lead.fan(phaser)
-  } else if(value === 'CHORUS') {
-    lead.disconnect()
-    lead.fan(chorus)
-  } else if(value === 'DISTORTION') {
-    lead.disconnect()
-    lead.fan(distortion)
-  } else if(value === 'BITCRUSHER') {
-    lead.disconnect()
-    lead.fan(bitcrusher)
-  } else if(value === 'AUTOFILTER') {
-    lead.disconnect()
-    lead.fan(autofilter)
-  } else if(value === 'PINGPONG') {
-    lead.disconnect()
-    lead.fan(pingpong)
-  }
-}
 
 const selectBass = effect => {
   let {value, id} = effect.target
@@ -371,17 +322,13 @@ const selectKick = sample => {
   kick = kicks[value]
 }
 
-const triggerNote = (synth, note) => {
+export const triggerNote = (synth, note) => {
   synth.triggerAttackRelease(note, '32n')
 }
 
-const triggerHit = drum => {
+export const triggerHit = drum => {
   drums.triggerAttack(drum)
 }
-
-leadSeq.on('change', event => {
-  socket.emit('leadSeq', event)
-})
 
 bassSeq.on('change', event => {
   socket.emit('bassSeq', event)
@@ -389,41 +336,6 @@ bassSeq.on('change', event => {
 
 drumSeq.on('change', event => {
   socket.emit('drumSeq', event)
-})
-
-leadSeq.on('step', notes => {
-  if(notes[7]) {
-    triggerNote(lead, 'C6')
-    socket.emit('nx', notes)
-  }
-  if(notes[6]) {
-    triggerNote(lead, 'B5')
-    socket.emit('nx', notes)   
-  }
-  if(notes[5]) {
-    triggerNote(lead, 'A5')
-    socket.emit('nx', notes)   
-  }
-  if(notes[4]) {
-    triggerNote(lead, 'G5')
-    socket.emit('nx', notes)   
-  }
-  if(notes[3]) {
-    triggerNote(lead, 'F5')
-    socket.emit('nx', notes)   
-  }
-  if(notes[2]) {
-    triggerNote(lead, 'E5')
-    socket.emit('nx', notes)   
-  }
-  if(notes[1]) {
-    triggerNote(lead, 'D5')
-    socket.emit('nx', notes)   
-  }
-  if(notes[0]) {
-    triggerNote(lead, 'C5')
-    socket.emit('nx', notes)
-  } 
 })
 
 bassSeq.on('step', notes => {
@@ -509,10 +421,6 @@ tempo.on('change', value => {
   drumSeq.start(bpm)
 })
 
-leadVol.on('change', level => {
-  lead.volume.value = level
-})
-
 bassVol.on('change', level => {
   bass.volume.value = level
 })
@@ -594,21 +502,12 @@ socket.on('connect', () => {
   console.log('I have made a persistent two-way connection to the server!')
 })
 
-socket.on('leadSeq', data => {
-  leadSeq.matrix.set.cell(data.column, data.row, data.state)
-})
-
 socket.on('bassSeq', data => {
   bassSeq.matrix.set.cell(data.column, data.row, data.state)
 })
 
 socket.on('drumSeq', data => {
   drumSeq.matrix.set.cell(data.column, data.row, data.state)
-})
-
-socket.on('selectLead', data => {
-  $("#lead-select").val(data)
-  lead = synths[data.toLowerCase()]
 })
 
 socket.on('selectBass', data => {

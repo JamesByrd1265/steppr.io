@@ -90,12 +90,14 @@
 /*!*************************!*\
   !*** ./client/index.js ***!
   \*************************/
-/*! exports provided: bpm */
+/*! exports provided: bpm, triggerNote, triggerHit */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bpm", function() { return bpm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triggerNote", function() { return triggerNote; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triggerHit", function() { return triggerHit; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
@@ -105,8 +107,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
 /* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _tempo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tempo */ "./client/tempo.js");
+/* harmony import */ var _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lead-sequencer */ "./client/lead-sequencer.js");
 const socket = io(window.location.origin);
 const canvas = document.createElement('canvas');
+
+
 
 
 
@@ -115,15 +120,13 @@ const canvas = document.createElement('canvas');
 var bpm = 125;
 
 
-let sequencer = { 'size': [940, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
-const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#lead-seq', sequencer);
-const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#bass-seq', sequencer);
+
+const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#bass-seq', { 'size': [940, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8 });
 const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#drum-seq', { 'size': [1932, 400], 'mode': 'toggle', 'rows': 8, 'columns': 16 });
 
-let leadSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
 let bassSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
 let drumSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
-const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#lead-vol', leadSlider);
+
 const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#bass-vol', bassSlider);
 const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#drum-vol', drumSlider);
 
@@ -314,8 +317,7 @@ const kicks = {
   BD_909_DIRTY: 'B8'
 };
 
-let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass,
+let bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass,
     cymbal = cymbals.RIDE_909,
     clap = claps.CLAP_909,
     shaker = shakers.MARACAS,
@@ -324,57 +326,6 @@ let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,
     perc = percussion.BONGO,
     snare = snares.SD_808,
     kick = kicks.BD_78;
-
-const selectLead = sound => {
-  let { value, id } = sound.target;
-  socket.emit('selectLead', value);
-  if (value === 'FM') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm;
-  } else if (value === 'MEMBRANE') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membrane;
-  } else if (value === 'AM') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].am;
-  } else if (value === 'PLUCK') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluck;
-  } else if (value === 'DUO') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duo;
-  } else if (value === 'POLY') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].poly;
-  }
-};
-
-const selectLeadEffect = effect => {
-  let { value, id } = effect.target;
-  socket.emit('selectLeadEffect', value);
-  if (value === 'DRY') {
-    lead.disconnect();
-    lead.fan(_synths__WEBPACK_IMPORTED_MODULE_1__["gain"], _synths__WEBPACK_IMPORTED_MODULE_1__["vol"]);
-  } else if (value === 'DELAY') {
-    lead.disconnect();
-    lead.fan(delay);
-  } else if (value === 'REVERB') {
-    lead.disconnect();
-    lead.fan(reverb);
-  } else if (value === 'PHASER') {
-    lead.disconnect();
-    lead.fan(phaser);
-  } else if (value === 'CHORUS') {
-    lead.disconnect();
-    lead.fan(chorus);
-  } else if (value === 'DISTORTION') {
-    lead.disconnect();
-    lead.fan(distortion);
-  } else if (value === 'BITCRUSHER') {
-    lead.disconnect();
-    lead.fan(bitcrusher);
-  } else if (value === 'AUTOFILTER') {
-    lead.disconnect();
-    lead.fan(autofilter);
-  } else if (value === 'PINGPONG') {
-    lead.disconnect();
-    lead.fan(pingpong);
-  }
-};
 
 const selectBass = effect => {
   let { value, id } = effect.target;
@@ -476,51 +427,12 @@ const triggerHit = drum => {
   drums.triggerAttack(drum);
 };
 
-leadSeq.on('change', event => {
-  socket.emit('leadSeq', event);
-});
-
 bassSeq.on('change', event => {
   socket.emit('bassSeq', event);
 });
 
 drumSeq.on('change', event => {
   socket.emit('drumSeq', event);
-});
-
-leadSeq.on('step', notes => {
-  if (notes[7]) {
-    triggerNote(lead, 'C6');
-    socket.emit('nx', notes);
-  }
-  if (notes[6]) {
-    triggerNote(lead, 'B5');
-    socket.emit('nx', notes);
-  }
-  if (notes[5]) {
-    triggerNote(lead, 'A5');
-    socket.emit('nx', notes);
-  }
-  if (notes[4]) {
-    triggerNote(lead, 'G5');
-    socket.emit('nx', notes);
-  }
-  if (notes[3]) {
-    triggerNote(lead, 'F5');
-    socket.emit('nx', notes);
-  }
-  if (notes[2]) {
-    triggerNote(lead, 'E5');
-    socket.emit('nx', notes);
-  }
-  if (notes[1]) {
-    triggerNote(lead, 'D5');
-    socket.emit('nx', notes);
-  }
-  if (notes[0]) {
-    triggerNote(lead, 'C5');
-    socket.emit('nx', notes);
-  }
 });
 
 bassSeq.on('step', notes => {
@@ -594,20 +506,16 @@ drumSeq.on('step', hits => {
 });
 
 _tempo__WEBPACK_IMPORTED_MODULE_5__["tempo"].on('change', value => {
-  leadSeq.matrix.bpm = value;
+  _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["leadSeq"].matrix.bpm = value;
   bassSeq.matrix.bpm = value;
   drumSeq.matrix.bpm = value;
   bpm = Object(_tempo__WEBPACK_IMPORTED_MODULE_5__["bpmConverter"])(value);
-  leadSeq.stop();
+  _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["leadSeq"].stop();
   bassSeq.stop();
   drumSeq.stop();
-  leadSeq.start(bpm);
+  _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["leadSeq"].start(bpm);
   bassSeq.start(bpm);
   drumSeq.start(bpm);
-});
-
-leadVol.on('change', level => {
-  lead.volume.value = level;
 });
 
 bassVol.on('change', level => {
@@ -619,15 +527,15 @@ drumVol.on('change', level => {
 });
 
 const start = () => {
-  const { context } = leadSeq.interval.clock;
+  const { context } = _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["leadSeq"].interval.clock;
   if (context.state === 'suspended') {
     context.resume().then(() => console.log('audio context resumed'));
-    leadSeq.start(bpm);
+    _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["leadSeq"].start(bpm);
     bassSeq.start(bpm);
     drumSeq.start(bpm);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('STOP');
   } else {
-    leadSeq.stop();
+    _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["leadSeq"].stop();
     bassSeq.stop();
     drumSeq.stop();
     context.suspend().then(() => console.log('audio context suspended'));
@@ -665,7 +573,7 @@ const toggleDrumEffect = function (effect, text) {
 
 const setupSequencers = () => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").on('click', start);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").on('change', selectLead);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").on('change', _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["selectLead"]);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").on('change', selectBass);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#cymbal-select").on('change', selectCymbal);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#clap-select").on('change', selectClap);
@@ -675,7 +583,7 @@ const setupSequencers = () => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#perc-select").on('change', selectPerc);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#snare-select").on('change', selectSnare);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-select").on('change', selectKick);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-effect-select").on('change', selectLeadEffect);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-effect-select").on('change', _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["selectLeadEffect"]);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-effect-select").on('change', selectBassEffect);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").on('click', toggleDrumEffect(drumDelay, 'delay'));
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").on('click', toggleDrumEffect(drumReverb, 'reverb'));
@@ -691,21 +599,12 @@ socket.on('connect', () => {
   console.log('I have made a persistent two-way connection to the server!');
 });
 
-socket.on('leadSeq', data => {
-  leadSeq.matrix.set.cell(data.column, data.row, data.state);
-});
-
 socket.on('bassSeq', data => {
   bassSeq.matrix.set.cell(data.column, data.row, data.state);
 });
 
 socket.on('drumSeq', data => {
   drumSeq.matrix.set.cell(data.column, data.row, data.state);
-});
-
-socket.on('selectLead', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").val(data);
-  lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"][data.toLowerCase()];
 });
 
 socket.on('selectBass', data => {
@@ -760,7 +659,7 @@ let height = 400,
     drumWidth = 1932;
 
 const resizeSequencers = (seqH, synthW, drumW, headerH, tempoR) => {
-  leadSeq.resize(synthW, seqH);
+  _lead_sequencer__WEBPACK_IMPORTED_MODULE_6__["leadSeq"].resize(synthW, seqH);
   bassSeq.resize(synthW, seqH);
   drumSeq.resize(drumW, seqH);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthW).height(headerH);
@@ -1973,6 +1872,161 @@ if (typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefine
 
 /***/ }),
 
+/***/ "./client/lead-sequencer.js":
+/*!**********************************!*\
+  !*** ./client/lead-sequencer.js ***!
+  \**********************************/
+/*! exports provided: leadVol, leadSeq, selectLead, selectLeadEffect */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "leadVol", function() { return leadVol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "leadSeq", function() { return leadSeq; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectLead", function() { return selectLead; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectLeadEffect", function() { return selectLeadEffect; });
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
+/* harmony import */ var _synth_effects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./synth-effects */ "./client/synth-effects.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index */ "./client/index.js");
+const socket = io(window.location.origin);
+
+
+
+
+
+
+let leadSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
+const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Slider('#lead-vol', leadSlider);
+
+const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Sequencer('#lead-seq', {
+  'size': [940, 400],
+  'mode': 'toggle',
+  'rows': 8,
+  'columns': 8
+});
+
+let lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].fm;
+
+const {
+  delay,
+  reverb,
+  phaser,
+  chorus,
+  distortion,
+  bitcrusher,
+  autofilter,
+  pingpong
+} = _synth_effects__WEBPACK_IMPORTED_MODULE_3__["default"];
+
+const selectLead = sound => {
+  let { value, id } = sound.target;
+  socket.emit('selectLead', value);
+  if (value === 'FM') {
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].fm;
+  } else if (value === 'MEMBRANE') {
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].membrane;
+  } else if (value === 'AM') {
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].am;
+  } else if (value === 'PLUCK') {
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].pluck;
+  } else if (value === 'DUO') {
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].duo;
+  } else if (value === 'POLY') {
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].poly;
+  }
+};
+
+const selectLeadEffect = effect => {
+  let { value, id } = effect.target;
+  socket.emit('selectLeadEffect', value);
+  if (value === 'DRY') {
+    lead.disconnect();
+    lead.fan(_synths__WEBPACK_IMPORTED_MODULE_2__["gain"], _synths__WEBPACK_IMPORTED_MODULE_2__["vol"]);
+  } else if (value === 'DELAY') {
+    lead.disconnect();
+    lead.fan(delay);
+  } else if (value === 'REVERB') {
+    lead.disconnect();
+    lead.fan(reverb);
+  } else if (value === 'PHASER') {
+    lead.disconnect();
+    lead.fan(phaser);
+  } else if (value === 'CHORUS') {
+    lead.disconnect();
+    lead.fan(chorus);
+  } else if (value === 'DISTORTION') {
+    lead.disconnect();
+    lead.fan(distortion);
+  } else if (value === 'BITCRUSHER') {
+    lead.disconnect();
+    lead.fan(bitcrusher);
+  } else if (value === 'AUTOFILTER') {
+    lead.disconnect();
+    lead.fan(autofilter);
+  } else if (value === 'PINGPONG') {
+    lead.disconnect();
+    lead.fan(pingpong);
+  }
+};
+
+leadVol.on('change', level => {
+  lead.volume.value = level;
+});
+
+leadSeq.on('change', event => {
+  socket.emit('leadSeq', event);
+});
+
+leadSeq.on('step', notes => {
+  if (notes[7]) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_4__["triggerNote"])(lead, 'C6');
+    socket.emit('nx', notes);
+  }
+  if (notes[6]) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_4__["triggerNote"])(lead, 'B5');
+    socket.emit('nx', notes);
+  }
+  if (notes[5]) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_4__["triggerNote"])(lead, 'A5');
+    socket.emit('nx', notes);
+  }
+  if (notes[4]) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_4__["triggerNote"])(lead, 'G5');
+    socket.emit('nx', notes);
+  }
+  if (notes[3]) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_4__["triggerNote"])(lead, 'F5');
+    socket.emit('nx', notes);
+  }
+  if (notes[2]) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_4__["triggerNote"])(lead, 'E5');
+    socket.emit('nx', notes);
+  }
+  if (notes[1]) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_4__["triggerNote"])(lead, 'D5');
+    socket.emit('nx', notes);
+  }
+  if (notes[0]) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_4__["triggerNote"])(lead, 'C5');
+    socket.emit('nx', notes);
+  }
+});
+
+socket.on('leadSeq', data => {
+  leadSeq.matrix.set.cell(data.column, data.row, data.state);
+});
+
+socket.on('selectLead', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()("#lead-select").val(data);
+  lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"][data.toLowerCase()];
+});
+
+/***/ }),
+
 /***/ "./client/synth-effects.js":
 /*!*********************************!*\
   !*** ./client/synth-effects.js ***!
@@ -2084,9 +2138,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index */ "./client/index.js");
 const socket = io(window.location.origin);
-
 
 
 
@@ -2095,7 +2147,7 @@ const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Dial('#tempo-se
   'size': [90, 90],
   'interaction': 'radial',
   'mode': 'absolute',
-  'value': _index__WEBPACK_IMPORTED_MODULE_2__["bpm"],
+  'value': null,
   'min': 30,
   'max': 300,
   'step': 1

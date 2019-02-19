@@ -1,14 +1,13 @@
 const socket = io(window.location.origin);
 import Nexus from 'nexusui'
 import $ from 'jquery'
-import {bpm} from './index'
 
 export const bpmConverter = ms => (60000/ms) / 4
 export const tempo = new Nexus.Dial('#tempo-select', {
   'size': [90, 90],
   'interaction': 'radial',
   'mode': 'absolute',
-  'value': bpm,
+  'value': null,
   'min': 30,
   'max': 300,
   'step': 1
