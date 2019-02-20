@@ -1093,16 +1093,16 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 455, 917, 20, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][5].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][6].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][7].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 540, 1090, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][8].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1133, 26, 65);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 561.5, 1133, 26, 65);
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][9].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 576, 1162, 26, 65);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
@@ -1157,10 +1157,10 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 455, 917, 20, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][31].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 480, 968, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 480, 968, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][32].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][33].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 26, 55);
@@ -1169,7 +1169,7 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 540, 1090, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][35].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1133, 26, 65);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 561.5, 1133, 26, 65);
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][36].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 576, 1162, 26, 65);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
@@ -1228,10 +1228,10 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 455, 917, 20, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][60].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 480, 968, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 480, 968, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][61].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 500, 1007, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 500, 1007, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][62].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 522, 1051, 26, 55);
@@ -1240,7 +1240,7 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 540, 1090, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][64].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 1133, 26, 65);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 561.5, 1133, 26, 65);
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][65].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 576, 1162, 26, 65);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
@@ -1304,10 +1304,10 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 455, 917, 20, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][91].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 480, 968, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 480, 968, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][92].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 500, 1007, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 500, 1007, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][93].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 522, 1051, 26, 55);
@@ -1316,7 +1316,7 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 540, 1090, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][95].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 1133, 26, 65);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 561.5, 1133, 26, 65);
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][96].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 576, 1162, 26, 65);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
@@ -1378,10 +1378,10 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 455, 917, 20, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][120].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 480, 968, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 480, 968, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][121].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 500, 1007, 24, 55);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 500, 1007, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][122].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 522, 1051, 26, 55);
@@ -1390,7 +1390,7 @@ const resizeOnload = () => {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 540, 1090, 26, 55);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][124].matches) {
-    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 1133, 26, 65);
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 561.5, 1133, 26, 65);
   } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][125].matches) {
     Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 576, 1162, 26, 65);
     Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
@@ -1468,9 +1468,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
 /* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _resize_queries__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./resize-queries */ "./client/resize-queries.js");
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index */ "./client/index.js");
-/* harmony import */ var _drum_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./drum-effects */ "./client/drum-effects.js");
+/* harmony import */ var _tempo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tempo */ "./client/tempo.js");
+/* harmony import */ var _resize_queries__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./resize-queries */ "./client/resize-queries.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index */ "./client/index.js");
+/* harmony import */ var _drum_effects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./drum-effects */ "./client/drum-effects.js");
+
 
 
 
@@ -1478,791 +1480,791 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const resizeResponsively = () => {
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][0].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][0].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 268, 545, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(160, 268, 545, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][1].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][1].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 318, 644, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(160, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][2].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][2].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 368, 742, 20, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(160, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][3].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][3].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 424, 856, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][4].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][4].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 455, 917, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][5].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][5].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 5, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 500, 1007, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][6].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][6].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 5, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 522, 1051, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][7].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][7].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 540, 1090, 26, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][8].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][8].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 561.5, 1133, 26, 65);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][9].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][9].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 576, 1162, 26, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][10].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][10].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 588, 1186, 29, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 588, 1186, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][11].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][11].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 602, 1215, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][12].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][12].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 606, 1240, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][13].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][13].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 614, 1271, 30, 70);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][14].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][14].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 616, 1274, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][15].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][15].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 640, 1329, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][16].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][16].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 660, 1360, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][17].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][17].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 680, 1412, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][18].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][18].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 700, 1454, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][19].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][19].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 720, 1493, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][20].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][20].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 740, 1533, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][21].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][21].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 780, 1612, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][22].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][22].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 820, 1693, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][23].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][23].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 860, 1772, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][24].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][24].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 900, 1851, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][25].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][25].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 940, 1932, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][26].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][26].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 268, 546, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(160, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][27].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][27].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 318, 644, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(160, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][28].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][28].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 368, 742, 20, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(160, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][29].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][29].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 424, 856, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][30].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][30].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 455, 917, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][31].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][31].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 480, 968, 24, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 480, 968, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][32].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][32].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 24, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 500, 1007, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][33].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][33].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 26, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 522, 1051, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][34].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][34].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 540, 1090, 26, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][35].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][35].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 561.5, 1133, 26, 65);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][36].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][36].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 576, 1162, 26, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][37].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][37].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 588, 1186, 29, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 588, 1186, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][38].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][38].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 602, 1215, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][39].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][39].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 606, 1240, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][40].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][40].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 614, 1271, 30, 70);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][41].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][41].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 616, 1274, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][42].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][42].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1285, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 1285, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][43].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][43].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 620, 1288, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 620, 1288, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][44].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][44].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 640, 1329, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][45].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][45].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 660, 1360, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][46].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][46].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 680, 1412, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][47].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][47].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 700, 1454, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][48].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][48].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 720, 1493, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][49].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][49].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 740, 1533, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][50].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][50].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 780, 1612, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][51].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][51].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 820, 1693, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][52].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][52].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 860, 1772, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][53].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][53].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 900, 1851, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][54].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][54].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 940, 1932, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][55].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][55].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 268, 546, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(200, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][56].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][56].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][57].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][57].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][58].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][58].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 424, 856, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][59].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][59].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 455, 917, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][60].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][60].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 480, 968, 24, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 480, 968, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][61].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][61].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 500, 1007, 5, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 500, 1007, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][62].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][62].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 522, 1051, 5, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 522, 1051, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][63].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][63].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 540, 1090, 26, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][64].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][64].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 561.5, 1133, 26, 65);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][65].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][65].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 576, 1162, 26, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][66].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][66].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 588, 1186, 29, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 588, 1186, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][67].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][67].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 602, 1215, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][68].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][68].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 606, 1240, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][69].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][69].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 606, 1240, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 606, 1240, 30, 70);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][70].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][70].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 614, 1271, 30, 70);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][71].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][71].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 616, 1274, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][72].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][72].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 617, 1285, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 617, 1285, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][73].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][73].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 620, 1288, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 620, 1288, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][74].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][74].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 640, 1329, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][75].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][75].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 660, 1360, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][76].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][76].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 680, 1412, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][77].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][77].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 700, 1454, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][78].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][78].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 720, 1493, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][79].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][79].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 740, 1533, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][80].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][80].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 780, 1612, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][81].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][81].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 820, 1693, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][82].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][82].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 860, 1772, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][83].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][83].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 900, 1851, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][84].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][84].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 940, 1932, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][85].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][85].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(220, 268, 546, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(220, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][86].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][86].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 268, 546, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][87].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][87].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][88].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][88].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][89].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][89].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 424, 856, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][90].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][90].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 455, 917, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][91].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][91].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 480, 968, 24, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 480, 968, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][92].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][92].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 500, 1007, 5, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 500, 1007, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][93].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][93].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 522, 1051, 5, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 522, 1051, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][94].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][94].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 540, 1090, 26, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][95].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][95].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 561.5, 1133, 26, 65);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][96].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][96].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 576, 1162, 26, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][97].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][97].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 588, 1186, 29, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 588, 1186, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][98].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][98].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 602, 1215, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][99].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][99].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 606, 1240, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][100].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][100].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 614, 1271, 30, 70);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][101].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][101].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 616, 1274, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][102].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][102].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 617, 1285, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 617, 1285, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][103].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][103].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 620, 1288, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 620, 1288, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][104].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][104].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 640, 1329, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][105].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][105].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 660, 1360, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][106].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][106].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 680, 1412, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][107].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][107].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 700, 1454, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][108].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][108].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 720, 1493, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][109].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][109].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 740, 1533, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][110].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][110].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 780, 1612, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][111].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][111].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 820, 1693, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][112].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][112].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 860, 1772, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][113].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][113].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 900, 1851, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][114].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][114].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(300, 940, 1932, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][115].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][115].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 268, 546, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][116].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][116].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][117].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][117].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(260, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][118].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][118].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 424, 856, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][119].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][119].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 455, 917, 20, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][120].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][120].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 480, 968, 24, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 480, 968, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][121].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][121].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 500, 1007, 5, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 500, 1007, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][122].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][122].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 522, 1051, 5, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 522, 1051, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][123].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][123].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 540, 1090, 26, 55);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][124].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][124].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 561.5, 1133, 26, 65);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][125].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][125].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 576, 1162, 26, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][126].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][126].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 588, 1186, 29, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 588, 1186, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][127].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][127].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 602, 1215, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][128].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][128].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 606, 1240, 30, 65);
-      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_5__["abbreviateDrumEffects"])();
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][129].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][129].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 614, 1271, 30, 70);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][130].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][130].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 616, 1274, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][131].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][131].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 617, 1285, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 617, 1285, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][132].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][132].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 620, 1288, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 620, 1288, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][133].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][133].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 640, 1329, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][134].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][134].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 660, 1360, 35, 80);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][135].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][135].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 680, 1412, 35);
     } else {
-      tempo.resize(90, 90);
+      _tempo__WEBPACK_IMPORTED_MODULE_2__["tempo"].resize(90, 90);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][136].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][136].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 700, 1454, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][137].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][137].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 720, 1493, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][138].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][138].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 740, 1533, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][139].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][139].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 780, 1612, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][140].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][140].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 820, 1693, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][141].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][141].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 860, 1772, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][142].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][142].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 900, 1851, 35);
     }
   });
-  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][143].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_3__["default"][143].addListener(e => {
     if (e.matches) {
-      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_4__["resizeSequencers"])(400, 940, 1932, 35);
     }
   });
 };

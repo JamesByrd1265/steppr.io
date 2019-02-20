@@ -21,16 +21,16 @@ const resizeOnload = () => {
     resizeSequencers(200, 455, 917, 20, 55)
     abbreviateDrumEffects()
   } else if(queries[5].matches) {
-    resizeSequencers(200, 500, 1007, 24, 55)
+    resizeSequencers(200, 500, 1007, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[6].matches) {
-    resizeSequencers(200, 522, 1051, 24, 55)
+    resizeSequencers(200, 522, 1051, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[7].matches) {
     resizeSequencers(200, 540, 1090, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[8].matches) {
-    resizeSequencers(200, 1133, 26, 65)
+    resizeSequencers(200, 561.5, 1133, 26, 65)
   } else if(queries[9].matches) {
     resizeSequencers(200, 576, 1162, 26, 65)
     abbreviateDrumEffects()
@@ -85,10 +85,10 @@ const resizeOnload = () => {
     resizeSequencers(200, 455, 917, 20, 55)
     abbreviateDrumEffects()
   } else if(queries[31].matches) {
-    resizeSequencers(200, 480, 968, 24, 55)
+    resizeSequencers(200, 480, 968, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[32].matches) {
-    resizeSequencers(200, 500, 1007, 24, 55)
+    resizeSequencers(200, 500, 1007, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[33].matches) {
     resizeSequencers(200, 522, 1051, 26, 55)
@@ -97,7 +97,7 @@ const resizeOnload = () => {
     resizeSequencers(200, 540, 1090, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[35].matches) {
-    resizeSequencers(200, 1133, 26, 65)
+    resizeSequencers(200, 561.5, 1133, 26, 65)
   } else if(queries[36].matches) {
     resizeSequencers(200, 576, 1162, 26, 65)
     abbreviateDrumEffects()
@@ -156,10 +156,10 @@ const resizeOnload = () => {
     resizeSequencers(260, 455, 917, 20, 55)
     abbreviateDrumEffects()
   } else if(queries[60].matches) { 
-    resizeSequencers(260, 480, 968, 24, 55)
+    resizeSequencers(260, 480, 968, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[61].matches) {
-    resizeSequencers(260, 500, 1007, 24, 55)
+    resizeSequencers(260, 500, 1007, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[62].matches) {
     resizeSequencers(260, 522, 1051, 26, 55)
@@ -168,7 +168,7 @@ const resizeOnload = () => {
     resizeSequencers(260, 540, 1090, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[64].matches) {
-    resizeSequencers(260, 1133, 26, 65)
+    resizeSequencers(260, 561.5, 1133, 26, 65)
   } else if(queries[65].matches) {
     resizeSequencers(260, 576, 1162, 26, 65)
     abbreviateDrumEffects()
@@ -232,10 +232,10 @@ const resizeOnload = () => {
     resizeSequencers(300, 455, 917, 20, 55)
     abbreviateDrumEffects()
   } else if(queries[91].matches) { 
-    resizeSequencers(300, 480, 968, 24, 55)
+    resizeSequencers(300, 480, 968, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[92].matches) {
-    resizeSequencers(300, 500, 1007, 24, 55)
+    resizeSequencers(300, 500, 1007, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[93].matches) {
     resizeSequencers(300, 522, 1051, 26, 55)
@@ -244,7 +244,7 @@ const resizeOnload = () => {
     resizeSequencers(300, 540, 1090, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[95].matches) {
-    resizeSequencers(300, 1133, 26, 65)
+    resizeSequencers(300, 561.5, 1133, 26, 65)
   } else if(queries[96].matches) {
     resizeSequencers(300, 576, 1162, 26, 65)
     abbreviateDrumEffects()
@@ -306,10 +306,10 @@ const resizeOnload = () => {
     resizeSequencers(400, 455, 917, 20, 55)
     abbreviateDrumEffects()
   } else if(queries[120].matches) { 
-    resizeSequencers(400, 480, 968, 24, 55)
+    resizeSequencers(400, 480, 968, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[121].matches) {
-    resizeSequencers(400, 500, 1007, 24, 55)
+    resizeSequencers(400, 500, 1007, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[122].matches) {
     resizeSequencers(400, 522, 1051, 26, 55)
@@ -318,7 +318,7 @@ const resizeOnload = () => {
     resizeSequencers(400, 540, 1090, 26, 55)
     abbreviateDrumEffects()
   } else if(queries[124].matches) {
-    resizeSequencers(400, 1133, 26, 65)
+    resizeSequencers(400, 561.5, 1133, 26, 65)
   } else if(queries[125].matches) {
     resizeSequencers(400, 576, 1162, 26, 65)
     abbreviateDrumEffects()

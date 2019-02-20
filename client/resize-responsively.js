@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import Nexus from 'nexusui'
+import {tempo} from './tempo'
 import queries from './resize-queries'
 import {resizeSequencers} from './index'
 import {abbreviateDrumEffects} from './drum-effects'
@@ -37,13 +38,13 @@ const resizeResponsively = () => {
   })
   queries[5].addListener(e => {
     if(e.matches) {
-      resizeSequencers(200, 500, 1007, 5, 55)
+      resizeSequencers(200, 500, 1007, 26, 55)
       abbreviateDrumEffects()
     }
   })
   queries[6].addListener(e => {
     if(e.matches) {
-      resizeSequencers(200, 522, 1051, 5, 55)
+      resizeSequencers(200, 522, 1051, 26, 55)
       abbreviateDrumEffects()
     }
   })
@@ -55,7 +56,7 @@ const resizeResponsively = () => {
   })
   queries[8].addListener(e => {
     if(e.matches) {
-      resizeSequencers(200, 1133, 26, 65)
+      resizeSequencers(200, 561.5, 1133, 26, 65)
     }
   })
   queries[9].addListener(e => {
@@ -66,7 +67,7 @@ const resizeResponsively = () => {
   })
   queries[10].addListener(e => {
     if(e.matches) {
-      resizeSequencers(200, 588, 1186, 29, 65)
+      resizeSequencers(200, 588, 1186, 26, 65)
       abbreviateDrumEffects()
     }
   })
@@ -179,13 +180,13 @@ const resizeResponsively = () => {
   })
   queries[31].addListener(e => {
     if(e.matches) {
-      resizeSequencers(200, 480, 968, 24, 55)
+      resizeSequencers(200, 480, 968, 26, 55)
       abbreviateDrumEffects()
     }
   })
   queries[32].addListener(e => {
     if(e.matches) {
-      resizeSequencers(200, 500, 1007, 24, 55)
+      resizeSequencers(200, 500, 1007, 26, 55)
       abbreviateDrumEffects()
     }
   })
@@ -203,7 +204,7 @@ const resizeResponsively = () => {
   })
   queries[35].addListener(e => {
     if(e.matches) {
-      resizeSequencers(200, 1133, 26, 65)
+      resizeSequencers(200, 561.5, 1133, 26, 65)
     }
   })
   queries[36].addListener(e => {
@@ -214,7 +215,7 @@ const resizeResponsively = () => {
   })
   queries[37].addListener(e => {
     if(e.matches) {
-      resizeSequencers(200, 588, 1186, 29, 65)
+      resizeSequencers(200, 588, 1186, 26, 65)
       abbreviateDrumEffects()
     }
   })
@@ -337,19 +338,19 @@ const resizeResponsively = () => {
   })
   queries[60].addListener(e => {
     if(e.matches) { 
-      resizeSequencers(260, 480, 968, 24, 55)
+      resizeSequencers(260, 480, 968, 26, 55)
       abbreviateDrumEffects()
     }
   })
   queries[61].addListener(e => {
     if(e.matches) {
-      resizeSequencers(260, 500, 1007, 5, 55)
+      resizeSequencers(260, 500, 1007, 26, 55)
       abbreviateDrumEffects()
     }
   })
   queries[62].addListener(e => {
     if(e.matches) {
-      resizeSequencers(260, 522, 1051, 5, 55)
+      resizeSequencers(260, 522, 1051, 26, 55)
       abbreviateDrumEffects()
     }
   })
@@ -361,7 +362,7 @@ const resizeResponsively = () => {
   })
   queries[64].addListener(e => {
     if(e.matches) {
-      resizeSequencers(260, 1133, 26, 65)
+      resizeSequencers(260, 561.5, 1133, 26, 65)
     }
   })
   queries[65].addListener(e => {
@@ -372,7 +373,7 @@ const resizeResponsively = () => {
   })
   queries[66].addListener(e => {
     if(e.matches) {
-      resizeSequencers(260, 588, 1186, 29, 65)
+      resizeSequencers(260, 588, 1186, 26, 65)
       abbreviateDrumEffects()
     }
   })
@@ -506,19 +507,19 @@ const resizeResponsively = () => {
   })
   queries[91].addListener(e => {
     if(e.matches) { 
-      resizeSequencers(300, 480, 968, 24, 55)
+      resizeSequencers(300, 480, 968, 26, 55)
       abbreviateDrumEffects()
     }
   })
   queries[92].addListener(e => {
     if(e.matches) {
-      resizeSequencers(300, 500, 1007, 5, 55)
+      resizeSequencers(300, 500, 1007, 26, 55)
       abbreviateDrumEffects()
     }
   })
   queries[93].addListener(e => {
     if(e.matches) {
-      resizeSequencers(300, 522, 1051, 5, 55)
+      resizeSequencers(300, 522, 1051, 26, 55)
       abbreviateDrumEffects()
     }
   })
@@ -530,7 +531,7 @@ const resizeResponsively = () => {
   })
   queries[95].addListener(e => {
     if(e.matches) {
-      resizeSequencers(300, 1133, 26, 65)
+      resizeSequencers(300, 561.5, 1133, 26, 65)
     }
   })
   queries[96].addListener(e => {
@@ -541,7 +542,7 @@ const resizeResponsively = () => {
   })
   queries[97].addListener(e => {
     if(e.matches) {
-      resizeSequencers(300, 588, 1186, 29, 65)
+      resizeSequencers(300, 588, 1186, 26, 65)
       abbreviateDrumEffects()
     }
   })
@@ -664,19 +665,19 @@ const resizeResponsively = () => {
   })
   queries[120].addListener(e => {
     if(e.matches) { 
-      resizeSequencers(400, 480, 968, 24, 55)
+      resizeSequencers(400, 480, 968, 26, 55)
       abbreviateDrumEffects()
     }
   })
   queries[121].addListener(e => {
     if(e.matches) {
-      resizeSequencers(400, 500, 1007, 5, 55)
+      resizeSequencers(400, 500, 1007, 26, 55)
       abbreviateDrumEffects()
     }
   })
   queries[122].addListener(e => {
     if(e.matches) {
-      resizeSequencers(400, 522, 1051, 5, 55)
+      resizeSequencers(400, 522, 1051, 26, 55)
       abbreviateDrumEffects()
     }
   })
@@ -688,7 +689,7 @@ const resizeResponsively = () => {
   })
   queries[124].addListener(e => {
     if(e.matches) {
-      resizeSequencers(400, 1133, 26, 65)
+      resizeSequencers(400, 561.5, 1133, 26, 65)
     }
   })
   queries[125].addListener(e => {
@@ -699,7 +700,7 @@ const resizeResponsively = () => {
   })
   queries[126].addListener(e => {
     if(e.matches) {
-      resizeSequencers(400, 588, 1186, 29, 65)
+      resizeSequencers(400, 588, 1186, 26, 65)
       abbreviateDrumEffects()
     }
   })

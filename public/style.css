@@ -2123,7 +2123,7 @@ path:nth-child(5) {
 
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1124px) {
   #tempo {
     display: none;
   }
@@ -2161,6 +2161,9 @@ path:nth-child(5) {
     display: none;
   }
   #drum-effect-container {
+    display: none;
+  }
+  #copyright {
     display: none;
   }
 }
