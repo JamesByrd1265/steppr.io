@@ -86,58 +86,40 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./client/index.js":
-/*!*************************!*\
-  !*** ./client/index.js ***!
-  \*************************/
-/*! no exports provided */
+/***/ "./client/bass-sequencer.js":
+/*!**********************************!*\
+  !*** ./client/bass-sequencer.js ***!
+  \**********************************/
+/*! exports provided: bassVol, bassSeq, selectBass, selectBassEffect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
-/* harmony import */ var _synth_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./synth-effects */ "./client/synth-effects.js");
-/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
-/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
-/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bassVol", function() { return bassVol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bassSeq", function() { return bassSeq; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectBass", function() { return selectBass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectBassEffect", function() { return selectBassEffect; });
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
+/* harmony import */ var _synth_effects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./synth-effects */ "./client/synth-effects.js");
 const socket = io(window.location.origin);
-const canvas = document.createElement('canvas');
 
 
 
 
 
-
-let bpm = 125;
-const bpmConverter = ms => 60000 / ms / 4;
-const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Dial('#tempo-select', {
-  'size': [90, 90],
-  'interaction': 'radial',
-  'mode': 'absolute',
-  'value': bpm,
-  'min': 30,
-  'max': 300,
-  'step': 1
-});
-
-tempo.colorize('fill', 'rgba(67, 203, 203, 0.84)');
-tempo.colorize('accent', '#3D3D3D');
-tempo.colorize('border', '#3D3D3D');
-
-let sequencer = { 'size': [940, 400], 'mode': 'toggle', 'rows': 8, 'columns': 8 };
-const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#lead-seq', sequencer);
-const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#bass-seq', sequencer);
-const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Sequencer('#drum-seq', { 'size': [1932, 400], 'mode': 'toggle', 'rows': 8, 'columns': 16 });
-
-let leadSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
+let bass = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].fmBass;
 let bassSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
-let drumSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
-const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#lead-vol', leadSlider);
-const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#bass-vol', bassSlider);
-const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_3___default.a.Slider('#drum-vol', drumSlider);
+const bassVol = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Slider('#bass-vol', bassSlider);
+const bassSeq = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Sequencer('#bass-seq', {
+  'size': [940, 400],
+  'mode': 'toggle',
+  'rows': 8,
+  'columns': 8
+});
 
 const {
   delay,
@@ -148,16 +130,143 @@ const {
   bitcrusher,
   autofilter,
   pingpong
-} = _synth_effects__WEBPACK_IMPORTED_MODULE_2__["default"];
+} = _synth_effects__WEBPACK_IMPORTED_MODULE_3__["default"];
 
-const drumDelay = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.FeedbackDelay();
-const drumReverb = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Freeverb();
-const drumPhaser = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Phaser();
-const drumChorus = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Chorus();
-const drumDistortion = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Distortion();
-const drumBitcrusher = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.BitCrusher();
-const drumAutofilter = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.AutoFilter();
-const drumPingpong = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.PingPongDelay();
+const selectBass = effect => {
+  let { value, id } = effect.target;
+  socket.emit('selectBass', value);
+  if (value === 'FM') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].fmBass;
+  } else if (value === 'MEMBRANE') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].membraneBass;
+  } else if (value === 'AM') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].amBass;
+  } else if (value === 'PLUCK') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].pluckBass;
+  } else if (value === 'DUO') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].duoBass;
+  } else if (value === 'POLY') {
+    bass = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].polyBass;
+  }
+};
+
+const selectBassEffect = effect => {
+  let { value, id } = effect.target;
+  socket.emit('selectBassEffect', value);
+  if (value === 'DRY') {
+    bass.disconnect();
+    bass.fan(_synths__WEBPACK_IMPORTED_MODULE_2__["gain"], _synths__WEBPACK_IMPORTED_MODULE_2__["vol"]);
+  } else if (value === 'DELAY') {
+    bass.disconnect();
+    bass.fan(delay);
+  } else if (value === 'REVERB') {
+    bass.disconnect();
+    bass.fan(reverb);
+  } else if (value === 'PHASER') {
+    bass.disconnect();
+    bass.fan(phaser);
+  } else if (value === 'CHORUS') {
+    bass.disconnect();
+    bass.fan(chorus);
+  } else if (value === 'DISTORTION') {
+    bass.disconnect();
+    bass.fan(distortion);
+  } else if (value === 'BITCRUSHER') {
+    bass.disconnect();
+    bass.fan(bitcrusher);
+  } else if (value === 'AUTOFILTER') {
+    bass.disconnect();
+    bass.fan(autofilter);
+  } else if (value === 'PINGPONG') {
+    bass.disconnect();
+    bass.fan(pingpong);
+  }
+};
+
+bassVol.on('change', level => {
+  bass.volume.value = level;
+});
+
+bassSeq.on('change', event => {
+  socket.emit('bassSeq', event);
+});
+
+bassSeq.on('step', notes => {
+  if (notes[7]) {
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(bass, 'C3');
+    socket.emit('nx', notes);
+  }
+  if (notes[6]) {
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(bass, 'B2');
+    socket.emit('nx', notes);
+  }
+  if (notes[5]) {
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(bass, 'A2');
+    socket.emit('nx', notes);
+  }
+  if (notes[4]) {
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(bass, 'G2');
+    socket.emit('nx', notes);
+  }
+  if (notes[3]) {
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(bass, 'F2');
+    socket.emit('nx', notes);
+  }
+  if (notes[2]) {
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(bass, 'E2');
+    socket.emit('nx', notes);
+  }
+  if (notes[1]) {
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(bass, 'D2');
+    socket.emit('nx', notes);
+  }
+  if (notes[0]) {
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(bass, 'C2');
+    socket.emit('nx', notes);
+  }
+});
+
+socket.on('bassSeq', data => {
+  bassSeq.matrix.set.cell(data.column, data.row, data.state);
+});
+
+socket.on('selectBass', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()("#bass-select").val(data);
+  bass = _synths__WEBPACK_IMPORTED_MODULE_2__["default"][data.toLowerCase()];
+});
+
+/***/ }),
+
+/***/ "./client/drum-effects.js":
+/*!********************************!*\
+  !*** ./client/drum-effects.js ***!
+  \********************************/
+/*! exports provided: setupDrumEffects, abbreviateDrumEffects, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupDrumEffects", function() { return setupDrumEffects; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "abbreviateDrumEffects", function() { return abbreviateDrumEffects; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_2__);
+const socket = io(window.location.origin);
+
+
+
+
+const drumDelay = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.FeedbackDelay();
+const drumReverb = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.Freeverb();
+const drumPhaser = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.Phaser();
+const drumChorus = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.Chorus();
+const drumDistortion = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.Distortion();
+const drumBitcrusher = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.BitCrusher();
+const drumAutofilter = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.AutoFilter();
+const drumPingpong = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.PingPongDelay();
 
 drumDelay.wet.value = 0;
 drumReverb.wet.value = 0;
@@ -168,7 +277,81 @@ drumBitcrusher.wet.value = 0;
 drumAutofilter.wet.value = 0;
 drumPingpong.wet.value = 0;
 
-const drumOnLoad = () => console.log('drum samples loaded');
+let effectFontColors = {
+  'delay': 'white',
+  'reverb': 'white',
+  'phaser': 'white',
+  'chorus': 'white',
+  'distortion': 'white',
+  'bitcrusher': 'white',
+  'autofilter': 'white',
+  'pingpong': 'white'
+};
+
+const toggleDrumEffect = function (effect, text) {
+  return () => {
+    console.log(effectFontColors[text]);
+    let currentText = "#drum-" + text;
+    console.log(currentText);
+    if (effect.wet.value === 0) {
+      effect.wet.value = .5;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(currentText).css('font-weight', 'bold');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(currentText).css('color', '#F29854');
+    } else {
+      effect.wet.value = 0;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(currentText).css('font-weight', 'normal');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(currentText).css('color', 'white');
+    }
+  };
+};
+
+const setupDrumEffects = () => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").on('click', toggleDrumEffect(drumDelay, 'delay'));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").on('click', toggleDrumEffect(drumReverb, 'reverb'));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").on('click', toggleDrumEffect(drumPhaser, 'phaser'));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").on('click', toggleDrumEffect(drumChorus, 'chorus'));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").on('click', toggleDrumEffect(drumDistortion, 'distortion'));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").on('click', toggleDrumEffect(drumBitcrusher, 'bitcrusher'));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").on('click', toggleDrumEffect(drumAutofilter, 'autofilter'));
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").on('click', toggleDrumEffect(drumPingpong, 'pingpong'));
+};
+
+const abbreviateDrumEffects = () => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
+};
+
+const drumEffects = {
+  drumDelay,
+  drumReverb,
+  drumPhaser,
+  drumChorus,
+  drumDistortion,
+  drumBitcrusher,
+  drumAutofilter,
+  drumPingpong
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (drumEffects);
+
+/***/ }),
+
+/***/ "./client/drum-samples.js":
+/*!********************************!*\
+  !*** ./client/drum-samples.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 const drumSamples = {
   "C1": "RIDE-909.wav",
   "C2": "RIDE-707.wav",
@@ -236,7 +419,275 @@ const drumSamples = {
   "B8": "BD-909-DIRTY.wav"
 };
 
-const drums = new tone__WEBPACK_IMPORTED_MODULE_4___default.a.Sampler(drumSamples, drumOnLoad, '/drum-samples/').chain(drumDelay, drumReverb, drumPhaser, drumChorus, drumDistortion, drumBitcrusher, drumAutofilter, drumPingpong, tone__WEBPACK_IMPORTED_MODULE_4___default.a.Master);
+/* harmony default export */ __webpack_exports__["default"] = (drumSamples);
+
+/***/ }),
+
+/***/ "./client/drum-selects.js":
+/*!********************************!*\
+  !*** ./client/drum-selects.js ***!
+  \********************************/
+/*! exports provided: setupDrumSelects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupDrumSelects", function() { return setupDrumSelects; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _drums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./drums */ "./client/drums.js");
+const socket = io(window.location.origin);
+
+
+
+const {
+  cymbals, claps, shakers, openHats,
+  closedHats, percussion, snares, kicks
+} = _drums__WEBPACK_IMPORTED_MODULE_1__["drumSampleOptions"];
+
+let cymbal = cymbals.RIDE_909,
+    clap = claps.CLAP_909,
+    shaker = shakers.MARACAS,
+    openHat = openHats.OH_909,
+    closedHat = closedHats.CH_78,
+    perc = percussion.BONGO,
+    snare = snares.SD_808,
+    kick = kicks.BD_78;
+
+const selectCymbal = sample => {
+  let { value, id } = sample.target;
+  socket.emit('selectCymbal', value);
+  cymbal = cymbals[value];
+};
+const selectClap = sample => {
+  let { value, id } = sample.target;
+  socket.emit('selectClap', value);
+  clap = claps[value];
+};
+const selectShaker = sample => {
+  let { value, id } = sample.target;
+  socket.emit('selectShaker', value);
+  shaker = shakers[value];
+};
+const selectOpenHat = sample => {
+  let { value, id } = sample.target;
+  socket.emit('selectOpenHat', value);
+  openHat = openHats[value];
+};
+const selectClosedHat = sample => {
+  let { value, id } = sample.target;
+  socket.emit('selectClosedHat', value);
+  closedHat = closedHats[value];
+};
+const selectPerc = sample => {
+  let { value, id } = sample.target;
+  socket.emit('selectPerc', value);
+  perc = percussion[value];
+};
+const selectSnare = sample => {
+  let { value, id } = sample.target;
+  socket.emit('selectSnare', value);
+  snare = snares[value];
+};
+const selectKick = sample => {
+  let { value, id } = sample.target;
+  socket.emit('selectKick', value);
+  kick = kicks[value];
+};
+
+const setupDrumSelects = () => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#cymbal-select").on('change', selectCymbal);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#clap-select").on('change', selectClap);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#shaker-select").on('change', selectShaker);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#oh-select").on('change', selectOpenHat);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#ch-select").on('change', selectClosedHat);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#perc-select").on('change', selectPerc);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#snare-select").on('change', selectSnare);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-select").on('change', selectKick);
+};
+
+socket.on('selectCymbal', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#cymbal-select").val(data);
+  cymbal = cymbals[data];
+});
+
+socket.on('selectClap', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#clap-select").val(data);
+  clap = claps[data];
+});
+
+socket.on('selectShaker', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#shaker-select").val(data);
+  shaker = shakers[data];
+});
+
+socket.on('selectOpenHat', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#oh-select").val(data);
+  openHat = openHats[data];
+});
+
+socket.on('selectClosedHat', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#ch-select").val(data);
+  closedHat = closedHats[data];
+});
+
+socket.on('selectPerc', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#perc-select").val(data);
+  perc = percussion[data];
+});
+
+socket.on('selectSnare', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#snare-select").val(data);
+  snare = snares[data];
+});
+
+socket.on('selectKick', data => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-select").val(data);
+  kick = kicks[data];
+});
+
+/***/ }),
+
+/***/ "./client/drum-sequencer.js":
+/*!**********************************!*\
+  !*** ./client/drum-sequencer.js ***!
+  \**********************************/
+/*! exports provided: drumVol, drumSeq */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drumVol", function() { return drumVol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drumSeq", function() { return drumSeq; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _drums__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./drums */ "./client/drums.js");
+const socket = io(window.location.origin);
+
+
+
+
+
+const {
+  cymbals, claps, shakers, openHats,
+  closedHats, percussion, snares, kicks
+} = _drums__WEBPACK_IMPORTED_MODULE_3__["drumSampleOptions"];
+
+let cymbal = cymbals.RIDE_909,
+    clap = claps.CLAP_909,
+    shaker = shakers.MARACAS,
+    openHat = openHats.OH_909,
+    closedHat = closedHats.CH_78,
+    perc = percussion.BONGO,
+    snare = snares.SD_808,
+    kick = kicks.BD_78;
+
+let drumSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
+const drumVol = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Slider('#drum-vol', drumSlider);
+const drumSeq = new nexusui__WEBPACK_IMPORTED_MODULE_1___default.a.Sequencer('#drum-seq', {
+  'size': [1932, 400],
+  'mode': 'toggle',
+  'rows': 8,
+  'columns': 16
+});
+
+const triggerHit = drum => {
+  _drums__WEBPACK_IMPORTED_MODULE_3__["drums"].triggerAttack(drum);
+};
+
+drumSeq.on('change', event => {
+  socket.emit('drumSeq', event);
+});
+
+drumSeq.on('step', hits => {
+  if (hits[7]) {
+    triggerHit(cymbal);
+    socket.emit('nx', hits);
+  }
+  if (hits[6]) {
+    triggerHit(clap);
+    socket.emit('nx', hits);
+  }
+  if (hits[5]) {
+    triggerHit(shaker);
+    socket.emit('nx', hits);
+  }
+  if (hits[4]) {
+    triggerHit(openHat);
+    socket.emit('nx', hits);
+  }
+  if (hits[3]) {
+    triggerHit(closedHat);
+    socket.emit('nx', hits);
+  }
+  if (hits[2]) {
+    triggerHit(perc);
+    socket.emit('nx', hits);
+  }
+  if (hits[1]) {
+    triggerHit(snare);
+    socket.emit('nx', hits);
+  }
+  if (hits[0]) {
+    triggerHit(kick);
+    socket.emit('nx', hits);
+  }
+});
+
+drumVol.on('change', level => {
+  _drums__WEBPACK_IMPORTED_MODULE_3__["drums"].volume.value = level;
+});
+
+socket.on('drumSeq', data => {
+  drumSeq.matrix.set.cell(data.column, data.row, data.state);
+});
+
+/***/ }),
+
+/***/ "./client/drums.js":
+/*!*************************!*\
+  !*** ./client/drums.js ***!
+  \*************************/
+/*! exports provided: drums, drumSampleOptions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drums", function() { return drums; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "drumSampleOptions", function() { return drumSampleOptions; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _drum_samples__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./drum-samples */ "./client/drum-samples.js");
+/* harmony import */ var _drum_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./drum-effects */ "./client/drum-effects.js");
+const socket = io(window.location.origin);
+
+
+
+
+
+
+const {
+  drumDelay,
+  drumReverb,
+  drumPhaser,
+  drumChorus,
+  drumDistortion,
+  drumBitcrusher,
+  drumAutofilter,
+  drumPingpong
+} = _drum_effects__WEBPACK_IMPORTED_MODULE_4__["default"];
+
+const drumOnLoad = () => console.log('drum samples loaded');
+
+const drums = new tone__WEBPACK_IMPORTED_MODULE_2___default.a.Sampler(_drum_samples__WEBPACK_IMPORTED_MODULE_3__["default"], drumOnLoad, '/drum-samples/').chain(drumDelay, drumReverb, drumPhaser, drumChorus, drumDistortion, drumBitcrusher, drumAutofilter, drumPingpong, tone__WEBPACK_IMPORTED_MODULE_2___default.a.Master);
 
 const cymbals = {
   RIDE_909: 'C1',
@@ -326,32 +777,193 @@ const kicks = {
   BD_909_DIRTY: 'B8'
 };
 
-let lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm,
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass,
-    cymbal = cymbals.RIDE_909,
-    clap = claps.CLAP_909,
-    shaker = shakers.MARACAS,
-    openHat = openHats.OH_909,
-    closedHat = closedHats.CH_78,
-    perc = percussion.BONGO,
-    snare = snares.SD_808,
-    kick = kicks.BD_78;
+const drumSampleOptions = {
+  cymbals, claps, shakers, openHats,
+  closedHats, percussion, snares, kicks
+};
+
+/***/ }),
+
+/***/ "./client/index.js":
+/*!*************************!*\
+  !*** ./client/index.js ***!
+  \*************************/
+/*! exports provided: bpm, resizeSequencers */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bpm", function() { return bpm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resizeSequencers", function() { return resizeSequencers; });
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tone */ "./node_modules/tone/build/Tone.js");
+/* harmony import */ var tone__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(tone__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
+/* harmony import */ var _synth_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./synth-effects */ "./client/synth-effects.js");
+/* harmony import */ var _drum_selects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./drum-selects */ "./client/drum-selects.js");
+/* harmony import */ var _drum_effects__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./drum-effects */ "./client/drum-effects.js");
+/* harmony import */ var _resize_onload__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./resize-onload */ "./client/resize-onload.js");
+/* harmony import */ var _resize_responsively__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./resize-responsively */ "./client/resize-responsively.js");
+/* harmony import */ var _tempo__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./tempo */ "./client/tempo.js");
+/* harmony import */ var _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lead-sequencer */ "./client/lead-sequencer.js");
+/* harmony import */ var _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./bass-sequencer */ "./client/bass-sequencer.js");
+/* harmony import */ var _drum_sequencer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./drum-sequencer */ "./client/drum-sequencer.js");
+const socket = io(window.location.origin);
+const canvas = document.createElement('canvas');
+
+
+
+
+
+
+
+
+
+
+
+var bpm = 125;
+
+
+
+
+
+_tempo__WEBPACK_IMPORTED_MODULE_9__["tempo"].on('change', value => {
+  _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["leadSeq"].matrix.bpm = value;
+  _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__["bassSeq"].matrix.bpm = value;
+  _drum_sequencer__WEBPACK_IMPORTED_MODULE_12__["drumSeq"].matrix.bpm = value;
+  bpm = Object(_tempo__WEBPACK_IMPORTED_MODULE_9__["bpmConverter"])(value);
+  _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["leadSeq"].stop();
+  _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__["bassSeq"].stop();
+  _drum_sequencer__WEBPACK_IMPORTED_MODULE_12__["drumSeq"].stop();
+  _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["leadSeq"].start(bpm);
+  _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__["bassSeq"].start(bpm);
+  _drum_sequencer__WEBPACK_IMPORTED_MODULE_12__["drumSeq"].start(bpm);
+});
+
+const start = () => {
+  const { context } = _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["leadSeq"].interval.clock;
+  if (context.state === 'suspended') {
+    context.resume().then(() => console.log('audio context resumed'));
+    _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["leadSeq"].start(bpm);
+    _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__["bassSeq"].start(bpm);
+    _drum_sequencer__WEBPACK_IMPORTED_MODULE_12__["drumSeq"].start(bpm);
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()("#start").html('STOP');
+  } else {
+    _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["leadSeq"].stop();
+    _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__["bassSeq"].stop();
+    _drum_sequencer__WEBPACK_IMPORTED_MODULE_12__["drumSeq"].stop();
+    context.suspend().then(() => console.log('audio context suspended'));
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()("#start").html('START');
+  }
+};
+
+const setupSequencers = () => {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#start").on('click', start);
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#lead-select").on('change', _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["selectLead"]);
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#bass-select").on('change', _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__["selectBass"]);
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#lead-effect-select").on('change', _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["selectLeadEffect"]);
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#bass-effect-select").on('change', _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__["selectBassEffect"]);
+  Object(_drum_selects__WEBPACK_IMPORTED_MODULE_5__["setupDrumSelects"])();
+  Object(_drum_effects__WEBPACK_IMPORTED_MODULE_6__["setupDrumEffects"])();
+};
+
+const resizeSequencers = (seqH, synthW, drumW, headerH, tempoR) => {
+  _lead_sequencer__WEBPACK_IMPORTED_MODULE_10__["leadSeq"].resize(synthW, seqH);
+  _bass_sequencer__WEBPACK_IMPORTED_MODULE_11__["bassSeq"].resize(synthW, seqH);
+  _drum_sequencer__WEBPACK_IMPORTED_MODULE_12__["drumSeq"].resize(drumW, seqH);
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()(".synth-seq-header").width(synthW).height(headerH);
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#drum-seq-header").width(drumW).height(headerH);
+  if (tempoR) _tempo__WEBPACK_IMPORTED_MODULE_9__["tempo"].resize(tempoR, tempoR);
+};
+
+const setup = () => {
+  document.body.appendChild(canvas);
+  Object(_resize_responsively__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  Object(_resize_onload__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  setupSequencers();
+};
+
+socket.on('connect', () => {
+  console.log('I have made a persistent two-way connection to the server!');
+});
+
+document.addEventListener('DOMContentLoaded', setup);
+
+if (typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefined") {
+  var resumeAudio = function () {
+    if (typeof g_WebAudioContext == "undefined" || g_WebAudioContext == null) return;
+    if (g_WebAudioContext.state == "suspended") g_WebAudioContext.resume();
+    document.removeEventListener("click", resumeAudio);
+  };
+  document.addEventListener("click", resumeAudio);
+}
+
+/***/ }),
+
+/***/ "./client/lead-sequencer.js":
+/*!**********************************!*\
+  !*** ./client/lead-sequencer.js ***!
+  \**********************************/
+/*! exports provided: leadVol, leadSeq, selectLead, selectLeadEffect */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "leadVol", function() { return leadVol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "leadSeq", function() { return leadSeq; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectLead", function() { return selectLead; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectLeadEffect", function() { return selectLeadEffect; });
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _synths__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./synths */ "./client/synths.js");
+/* harmony import */ var _synth_effects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./synth-effects */ "./client/synth-effects.js");
+const socket = io(window.location.origin);
+
+
+
+
+
+let lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].fm;
+let leadSlider = { 'size': [180, 20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0 };
+const leadVol = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Slider('#lead-vol', leadSlider);
+const leadSeq = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Sequencer('#lead-seq', {
+  'size': [940, 400],
+  'mode': 'toggle',
+  'rows': 8,
+  'columns': 8
+});
+
+const {
+  delay,
+  reverb,
+  phaser,
+  chorus,
+  distortion,
+  bitcrusher,
+  autofilter,
+  pingpong
+} = _synth_effects__WEBPACK_IMPORTED_MODULE_3__["default"];
 
 const selectLead = sound => {
   let { value, id } = sound.target;
   socket.emit('selectLead', value);
   if (value === 'FM') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fm;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].fm;
   } else if (value === 'MEMBRANE') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membrane;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].membrane;
   } else if (value === 'AM') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].am;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].am;
   } else if (value === 'PLUCK') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluck;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].pluck;
   } else if (value === 'DUO') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duo;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].duo;
   } else if (value === 'POLY') {
-    lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].poly;
+    lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"].poly;
   }
 };
 
@@ -360,7 +972,7 @@ const selectLeadEffect = effect => {
   socket.emit('selectLeadEffect', value);
   if (value === 'DRY') {
     lead.disconnect();
-    lead.fan(_synths__WEBPACK_IMPORTED_MODULE_1__["gain"], _synths__WEBPACK_IMPORTED_MODULE_1__["vol"]);
+    lead.fan(_synths__WEBPACK_IMPORTED_MODULE_2__["gain"], _synths__WEBPACK_IMPORTED_MODULE_2__["vol"]);
   } else if (value === 'DELAY') {
     lead.disconnect();
     lead.fan(delay);
@@ -388,1611 +1000,1274 @@ const selectLeadEffect = effect => {
   }
 };
 
-const selectBass = effect => {
-  let { value, id } = effect.target;
-  socket.emit('selectBass', value);
-  if (value === 'FM') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].fmBass;
-  } else if (value === 'MEMBRANE') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].membraneBass;
-  } else if (value === 'AM') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].amBass;
-  } else if (value === 'PLUCK') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].pluckBass;
-  } else if (value === 'DUO') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].duoBass;
-  } else if (value === 'POLY') {
-    bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"].polyBass;
-  }
-};
-
-const selectBassEffect = effect => {
-  let { value, id } = effect.target;
-  socket.emit('selectBassEffect', value);
-  if (value === 'DRY') {
-    bass.disconnect();
-    bass.fan(_synths__WEBPACK_IMPORTED_MODULE_1__["gain"], _synths__WEBPACK_IMPORTED_MODULE_1__["vol"]);
-  } else if (value === 'DELAY') {
-    bass.disconnect();
-    bass.fan(delay);
-  } else if (value === 'REVERB') {
-    bass.disconnect();
-    bass.fan(reverb);
-  } else if (value === 'PHASER') {
-    bass.disconnect();
-    bass.fan(phaser);
-  } else if (value === 'CHORUS') {
-    bass.disconnect();
-    bass.fan(chorus);
-  } else if (value === 'DISTORTION') {
-    bass.disconnect();
-    bass.fan(distortion);
-  } else if (value === 'BITCRUSHER') {
-    bass.disconnect();
-    bass.fan(bitcrusher);
-  } else if (value === 'AUTOFILTER') {
-    bass.disconnect();
-    bass.fan(autofilter);
-  } else if (value === 'PINGPONG') {
-    bass.disconnect();
-    bass.fan(pingpong);
-  }
-};
-
-const selectCymbal = sample => {
-  let { value, id } = sample.target;
-  socket.emit('selectCymbal', value);
-  cymbal = cymbals[value];
-};
-const selectClap = sample => {
-  let { value, id } = sample.target;
-  socket.emit('selectClap', value);
-  clap = claps[value];
-};
-const selectShaker = sample => {
-  let { value, id } = sample.target;
-  socket.emit('selectShaker', value);
-  shaker = shakers[value];
-};
-const selectOpenHat = sample => {
-  let { value, id } = sample.target;
-  socket.emit('selectOpenHat', value);
-  openHat = openHats[value];
-};
-const selectClosedHat = sample => {
-  let { value, id } = sample.target;
-  socket.emit('selectClosedHat', value);
-  closedHat = closedHats[value];
-};
-const selectPerc = sample => {
-  let { value, id } = sample.target;
-  socket.emit('selectPerc', value);
-  perc = percussion[value];
-};
-const selectSnare = sample => {
-  let { value, id } = sample.target;
-  socket.emit('selectSnare', value);
-  snare = snares[value];
-};
-const selectKick = sample => {
-  let { value, id } = sample.target;
-  socket.emit('selectKick', value);
-  kick = kicks[value];
-};
-
-const triggerNote = (synth, note) => {
-  synth.triggerAttackRelease(note, '32n');
-};
-
-const triggerHit = drum => {
-  drums.triggerAttack(drum);
-};
-
-tempo.on('change', event => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#tempo').mouseup(() => {
-    socket.emit('changeTempo', event);
-  });
+leadVol.on('change', level => {
+  lead.volume.value = level;
 });
 
 leadSeq.on('change', event => {
   socket.emit('leadSeq', event);
 });
 
-bassSeq.on('change', event => {
-  socket.emit('bassSeq', event);
-});
-
-drumSeq.on('change', event => {
-  socket.emit('drumSeq', event);
-});
-
 leadSeq.on('step', notes => {
   if (notes[7]) {
-    triggerNote(lead, 'C6');
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(lead, 'C6');
     socket.emit('nx', notes);
   }
   if (notes[6]) {
-    triggerNote(lead, 'B5');
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(lead, 'B5');
     socket.emit('nx', notes);
   }
   if (notes[5]) {
-    triggerNote(lead, 'A5');
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(lead, 'A5');
     socket.emit('nx', notes);
   }
   if (notes[4]) {
-    triggerNote(lead, 'G5');
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(lead, 'G5');
     socket.emit('nx', notes);
   }
   if (notes[3]) {
-    triggerNote(lead, 'F5');
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(lead, 'F5');
     socket.emit('nx', notes);
   }
   if (notes[2]) {
-    triggerNote(lead, 'E5');
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(lead, 'E5');
     socket.emit('nx', notes);
   }
   if (notes[1]) {
-    triggerNote(lead, 'D5');
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(lead, 'D5');
     socket.emit('nx', notes);
   }
   if (notes[0]) {
-    triggerNote(lead, 'C5');
+    Object(_synths__WEBPACK_IMPORTED_MODULE_2__["triggerNote"])(lead, 'C5');
     socket.emit('nx', notes);
   }
-});
-
-bassSeq.on('step', notes => {
-  if (notes[7]) {
-    triggerNote(bass, 'C3');
-    socket.emit('nx', notes);
-  }
-  if (notes[6]) {
-    triggerNote(bass, 'B2');
-    socket.emit('nx', notes);
-  }
-  if (notes[5]) {
-    triggerNote(bass, 'A2');
-    socket.emit('nx', notes);
-  }
-  if (notes[4]) {
-    triggerNote(bass, 'G2');
-    socket.emit('nx', notes);
-  }
-  if (notes[3]) {
-    triggerNote(bass, 'F2');
-    socket.emit('nx', notes);
-  }
-  if (notes[2]) {
-    triggerNote(bass, 'E2');
-    socket.emit('nx', notes);
-  }
-  if (notes[1]) {
-    triggerNote(bass, 'D2');
-    socket.emit('nx', notes);
-  }
-  if (notes[0]) {
-    triggerNote(bass, 'C2');
-    socket.emit('nx', notes);
-  }
-});
-
-drumSeq.on('step', hits => {
-  if (hits[7]) {
-    triggerHit(cymbal);
-    socket.emit('nx', hits);
-  }
-  if (hits[6]) {
-    triggerHit(clap);
-    socket.emit('nx', hits);
-  }
-  if (hits[5]) {
-    triggerHit(shaker);
-    socket.emit('nx', hits);
-  }
-  if (hits[4]) {
-    triggerHit(openHat);
-    socket.emit('nx', hits);
-  }
-  if (hits[3]) {
-    triggerHit(closedHat);
-    socket.emit('nx', hits);
-  }
-  if (hits[2]) {
-    triggerHit(perc);
-    socket.emit('nx', hits);
-  }
-  if (hits[1]) {
-    triggerHit(snare);
-    socket.emit('nx', hits);
-  }
-  if (hits[0]) {
-    triggerHit(kick);
-    socket.emit('nx', hits);
-  }
-});
-
-tempo.on('change', value => {
-  leadSeq.matrix.bpm = value;
-  bassSeq.matrix.bpm = value;
-  drumSeq.matrix.bpm = value;
-  bpm = bpmConverter(value);
-  leadSeq.stop();
-  bassSeq.stop();
-  drumSeq.stop();
-  leadSeq.start(bpm);
-  bassSeq.start(bpm);
-  drumSeq.start(bpm);
-});
-
-leadVol.on('change', level => {
-  lead.volume.value = level;
-});
-
-bassVol.on('change', level => {
-  bass.volume.value = level;
-});
-
-drumVol.on('change', level => {
-  drums.volume.value = level;
-});
-
-const start = () => {
-  const { context } = leadSeq.interval.clock;
-  if (context.state === 'suspended') {
-    context.resume().then(() => console.log('audio context resumed'));
-    leadSeq.start(bpm);
-    bassSeq.start(bpm);
-    drumSeq.start(bpm);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('STOP');
-  } else {
-    leadSeq.stop();
-    bassSeq.stop();
-    drumSeq.stop();
-    context.suspend().then(() => console.log('audio context suspended'));
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").html('START');
-  }
-};
-
-let effectFontColors = {
-  'delay': 'white',
-  'reverb': 'white',
-  'phaser': 'white',
-  'chorus': 'white',
-  'distortion': 'white',
-  'bitcrusher': 'white',
-  'autofilter': 'white',
-  'pingpong': 'white'
-};
-
-const toggleDrumEffect = function (effect, text) {
-  return () => {
-    console.log(effectFontColors[text]);
-    let currentText = "#drum-" + text;
-    console.log(currentText);
-    if (effect.wet.value === 0) {
-      effect.wet.value = .5;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(currentText).css('font-weight', 'bold');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(currentText).css('color', '#F29854');
-    } else {
-      effect.wet.value = 0;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(currentText).css('font-weight', 'normal');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(currentText).css('color', 'white');
-    }
-  };
-};
-
-const setupSequencers = () => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#start").on('click', start);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").on('change', selectLead);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").on('change', selectBass);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#cymbal-select").on('change', selectCymbal);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#clap-select").on('change', selectClap);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#shaker-select").on('change', selectShaker);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#oh-select").on('change', selectOpenHat);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#ch-select").on('change', selectClosedHat);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#perc-select").on('change', selectPerc);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#snare-select").on('change', selectSnare);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-select").on('change', selectKick);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-effect-select").on('change', selectLeadEffect);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-effect-select").on('change', selectBassEffect);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").on('click', toggleDrumEffect(drumDelay, 'delay'));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").on('click', toggleDrumEffect(drumReverb, 'reverb'));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").on('click', toggleDrumEffect(drumPhaser, 'phaser'));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").on('click', toggleDrumEffect(drumChorus, 'chorus'));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").on('click', toggleDrumEffect(drumDistortion, 'distortion'));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").on('click', toggleDrumEffect(drumBitcrusher, 'bitcrusher'));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").on('click', toggleDrumEffect(drumAutofilter, 'autofilter'));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").on('click', toggleDrumEffect(drumPingpong, 'pingpong'));
-};
-
-socket.on('connect', () => {
-  console.log('I have made a persistent two-way connection to the server!');
-});
-
-socket.on('changeTempo', data => {
-  tempo.value = data;
-  console.log('tempo data: ', data, '   bpm:  ', bpm);
 });
 
 socket.on('leadSeq', data => {
   leadSeq.matrix.set.cell(data.column, data.row, data.state);
 });
 
-socket.on('bassSeq', data => {
-  bassSeq.matrix.set.cell(data.column, data.row, data.state);
-});
-
-socket.on('drumSeq', data => {
-  drumSeq.matrix.set.cell(data.column, data.row, data.state);
-});
-
 socket.on('selectLead', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#lead-select").val(data);
-  lead = _synths__WEBPACK_IMPORTED_MODULE_1__["default"][data.toLowerCase()];
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()("#lead-select").val(data);
+  lead = _synths__WEBPACK_IMPORTED_MODULE_2__["default"][data.toLowerCase()];
 });
 
-socket.on('selectBass', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#bass-select").val(data);
-  bass = _synths__WEBPACK_IMPORTED_MODULE_1__["default"][data.toLowerCase()];
-});
+/***/ }),
 
-socket.on('selectCymbal', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#cymbal-select").val(data);
-  cymbal = cymbals[data];
-});
+/***/ "./client/resize-onload.js":
+/*!*********************************!*\
+  !*** ./client/resize-onload.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-socket.on('selectClap', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#clap-select").val(data);
-  clap = claps[data];
-});
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _resize_queries__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./resize-queries */ "./client/resize-queries.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index */ "./client/index.js");
+/* harmony import */ var _drum_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./drum-effects */ "./client/drum-effects.js");
 
-socket.on('selectShaker', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#shaker-select").val(data);
-  shaker = shakers[data];
-});
 
-socket.on('selectOpenHat', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#oh-select").val(data);
-  openHat = openHats[data];
-});
 
-socket.on('selectClosedHat', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#ch-select").val(data);
-  closedHat = closedHats[data];
-});
 
-socket.on('selectPerc', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#perc-select").val(data);
-  perc = percussion[data];
-});
 
-socket.on('selectSnare', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#snare-select").val(data);
-  snare = snares[data];
-});
 
-socket.on('selectKick', data => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#kick-select").val(data);
-  kick = kicks[data];
-});
-
-const mq = [window.matchMedia('(min-width: 0px) and (max-width: 1024px) and (max-height: 500px)'), window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 500px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 500px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 500px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1274px) and (max-height: 500px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 500px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 500px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 500px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 500px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 500px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 500px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 500px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (max-height: 500px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (max-height: 500px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1894px) and (max-height: 500px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 500px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 500px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 500px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 500px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 500px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 500px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 500px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 500px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 500px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 500px)'), window.matchMedia('(min-width: 2497px) and (max-height: 500px)'), window.matchMedia('(min-width: 0px) and (max-width: 874px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 875px) and (max-width: 1074px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2497px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 0px) and (max-width: 924px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 925px) and (max-width: 1074px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2497px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 0px) and (max-width: 774px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 775px) and (max-width: 824px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 825px) and (max-width: 974px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2497px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 0px) and (max-width: 824px) and (min-height: 1001px)'), window.matchMedia('(min-width: 825px) and (max-width: 974px) and (min-height: 1001px)'), window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2497px) and (min-height: 1001px)')];
-
-let height = 400,
-    synthWidth = 940,
-    drumWidth = 1932;
-
-const resizeSequencers = (seqH, synthW, drumW, headerH, tempoR) => {
-  leadSeq.resize(synthW, seqH);
-  bassSeq.resize(synthW, seqH);
-  drumSeq.resize(drumW, seqH);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".synth-seq-header").width(synthW).height(headerH);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-seq-header").width(drumW).height(headerH);
-  if (tempoR) tempo.resize(tempoR, tempoR);
+const resizeOnload = () => {
+  if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][0].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 268, 545, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][1].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 318, 644, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][2].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 368, 742, 20, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][3].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 424, 856, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][4].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 455, 917, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][5].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][6].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][7].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 540, 1090, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][8].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1133, 26, 65);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][9].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 576, 1162, 26, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][10].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 588, 1186, 29, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][11].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 602, 1215, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][12].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 606, 1240, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][13].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 614, 1271, 30, 70);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][14].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 616, 1274, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][15].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 640, 1329, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][16].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 660, 1360, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][17].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 680, 1412, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][18].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 700, 1454, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][19].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 720, 1493, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][20].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 740, 1533, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][21].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 780, 1612, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][22].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 820, 1693, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][23].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 860, 1772, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][24].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 900, 1851, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][25].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 940, 1932, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][26].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 268, 546, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][27].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 318, 644, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][28].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 368, 742, 20, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][29].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 424, 856, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][30].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 455, 917, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][31].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 480, 968, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][32].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][33].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][34].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 540, 1090, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][35].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1133, 26, 65);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][36].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 576, 1162, 26, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][37].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 588, 1186, 29, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][38].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 602, 1215, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][39].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 606, 1240, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][40].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 614, 1271, 30, 70);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][41].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 616, 1274, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][42].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1285, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][43].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 620, 1288, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][44].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 640, 1329, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][45].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 660, 1360, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][46].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 680, 1412, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][47].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 700, 1454, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][48].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 720, 1493, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][49].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 740, 1533, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][50].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 780, 1612, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][51].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 820, 1693, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][52].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 860, 1772, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][53].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 900, 1851, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][54].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 940, 1932, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][55].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 268, 546, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][56].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][57].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][58].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 424, 856, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][59].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 455, 917, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][60].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 480, 968, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][61].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 500, 1007, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][62].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 522, 1051, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][63].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 540, 1090, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][64].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 1133, 26, 65);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][65].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 576, 1162, 26, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][66].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 588, 1186, 29, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][67].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 602, 1215, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][68].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 606, 1240, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][69].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 606, 1240, 30, 70);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][70].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 614, 1271, 30, 70);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][71].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 616, 1274, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][72].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 617, 1285, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][73].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 620, 1288, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][74].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 640, 1329, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][75].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 660, 1360, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][76].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 680, 1412, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][77].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 700, 1454, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][78].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 720, 1493, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][79].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 740, 1533, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][80].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 780, 1612, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][81].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 820, 1693, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][82].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 860, 1772, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][83].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 900, 1851, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][84].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 940, 1932, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][85].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(220, 268, 546, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][86].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 268, 546, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][87].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][88].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][89].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 424, 856, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][90].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 455, 917, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][91].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 480, 968, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][92].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 500, 1007, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][93].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 522, 1051, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][94].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 540, 1090, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][95].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 1133, 26, 65);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][96].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 576, 1162, 26, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][97].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 588, 1186, 29, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][98].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 602, 1215, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][99].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 606, 1240, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][100].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 614, 1271, 30, 70);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][101].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 616, 1274, 35, 80);
+    tempo.resize(80, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][102].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 617, 1285, 35, 80);
+    tempo.resize(80, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][103].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 620, 1288, 35, 80);
+    tempo.resize(80, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][104].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 640, 1329, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][105].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 660, 1360, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][106].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 680, 1412, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][107].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 700, 1454, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][108].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 720, 1493, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][109].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 740, 1533, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][110].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 780, 1612, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][111].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 820, 1693, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][112].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 860, 1772, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][113].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 900, 1851, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][114].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 940, 1932, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][115].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 268, 546, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][116].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][117].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][118].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 424, 856, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][119].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 455, 917, 20, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][120].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 480, 968, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][121].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 500, 1007, 24, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][122].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 522, 1051, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][123].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 540, 1090, 26, 55);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][124].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 1133, 26, 65);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][125].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 576, 1162, 26, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][126].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 588, 1186, 29, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][127].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 602, 1215, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][128].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 606, 1240, 30, 65);
+    Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][129].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 614, 1271, 30, 70);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][130].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 616, 1274, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][131].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 617, 1285, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][132].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 620, 1288, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][133].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 640, 1329, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][134].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 660, 1360, 35, 80);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][135].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 680, 1412, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][136].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 700, 1454, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][137].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 720, 1493, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][138].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 740, 1533, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][139].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 780, 1612, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][140].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 820, 1693, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][141].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 860, 1772, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][142].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 900, 1851, 35);
+  } else if (_resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][143].matches) {
+    Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 940, 1932, 35);
+  }
 };
 
-const abbreviateEffects = () => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-delay").html('DELY');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-reverb").html('REVR');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-phaser").html('PHSR');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-chorus").html('CHOR');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-distortion").html('DSTR');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-bitcrusher").html('BTCR');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-autofilter").html('FLTR');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-pingpong").html('PPDL');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#drum-effect-header").html('FX');
-};
+/* harmony default export */ __webpack_exports__["default"] = (resizeOnload);
 
-const resizeSequencersResponsively = () => {
-  mq[0].addListener(e => {
+/***/ }),
+
+/***/ "./client/resize-queries.js":
+/*!**********************************!*\
+  !*** ./client/resize-queries.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const queries = [window.matchMedia('(min-width: 0px) and (max-width: 1024px) and (max-height: 500px)'), window.matchMedia('(min-width: 1025px) and (max-width: 1074px) and (max-height: 500px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (max-height: 500px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (max-height: 500px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1274px) and (max-height: 500px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (max-height: 500px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (max-height: 500px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (max-height: 500px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (max-height: 500px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (max-height: 500px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (max-height: 500px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (max-height: 500px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (max-height: 500px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (max-height: 500px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1894px) and (max-height: 500px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (max-height: 500px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (max-height: 500px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (max-height: 500px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (max-height: 500px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (max-height: 500px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (max-height: 500px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (max-height: 500px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (max-height: 500px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (max-height: 500px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (max-height: 500px)'), window.matchMedia('(min-width: 2497px) and (max-height: 500px)'), window.matchMedia('(min-width: 0px) and (max-width: 874px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 875px) and (max-width: 1074px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 2497px) and (min-height: 501px) and (max-height: 620px)'), window.matchMedia('(min-width: 0px) and (max-width: 924px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 925px) and (max-width: 1074px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1075px) and (max-width: 1124px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1654px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1655px) and (max-width: 1702px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 2497px) and (min-height: 621px) and (max-height: 850px)'), window.matchMedia('(min-width: 0px) and (max-width: 774px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 775px) and (max-width: 824px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 825px) and (max-width: 974px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 2497px) and (min-height: 851px) and (max-height: 1000px)'), window.matchMedia('(min-width: 0px) and (max-width: 824px) and (min-height: 1001px)'), window.matchMedia('(min-width: 825px) and (max-width: 974px) and (min-height: 1001px)'), window.matchMedia('(min-width: 975px) and (max-width: 1124px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1125px) and (max-width: 1174px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1175px) and (max-width: 1224px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1225px) and (max-width: 1274px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1275px) and (max-width: 1324px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1325px) and (max-width: 1374px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1375px) and (max-width: 1424px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1425px) and (max-width: 1467px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1468px) and (max-width: 1534px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1535px) and (max-width: 1574px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1575px) and (max-width: 1624px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1625px) and (max-width: 1702px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1703px) and (max-width: 1774px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1775px) and (max-width: 1814px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1815px) and (max-width: 1854px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1855px) and (max-width: 1894px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1895px) and (max-width: 1934px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1935px) and (max-width: 1974px) and (min-height: 1001px)'), window.matchMedia('(min-width: 1975px) and (max-width: 2014px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2015px) and (max-width: 2054px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2055px) and (max-width: 2094px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2095px) and (max-width: 2174px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2175px) and (max-width: 2254px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2255px) and (max-width: 2334px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2335px) and (max-width: 2414px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2415px) and (max-width: 2496px) and (min-height: 1001px)'), window.matchMedia('(min-width: 2497px) and (min-height: 1001px)')];
+
+/* harmony default export */ __webpack_exports__["default"] = (queries);
+
+/***/ }),
+
+/***/ "./client/resize-responsively.js":
+/*!***************************************!*\
+  !*** ./client/resize-responsively.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _resize_queries__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./resize-queries */ "./client/resize-queries.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index */ "./client/index.js");
+/* harmony import */ var _drum_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./drum-effects */ "./client/drum-effects.js");
+
+
+
+
+
+
+const resizeResponsively = () => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][0].addListener(e => {
     if (e.matches) {
-      resizeSequencers(160, 268, 545, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 268, 545, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[1].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][1].addListener(e => {
     if (e.matches) {
-      resizeSequencers(160, 318, 644, 16, 45);
-      abbreviateEffects();
-      tempo.resize(45, 45);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[2].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][2].addListener(e => {
     if (e.matches) {
-      resizeSequencers(160, 368, 742, 20, 45);
-      abbreviateEffects();
-      tempo.resize(45, 45);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[3].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][3].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 424, 856, 20, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[4].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][4].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 455, 917, 20, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[5].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][5].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 500, 1007, 5, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 5, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[6].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][6].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 522, 1051, 5, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 5, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[7].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][7].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 540, 1090, 26, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[8].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][8].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 1133, 26, 65);
-      tempo.resize(65, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1133, 26, 65);
     }
   });
-  mq[9].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][9].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 576, 1162, 26, 65);
-      abbreviateEffects();
-      tempo.resize(65, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[10].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][10].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 588, 1186, 29, 65);
-      abbreviateEffects();
-      tempo.resize(65, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 588, 1186, 29, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[11].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][11].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 602, 1215, 30, 65);
-      abbreviateEffects();
-      tempo.resize(65, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[12].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][12].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 606, 1240, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[13].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][13].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 614, 1271, 30, 70);
     }
   });
-  mq[14].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][14].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 616, 1274, 35, 80);
     }
   });
-  mq[15].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][15].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 640, 1329, 35, 80);
     }
   });
-  mq[16].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][16].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 660, 1360, 35, 80);
-      tempo.resize(80, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 660, 1360, 35, 80);
     }
   });
-  mq[17].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][17].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 680, 1412, 35);
     }
   });
-  mq[18].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][18].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 700, 1454, 35);
     }
   });
-  mq[19].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][19].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 720, 1493, 35);
     }
   });
-  mq[20].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][20].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 740, 1533, 35);
     }
   });
-  mq[21].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][21].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 780, 1612, 35);
     }
   });
-  mq[22].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][22].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 820, 1693, 35);
     }
   });
-  mq[23].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][23].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 860, 1772, 35);
     }
   });
-  mq[24].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][24].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 900, 1851, 35);
     }
   });
-  mq[25].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][25].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 940, 1932, 35);
     }
   });
-  mq[26].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][26].addListener(e => {
     if (e.matches) {
-      resizeSequencers(160, 268, 546, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[27].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][27].addListener(e => {
     if (e.matches) {
-      resizeSequencers(160, 318, 644, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[28].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][28].addListener(e => {
     if (e.matches) {
-      resizeSequencers(160, 368, 742, 20, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(160, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[29].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][29].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 424, 856, 20, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[30].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][30].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 455, 917, 20, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[31].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][31].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 480, 968, 24, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 480, 968, 24, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[32].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][32].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 500, 1007, 24, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 500, 1007, 24, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[33].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][33].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 522, 1051, 26, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 522, 1051, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[34].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][34].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 540, 1090, 26, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[35].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][35].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1133, 26, 65);
     }
   });
-  mq[36].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][36].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 576, 1162, 26, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[37].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][37].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 588, 1186, 29, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 588, 1186, 29, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[38].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][38].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 602, 1215, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[39].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][39].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 606, 1240, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[40].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][40].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 614, 1271, 30, 70);
     }
   });
-  mq[41].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][41].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 616, 1274, 35, 80);
     }
   });
-  mq[42].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][42].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 1285, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 1285, 35, 80);
     }
   });
-  mq[43].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][43].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 620, 1288, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 620, 1288, 35, 80);
     }
   });
-  mq[44].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][44].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 640, 1329, 35, 80);
     }
   });
-  mq[45].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][45].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 660, 1360, 35, 80);
     }
   });
-  mq[46].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][46].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 680, 1412, 35);
     }
   });
-  mq[47].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][47].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 700, 1454, 35);
     }
   });
-  mq[48].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][48].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 720, 1493, 35);
     }
   });
-  mq[49].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][49].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 740, 1533, 35);
     }
   });
-  mq[50].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][50].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 780, 1612, 35);
     }
   });
-  mq[51].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][51].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 820, 1693, 35);
     }
   });
-  mq[52].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][52].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 860, 1772, 35);
     }
   });
-  mq[53].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][53].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 900, 1851, 35);
     }
   });
-  mq[54].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][54].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 940, 1932, 35);
     }
   });
-  mq[55].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][55].addListener(e => {
     if (e.matches) {
-      resizeSequencers(200, 268, 546, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(200, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[56].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][56].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 318, 644, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[57].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][57].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 368, 742, 20, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[58].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][58].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 424, 856, 20, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[59].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][59].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 455, 917, 20, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[60].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][60].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 480, 968, 24, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 480, 968, 24, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[61].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][61].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 500, 1007, 5, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 500, 1007, 5, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[62].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][62].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 522, 1051, 5, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 522, 1051, 5, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[63].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][63].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 540, 1090, 26, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[64].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][64].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 1133, 26, 65);
     }
   });
-  mq[65].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][65].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 576, 1162, 26, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[66].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][66].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 588, 1186, 29, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 588, 1186, 29, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[67].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][67].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 602, 1215, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[68].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][68].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 606, 1240, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[69].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][69].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 606, 1240, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 606, 1240, 30, 70);
     }
   });
-  mq[70].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][70].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 614, 1271, 30, 70);
     }
   });
-  mq[71].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][71].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 616, 1274, 35, 80);
     }
   });
-  mq[72].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][72].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 617, 1285, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 617, 1285, 35, 80);
     }
   });
-  mq[73].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][73].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 620, 1288, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 620, 1288, 35, 80);
     }
   });
-  mq[74].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][74].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 640, 1329, 35, 80);
     }
   });
-  mq[75].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][75].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 660, 1360, 35, 80);
     }
   });
-  mq[76].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][76].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 680, 1412, 35);
     }
   });
-  mq[77].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][77].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 700, 1454, 35);
     }
   });
-  mq[78].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][78].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 720, 1493, 35);
     }
   });
-  mq[79].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][79].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 740, 1533, 35);
     }
   });
-  mq[80].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][80].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 780, 1612, 35);
     }
   });
-  mq[81].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][81].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 820, 1693, 35);
     }
   });
-  mq[82].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][82].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 860, 1772, 35);
     }
   });
-  mq[83].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][83].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 900, 1851, 35);
     }
   });
-  mq[84].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][84].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 940, 1932, 35);
     }
   });
-  mq[85].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][85].addListener(e => {
     if (e.matches) {
-      resizeSequencers(220, 268, 546, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(220, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[86].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][86].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 268, 546, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[87].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][87].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 318, 644, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[88].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][88].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 368, 742, 20, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[89].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][89].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 424, 856, 20, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[90].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][90].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 455, 917, 20, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[91].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][91].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 480, 968, 24, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 480, 968, 24, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[92].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][92].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 500, 1007, 5, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 500, 1007, 5, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[93].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][93].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 522, 1051, 5, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 522, 1051, 5, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[94].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][94].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 540, 1090, 26, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[95].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][95].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 1133, 26, 65);
     }
   });
-  mq[96].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][96].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 576, 1162, 26, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[97].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][97].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 588, 1186, 29, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 588, 1186, 29, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[98].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][98].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 602, 1215, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[99].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][99].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 606, 1240, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[100].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][100].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 614, 1271, 30, 70);
     }
   });
-  mq[101].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][101].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 616, 1274, 35, 80);
     }
   });
-  mq[102].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][102].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 617, 1285, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 617, 1285, 35, 80);
     }
   });
-  mq[103].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][103].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 620, 1288, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 620, 1288, 35, 80);
     }
   });
-  mq[104].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][104].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 640, 1329, 35, 80);
     }
   });
-  mq[105].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][105].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 660, 1360, 35, 80);
     }
   });
-  mq[106].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][106].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 680, 1412, 35);
     }
   });
-  mq[107].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][107].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 700, 1454, 35);
     }
   });
-  mq[108].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][108].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 720, 1493, 35);
     }
   });
-  mq[109].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][109].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 740, 1533, 35);
     }
   });
-  mq[110].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][110].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 780, 1612, 35);
     }
   });
-  mq[111].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][111].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 820, 1693, 35);
     }
   });
-  mq[112].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][112].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 860, 1772, 35);
     }
   });
-  mq[113].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][113].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 900, 1851, 35);
     }
   });
-  mq[114].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][114].addListener(e => {
     if (e.matches) {
-      resizeSequencers(300, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(300, 940, 1932, 35);
     }
   });
-  mq[115].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][115].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 268, 546, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 268, 546, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[116].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][116].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 318, 644, 16, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 318, 644, 16, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[117].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][117].addListener(e => {
     if (e.matches) {
-      resizeSequencers(260, 368, 742, 20, 45);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(260, 368, 742, 20, 45);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[118].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][118].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 424, 856, 20, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 424, 856, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[119].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][119].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 455, 917, 20, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 455, 917, 20, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[120].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][120].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 480, 968, 24, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 480, 968, 24, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[121].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][121].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 500, 1007, 5, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 500, 1007, 5, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[122].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][122].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 522, 1051, 5, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 522, 1051, 5, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[123].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][123].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 540, 1090, 26, 55);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 540, 1090, 26, 55);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[124].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][124].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 1133, 26, 65);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 1133, 26, 65);
     }
   });
-  mq[125].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][125].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 576, 1162, 26, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 576, 1162, 26, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[126].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][126].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 588, 1186, 29, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 588, 1186, 29, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[127].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][127].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 602, 1215, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 602, 1215, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[128].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][128].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 606, 1240, 30, 65);
-      abbreviateEffects();
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 606, 1240, 30, 65);
+      Object(_drum_effects__WEBPACK_IMPORTED_MODULE_4__["abbreviateDrumEffects"])();
     }
   });
-  mq[129].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][129].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 614, 1271, 30, 70);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 614, 1271, 30, 70);
     }
   });
-  mq[130].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][130].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 616, 1274, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 616, 1274, 35, 80);
     }
   });
-  mq[131].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][131].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 617, 1285, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 617, 1285, 35, 80);
     }
   });
-  mq[132].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][132].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 620, 1288, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 620, 1288, 35, 80);
     }
   });
-  mq[133].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][133].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 640, 1329, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 640, 1329, 35, 80);
     }
   });
-  mq[134].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][134].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 660, 1360, 35, 80);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 660, 1360, 35, 80);
     }
   });
-  mq[135].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][135].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 680, 1412, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 680, 1412, 35);
     } else {
       tempo.resize(90, 90);
     }
   });
-  mq[136].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][136].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 700, 1454, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 700, 1454, 35);
     }
   });
-  mq[137].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][137].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 720, 1493, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 720, 1493, 35);
     }
   });
-  mq[138].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][138].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 740, 1533, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 740, 1533, 35);
     }
   });
-  mq[139].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][139].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 780, 1612, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 780, 1612, 35);
     }
   });
-  mq[140].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][140].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 820, 1693, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 820, 1693, 35);
     }
   });
-  mq[141].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][141].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 860, 1772, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 860, 1772, 35);
     }
   });
-  mq[142].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][142].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 900, 1851, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 900, 1851, 35);
     }
   });
-  mq[143].addListener(e => {
+  _resize_queries__WEBPACK_IMPORTED_MODULE_2__["default"][143].addListener(e => {
     if (e.matches) {
-      resizeSequencers(400, 940, 1932, 35);
+      Object(_index__WEBPACK_IMPORTED_MODULE_3__["resizeSequencers"])(400, 940, 1932, 35);
     }
   });
 };
 
-const setup = () => {
-  document.body.appendChild(canvas);
-  setupSequencers();
-  const loadSequencerSizes = () => {
-    if (mq[0].matches) {
-      resizeSequencers(160, 268, 545, 16, 45);
-      abbreviateEffects();
-    } else if (mq[1].matches) {
-      resizeSequencers(160, 318, 644, 16, 45);
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[2].matches) {
-      resizeSequencers(160, 368, 742, 20, 45);
-      abbreviateEffects();
-      tempo.resize(45, 45);
-    } else if (mq[3].matches) {
-      resizeSequencers(200, 424, 856, 20, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[4].matches) {
-      resizeSequencers(200, 455, 917, 20, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[5].matches) {
-      resizeSequencers(200, 500, 1007, 24, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[6].matches) {
-      resizeSequencers(200, 522, 1051, 24, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[7].matches) {
-      resizeSequencers(200, 540, 1090, 26, 55);
-      abbreviateEffects();
-      tempo.resize(55, 55);
-    } else if (mq[8].matches) {
-      resizeSequencers(200, 1133, 26, 65);
-      tempo.resize(65, 65);
-    } else if (mq[9].matches) {
-      resizeSequencers(200, 576, 1162, 26, 65);
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[10].matches) {
-      resizeSequencers(200, 588, 1186, 29, 65);
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[11].matches) {
-      resizeSequencers(200, 602, 1215, 30, 65);
-      abbreviateEffects();
-      tempo.resize(65, 65);
-    } else if (mq[12].matches) {
-      resizeSequencers(200, 606, 1240, 30, 65);
-      abbreviateEffects();
-    } else if (mq[13].matches) {
-      resizeSequencers(200, 614, 1271, 30, 70);
-    } else if (mq[14].matches) {
-      resizeSequencers(200, 616, 1274, 35, 80);
-    } else if (mq[15].matches) {
-      resizeSequencers(200, 640, 1329, 35, 80);
-    } else if (mq[16].matches) {
-      resizeSequencers(200, 660, 1360, 35, 80);
-      tempo.resize(80, 80);
-    } else if (mq[17].matches) {
-      resizeSequencers(200, 680, 1412, 35);
-    } else if (mq[18].matches) {
-      resizeSequencers(200, 700, 1454, 35);
-    } else if (mq[19].matches) {
-      resizeSequencers(200, 720, 1493, 35);
-    } else if (mq[20].matches) {
-      resizeSequencers(200, 740, 1533, 35);
-    } else if (mq[21].matches) {
-      resizeSequencers(200, 780, 1612, 35);
-    } else if (mq[22].matches) {
-      resizeSequencers(200, 820, 1693, 35);
-    } else if (mq[23].matches) {
-      resizeSequencers(200, 860, 1772, 35);
-    } else if (mq[24].matches) {
-      resizeSequencers(200, 900, 1851, 35);
-    } else if (mq[25].matches) {
-      resizeSequencers(200, 940, 1932, 35);
-    } else if (mq[26].matches) {
-      resizeSequencers(160, 268, 546, 16, 45);
-      abbreviateEffects();
-    } else if (mq[27].matches) {
-      resizeSequencers(160, 318, 644, 16, 45);
-      abbreviateEffects();
-    } else if (mq[28].matches) {
-      resizeSequencers(160, 368, 742, 20, 45);
-      abbreviateEffects();
-    } else if (mq[29].matches) {
-      resizeSequencers(200, 424, 856, 20, 55);
-      abbreviateEffects();
-    } else if (mq[30].matches) {
-      resizeSequencers(200, 455, 917, 20, 55);
-      abbreviateEffects();
-    } else if (mq[31].matches) {
-      resizeSequencers(200, 480, 968, 24, 55);
-      abbreviateEffects();
-    } else if (mq[32].matches) {
-      resizeSequencers(200, 500, 1007, 24, 55);
-      abbreviateEffects();
-    } else if (mq[33].matches) {
-      resizeSequencers(200, 522, 1051, 26, 55);
-      abbreviateEffects();
-    } else if (mq[34].matches) {
-      resizeSequencers(200, 540, 1090, 26, 55);
-      abbreviateEffects();
-    } else if (mq[35].matches) {
-      resizeSequencers(200, 1133, 26, 65);
-    } else if (mq[36].matches) {
-      resizeSequencers(200, 576, 1162, 26, 65);
-      abbreviateEffects();
-    } else if (mq[37].matches) {
-      resizeSequencers(200, 588, 1186, 29, 65);
-      abbreviateEffects();
-    } else if (mq[38].matches) {
-      resizeSequencers(200, 602, 1215, 30, 65);
-      abbreviateEffects();
-    } else if (mq[39].matches) {
-      resizeSequencers(200, 606, 1240, 30, 65);
-      abbreviateEffects();
-    } else if (mq[40].matches) {
-      resizeSequencers(200, 614, 1271, 30, 70);
-    } else if (mq[41].matches) {
-      resizeSequencers(200, 616, 1274, 35, 80);
-    } else if (mq[42].matches) {
-      resizeSequencers(200, 1285, 35, 80);
-    } else if (mq[43].matches) {
-      resizeSequencers(200, 620, 1288, 35, 80);
-    } else if (mq[44].matches) {
-      resizeSequencers(200, 640, 1329, 35, 80);
-    } else if (mq[45].matches) {
-      resizeSequencers(200, 660, 1360, 35, 80);
-    } else if (mq[46].matches) {
-      resizeSequencers(200, 680, 1412, 35);
-    } else if (mq[47].matches) {
-      resizeSequencers(200, 700, 1454, 35);
-    } else if (mq[48].matches) {
-      resizeSequencers(200, 720, 1493, 35);
-    } else if (mq[49].matches) {
-      resizeSequencers(200, 740, 1533, 35);
-    } else if (mq[50].matches) {
-      resizeSequencers(200, 780, 1612, 35);
-    } else if (mq[51].matches) {
-      resizeSequencers(200, 820, 1693, 35);
-    } else if (mq[52].matches) {
-      resizeSequencers(200, 860, 1772, 35);
-    } else if (mq[53].matches) {
-      resizeSequencers(200, 900, 1851, 35);
-    } else if (mq[54].matches) {
-      resizeSequencers(200, 940, 1932, 35);
-    } else if (mq[55].matches) {
-      resizeSequencers(200, 268, 546, 16, 45);
-      abbreviateEffects();
-    } else if (mq[56].matches) {
-      resizeSequencers(260, 318, 644, 16, 45);
-      abbreviateEffects();
-    } else if (mq[57].matches) {
-      resizeSequencers(260, 368, 742, 20, 45);
-      abbreviateEffects();
-    } else if (mq[58].matches) {
-      resizeSequencers(260, 424, 856, 20, 55);
-      abbreviateEffects();
-    } else if (mq[59].matches) {
-      resizeSequencers(260, 455, 917, 20, 55);
-      abbreviateEffects();
-    } else if (mq[60].matches) {
-      resizeSequencers(260, 480, 968, 24, 55);
-      abbreviateEffects();
-    } else if (mq[61].matches) {
-      resizeSequencers(260, 500, 1007, 24, 55);
-      abbreviateEffects();
-    } else if (mq[62].matches) {
-      resizeSequencers(260, 522, 1051, 26, 55);
-      abbreviateEffects();
-    } else if (mq[63].matches) {
-      resizeSequencers(260, 540, 1090, 26, 55);
-      abbreviateEffects();
-    } else if (mq[64].matches) {
-      resizeSequencers(260, 1133, 26, 65);
-    } else if (mq[65].matches) {
-      resizeSequencers(260, 576, 1162, 26, 65);
-      abbreviateEffects();
-    } else if (mq[66].matches) {
-      resizeSequencers(260, 588, 1186, 29, 65);
-      abbreviateEffects();
-    } else if (mq[67].matches) {
-      resizeSequencers(260, 602, 1215, 30, 65);
-      abbreviateEffects();
-    } else if (mq[68].matches) {
-      resizeSequencers(260, 606, 1240, 30, 65);
-      abbreviateEffects();
-    } else if (mq[69].matches) {
-      resizeSequencers(260, 606, 1240, 30, 70);
-    } else if (mq[70].matches) {
-      resizeSequencers(260, 614, 1271, 30, 70);
-    } else if (mq[71].matches) {
-      resizeSequencers(260, 616, 1274, 35, 80);
-    } else if (mq[72].matches) {
-      resizeSequencers(260, 617, 1285, 35, 80);
-    } else if (mq[73].matches) {
-      resizeSequencers(260, 620, 1288, 35, 80);
-    } else if (mq[74].matches) {
-      resizeSequencers(260, 640, 1329, 35, 80);
-    } else if (mq[75].matches) {
-      resizeSequencers(260, 660, 1360, 35, 80);
-    } else if (mq[76].matches) {
-      resizeSequencers(260, 680, 1412, 35);
-    } else if (mq[77].matches) {
-      resizeSequencers(260, 700, 1454, 35);
-    } else if (mq[78].matches) {
-      resizeSequencers(260, 720, 1493, 35);
-    } else if (mq[79].matches) {
-      resizeSequencers(260, 740, 1533, 35);
-    } else if (mq[80].matches) {
-      resizeSequencers(260, 780, 1612, 35);
-    } else if (mq[81].matches) {
-      resizeSequencers(260, 820, 1693, 35);
-    } else if (mq[82].matches) {
-      resizeSequencers(260, 860, 1772, 35);
-    } else if (mq[83].matches) {
-      resizeSequencers(260, 900, 1851, 35);
-    } else if (mq[84].matches) {
-      resizeSequencers(260, 940, 1932, 35);
-    } else if (mq[85].matches) {
-      resizeSequencers(220, 268, 546, 16, 45);
-      abbreviateEffects();
-    } else if (mq[86].matches) {
-      resizeSequencers(260, 268, 546, 16, 45);
-      abbreviateEffects();
-    } else if (mq[87].matches) {
-      resizeSequencers(260, 318, 644, 16, 45);
-      abbreviateEffects();
-    } else if (mq[88].matches) {
-      resizeSequencers(260, 368, 742, 20, 45);
-      abbreviateEffects();
-    } else if (mq[89].matches) {
-      resizeSequencers(300, 424, 856, 20, 55);
-      abbreviateEffects();
-    } else if (mq[90].matches) {
-      resizeSequencers(300, 455, 917, 20, 55);
-      abbreviateEffects();
-    } else if (mq[91].matches) {
-      resizeSequencers(300, 480, 968, 24, 55);
-      abbreviateEffects();
-    } else if (mq[92].matches) {
-      resizeSequencers(300, 500, 1007, 24, 55);
-      abbreviateEffects();
-    } else if (mq[93].matches) {
-      resizeSequencers(300, 522, 1051, 26, 55);
-      abbreviateEffects();
-    } else if (mq[94].matches) {
-      resizeSequencers(300, 540, 1090, 26, 55);
-      abbreviateEffects();
-    } else if (mq[95].matches) {
-      resizeSequencers(300, 1133, 26, 65);
-    } else if (mq[96].matches) {
-      resizeSequencers(300, 576, 1162, 26, 65);
-      abbreviateEffects();
-    } else if (mq[97].matches) {
-      resizeSequencers(300, 588, 1186, 29, 65);
-      abbreviateEffects();
-    } else if (mq[98].matches) {
-      resizeSequencers(300, 602, 1215, 30, 65);
-      abbreviateEffects();
-    } else if (mq[99].matches) {
-      resizeSequencers(300, 606, 1240, 30, 65);
-      abbreviateEffects();
-    } else if (mq[100].matches) {
-      resizeSequencers(300, 614, 1271, 30, 70);
-    } else if (mq[101].matches) {
-      resizeSequencers(300, 616, 1274, 35, 80);
-      tempo.resize(80, 80);
-    } else if (mq[102].matches) {
-      resizeSequencers(300, 617, 1285, 35, 80);
-      tempo.resize(80, 80);
-    } else if (mq[103].matches) {
-      resizeSequencers(300, 620, 1288, 35, 80);
-      tempo.resize(80, 80);
-    } else if (mq[104].matches) {
-      resizeSequencers(300, 640, 1329, 35, 80);
-    } else if (mq[105].matches) {
-      resizeSequencers(300, 660, 1360, 35, 80);
-    } else if (mq[106].matches) {
-      resizeSequencers(300, 680, 1412, 35);
-    } else if (mq[107].matches) {
-      resizeSequencers(300, 700, 1454, 35);
-    } else if (mq[108].matches) {
-      resizeSequencers(300, 720, 1493, 35);
-    } else if (mq[109].matches) {
-      resizeSequencers(300, 740, 1533, 35);
-    } else if (mq[110].matches) {
-      resizeSequencers(300, 780, 1612, 35);
-    } else if (mq[111].matches) {
-      resizeSequencers(300, 820, 1693, 35);
-    } else if (mq[112].matches) {
-      resizeSequencers(300, 860, 1772, 35);
-    } else if (mq[113].matches) {
-      resizeSequencers(300, 900, 1851, 35);
-    } else if (mq[114].matches) {
-      resizeSequencers(300, 940, 1932, 35);
-    } else if (mq[115].matches) {
-      resizeSequencers(260, 268, 546, 16, 45);
-      abbreviateEffects();
-    } else if (mq[116].matches) {
-      resizeSequencers(260, 318, 644, 16, 45);
-      abbreviateEffects();
-    } else if (mq[117].matches) {
-      resizeSequencers(260, 368, 742, 20, 45);
-      abbreviateEffects();
-    } else if (mq[118].matches) {
-      resizeSequencers(400, 424, 856, 20, 55);
-      abbreviateEffects();
-    } else if (mq[119].matches) {
-      resizeSequencers(400, 455, 917, 20, 55);
-      abbreviateEffects();
-    } else if (mq[120].matches) {
-      resizeSequencers(400, 480, 968, 24, 55);
-      abbreviateEffects();
-    } else if (mq[121].matches) {
-      resizeSequencers(400, 500, 1007, 24, 55);
-      abbreviateEffects();
-    } else if (mq[122].matches) {
-      resizeSequencers(400, 522, 1051, 26, 55);
-      abbreviateEffects();
-    } else if (mq[123].matches) {
-      resizeSequencers(400, 540, 1090, 26, 55);
-      abbreviateEffects();
-    } else if (mq[124].matches) {
-      resizeSequencers(400, 1133, 26, 65);
-    } else if (mq[125].matches) {
-      resizeSequencers(400, 576, 1162, 26, 65);
-      abbreviateEffects();
-    } else if (mq[126].matches) {
-      resizeSequencers(400, 588, 1186, 29, 65);
-      abbreviateEffects();
-    } else if (mq[127].matches) {
-      resizeSequencers(400, 602, 1215, 30, 65);
-      abbreviateEffects();
-    } else if (mq[128].matches) {
-      resizeSequencers(400, 606, 1240, 30, 65);
-      abbreviateEffects();
-    } else if (mq[129].matches) {
-      resizeSequencers(400, 614, 1271, 30, 70);
-    } else if (mq[130].matches) {
-      resizeSequencers(400, 616, 1274, 35, 80);
-    } else if (mq[131].matches) {
-      resizeSequencers(400, 617, 1285, 35, 80);
-    } else if (mq[132].matches) {
-      resizeSequencers(400, 620, 1288, 35, 80);
-    } else if (mq[133].matches) {
-      resizeSequencers(400, 640, 1329, 35, 80);
-    } else if (mq[134].matches) {
-      resizeSequencers(400, 660, 1360, 35, 80);
-    } else if (mq[135].matches) {
-      resizeSequencers(400, 680, 1412, 35);
-    } else if (mq[136].matches) {
-      resizeSequencers(400, 700, 1454, 35);
-    } else if (mq[137].matches) {
-      resizeSequencers(400, 720, 1493, 35);
-    } else if (mq[138].matches) {
-      resizeSequencers(400, 740, 1533, 35);
-    } else if (mq[139].matches) {
-      resizeSequencers(400, 780, 1612, 35);
-    } else if (mq[140].matches) {
-      resizeSequencers(400, 820, 1693, 35);
-    } else if (mq[141].matches) {
-      resizeSequencers(400, 860, 1772, 35);
-    } else if (mq[142].matches) {
-      resizeSequencers(400, 900, 1851, 35);
-    } else if (mq[143].matches) {
-      resizeSequencers(400, 940, 1932, 35);
-    }
-  };
-  loadSequencerSizes();
-  resizeSequencersResponsively();
-};
-
-document.addEventListener('DOMContentLoaded', setup);
-
-if (typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefined") {
-  var resumeAudio = function () {
-    if (typeof g_WebAudioContext == "undefined" || g_WebAudioContext == null) return;
-    if (g_WebAudioContext.state == "suspended") g_WebAudioContext.resume();
-    document.removeEventListener("click", resumeAudio);
-  };
-  document.addEventListener("click", resumeAudio);
-}
+/* harmony default export */ __webpack_exports__["default"] = (resizeResponsively);
 
 /***/ }),
 
@@ -2025,7 +2300,7 @@ bitcrusher.wet.value = 1;
 autofilter.wet.value = 1;
 pingpong.wet.value = .5;
 
-const effects = {
+const synthEffects = {
   delay,
   reverb,
   phaser,
@@ -2036,7 +2311,7 @@ const effects = {
   pingpong
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (effects);
+/* harmony default export */ __webpack_exports__["default"] = (synthEffects);
 
 /***/ }),
 
@@ -2044,13 +2319,14 @@ const effects = {
 /*!**************************!*\
   !*** ./client/synths.js ***!
   \**************************/
-/*! exports provided: vol, gain, default */
+/*! exports provided: vol, gain, triggerNote, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vol", function() { return vol; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gain", function() { return gain; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triggerNote", function() { return triggerNote; });
 const Tone = __webpack_require__(/*! Tone */ "./node_modules/Tone/build/Tone.js");
 
 const vol = new Tone.Volume().toMaster();
@@ -2073,6 +2349,10 @@ let pluckBass = new Tone.PluckSynth().chain(gain, vol);
 let duoBass = new Tone.DuoSynth().chain(gain, vol);
 let polyBass = new Tone.PolySynth().chain(gain, vol);
 
+const triggerNote = (synth, note) => {
+  synth.triggerAttackRelease(note, '32n');
+};
+
 const synths = {
   fm,
   membrane,
@@ -2089,6 +2369,52 @@ const synths = {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (synths);
+
+/***/ }),
+
+/***/ "./client/tempo.js":
+/*!*************************!*\
+  !*** ./client/tempo.js ***!
+  \*************************/
+/*! exports provided: bpmConverter, tempo */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bpmConverter", function() { return bpmConverter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tempo", function() { return tempo; });
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! nexusui */ "./node_modules/nexusui/dist/NexusUI.js");
+/* harmony import */ var nexusui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(nexusui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+const socket = io(window.location.origin);
+
+
+
+const bpmConverter = ms => 60000 / ms / 4;
+const tempo = new nexusui__WEBPACK_IMPORTED_MODULE_0___default.a.Dial('#tempo-select', {
+  'size': [90, 90],
+  'interaction': 'radial',
+  'mode': 'absolute',
+  'value': null,
+  'min': 30,
+  'max': 300,
+  'step': 1
+});
+
+tempo.colorize('fill', 'rgba(67, 203, 203, 0.84)');
+tempo.colorize('accent', '#3D3D3D');
+tempo.colorize('border', '#3D3D3D');
+
+tempo.on('change', event => {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('#tempo').mouseup(() => {
+    socket.emit('changeTempo', event);
+  });
+});
+
+socket.on('changeTempo', data => {
+  tempo.value = data;
+});
 
 /***/ }),
 

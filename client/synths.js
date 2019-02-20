@@ -20,6 +20,10 @@ let pluckBass = new Tone.PluckSynth().chain(gain, vol)
 let duoBass = new Tone.DuoSynth().chain(gain, vol)
 let polyBass = new Tone.PolySynth().chain(gain, vol)
 
+export const triggerNote = (synth, note) => {
+  synth.triggerAttackRelease(note, '32n')
+}
+
 const synths = {
   fm,
   membrane,
