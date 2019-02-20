@@ -18,7 +18,7 @@ bitcrusher.wet.value = 1
 autofilter.wet.value = 1
 pingpong.wet.value = .5
 
-const effects = {
+const synthEffects = {
   delay,
   reverb,
   phaser,
@@ -29,4 +29,4 @@ const effects = {
   pingpong
 }
 
-export default effects
+export default synthEffects

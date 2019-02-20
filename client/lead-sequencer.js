@@ -1,21 +1,18 @@
 const socket = io(window.location.origin);
 import Nexus from 'nexusui'
 import $ from 'jquery'
-import synths, {vol, gain} from './synths'
+import synths, {vol, gain, triggerNote} from './synths'
 import synthEffects from './synth-effects'
-import {triggerNote} from './index'
 
+let lead = synths.fm
 let leadSlider = {'size': [180,20], 'mode': 'absolute', 'min': -30, 'max': 0, 'step': 0, 'value': 0}
 export const leadVol = new Nexus.Slider('#lead-vol', leadSlider)
-
 export const leadSeq = new Nexus.Sequencer('#lead-seq', {
   'size': [940, 400],
   'mode': 'toggle',
   'rows': 8,
   'columns': 8
 })
-
-let lead = synths.fm
 
 const {
   delay,
