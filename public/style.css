@@ -2182,7 +2182,7 @@ path:nth-child(5) {
     display: none;
   }
   #footer {
-    margin-top: 200px;
+    margin-top: 0px;
     height: 200px;
   }
   #synth-container {
